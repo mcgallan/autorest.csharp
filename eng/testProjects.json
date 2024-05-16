@@ -71,6 +71,7 @@
         "type/union",
         "serialization/encoded-name/json",
         "server/endpoint/not-defined",
+        "special-headers/conditional-request",
         "special-words"
     ],
     "TestServerProjects": [
