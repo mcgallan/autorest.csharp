@@ -1,0 +1,210 @@
+{
+ "$id": "1",
+ "Name": "Versioning.AnomalyDetector",
+ "ApiVersions": [
+  "v1",
+  "v2"
+ ],
+ "Enums": [
+  {
+   "$id": "2",
+   "Kind": "enum",
+   "Name": "Versions",
+   "ValueType": {
+    "$id": "3",
+    "Kind": "string",
+    "IsNullable": false
+   },
+   "Values": [
+    {
+     "$id": "4",
+     "Name": "v1",
+     "Value": "v1"
+    },
+    {
+     "$id": "5",
+     "Name": "v2",
+     "Value": "v2"
+    }
+   ],
+   "Namespace": "Versioning.AnomalyDetector",
+   "IsExtensible": false,
+   "IsNullable": false,
+   "Usage": "None"
+  }
+ ],
+ "Models": [
+  {
+   "$id": "6",
+   "Kind": "Model",
+   "Name": "DetectionResult",
+   "Namespace": "Versioning.AnomalyDetector",
+   "Description": "Detection results for the given resultId.",
+   "IsNullable": false,
+   "Usage": "Output",
+   "Properties": [
+    {
+     "$id": "7",
+     "Name": "resultId",
+     "SerializedName": "resultId",
+     "Description": "Result identifier, which is used to fetch the results of an inference call.",
+     "Type": {
+      "$id": "8",
+      "Kind": "uuid",
+      "IsNullable": false,
+      "Encode": "string"
+     },
+     "IsRequired": true,
+     "IsReadOnly": false
+    }
+   ]
+  }
+ ],
+ "Clients": [
+  {
+   "$id": "9",
+   "Name": "AnomalyDetectorClient",
+   "Description": "CADL project to test api versions.",
+   "Operations": [
+    {
+     "$id": "10",
+     "Name": "GetAnomalyDetectionResult",
+     "ResourceName": "AnomalyDetector",
+     "Summary": "Get Multivariate Anomaly Detection Result",
+     "Description": "For asynchronous inference, get multivariate anomaly detection result based on\nresultId returned by the BatchDetectAnomaly api.",
+     "Parameters": [
+      {
+       "$id": "11",
+       "Name": "Endpoint",
+       "NameInRequest": "Endpoint",
+       "Description": "Need to be set as 'http://localhost:3000' in client.",
+       "Type": {
+        "$id": "12",
+        "Kind": "uri",
+        "IsNullable": false
+       },
+       "Location": "Uri",
+       "IsApiVersion": false,
+       "IsResourceParameter": false,
+       "IsContentType": false,
+       "IsRequired": true,
+       "IsEndpoint": true,
+       "SkipUrlEncoding": false,
+       "Explode": false,
+       "Kind": "Client"
+      },
+      {
+       "$id": "13",
+       "Name": "ApiVersion",
+       "NameInRequest": "ApiVersion",
+       "Description": "Api Version",
+       "Type": {
+        "$ref": "2"
+       },
+       "Location": "Uri",
+       "IsApiVersion": true,
+       "IsResourceParameter": false,
+       "IsContentType": false,
+       "IsRequired": true,
+       "IsEndpoint": false,
+       "SkipUrlEncoding": false,
+       "Explode": false,
+       "Kind": "Client",
+       "DefaultValue": {
+        "$id": "14",
+        "Type": {
+         "$id": "15",
+         "Kind": "string",
+         "IsNullable": false
+        },
+        "Value": "v2"
+       }
+      },
+      {
+       "$id": "16",
+       "Name": "resultId",
+       "NameInRequest": "resultId",
+       "Type": {
+        "$id": "17",
+        "Kind": "uuid",
+        "IsNullable": false,
+        "Encode": "string"
+       },
+       "Location": "Path",
+       "IsRequired": true,
+       "IsApiVersion": false,
+       "IsResourceParameter": false,
+       "IsContentType": false,
+       "IsEndpoint": false,
+       "SkipUrlEncoding": false,
+       "Explode": false,
+       "Kind": "Method"
+      },
+      {
+       "$id": "18",
+       "Name": "accept",
+       "NameInRequest": "Accept",
+       "Type": {
+        "$id": "19",
+        "Kind": "string",
+        "IsNullable": false
+       },
+       "Location": "Header",
+       "IsApiVersion": false,
+       "IsResourceParameter": false,
+       "IsContentType": false,
+       "IsRequired": true,
+       "IsEndpoint": false,
+       "SkipUrlEncoding": false,
+       "Explode": false,
+       "Kind": "Constant",
+       "DefaultValue": {
+        "$id": "20",
+        "Type": {
+         "$ref": "19"
+        },
+        "Value": "application/json"
+       }
+      }
+     ],
+     "Responses": [
+      {
+       "$id": "21",
+       "StatusCodes": [
+        200
+       ],
+       "BodyType": {
+        "$ref": "6"
+       },
+       "BodyMediaType": "Json",
+       "Headers": [],
+       "IsErrorResponse": false,
+       "ContentTypes": [
+        "application/json"
+       ]
+      }
+     ],
+     "HttpMethod": "GET",
+     "RequestBodyMediaType": "None",
+     "Uri": "{Endpoint}/versioning/anomalydetector/{ApiVersion}",
+     "Path": "/result/{resultId}",
+     "BufferResponse": true,
+     "GenerateProtocolMethod": true,
+     "GenerateConvenienceMethod": true
+    }
+   ],
+   "Protocol": {
+    "$id": "22"
+   },
+   "Creatable": true,
+   "Parameters": [
+    {
+     "$ref": "11"
+    },
+    {
+     "$ref": "13"
+    }
+   ]
+  }
+ ]
+}
