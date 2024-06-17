@@ -9,7 +9,7 @@ using Versioning.Added.Models;
 using System;
 using System.Linq;
 using System.Reflection;
-using Versioning.AnomalyDetector;
+using Versioning.Anomaly;
 
 namespace CadlRanchProjects.Tests
 {
@@ -18,7 +18,7 @@ namespace CadlRanchProjects.Tests
         [Test]
         public Task Versioning_AnomalyDetector_GetAnomalyDetectionResult() => Test(async (host) =>
         {
-            var response = await new AnomalyDetectorClient(host, new AnomalyDetectorClientOptions(AnomalyDetectorClientOptions.ServiceVersion.V1)).GetAnomalyDetectionResultAsync(Guid.Parse("73f411fe-4f43-4b4b-9cbd-6828d8f4cf9a"));
+            var response = await new AnomalyClient(host, new AnomalyClientOptions(AnomalyClientOptions.ServiceVersion.V1)).GetAnomalyDetectionResultAsync(Guid.Parse("73f411fe-4f43-4b4b-9cbd-6828d8f4cf9a"));
             Assert.AreEqual(200, response.GetRawResponse().Status);
             Assert.AreEqual(Guid.Parse("73f411fe-4f43-4b4b-9cbd-6828d8f4cf9a"), response.Value.ResultId);
         });

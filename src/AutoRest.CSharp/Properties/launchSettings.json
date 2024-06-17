@@ -936,9 +936,9 @@
       "commandName": "Project",
       "commandLineArgs": "--standalone $(SolutionDir)\\test\\CadlRanchProjects\\versioning\\added\\src\\Generated -n"
     },
-    "typespec-versioning/anomalydetector": {
+    "typespec-versioning/anomaly": {
       "commandName": "Project",
-      "commandLineArgs": "--standalone $(SolutionDir)\\test\\CadlRanchProjects\\versioning\\anomalydetector\\src\\Generated -n"
+      "commandLineArgs": "--standalone $(SolutionDir)\\test\\CadlRanchProjects\\versioning\\anomaly\\src\\Generated -n"
     },
     "typespec-versioning/madeOptional": {
       "commandName": "Project",

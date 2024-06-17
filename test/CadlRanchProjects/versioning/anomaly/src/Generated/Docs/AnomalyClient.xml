@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetAnomalyDetectionResultAsync(Guid,CancellationToken)">
+      <example>
+This sample shows how to call GetAnomalyDetectionResultAsync.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+AnomalyClient client = new AnomalyClient(endpoint);
+
+Response<DetectionResult> response = await client.GetAnomalyDetectionResultAsync(Guid.Parse("73f411fe-4f43-4b4b-9cbd-6828d8f4cf9a"));
+]]></code>
+This sample shows how to call GetAnomalyDetectionResultAsync with all parameters.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+AnomalyClient client = new AnomalyClient(endpoint);
+
+Response<DetectionResult> response = await client.GetAnomalyDetectionResultAsync(Guid.Parse("73f411fe-4f43-4b4b-9cbd-6828d8f4cf9a"));
+]]></code></example>
+    </member>
+    <member name="GetAnomalyDetectionResult(Guid,CancellationToken)">
+      <example>
+This sample shows how to call GetAnomalyDetectionResult.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+AnomalyClient client = new AnomalyClient(endpoint);
+
+Response<DetectionResult> response = client.GetAnomalyDetectionResult(Guid.Parse("73f411fe-4f43-4b4b-9cbd-6828d8f4cf9a"));
+]]></code>
+This sample shows how to call GetAnomalyDetectionResult with all parameters.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+AnomalyClient client = new AnomalyClient(endpoint);
+
+Response<DetectionResult> response = client.GetAnomalyDetectionResult(Guid.Parse("73f411fe-4f43-4b4b-9cbd-6828d8f4cf9a"));
+]]></code></example>
+    </member>
+    <member name="GetAnomalyDetectionResultAsync(Guid,RequestContext)">
+      <example>
+This sample shows how to call GetAnomalyDetectionResultAsync and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+AnomalyClient client = new AnomalyClient(endpoint);
+
+Response response = await client.GetAnomalyDetectionResultAsync(Guid.Parse("73f411fe-4f43-4b4b-9cbd-6828d8f4cf9a"), null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("resultId").ToString());
+]]></code>
+This sample shows how to call GetAnomalyDetectionResultAsync with all parameters and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+AnomalyClient client = new AnomalyClient(endpoint);
+
+Response response = await client.GetAnomalyDetectionResultAsync(Guid.Parse("73f411fe-4f43-4b4b-9cbd-6828d8f4cf9a"), null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("resultId").ToString());
+]]></code></example>
+    </member>
+    <member name="GetAnomalyDetectionResult(Guid,RequestContext)">
+      <example>
+This sample shows how to call GetAnomalyDetectionResult and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+AnomalyClient client = new AnomalyClient(endpoint);
+
+Response response = client.GetAnomalyDetectionResult(Guid.Parse("73f411fe-4f43-4b4b-9cbd-6828d8f4cf9a"), null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("resultId").ToString());
+]]></code>
+This sample shows how to call GetAnomalyDetectionResult with all parameters and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+AnomalyClient client = new AnomalyClient(endpoint);
+
+Response response = client.GetAnomalyDetectionResult(Guid.Parse("73f411fe-4f43-4b4b-9cbd-6828d8f4cf9a"), null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("resultId").ToString());
+]]></code></example>
+    </member>
+  </members>
+</doc>

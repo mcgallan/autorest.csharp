@@ -53,7 +53,7 @@
         "client/structure/renamed-operation",
         "client/structure/two-operation-group",
         "versioning/added",
-        "versioning/anomalydetector",
+        "versioning/anomaly",
         "versioning/madeOptional",
         "versioning/removed",
         "versioning/renamedFrom",
