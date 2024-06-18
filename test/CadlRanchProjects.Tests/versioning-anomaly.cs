@@ -13,10 +13,10 @@ using Versioning.Anomaly;
 
 namespace CadlRanchProjects.Tests
 {
-    public class VersioningAnomalyDetectorTest : CadlRanchTestBase
+    public class VersioningAnomalyTest : CadlRanchTestBase
     {
         [Test]
-        public Task Versioning_AnomalyDetector_GetAnomalyDetectionResult() => Test(async (host) =>
+        public Task Versioning_Anomaly_GetAnomalyDetectionResult() => Test(async (host) =>
         {
             var response = await new AnomalyClient(host, new AnomalyClientOptions(AnomalyClientOptions.ServiceVersion.V1)).GetAnomalyDetectionResultAsync(Guid.Parse("73f411fe-4f43-4b4b-9cbd-6828d8f4cf9a"));
             Assert.AreEqual(200, response.GetRawResponse().Status);
