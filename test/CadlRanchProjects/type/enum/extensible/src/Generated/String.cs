@@ -224,30 +224,7 @@ namespace _Type._Enum.Extensible
             }
         }
 
-        /// <summary> Put known value. </summary>
-        /// <param name="body"> The <see cref="DaysOfWeekExtensibleEnum"/> to use. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <include file="Docs/String.xml" path="doc/members/member[@name='PutKnownValueAsync(DaysOfWeekExtensibleEnum,CancellationToken)']/*" />
-        public virtual async Task<Response> PutKnownValueAsync(DaysOfWeekExtensibleEnum body, CancellationToken cancellationToken = default)
-        {
-            using RequestContent content = RequestContent.Create(BinaryData.FromObjectAsJson(body.ToString()));
-            RequestContext context = FromCancellationToken(cancellationToken);
-            Response response = await PutKnownValueAsync(content, context).ConfigureAwait(false);
-            return response;
-        }
-
-        /// <summary> Put known value. </summary>
-        /// <param name="body"> The <see cref="DaysOfWeekExtensibleEnum"/> to use. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <include file="Docs/String.xml" path="doc/members/member[@name='PutKnownValue(DaysOfWeekExtensibleEnum,CancellationToken)']/*" />
-        public virtual Response PutKnownValue(DaysOfWeekExtensibleEnum body, CancellationToken cancellationToken = default)
-        {
-            using RequestContent content = RequestContent.Create(BinaryData.FromObjectAsJson(body.ToString()));
-            RequestContext context = FromCancellationToken(cancellationToken);
-            Response response = PutKnownValue(content, context);
-            return response;
-        }
-
+        // The convenience method is omitted here because it has exactly the same parameter list as the corresponding protocol method
         /// <summary>
         /// [Protocol Method] Put known value.
         /// <list type="bullet">
@@ -256,28 +233,19 @@ namespace _Type._Enum.Extensible
         /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
         /// </description>
         /// </item>
-        /// <item>
-        /// <description>
-        /// Please try the simpler <see cref="PutKnownValueAsync(DaysOfWeekExtensibleEnum,CancellationToken)"/> convenience overload with strongly typed models first.
-        /// </description>
-        /// </item>
         /// </list>
         /// </summary>
-        /// <param name="content"> The content to send as the body of the request. </param>
         /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
         /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
         /// <returns> The response returned from the service. </returns>
-        /// <include file="Docs/String.xml" path="doc/members/member[@name='PutKnownValueAsync(RequestContent,RequestContext)']/*" />
-        public virtual async Task<Response> PutKnownValueAsync(RequestContent content, RequestContext context = null)
+        /// <include file="Docs/String.xml" path="doc/members/member[@name='PutKnownValueAsync(RequestContext)']/*" />
+        public virtual async Task<Response> PutKnownValueAsync(RequestContext context = null)
         {
-            Argument.AssertNotNull(content, nameof(content));
-
             using var scope = ClientDiagnostics.CreateScope("String.PutKnownValue");
             scope.Start();
             try
             {
-                using HttpMessage message = CreatePutKnownValueRequest(content, context);
+                using HttpMessage message = CreatePutKnownValueRequest(context);
                 return await _pipeline.ProcessMessageAsync(message, context).ConfigureAwait(false);
             }
             catch (Exception e)
@@ -287,6 +255,7 @@ namespace _Type._Enum.Extensible
             }
         }
 
+        // The convenience method is omitted here because it has exactly the same parameter list as the corresponding protocol method
         /// <summary>
         /// [Protocol Method] Put known value.
         /// <list type="bullet">
@@ -295,28 +264,19 @@ namespace _Type._Enum.Extensible
         /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
         /// </description>
         /// </item>
-        /// <item>
-        /// <description>
-        /// Please try the simpler <see cref="PutKnownValue(DaysOfWeekExtensibleEnum,CancellationToken)"/> convenience overload with strongly typed models first.
-        /// </description>
-        /// </item>
         /// </list>
         /// </summary>
-        /// <param name="content"> The content to send as the body of the request. </param>
         /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
         /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
         /// <returns> The response returned from the service. </returns>
-        /// <include file="Docs/String.xml" path="doc/members/member[@name='PutKnownValue(RequestContent,RequestContext)']/*" />
-        public virtual Response PutKnownValue(RequestContent content, RequestContext context = null)
+        /// <include file="Docs/String.xml" path="doc/members/member[@name='PutKnownValue(RequestContext)']/*" />
+        public virtual Response PutKnownValue(RequestContext context = null)
         {
-            Argument.AssertNotNull(content, nameof(content));
-
             using var scope = ClientDiagnostics.CreateScope("String.PutKnownValue");
             scope.Start();
             try
             {
-                using HttpMessage message = CreatePutKnownValueRequest(content, context);
+                using HttpMessage message = CreatePutKnownValueRequest(context);
                 return _pipeline.ProcessMessage(message, context);
             }
             catch (Exception e)
@@ -326,30 +286,7 @@ namespace _Type._Enum.Extensible
             }
         }
 
-        /// <summary> Put unknown value. </summary>
-        /// <param name="body"> The <see cref="DaysOfWeekExtensibleEnum"/> to use. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <include file="Docs/String.xml" path="doc/members/member[@name='PutUnknownValueAsync(DaysOfWeekExtensibleEnum,CancellationToken)']/*" />
-        public virtual async Task<Response> PutUnknownValueAsync(DaysOfWeekExtensibleEnum body, CancellationToken cancellationToken = default)
-        {
-            using RequestContent content = RequestContent.Create(BinaryData.FromObjectAsJson(body.ToString()));
-            RequestContext context = FromCancellationToken(cancellationToken);
-            Response response = await PutUnknownValueAsync(content, context).ConfigureAwait(false);
-            return response;
-        }
-
-        /// <summary> Put unknown value. </summary>
-        /// <param name="body"> The <see cref="DaysOfWeekExtensibleEnum"/> to use. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <include file="Docs/String.xml" path="doc/members/member[@name='PutUnknownValue(DaysOfWeekExtensibleEnum,CancellationToken)']/*" />
-        public virtual Response PutUnknownValue(DaysOfWeekExtensibleEnum body, CancellationToken cancellationToken = default)
-        {
-            using RequestContent content = RequestContent.Create(BinaryData.FromObjectAsJson(body.ToString()));
-            RequestContext context = FromCancellationToken(cancellationToken);
-            Response response = PutUnknownValue(content, context);
-            return response;
-        }
-
+        // The convenience method is omitted here because it has exactly the same parameter list as the corresponding protocol method
         /// <summary>
         /// [Protocol Method] Put unknown value.
         /// <list type="bullet">
@@ -358,28 +295,105 @@ namespace _Type._Enum.Extensible
         /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
         /// </description>
         /// </item>
-        /// <item>
-        /// <description>
-        /// Please try the simpler <see cref="PutUnknownValueAsync(DaysOfWeekExtensibleEnum,CancellationToken)"/> convenience overload with strongly typed models first.
-        /// </description>
-        /// </item>
         /// </list>
         /// </summary>
-        /// <param name="content"> The content to send as the body of the request. </param>
         /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
         /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
         /// <returns> The response returned from the service. </returns>
-        /// <include file="Docs/String.xml" path="doc/members/member[@name='PutUnknownValueAsync(RequestContent,RequestContext)']/*" />
-        public virtual async Task<Response> PutUnknownValueAsync(RequestContent content, RequestContext context = null)
+        /// <include file="Docs/String.xml" path="doc/members/member[@name='PutUnknownValueAsync(RequestContext)']/*" />
+        public virtual async Task<Response> PutUnknownValueAsync(RequestContext context = null)
         {
-            Argument.AssertNotNull(content, nameof(content));
-
             using var scope = ClientDiagnostics.CreateScope("String.PutUnknownValue");
             scope.Start();
             try
             {
-                using HttpMessage message = CreatePutUnknownValueRequest(content, context);
+                using HttpMessage message = CreatePutUnknownValueRequest(context);
+                return await _pipeline.ProcessMessageAsync(message, context).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                scope.Failed(e);
+                throw;
+            }
+        }
+
+        // The convenience method is omitted here because it has exactly the same parameter list as the corresponding protocol method
+        /// <summary>
+        /// [Protocol Method] Put unknown value.
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        /// <include file="Docs/String.xml" path="doc/members/member[@name='PutUnknownValue(RequestContext)']/*" />
+        public virtual Response PutUnknownValue(RequestContext context = null)
+        {
+            using var scope = ClientDiagnostics.CreateScope("String.PutUnknownValue");
+            scope.Start();
+            try
+            {
+                using HttpMessage message = CreatePutUnknownValueRequest(context);
+                return _pipeline.ProcessMessage(message, context);
+            }
+            catch (Exception e)
+            {
+                scope.Failed(e);
+                throw;
+            }
+        }
+
+        /// <summary> Get required readonly value. </summary>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <include file="Docs/String.xml" path="doc/members/member[@name='GetRequiredReadonlyValueAsync(CancellationToken)']/*" />
+        public virtual async Task<Response<Workday>> GetRequiredReadonlyValueAsync(CancellationToken cancellationToken = default)
+        {
+            RequestContext context = FromCancellationToken(cancellationToken);
+            Response response = await GetRequiredReadonlyValueAsync(context).ConfigureAwait(false);
+            return Response.FromValue(Workday.FromResponse(response), response);
+        }
+
+        /// <summary> Get required readonly value. </summary>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <include file="Docs/String.xml" path="doc/members/member[@name='GetRequiredReadonlyValue(CancellationToken)']/*" />
+        public virtual Response<Workday> GetRequiredReadonlyValue(CancellationToken cancellationToken = default)
+        {
+            RequestContext context = FromCancellationToken(cancellationToken);
+            Response response = GetRequiredReadonlyValue(context);
+            return Response.FromValue(Workday.FromResponse(response), response);
+        }
+
+        /// <summary>
+        /// [Protocol Method] Get required readonly value.
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="GetRequiredReadonlyValueAsync(CancellationToken)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        /// <include file="Docs/String.xml" path="doc/members/member[@name='GetRequiredReadonlyValueAsync(RequestContext)']/*" />
+        public virtual async Task<Response> GetRequiredReadonlyValueAsync(RequestContext context)
+        {
+            using var scope = ClientDiagnostics.CreateScope("String.GetRequiredReadonlyValue");
+            scope.Start();
+            try
+            {
+                using HttpMessage message = CreateGetRequiredReadonlyValueRequest(context);
                 return await _pipeline.ProcessMessageAsync(message, context).ConfigureAwait(false);
             }
             catch (Exception e)
@@ -390,7 +404,7 @@ namespace _Type._Enum.Extensible
         }
 
         /// <summary>
-        /// [Protocol Method] Put unknown value.
+        /// [Protocol Method] Get required readonly value.
         /// <list type="bullet">
         /// <item>
         /// <description>
@@ -399,26 +413,112 @@ namespace _Type._Enum.Extensible
         /// </item>
         /// <item>
         /// <description>
-        /// Please try the simpler <see cref="PutUnknownValue(DaysOfWeekExtensibleEnum,CancellationToken)"/> convenience overload with strongly typed models first.
+        /// Please try the simpler <see cref="GetRequiredReadonlyValue(CancellationToken)"/> convenience overload with strongly typed models first.
         /// </description>
         /// </item>
         /// </list>
         /// </summary>
-        /// <param name="content"> The content to send as the body of the request. </param>
         /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
         /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
         /// <returns> The response returned from the service. </returns>
-        /// <include file="Docs/String.xml" path="doc/members/member[@name='PutUnknownValue(RequestContent,RequestContext)']/*" />
-        public virtual Response PutUnknownValue(RequestContent content, RequestContext context = null)
+        /// <include file="Docs/String.xml" path="doc/members/member[@name='GetRequiredReadonlyValue(RequestContext)']/*" />
+        public virtual Response GetRequiredReadonlyValue(RequestContext context)
         {
-            Argument.AssertNotNull(content, nameof(content));
-
-            using var scope = ClientDiagnostics.CreateScope("String.PutUnknownValue");
+            using var scope = ClientDiagnostics.CreateScope("String.GetRequiredReadonlyValue");
             scope.Start();
             try
             {
-                using HttpMessage message = CreatePutUnknownValueRequest(content, context);
+                using HttpMessage message = CreateGetRequiredReadonlyValueRequest(context);
+                return _pipeline.ProcessMessage(message, context);
+            }
+            catch (Exception e)
+            {
+                scope.Failed(e);
+                throw;
+            }
+        }
+
+        /// <summary> Get optional readonly value. </summary>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <include file="Docs/String.xml" path="doc/members/member[@name='GetOptionalReadonlyValueAsync(CancellationToken)']/*" />
+        public virtual async Task<Response<Workday>> GetOptionalReadonlyValueAsync(CancellationToken cancellationToken = default)
+        {
+            RequestContext context = FromCancellationToken(cancellationToken);
+            Response response = await GetOptionalReadonlyValueAsync(context).ConfigureAwait(false);
+            return Response.FromValue(Workday.FromResponse(response), response);
+        }
+
+        /// <summary> Get optional readonly value. </summary>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <include file="Docs/String.xml" path="doc/members/member[@name='GetOptionalReadonlyValue(CancellationToken)']/*" />
+        public virtual Response<Workday> GetOptionalReadonlyValue(CancellationToken cancellationToken = default)
+        {
+            RequestContext context = FromCancellationToken(cancellationToken);
+            Response response = GetOptionalReadonlyValue(context);
+            return Response.FromValue(Workday.FromResponse(response), response);
+        }
+
+        /// <summary>
+        /// [Protocol Method] Get optional readonly value.
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="GetOptionalReadonlyValueAsync(CancellationToken)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        /// <include file="Docs/String.xml" path="doc/members/member[@name='GetOptionalReadonlyValueAsync(RequestContext)']/*" />
+        public virtual async Task<Response> GetOptionalReadonlyValueAsync(RequestContext context)
+        {
+            using var scope = ClientDiagnostics.CreateScope("String.GetOptionalReadonlyValue");
+            scope.Start();
+            try
+            {
+                using HttpMessage message = CreateGetOptionalReadonlyValueRequest(context);
+                return await _pipeline.ProcessMessageAsync(message, context).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                scope.Failed(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// [Protocol Method] Get optional readonly value.
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="GetOptionalReadonlyValue(CancellationToken)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        /// <include file="Docs/String.xml" path="doc/members/member[@name='GetOptionalReadonlyValue(RequestContext)']/*" />
+        public virtual Response GetOptionalReadonlyValue(RequestContext context)
+        {
+            using var scope = ClientDiagnostics.CreateScope("String.GetOptionalReadonlyValue");
+            scope.Start();
+            try
+            {
+                using HttpMessage message = CreateGetOptionalReadonlyValueRequest(context);
                 return _pipeline.ProcessMessage(message, context);
             }
             catch (Exception e)
@@ -454,7 +554,7 @@ namespace _Type._Enum.Extensible
             return message;
         }
 
-        internal HttpMessage CreatePutKnownValueRequest(RequestContent content, RequestContext context)
+        internal HttpMessage CreatePutKnownValueRequest(RequestContext context)
         {
             var message = _pipeline.CreateMessage(context, ResponseClassifier204);
             var request = message.Request;
@@ -464,12 +564,10 @@ namespace _Type._Enum.Extensible
             uri.AppendPath("/type/enum/extensible/string/known-value", false);
             request.Uri = uri;
             request.Headers.Add("Accept", "application/json");
-            request.Headers.Add("Content-Type", "application/json");
-            request.Content = content;
             return message;
         }
 
-        internal HttpMessage CreatePutUnknownValueRequest(RequestContent content, RequestContext context)
+        internal HttpMessage CreatePutUnknownValueRequest(RequestContext context)
         {
             var message = _pipeline.CreateMessage(context, ResponseClassifier204);
             var request = message.Request;
@@ -479,8 +577,32 @@ namespace _Type._Enum.Extensible
             uri.AppendPath("/type/enum/extensible/string/unknown-value", false);
             request.Uri = uri;
             request.Headers.Add("Accept", "application/json");
-            request.Headers.Add("Content-Type", "application/json");
-            request.Content = content;
+            return message;
+        }
+
+        internal HttpMessage CreateGetRequiredReadonlyValueRequest(RequestContext context)
+        {
+            var message = _pipeline.CreateMessage(context, ResponseClassifier200);
+            var request = message.Request;
+            request.Method = RequestMethod.Get;
+            var uri = new RawRequestUriBuilder();
+            uri.Reset(_endpoint);
+            uri.AppendPath("/type/enum/extensible/string/readonly-required-value", false);
+            request.Uri = uri;
+            request.Headers.Add("Accept", "application/json");
+            return message;
+        }
+
+        internal HttpMessage CreateGetOptionalReadonlyValueRequest(RequestContext context)
+        {
+            var message = _pipeline.CreateMessage(context, ResponseClassifier200);
+            var request = message.Request;
+            request.Method = RequestMethod.Get;
+            var uri = new RawRequestUriBuilder();
+            uri.Reset(_endpoint);
+            uri.AppendPath("/type/enum/extensible/string/readonly-optional-value", false);
+            request.Uri = uri;
+            request.Headers.Add("Accept", "application/json");
             return message;
         }
 

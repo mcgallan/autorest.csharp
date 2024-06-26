@@ -9,7 +9,6 @@ using System;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Azure;
-using Azure.Core;
 using Azure.Identity;
 using NUnit.Framework;
 using _Type._Enum.Extensible.Models;
@@ -192,8 +191,7 @@ namespace _Type._Enum.Extensible.Samples
         {
             String client = new ExtensibleClient().GetStringClient();
 
-            using RequestContent content = RequestContent.Create("Monday");
-            Response response = client.PutKnownValue(content);
+            Response response = client.PutKnownValue();
 
             Console.WriteLine(response.Status);
         }
@@ -204,28 +202,9 @@ namespace _Type._Enum.Extensible.Samples
         {
             String client = new ExtensibleClient().GetStringClient();
 
-            using RequestContent content = RequestContent.Create("Monday");
-            Response response = await client.PutKnownValueAsync(content);
+            Response response = await client.PutKnownValueAsync();
 
             Console.WriteLine(response.Status);
-        }
-
-        [Test]
-        [Ignore("Only validating compilation of examples")]
-        public void Example_String_PutKnownValue_ShortVersion_Convenience()
-        {
-            String client = new ExtensibleClient().GetStringClient();
-
-            Response response = client.PutKnownValue(DaysOfWeekExtensibleEnum.Monday);
-        }
-
-        [Test]
-        [Ignore("Only validating compilation of examples")]
-        public async Task Example_String_PutKnownValue_ShortVersion_Convenience_Async()
-        {
-            String client = new ExtensibleClient().GetStringClient();
-
-            Response response = await client.PutKnownValueAsync(DaysOfWeekExtensibleEnum.Monday);
         }
 
         [Test]
@@ -234,8 +213,7 @@ namespace _Type._Enum.Extensible.Samples
         {
             String client = new ExtensibleClient().GetStringClient();
 
-            using RequestContent content = RequestContent.Create("Monday");
-            Response response = client.PutKnownValue(content);
+            Response response = client.PutKnownValue();
 
             Console.WriteLine(response.Status);
         }
@@ -246,28 +224,9 @@ namespace _Type._Enum.Extensible.Samples
         {
             String client = new ExtensibleClient().GetStringClient();
 
-            using RequestContent content = RequestContent.Create("Monday");
-            Response response = await client.PutKnownValueAsync(content);
+            Response response = await client.PutKnownValueAsync();
 
             Console.WriteLine(response.Status);
-        }
-
-        [Test]
-        [Ignore("Only validating compilation of examples")]
-        public void Example_String_PutKnownValue_AllParameters_Convenience()
-        {
-            String client = new ExtensibleClient().GetStringClient();
-
-            Response response = client.PutKnownValue(DaysOfWeekExtensibleEnum.Monday);
-        }
-
-        [Test]
-        [Ignore("Only validating compilation of examples")]
-        public async Task Example_String_PutKnownValue_AllParameters_Convenience_Async()
-        {
-            String client = new ExtensibleClient().GetStringClient();
-
-            Response response = await client.PutKnownValueAsync(DaysOfWeekExtensibleEnum.Monday);
         }
 
         [Test]
@@ -276,8 +235,7 @@ namespace _Type._Enum.Extensible.Samples
         {
             String client = new ExtensibleClient().GetStringClient();
 
-            using RequestContent content = RequestContent.Create("Monday");
-            Response response = client.PutUnknownValue(content);
+            Response response = client.PutUnknownValue();
 
             Console.WriteLine(response.Status);
         }
@@ -288,28 +246,9 @@ namespace _Type._Enum.Extensible.Samples
         {
             String client = new ExtensibleClient().GetStringClient();
 
-            using RequestContent content = RequestContent.Create("Monday");
-            Response response = await client.PutUnknownValueAsync(content);
+            Response response = await client.PutUnknownValueAsync();
 
             Console.WriteLine(response.Status);
-        }
-
-        [Test]
-        [Ignore("Only validating compilation of examples")]
-        public void Example_String_PutUnknownValue_ShortVersion_Convenience()
-        {
-            String client = new ExtensibleClient().GetStringClient();
-
-            Response response = client.PutUnknownValue(DaysOfWeekExtensibleEnum.Monday);
-        }
-
-        [Test]
-        [Ignore("Only validating compilation of examples")]
-        public async Task Example_String_PutUnknownValue_ShortVersion_Convenience_Async()
-        {
-            String client = new ExtensibleClient().GetStringClient();
-
-            Response response = await client.PutUnknownValueAsync(DaysOfWeekExtensibleEnum.Monday);
         }
 
         [Test]
@@ -318,8 +257,7 @@ namespace _Type._Enum.Extensible.Samples
         {
             String client = new ExtensibleClient().GetStringClient();
 
-            using RequestContent content = RequestContent.Create("Monday");
-            Response response = client.PutUnknownValue(content);
+            Response response = client.PutUnknownValue();
 
             Console.WriteLine(response.Status);
         }
@@ -330,28 +268,177 @@ namespace _Type._Enum.Extensible.Samples
         {
             String client = new ExtensibleClient().GetStringClient();
 
-            using RequestContent content = RequestContent.Create("Monday");
-            Response response = await client.PutUnknownValueAsync(content);
+            Response response = await client.PutUnknownValueAsync();
 
             Console.WriteLine(response.Status);
         }
 
         [Test]
         [Ignore("Only validating compilation of examples")]
-        public void Example_String_PutUnknownValue_AllParameters_Convenience()
+        public void Example_String_GetRequiredReadonlyValue_ShortVersion()
         {
             String client = new ExtensibleClient().GetStringClient();
 
-            Response response = client.PutUnknownValue(DaysOfWeekExtensibleEnum.Monday);
+            Response response = client.GetRequiredReadonlyValue(null);
+
+            JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+            Console.WriteLine(result.ToString());
         }
 
         [Test]
         [Ignore("Only validating compilation of examples")]
-        public async Task Example_String_PutUnknownValue_AllParameters_Convenience_Async()
+        public async Task Example_String_GetRequiredReadonlyValue_ShortVersion_Async()
         {
             String client = new ExtensibleClient().GetStringClient();
 
-            Response response = await client.PutUnknownValueAsync(DaysOfWeekExtensibleEnum.Monday);
+            Response response = await client.GetRequiredReadonlyValueAsync(null);
+
+            JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+            Console.WriteLine(result.ToString());
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public void Example_String_GetRequiredReadonlyValue_ShortVersion_Convenience()
+        {
+            String client = new ExtensibleClient().GetStringClient();
+
+            Response<Workday> response = client.GetRequiredReadonlyValue();
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public async Task Example_String_GetRequiredReadonlyValue_ShortVersion_Convenience_Async()
+        {
+            String client = new ExtensibleClient().GetStringClient();
+
+            Response<Workday> response = await client.GetRequiredReadonlyValueAsync();
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public void Example_String_GetRequiredReadonlyValue_AllParameters()
+        {
+            String client = new ExtensibleClient().GetStringClient();
+
+            Response response = client.GetRequiredReadonlyValue(null);
+
+            JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+            Console.WriteLine(result.GetProperty("day").ToString());
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public async Task Example_String_GetRequiredReadonlyValue_AllParameters_Async()
+        {
+            String client = new ExtensibleClient().GetStringClient();
+
+            Response response = await client.GetRequiredReadonlyValueAsync(null);
+
+            JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+            Console.WriteLine(result.GetProperty("day").ToString());
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public void Example_String_GetRequiredReadonlyValue_AllParameters_Convenience()
+        {
+            String client = new ExtensibleClient().GetStringClient();
+
+            Response<Workday> response = client.GetRequiredReadonlyValue();
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public async Task Example_String_GetRequiredReadonlyValue_AllParameters_Convenience_Async()
+        {
+            String client = new ExtensibleClient().GetStringClient();
+
+            Response<Workday> response = await client.GetRequiredReadonlyValueAsync();
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public void Example_String_GetOptionalReadonlyValue_ShortVersion()
+        {
+            String client = new ExtensibleClient().GetStringClient();
+
+            Response response = client.GetOptionalReadonlyValue(null);
+
+            JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+            Console.WriteLine(result.ToString());
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public async Task Example_String_GetOptionalReadonlyValue_ShortVersion_Async()
+        {
+            String client = new ExtensibleClient().GetStringClient();
+
+            Response response = await client.GetOptionalReadonlyValueAsync(null);
+
+            JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+            Console.WriteLine(result.ToString());
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public void Example_String_GetOptionalReadonlyValue_ShortVersion_Convenience()
+        {
+            String client = new ExtensibleClient().GetStringClient();
+
+            Response<Workday> response = client.GetOptionalReadonlyValue();
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public async Task Example_String_GetOptionalReadonlyValue_ShortVersion_Convenience_Async()
+        {
+            String client = new ExtensibleClient().GetStringClient();
+
+            Response<Workday> response = await client.GetOptionalReadonlyValueAsync();
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public void Example_String_GetOptionalReadonlyValue_AllParameters()
+        {
+            String client = new ExtensibleClient().GetStringClient();
+
+            Response response = client.GetOptionalReadonlyValue(null);
+
+            JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+            Console.WriteLine(result.GetProperty("day").ToString());
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public async Task Example_String_GetOptionalReadonlyValue_AllParameters_Async()
+        {
+            String client = new ExtensibleClient().GetStringClient();
+
+            Response response = await client.GetOptionalReadonlyValueAsync(null);
+
+            JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+            Console.WriteLine(result.GetProperty("day").ToString());
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public void Example_String_GetOptionalReadonlyValue_AllParameters_Convenience()
+        {
+            String client = new ExtensibleClient().GetStringClient();
+
+            Response<Workday> response = client.GetOptionalReadonlyValue();
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public async Task Example_String_GetOptionalReadonlyValue_AllParameters_Convenience_Async()
+        {
+            String client = new ExtensibleClient().GetStringClient();
+
+            Response<Workday> response = await client.GetOptionalReadonlyValueAsync();
         }
     }
 }
