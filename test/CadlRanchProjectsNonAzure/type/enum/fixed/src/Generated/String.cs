@@ -96,24 +96,7 @@ namespace Scm._Type._Enum.Fixed
             return ClientResult.FromResponse(_pipeline.ProcessMessage(message, options));
         }
 
-        /// <summary> putKnownValue. </summary>
-        /// <param name="body"> _. </param>
-        public virtual async Task<ClientResult> PutKnownValueAsync(DaysOfWeekEnum body)
-        {
-            using BinaryContent content = BinaryContent.Create(BinaryData.FromObjectAsJson(body.ToSerialString()));
-            ClientResult result = await PutKnownValueAsync(content, null).ConfigureAwait(false);
-            return result;
-        }
-
-        /// <summary> putKnownValue. </summary>
-        /// <param name="body"> _. </param>
-        public virtual ClientResult PutKnownValue(DaysOfWeekEnum body)
-        {
-            using BinaryContent content = BinaryContent.Create(BinaryData.FromObjectAsJson(body.ToSerialString()));
-            ClientResult result = PutKnownValue(content, null);
-            return result;
-        }
-
+        // The convenience method is omitted here because it has exactly the same parameter list as the corresponding protocol method
         /// <summary>
         /// [Protocol Method] putKnownValue
         /// <list type="bullet">
@@ -122,26 +105,18 @@ namespace Scm._Type._Enum.Fixed
         /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
         /// </description>
         /// </item>
-        /// <item>
-        /// <description>
-        /// Please try the simpler <see cref="PutKnownValueAsync(DaysOfWeekEnum)"/> convenience overload with strongly typed models first.
-        /// </description>
-        /// </item>
         /// </list>
         /// </summary>
-        /// <param name="content"> The content to send as the body of the request. </param>
         /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
         /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
         /// <returns> The response returned from the service. </returns>
-        public virtual async Task<ClientResult> PutKnownValueAsync(BinaryContent content, RequestOptions options = null)
+        public virtual async Task<ClientResult> PutKnownValueAsync(RequestOptions options = null)
         {
-            Argument.AssertNotNull(content, nameof(content));
-
-            using PipelineMessage message = CreatePutKnownValueRequest(content, options);
+            using PipelineMessage message = CreatePutKnownValueRequest(options);
             return ClientResult.FromResponse(await _pipeline.ProcessMessageAsync(message, options).ConfigureAwait(false));
         }
 
+        // The convenience method is omitted here because it has exactly the same parameter list as the corresponding protocol method
         /// <summary>
         /// [Protocol Method] putKnownValue
         /// <list type="bullet">
@@ -150,44 +125,18 @@ namespace Scm._Type._Enum.Fixed
         /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
         /// </description>
         /// </item>
-        /// <item>
-        /// <description>
-        /// Please try the simpler <see cref="PutKnownValue(DaysOfWeekEnum)"/> convenience overload with strongly typed models first.
-        /// </description>
-        /// </item>
         /// </list>
         /// </summary>
-        /// <param name="content"> The content to send as the body of the request. </param>
         /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
         /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
         /// <returns> The response returned from the service. </returns>
-        public virtual ClientResult PutKnownValue(BinaryContent content, RequestOptions options = null)
+        public virtual ClientResult PutKnownValue(RequestOptions options = null)
         {
-            Argument.AssertNotNull(content, nameof(content));
-
-            using PipelineMessage message = CreatePutKnownValueRequest(content, options);
+            using PipelineMessage message = CreatePutKnownValueRequest(options);
             return ClientResult.FromResponse(_pipeline.ProcessMessage(message, options));
         }
 
-        /// <summary> putUnknownValue. </summary>
-        /// <param name="body"> _. </param>
-        public virtual async Task<ClientResult> PutUnknownValueAsync(DaysOfWeekEnum body)
-        {
-            using BinaryContent content = BinaryContent.Create(BinaryData.FromObjectAsJson(body.ToSerialString()));
-            ClientResult result = await PutUnknownValueAsync(content, null).ConfigureAwait(false);
-            return result;
-        }
-
-        /// <summary> putUnknownValue. </summary>
-        /// <param name="body"> _. </param>
-        public virtual ClientResult PutUnknownValue(DaysOfWeekEnum body)
-        {
-            using BinaryContent content = BinaryContent.Create(BinaryData.FromObjectAsJson(body.ToSerialString()));
-            ClientResult result = PutUnknownValue(content, null);
-            return result;
-        }
-
+        // The convenience method is omitted here because it has exactly the same parameter list as the corresponding protocol method
         /// <summary>
         /// [Protocol Method] putUnknownValue
         /// <list type="bullet">
@@ -196,28 +145,77 @@ namespace Scm._Type._Enum.Fixed
         /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
         /// </description>
         /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        public virtual async Task<ClientResult> PutUnknownValueAsync(RequestOptions options = null)
+        {
+            using PipelineMessage message = CreatePutUnknownValueRequest(options);
+            return ClientResult.FromResponse(await _pipeline.ProcessMessageAsync(message, options).ConfigureAwait(false));
+        }
+
+        // The convenience method is omitted here because it has exactly the same parameter list as the corresponding protocol method
+        /// <summary>
+        /// [Protocol Method] putUnknownValue
+        /// <list type="bullet">
         /// <item>
         /// <description>
-        /// Please try the simpler <see cref="PutUnknownValueAsync(DaysOfWeekEnum)"/> convenience overload with strongly typed models first.
+        /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
         /// </description>
         /// </item>
         /// </list>
         /// </summary>
-        /// <param name="content"> The content to send as the body of the request. </param>
         /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
         /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
         /// <returns> The response returned from the service. </returns>
-        public virtual async Task<ClientResult> PutUnknownValueAsync(BinaryContent content, RequestOptions options = null)
+        public virtual ClientResult PutUnknownValue(RequestOptions options = null)
         {
-            Argument.AssertNotNull(content, nameof(content));
+            using PipelineMessage message = CreatePutUnknownValueRequest(options);
+            return ClientResult.FromResponse(_pipeline.ProcessMessage(message, options));
+        }
 
-            using PipelineMessage message = CreatePutUnknownValueRequest(content, options);
+        /// <summary> Get required readonly value. </summary>
+        public virtual async Task<ClientResult<Workday>> GetRequiredReadonlyValueAsync()
+        {
+            ClientResult result = await GetRequiredReadonlyValueAsync(null).ConfigureAwait(false);
+            return ClientResult.FromValue(Workday.FromResponse(result.GetRawResponse()), result.GetRawResponse());
+        }
+
+        /// <summary> Get required readonly value. </summary>
+        public virtual ClientResult<Workday> GetRequiredReadonlyValue()
+        {
+            ClientResult result = GetRequiredReadonlyValue(null);
+            return ClientResult.FromValue(Workday.FromResponse(result.GetRawResponse()), result.GetRawResponse());
+        }
+
+        /// <summary>
+        /// [Protocol Method] Get required readonly value.
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="GetRequiredReadonlyValueAsync()"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        public virtual async Task<ClientResult> GetRequiredReadonlyValueAsync(RequestOptions options)
+        {
+            using PipelineMessage message = CreateGetRequiredReadonlyValueRequest(options);
             return ClientResult.FromResponse(await _pipeline.ProcessMessageAsync(message, options).ConfigureAwait(false));
         }
 
         /// <summary>
-        /// [Protocol Method] putUnknownValue
+        /// [Protocol Method] Get required readonly value.
         /// <list type="bullet">
         /// <item>
         /// <description>
@@ -226,21 +224,79 @@ namespace Scm._Type._Enum.Fixed
         /// </item>
         /// <item>
         /// <description>
-        /// Please try the simpler <see cref="PutUnknownValue(DaysOfWeekEnum)"/> convenience overload with strongly typed models first.
+        /// Please try the simpler <see cref="GetRequiredReadonlyValue()"/> convenience overload with strongly typed models first.
         /// </description>
         /// </item>
         /// </list>
         /// </summary>
-        /// <param name="content"> The content to send as the body of the request. </param>
         /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
         /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
         /// <returns> The response returned from the service. </returns>
-        public virtual ClientResult PutUnknownValue(BinaryContent content, RequestOptions options = null)
+        public virtual ClientResult GetRequiredReadonlyValue(RequestOptions options)
         {
-            Argument.AssertNotNull(content, nameof(content));
+            using PipelineMessage message = CreateGetRequiredReadonlyValueRequest(options);
+            return ClientResult.FromResponse(_pipeline.ProcessMessage(message, options));
+        }
 
-            using PipelineMessage message = CreatePutUnknownValueRequest(content, options);
+        /// <summary> Get optional readonly value. </summary>
+        public virtual async Task<ClientResult<Workday>> GetOptionalReadonlyValueAsync()
+        {
+            ClientResult result = await GetOptionalReadonlyValueAsync(null).ConfigureAwait(false);
+            return ClientResult.FromValue(Workday.FromResponse(result.GetRawResponse()), result.GetRawResponse());
+        }
+
+        /// <summary> Get optional readonly value. </summary>
+        public virtual ClientResult<Workday> GetOptionalReadonlyValue()
+        {
+            ClientResult result = GetOptionalReadonlyValue(null);
+            return ClientResult.FromValue(Workday.FromResponse(result.GetRawResponse()), result.GetRawResponse());
+        }
+
+        /// <summary>
+        /// [Protocol Method] Get optional readonly value.
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="GetOptionalReadonlyValueAsync()"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        public virtual async Task<ClientResult> GetOptionalReadonlyValueAsync(RequestOptions options)
+        {
+            using PipelineMessage message = CreateGetOptionalReadonlyValueRequest(options);
+            return ClientResult.FromResponse(await _pipeline.ProcessMessageAsync(message, options).ConfigureAwait(false));
+        }
+
+        /// <summary>
+        /// [Protocol Method] Get optional readonly value.
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="GetOptionalReadonlyValue()"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        public virtual ClientResult GetOptionalReadonlyValue(RequestOptions options)
+        {
+            using PipelineMessage message = CreateGetOptionalReadonlyValueRequest(options);
             return ClientResult.FromResponse(_pipeline.ProcessMessage(message, options));
         }
 
@@ -259,7 +315,7 @@ namespace Scm._Type._Enum.Fixed
             return message;
         }
 
-        internal PipelineMessage CreatePutKnownValueRequest(BinaryContent content, RequestOptions options)
+        internal PipelineMessage CreatePutKnownValueRequest(RequestOptions options)
         {
             var message = _pipeline.CreateMessage();
             message.ResponseClassifier = PipelineMessageClassifier204;
@@ -270,13 +326,11 @@ namespace Scm._Type._Enum.Fixed
             uri.AppendPath("/type/enum/fixed/string/known-value", false);
             request.Uri = uri.ToUri();
             request.Headers.Set("Accept", "application/json");
-            request.Headers.Set("Content-Type", "application/json");
-            request.Content = content;
             message.Apply(options);
             return message;
         }
 
-        internal PipelineMessage CreatePutUnknownValueRequest(BinaryContent content, RequestOptions options)
+        internal PipelineMessage CreatePutUnknownValueRequest(RequestOptions options)
         {
             var message = _pipeline.CreateMessage();
             message.ResponseClassifier = PipelineMessageClassifier204;
@@ -287,8 +341,36 @@ namespace Scm._Type._Enum.Fixed
             uri.AppendPath("/type/enum/fixed/string/unknown-value", false);
             request.Uri = uri.ToUri();
             request.Headers.Set("Accept", "application/json");
-            request.Headers.Set("Content-Type", "application/json");
-            request.Content = content;
+            message.Apply(options);
+            return message;
+        }
+
+        internal PipelineMessage CreateGetRequiredReadonlyValueRequest(RequestOptions options)
+        {
+            var message = _pipeline.CreateMessage();
+            message.ResponseClassifier = PipelineMessageClassifier200;
+            var request = message.Request;
+            request.Method = "GET";
+            var uri = new ClientUriBuilder();
+            uri.Reset(_endpoint);
+            uri.AppendPath("/type/enum/fixed/string/readonly-required-value", false);
+            request.Uri = uri.ToUri();
+            request.Headers.Set("Accept", "application/json");
+            message.Apply(options);
+            return message;
+        }
+
+        internal PipelineMessage CreateGetOptionalReadonlyValueRequest(RequestOptions options)
+        {
+            var message = _pipeline.CreateMessage();
+            message.ResponseClassifier = PipelineMessageClassifier200;
+            var request = message.Request;
+            request.Method = "GET";
+            var uri = new ClientUriBuilder();
+            uri.Reset(_endpoint);
+            uri.AppendPath("/type/enum/fixed/string/readonly-optional-value", false);
+            request.Uri = uri.ToUri();
+            request.Headers.Set("Accept", "application/json");
             message.Apply(options);
             return message;
         }

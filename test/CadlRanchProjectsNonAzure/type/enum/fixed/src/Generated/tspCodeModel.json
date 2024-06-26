@@ -61,25 +61,46 @@
    "Usage": "RoundTrip"
   }
  ],
- "Models": [],
- "Clients": [
+ "Models": [
   {
    "$id": "11",
+   "Kind": "Model",
+   "Name": "workday",
+   "Namespace": "Type.Enum.Fixed",
+   "Usage": "Output",
+   "Properties": [
+    {
+     "$id": "12",
+     "Name": "day",
+     "SerializedName": "day",
+     "Description": "The day of the week",
+     "Type": {
+      "$ref": "2"
+     },
+     "IsRequired": false,
+     "IsReadOnly": true
+    }
+   ]
+  }
+ ],
+ "Clients": [
+  {
+   "$id": "13",
    "Name": "FixedClient",
    "Description": "",
    "Operations": [],
    "Protocol": {
-    "$id": "12"
+    "$id": "14"
    },
    "Creatable": true,
    "Parameters": [
     {
-     "$id": "13",
+     "$id": "15",
      "Name": "host",
      "NameInRequest": "host",
      "Description": "TestServer endpoint",
      "Type": {
-      "$id": "14",
+      "$id": "16",
       "Kind": "string",
       "IsNullable": false
      },
@@ -93,9 +114,9 @@
      "Explode": false,
      "Kind": "Client",
      "DefaultValue": {
-      "$id": "15",
+      "$id": "17",
       "Type": {
-       "$id": "16",
+       "$id": "18",
        "Kind": "string",
        "IsNullable": false
       },
@@ -105,26 +126,25 @@
    ]
   },
   {
-   "$id": "17",
+   "$id": "19",
    "Name": "String",
    "Description": "",
    "Operations": [
     {
-     "$id": "18",
+     "$id": "20",
      "Name": "getKnownValue",
      "ResourceName": "String",
      "Description": "getKnownValue",
-     "Accessibility": "public",
      "Parameters": [
       {
-       "$ref": "13"
+       "$ref": "15"
       },
       {
-       "$id": "19",
+       "$id": "21",
        "Name": "accept",
        "NameInRequest": "Accept",
        "Type": {
-        "$id": "20",
+        "$id": "22",
         "Kind": "string",
         "IsNullable": false
        },
@@ -138,9 +158,9 @@
        "Explode": false,
        "Kind": "Constant",
        "DefaultValue": {
-        "$id": "21",
+        "$id": "23",
         "Type": {
-         "$ref": "20"
+         "$ref": "22"
         },
         "Value": "application/json"
        }
@@ -148,7 +168,7 @@
      ],
      "Responses": [
       {
-       "$id": "22",
+       "$id": "24",
        "StatusCodes": [
         200
        ],
@@ -172,65 +192,20 @@
      "GenerateConvenienceMethod": true
     },
     {
-     "$id": "23",
+     "$id": "25",
      "Name": "putKnownValue",
      "ResourceName": "String",
      "Description": "putKnownValue",
-     "Accessibility": "public",
      "Parameters": [
       {
-       "$ref": "13"
+       "$ref": "15"
       },
       {
-       "$id": "24",
-       "Name": "body",
-       "NameInRequest": "body",
-       "Description": "_",
-       "Type": {
-        "$ref": "2"
-       },
-       "Location": "Body",
-       "IsRequired": true,
-       "IsApiVersion": false,
-       "IsResourceParameter": false,
-       "IsContentType": false,
-       "IsEndpoint": false,
-       "SkipUrlEncoding": false,
-       "Explode": false,
-       "Kind": "Method"
-      },
-      {
-       "$id": "25",
-       "Name": "contentType",
-       "NameInRequest": "Content-Type",
-       "Type": {
-        "$id": "26",
-        "Kind": "string",
-        "IsNullable": false
-       },
-       "Location": "Header",
-       "IsApiVersion": false,
-       "IsResourceParameter": false,
-       "IsContentType": true,
-       "IsRequired": true,
-       "IsEndpoint": false,
-       "SkipUrlEncoding": false,
-       "Explode": false,
-       "Kind": "Constant",
-       "DefaultValue": {
-        "$id": "27",
-        "Type": {
-         "$ref": "26"
-        },
-        "Value": "application/json"
-       }
-      },
-      {
-       "$id": "28",
+       "$id": "26",
        "Name": "accept",
        "NameInRequest": "Accept",
        "Type": {
-        "$id": "29",
+        "$id": "27",
         "Kind": "string",
         "IsNullable": false
        },
@@ -244,9 +219,9 @@
        "Explode": false,
        "Kind": "Constant",
        "DefaultValue": {
-        "$id": "30",
+        "$id": "28",
         "Type": {
-         "$ref": "29"
+         "$ref": "27"
         },
         "Value": "application/json"
        }
@@ -254,7 +229,7 @@
      ],
      "Responses": [
       {
-       "$id": "31",
+       "$id": "29",
        "StatusCodes": [
         204
        ],
@@ -267,73 +242,25 @@
      "RequestBodyMediaType": "None",
      "Uri": "{host}",
      "Path": "/type/enum/fixed/string/known-value",
-     "RequestMediaTypes": [
-      "application/json"
-     ],
      "BufferResponse": true,
      "GenerateProtocolMethod": true,
      "GenerateConvenienceMethod": true
     },
     {
-     "$id": "32",
+     "$id": "30",
      "Name": "putUnknownValue",
      "ResourceName": "String",
      "Description": "putUnknownValue",
-     "Accessibility": "public",
      "Parameters": [
       {
-       "$ref": "13"
+       "$ref": "15"
       },
       {
-       "$id": "33",
-       "Name": "body",
-       "NameInRequest": "body",
-       "Description": "_",
-       "Type": {
-        "$ref": "2"
-       },
-       "Location": "Body",
-       "IsRequired": true,
-       "IsApiVersion": false,
-       "IsResourceParameter": false,
-       "IsContentType": false,
-       "IsEndpoint": false,
-       "SkipUrlEncoding": false,
-       "Explode": false,
-       "Kind": "Method"
-      },
-      {
-       "$id": "34",
-       "Name": "contentType",
-       "NameInRequest": "Content-Type",
-       "Type": {
-        "$id": "35",
-        "Kind": "string",
-        "IsNullable": false
-       },
-       "Location": "Header",
-       "IsApiVersion": false,
-       "IsResourceParameter": false,
-       "IsContentType": true,
-       "IsRequired": true,
-       "IsEndpoint": false,
-       "SkipUrlEncoding": false,
-       "Explode": false,
-       "Kind": "Constant",
-       "DefaultValue": {
-        "$id": "36",
-        "Type": {
-         "$ref": "35"
-        },
-        "Value": "application/json"
-       }
-      },
-      {
-       "$id": "37",
+       "$id": "31",
        "Name": "accept",
        "NameInRequest": "Accept",
        "Type": {
-        "$id": "38",
+        "$id": "32",
         "Kind": "string",
         "IsNullable": false
        },
@@ -347,9 +274,9 @@
        "Explode": false,
        "Kind": "Constant",
        "DefaultValue": {
-        "$id": "39",
+        "$id": "33",
         "Type": {
-         "$ref": "38"
+         "$ref": "32"
         },
         "Value": "application/json"
        }
@@ -357,7 +284,7 @@
      ],
      "Responses": [
       {
-       "$id": "40",
+       "$id": "34",
        "StatusCodes": [
         204
        ],
@@ -370,22 +297,139 @@
      "RequestBodyMediaType": "None",
      "Uri": "{host}",
      "Path": "/type/enum/fixed/string/unknown-value",
-     "RequestMediaTypes": [
-      "application/json"
+     "BufferResponse": true,
+     "GenerateProtocolMethod": true,
+     "GenerateConvenienceMethod": true
+    },
+    {
+     "$id": "35",
+     "Name": "getRequiredReadonlyValue",
+     "ResourceName": "String",
+     "Parameters": [
+      {
+       "$ref": "15"
+      },
+      {
+       "$id": "36",
+       "Name": "accept",
+       "NameInRequest": "Accept",
+       "Type": {
+        "$id": "37",
+        "Kind": "string",
+        "IsNullable": false
+       },
+       "Location": "Header",
+       "IsApiVersion": false,
+       "IsResourceParameter": false,
+       "IsContentType": false,
+       "IsRequired": true,
+       "IsEndpoint": false,
+       "SkipUrlEncoding": false,
+       "Explode": false,
+       "Kind": "Constant",
+       "DefaultValue": {
+        "$id": "38",
+        "Type": {
+         "$ref": "37"
+        },
+        "Value": "application/json"
+       }
+      }
      ],
+     "Responses": [
+      {
+       "$id": "39",
+       "StatusCodes": [
+        200
+       ],
+       "BodyType": {
+        "$ref": "11"
+       },
+       "BodyMediaType": "Json",
+       "Headers": [],
+       "IsErrorResponse": false,
+       "ContentTypes": [
+        "application/json"
+       ]
+      }
+     ],
+     "HttpMethod": "GET",
+     "RequestBodyMediaType": "None",
+     "Uri": "{host}",
+     "Path": "/type/enum/fixed/string/readonly-required-value",
+     "BufferResponse": true,
+     "GenerateProtocolMethod": true,
+     "GenerateConvenienceMethod": true
+    },
+    {
+     "$id": "40",
+     "Name": "getOptionalReadonlyValue",
+     "ResourceName": "String",
+     "Parameters": [
+      {
+       "$ref": "15"
+      },
+      {
+       "$id": "41",
+       "Name": "accept",
+       "NameInRequest": "Accept",
+       "Type": {
+        "$id": "42",
+        "Kind": "string",
+        "IsNullable": false
+       },
+       "Location": "Header",
+       "IsApiVersion": false,
+       "IsResourceParameter": false,
+       "IsContentType": false,
+       "IsRequired": true,
+       "IsEndpoint": false,
+       "SkipUrlEncoding": false,
+       "Explode": false,
+       "Kind": "Constant",
+       "DefaultValue": {
+        "$id": "43",
+        "Type": {
+         "$ref": "42"
+        },
+        "Value": "application/json"
+       }
+      }
+     ],
+     "Responses": [
+      {
+       "$id": "44",
+       "StatusCodes": [
+        200
+       ],
+       "BodyType": {
+        "$ref": "11"
+       },
+       "BodyMediaType": "Json",
+       "Headers": [],
+       "IsErrorResponse": false,
+       "ContentTypes": [
+        "application/json"
+       ]
+      }
+     ],
+     "HttpMethod": "GET",
+     "RequestBodyMediaType": "None",
+     "Uri": "{host}",
+     "Path": "/type/enum/fixed/string/readonly-optional-value",
      "BufferResponse": true,
      "GenerateProtocolMethod": true,
      "GenerateConvenienceMethod": true
     }
    ],
    "Protocol": {
-    "$id": "41"
+    "$id": "45"
    },
    "Creatable": false,
    "Parent": "FixedClient",
    "Parameters": [
     {
-     "$ref": "13"
+     "$ref": "15"
     }
    ]
   }

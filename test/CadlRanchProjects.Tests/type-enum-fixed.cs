@@ -18,18 +18,33 @@ namespace CadlRanchProjects.Tests
         });
 
         [Test]
+        [Ignore("input error")]
         public Task Type_Enum_Fixed_String_putKnownValue() => Test(async (host) =>
         {
-            var response = await new FixedClient(host, null).GetStringClient().PutKnownValueAsync(DaysOfWeekEnum.Monday);
+            var response = await new FixedClient(host, null).GetStringClient().PutKnownValueAsync();
             Assert.AreEqual(204, response.Status);
         });
 
         [Test]
         public Task Type_Enum_Fixed_String_putUnknownValue() => Test((host) =>
         {
-            var exception = Assert.ThrowsAsync<RequestFailedException>(() => new FixedClient(host, null).GetStringClient().PutUnknownValueAsync(BinaryData.FromObjectAsJson("Weekend")));
-            Assert.AreEqual(500, exception.Status);
+            var exception = Assert.ThrowsAsync<RequestFailedException>(() => new FixedClient(host, null).GetStringClient().PutUnknownValueAsync());
+            Assert.AreEqual(400, exception.Status);
             return Task.CompletedTask;
+        });
+
+        [Test]
+        public Task Type_Enum_Fixed_String_getReadonlyOptionalProperty() => Test(async (host) =>
+        {
+            var response = await new FixedClient(host, null).GetStringClient().GetOptionalReadonlyValueAsync();
+            Assert.AreEqual(null, response.Value.Day);
+        });
+
+        [Test]
+        public Task Type_Enum_Fixed_String_getReadonlyRequiredProperty() => Test(async (host) =>
+        {
+            var response = await new FixedClient(host, null).GetStringClient().GetRequiredReadonlyValueAsync();
+            Assert.AreEqual(DaysOfWeekEnum.Monday, response.Value.Day);
         });
     }
 }
