@@ -159,25 +159,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="FloatLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutAllAsync(FloatLiteralProperty body)
+        /// <param name="floatLiteralProperty"> Model with float literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="floatLiteralProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutAllAsync(FloatLiteralProperty floatLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(floatLiteralProperty, nameof(floatLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = floatLiteralProperty.ToBinaryContent();
             ClientResult result = await PutAllAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="FloatLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutAll(FloatLiteralProperty body)
+        /// <param name="floatLiteralProperty"> Model with float literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="floatLiteralProperty"/> is null. </exception>
+        public virtual ClientResult PutAll(FloatLiteralProperty floatLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(floatLiteralProperty, nameof(floatLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = floatLiteralProperty.ToBinaryContent();
             ClientResult result = PutAll(content, null);
             return result;
         }
@@ -239,25 +239,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="FloatLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutDefaultAsync(FloatLiteralProperty body)
+        /// <param name="floatLiteralProperty"> Model with float literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="floatLiteralProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutDefaultAsync(FloatLiteralProperty floatLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(floatLiteralProperty, nameof(floatLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = floatLiteralProperty.ToBinaryContent();
             ClientResult result = await PutDefaultAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="FloatLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutDefault(FloatLiteralProperty body)
+        /// <param name="floatLiteralProperty"> Model with float literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="floatLiteralProperty"/> is null. </exception>
+        public virtual ClientResult PutDefault(FloatLiteralProperty floatLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(floatLiteralProperty, nameof(floatLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = floatLiteralProperty.ToBinaryContent();
             ClientResult result = PutDefault(content, null);
             return result;
         }

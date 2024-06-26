@@ -216,8 +216,8 @@ namespace _Type.Property.Optionality.Samples
         {
             UnionFloatLiteral client = new OptionalClient().GetUnionFloatLiteralClient();
 
-            UnionFloatLiteralProperty body = new UnionFloatLiteralProperty();
-            Response response = client.PutAll(body);
+            UnionFloatLiteralProperty unionFloatLiteralProperty = new UnionFloatLiteralProperty();
+            Response response = client.PutAll(unionFloatLiteralProperty);
         }
 
         [Test]
@@ -226,8 +226,8 @@ namespace _Type.Property.Optionality.Samples
         {
             UnionFloatLiteral client = new OptionalClient().GetUnionFloatLiteralClient();
 
-            UnionFloatLiteralProperty body = new UnionFloatLiteralProperty();
-            Response response = await client.PutAllAsync(body);
+            UnionFloatLiteralProperty unionFloatLiteralProperty = new UnionFloatLiteralProperty();
+            Response response = await client.PutAllAsync(unionFloatLiteralProperty);
         }
 
         [Test]
@@ -266,11 +266,11 @@ namespace _Type.Property.Optionality.Samples
         {
             UnionFloatLiteral client = new OptionalClient().GetUnionFloatLiteralClient();
 
-            UnionFloatLiteralProperty body = new UnionFloatLiteralProperty
+            UnionFloatLiteralProperty unionFloatLiteralProperty = new UnionFloatLiteralProperty
             {
                 Property = UnionFloatLiteralPropertyProperty._125,
             };
-            Response response = client.PutAll(body);
+            Response response = client.PutAll(unionFloatLiteralProperty);
         }
 
         [Test]
@@ -279,11 +279,11 @@ namespace _Type.Property.Optionality.Samples
         {
             UnionFloatLiteral client = new OptionalClient().GetUnionFloatLiteralClient();
 
-            UnionFloatLiteralProperty body = new UnionFloatLiteralProperty
+            UnionFloatLiteralProperty unionFloatLiteralProperty = new UnionFloatLiteralProperty
             {
                 Property = UnionFloatLiteralPropertyProperty._125,
             };
-            Response response = await client.PutAllAsync(body);
+            Response response = await client.PutAllAsync(unionFloatLiteralProperty);
         }
 
         [Test]
@@ -316,8 +316,8 @@ namespace _Type.Property.Optionality.Samples
         {
             UnionFloatLiteral client = new OptionalClient().GetUnionFloatLiteralClient();
 
-            UnionFloatLiteralProperty body = new UnionFloatLiteralProperty();
-            Response response = client.PutDefault(body);
+            UnionFloatLiteralProperty unionFloatLiteralProperty = new UnionFloatLiteralProperty();
+            Response response = client.PutDefault(unionFloatLiteralProperty);
         }
 
         [Test]
@@ -326,8 +326,8 @@ namespace _Type.Property.Optionality.Samples
         {
             UnionFloatLiteral client = new OptionalClient().GetUnionFloatLiteralClient();
 
-            UnionFloatLiteralProperty body = new UnionFloatLiteralProperty();
-            Response response = await client.PutDefaultAsync(body);
+            UnionFloatLiteralProperty unionFloatLiteralProperty = new UnionFloatLiteralProperty();
+            Response response = await client.PutDefaultAsync(unionFloatLiteralProperty);
         }
 
         [Test]
@@ -366,11 +366,11 @@ namespace _Type.Property.Optionality.Samples
         {
             UnionFloatLiteral client = new OptionalClient().GetUnionFloatLiteralClient();
 
-            UnionFloatLiteralProperty body = new UnionFloatLiteralProperty
+            UnionFloatLiteralProperty unionFloatLiteralProperty = new UnionFloatLiteralProperty
             {
                 Property = UnionFloatLiteralPropertyProperty._125,
             };
-            Response response = client.PutDefault(body);
+            Response response = client.PutDefault(unionFloatLiteralProperty);
         }
 
         [Test]
@@ -379,11 +379,11 @@ namespace _Type.Property.Optionality.Samples
         {
             UnionFloatLiteral client = new OptionalClient().GetUnionFloatLiteralClient();
 
-            UnionFloatLiteralProperty body = new UnionFloatLiteralProperty
+            UnionFloatLiteralProperty unionFloatLiteralProperty = new UnionFloatLiteralProperty
             {
                 Property = UnionFloatLiteralPropertyProperty._125,
             };
-            Response response = await client.PutDefaultAsync(body);
+            Response response = await client.PutDefaultAsync(unionFloatLiteralProperty);
         }
     }
 }

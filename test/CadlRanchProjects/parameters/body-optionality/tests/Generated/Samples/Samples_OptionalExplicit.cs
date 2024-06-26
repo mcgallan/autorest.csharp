@@ -23,7 +23,10 @@ namespace Parameters.BodyOptionality.Samples
         {
             OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-            using RequestContent content = null;
+            using RequestContent content = RequestContent.Create(new
+            {
+                name = "<name>",
+            });
             Response response = client.Set(content);
 
             Console.WriteLine(response.Status);
@@ -35,7 +38,10 @@ namespace Parameters.BodyOptionality.Samples
         {
             OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-            using RequestContent content = null;
+            using RequestContent content = RequestContent.Create(new
+            {
+                name = "<name>",
+            });
             Response response = await client.SetAsync(content);
 
             Console.WriteLine(response.Status);
@@ -47,7 +53,8 @@ namespace Parameters.BodyOptionality.Samples
         {
             OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-            Response response = client.Set();
+            BodyModel bodyModel = new BodyModel("<name>");
+            Response response = client.Set(bodyModel);
         }
 
         [Test]
@@ -56,7 +63,8 @@ namespace Parameters.BodyOptionality.Samples
         {
             OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-            Response response = await client.SetAsync();
+            BodyModel bodyModel = new BodyModel("<name>");
+            Response response = await client.SetAsync(bodyModel);
         }
 
         [Test]
@@ -95,8 +103,8 @@ namespace Parameters.BodyOptionality.Samples
         {
             OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-            BodyModel body = new BodyModel("<name>");
-            Response response = client.Set(body: body);
+            BodyModel bodyModel = new BodyModel("<name>");
+            Response response = client.Set(bodyModel);
         }
 
         [Test]
@@ -105,8 +113,8 @@ namespace Parameters.BodyOptionality.Samples
         {
             OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-            BodyModel body = new BodyModel("<name>");
-            Response response = await client.SetAsync(body: body);
+            BodyModel bodyModel = new BodyModel("<name>");
+            Response response = await client.SetAsync(bodyModel);
         }
 
         [Test]
@@ -115,7 +123,10 @@ namespace Parameters.BodyOptionality.Samples
         {
             OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-            using RequestContent content = null;
+            using RequestContent content = RequestContent.Create(new
+            {
+                name = "<name>",
+            });
             Response response = client.Omit(content);
 
             Console.WriteLine(response.Status);
@@ -127,7 +138,10 @@ namespace Parameters.BodyOptionality.Samples
         {
             OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-            using RequestContent content = null;
+            using RequestContent content = RequestContent.Create(new
+            {
+                name = "<name>",
+            });
             Response response = await client.OmitAsync(content);
 
             Console.WriteLine(response.Status);
@@ -139,7 +153,8 @@ namespace Parameters.BodyOptionality.Samples
         {
             OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-            Response response = client.Omit();
+            BodyModel bodyModel = new BodyModel("<name>");
+            Response response = client.Omit(bodyModel);
         }
 
         [Test]
@@ -148,7 +163,8 @@ namespace Parameters.BodyOptionality.Samples
         {
             OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-            Response response = await client.OmitAsync();
+            BodyModel bodyModel = new BodyModel("<name>");
+            Response response = await client.OmitAsync(bodyModel);
         }
 
         [Test]
@@ -187,8 +203,8 @@ namespace Parameters.BodyOptionality.Samples
         {
             OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-            BodyModel body = new BodyModel("<name>");
-            Response response = client.Omit(body: body);
+            BodyModel bodyModel = new BodyModel("<name>");
+            Response response = client.Omit(bodyModel);
         }
 
         [Test]
@@ -197,8 +213,8 @@ namespace Parameters.BodyOptionality.Samples
         {
             OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-            BodyModel body = new BodyModel("<name>");
-            Response response = await client.OmitAsync(body: body);
+            BodyModel bodyModel = new BodyModel("<name>");
+            Response response = await client.OmitAsync(bodyModel);
         }
     }
 }

@@ -58,6 +58,16 @@ namespace _Type.Property.Optionality
         private UnionIntLiteral _cachedUnionIntLiteral;
         private UnionFloatLiteral _cachedUnionFloatLiteral;
         private RequiredAndOptional _cachedRequiredAndOptional;
+        private ReadOnlyString _cachedReadOnlyString;
+        private ReadOnlyInt _cachedReadOnlyInt;
+        private ReadOnlyModel _cachedReadOnlyModel;
+        private ReadOnlyStringList _cachedReadOnlyStringList;
+        private ReadOnlyStringRecord _cachedReadOnlyStringRecord;
+        private ReadOnlyIntList _cachedReadOnlyIntList;
+        private ReadOnlyIntRecord _cachedReadOnlyIntRecord;
+        private ReadOnlyModelList _cachedReadOnlyModelList;
+        private ReadOnlyModelRecord _cachedReadOnlyModelRecord;
+        private RequiredReadOnlyModelRecord _cachedRequiredReadOnlyModelRecord;
 
         /// <summary> Initializes a new instance of String. </summary>
         public virtual String GetStringClient()
@@ -141,6 +151,66 @@ namespace _Type.Property.Optionality
         public virtual RequiredAndOptional GetRequiredAndOptionalClient()
         {
             return Volatile.Read(ref _cachedRequiredAndOptional) ?? Interlocked.CompareExchange(ref _cachedRequiredAndOptional, new RequiredAndOptional(ClientDiagnostics, _pipeline, _endpoint), null) ?? _cachedRequiredAndOptional;
+        }
+
+        /// <summary> Initializes a new instance of ReadOnlyString. </summary>
+        public virtual ReadOnlyString GetReadOnlyStringClient()
+        {
+            return Volatile.Read(ref _cachedReadOnlyString) ?? Interlocked.CompareExchange(ref _cachedReadOnlyString, new ReadOnlyString(ClientDiagnostics, _pipeline, _endpoint), null) ?? _cachedReadOnlyString;
+        }
+
+        /// <summary> Initializes a new instance of ReadOnlyInt. </summary>
+        public virtual ReadOnlyInt GetReadOnlyIntClient()
+        {
+            return Volatile.Read(ref _cachedReadOnlyInt) ?? Interlocked.CompareExchange(ref _cachedReadOnlyInt, new ReadOnlyInt(ClientDiagnostics, _pipeline, _endpoint), null) ?? _cachedReadOnlyInt;
+        }
+
+        /// <summary> Initializes a new instance of ReadOnlyModel. </summary>
+        public virtual ReadOnlyModel GetReadOnlyModelClient()
+        {
+            return Volatile.Read(ref _cachedReadOnlyModel) ?? Interlocked.CompareExchange(ref _cachedReadOnlyModel, new ReadOnlyModel(ClientDiagnostics, _pipeline, _endpoint), null) ?? _cachedReadOnlyModel;
+        }
+
+        /// <summary> Initializes a new instance of ReadOnlyStringList. </summary>
+        public virtual ReadOnlyStringList GetReadOnlyStringListClient()
+        {
+            return Volatile.Read(ref _cachedReadOnlyStringList) ?? Interlocked.CompareExchange(ref _cachedReadOnlyStringList, new ReadOnlyStringList(ClientDiagnostics, _pipeline, _endpoint), null) ?? _cachedReadOnlyStringList;
+        }
+
+        /// <summary> Initializes a new instance of ReadOnlyStringRecord. </summary>
+        public virtual ReadOnlyStringRecord GetReadOnlyStringRecordClient()
+        {
+            return Volatile.Read(ref _cachedReadOnlyStringRecord) ?? Interlocked.CompareExchange(ref _cachedReadOnlyStringRecord, new ReadOnlyStringRecord(ClientDiagnostics, _pipeline, _endpoint), null) ?? _cachedReadOnlyStringRecord;
+        }
+
+        /// <summary> Initializes a new instance of ReadOnlyIntList. </summary>
+        public virtual ReadOnlyIntList GetReadOnlyIntListClient()
+        {
+            return Volatile.Read(ref _cachedReadOnlyIntList) ?? Interlocked.CompareExchange(ref _cachedReadOnlyIntList, new ReadOnlyIntList(ClientDiagnostics, _pipeline, _endpoint), null) ?? _cachedReadOnlyIntList;
+        }
+
+        /// <summary> Initializes a new instance of ReadOnlyIntRecord. </summary>
+        public virtual ReadOnlyIntRecord GetReadOnlyIntRecordClient()
+        {
+            return Volatile.Read(ref _cachedReadOnlyIntRecord) ?? Interlocked.CompareExchange(ref _cachedReadOnlyIntRecord, new ReadOnlyIntRecord(ClientDiagnostics, _pipeline, _endpoint), null) ?? _cachedReadOnlyIntRecord;
+        }
+
+        /// <summary> Initializes a new instance of ReadOnlyModelList. </summary>
+        public virtual ReadOnlyModelList GetReadOnlyModelListClient()
+        {
+            return Volatile.Read(ref _cachedReadOnlyModelList) ?? Interlocked.CompareExchange(ref _cachedReadOnlyModelList, new ReadOnlyModelList(ClientDiagnostics, _pipeline, _endpoint), null) ?? _cachedReadOnlyModelList;
+        }
+
+        /// <summary> Initializes a new instance of ReadOnlyModelRecord. </summary>
+        public virtual ReadOnlyModelRecord GetReadOnlyModelRecordClient()
+        {
+            return Volatile.Read(ref _cachedReadOnlyModelRecord) ?? Interlocked.CompareExchange(ref _cachedReadOnlyModelRecord, new ReadOnlyModelRecord(ClientDiagnostics, _pipeline, _endpoint), null) ?? _cachedReadOnlyModelRecord;
+        }
+
+        /// <summary> Initializes a new instance of RequiredReadOnlyModelRecord. </summary>
+        public virtual RequiredReadOnlyModelRecord GetRequiredReadOnlyModelRecordClient()
+        {
+            return Volatile.Read(ref _cachedRequiredReadOnlyModelRecord) ?? Interlocked.CompareExchange(ref _cachedRequiredReadOnlyModelRecord, new RequiredReadOnlyModelRecord(ClientDiagnostics, _pipeline, _endpoint), null) ?? _cachedRequiredReadOnlyModelRecord;
         }
     }
 }

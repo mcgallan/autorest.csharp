@@ -151,18 +151,18 @@ This sample shows how to call PutAllAsync.
 <code><![CDATA[
 String client = new OptionalClient().GetStringClient();
 
-StringProperty body = new StringProperty();
-Response response = await client.PutAllAsync(body);
+StringProperty stringProperty = new StringProperty();
+Response response = await client.PutAllAsync(stringProperty);
 ]]></code>
 This sample shows how to call PutAllAsync with all parameters.
 <code><![CDATA[
 String client = new OptionalClient().GetStringClient();
 
-StringProperty body = new StringProperty
+StringProperty stringProperty = new StringProperty
 {
     Property = "<property>",
 };
-Response response = await client.PutAllAsync(body);
+Response response = await client.PutAllAsync(stringProperty);
 ]]></code></example>
     </member>
     <member name="PutAll(StringProperty,CancellationToken)">
@@ -171,18 +171,18 @@ This sample shows how to call PutAll.
 <code><![CDATA[
 String client = new OptionalClient().GetStringClient();
 
-StringProperty body = new StringProperty();
-Response response = client.PutAll(body);
+StringProperty stringProperty = new StringProperty();
+Response response = client.PutAll(stringProperty);
 ]]></code>
 This sample shows how to call PutAll with all parameters.
 <code><![CDATA[
 String client = new OptionalClient().GetStringClient();
 
-StringProperty body = new StringProperty
+StringProperty stringProperty = new StringProperty
 {
     Property = "<property>",
 };
-Response response = client.PutAll(body);
+Response response = client.PutAll(stringProperty);
 ]]></code></example>
     </member>
     <member name="PutAllAsync(RequestContent,RequestContext)">
@@ -239,18 +239,18 @@ This sample shows how to call PutDefaultAsync.
 <code><![CDATA[
 String client = new OptionalClient().GetStringClient();
 
-StringProperty body = new StringProperty();
-Response response = await client.PutDefaultAsync(body);
+StringProperty stringProperty = new StringProperty();
+Response response = await client.PutDefaultAsync(stringProperty);
 ]]></code>
 This sample shows how to call PutDefaultAsync with all parameters.
 <code><![CDATA[
 String client = new OptionalClient().GetStringClient();
 
-StringProperty body = new StringProperty
+StringProperty stringProperty = new StringProperty
 {
     Property = "<property>",
 };
-Response response = await client.PutDefaultAsync(body);
+Response response = await client.PutDefaultAsync(stringProperty);
 ]]></code></example>
     </member>
     <member name="PutDefault(StringProperty,CancellationToken)">
@@ -259,18 +259,18 @@ This sample shows how to call PutDefault.
 <code><![CDATA[
 String client = new OptionalClient().GetStringClient();
 
-StringProperty body = new StringProperty();
-Response response = client.PutDefault(body);
+StringProperty stringProperty = new StringProperty();
+Response response = client.PutDefault(stringProperty);
 ]]></code>
 This sample shows how to call PutDefault with all parameters.
 <code><![CDATA[
 String client = new OptionalClient().GetStringClient();
 
-StringProperty body = new StringProperty
+StringProperty stringProperty = new StringProperty
 {
     Property = "<property>",
 };
-Response response = client.PutDefault(body);
+Response response = client.PutDefault(stringProperty);
 ]]></code></example>
     </member>
     <member name="PutDefaultAsync(RequestContent,RequestContext)">

@@ -159,25 +159,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="UnionStringLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutAllAsync(UnionStringLiteralProperty body)
+        /// <param name="unionStringLiteralProperty"> Model with union of string literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionStringLiteralProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutAllAsync(UnionStringLiteralProperty unionStringLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionStringLiteralProperty, nameof(unionStringLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = unionStringLiteralProperty.ToBinaryContent();
             ClientResult result = await PutAllAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="UnionStringLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutAll(UnionStringLiteralProperty body)
+        /// <param name="unionStringLiteralProperty"> Model with union of string literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionStringLiteralProperty"/> is null. </exception>
+        public virtual ClientResult PutAll(UnionStringLiteralProperty unionStringLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionStringLiteralProperty, nameof(unionStringLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = unionStringLiteralProperty.ToBinaryContent();
             ClientResult result = PutAll(content, null);
             return result;
         }
@@ -239,25 +239,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="UnionStringLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutDefaultAsync(UnionStringLiteralProperty body)
+        /// <param name="unionStringLiteralProperty"> Model with union of string literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionStringLiteralProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutDefaultAsync(UnionStringLiteralProperty unionStringLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionStringLiteralProperty, nameof(unionStringLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = unionStringLiteralProperty.ToBinaryContent();
             ClientResult result = await PutDefaultAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="UnionStringLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutDefault(UnionStringLiteralProperty body)
+        /// <param name="unionStringLiteralProperty"> Model with union of string literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionStringLiteralProperty"/> is null. </exception>
+        public virtual ClientResult PutDefault(UnionStringLiteralProperty unionStringLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionStringLiteralProperty, nameof(unionStringLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = unionStringLiteralProperty.ToBinaryContent();
             ClientResult result = PutDefault(content, null);
             return result;
         }

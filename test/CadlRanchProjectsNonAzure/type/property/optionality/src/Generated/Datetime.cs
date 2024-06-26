@@ -159,25 +159,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="DatetimeProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutAllAsync(DatetimeProperty body)
+        /// <param name="datetimeProperty"> Model with a datetime property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="datetimeProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutAllAsync(DatetimeProperty datetimeProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(datetimeProperty, nameof(datetimeProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = datetimeProperty.ToBinaryContent();
             ClientResult result = await PutAllAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="DatetimeProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutAll(DatetimeProperty body)
+        /// <param name="datetimeProperty"> Model with a datetime property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="datetimeProperty"/> is null. </exception>
+        public virtual ClientResult PutAll(DatetimeProperty datetimeProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(datetimeProperty, nameof(datetimeProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = datetimeProperty.ToBinaryContent();
             ClientResult result = PutAll(content, null);
             return result;
         }
@@ -239,25 +239,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="DatetimeProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutDefaultAsync(DatetimeProperty body)
+        /// <param name="datetimeProperty"> Model with a datetime property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="datetimeProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutDefaultAsync(DatetimeProperty datetimeProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(datetimeProperty, nameof(datetimeProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = datetimeProperty.ToBinaryContent();
             ClientResult result = await PutDefaultAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="DatetimeProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutDefault(DatetimeProperty body)
+        /// <param name="datetimeProperty"> Model with a datetime property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="datetimeProperty"/> is null. </exception>
+        public virtual ClientResult PutDefault(DatetimeProperty datetimeProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(datetimeProperty, nameof(datetimeProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = datetimeProperty.ToBinaryContent();
             ClientResult result = PutDefault(content, null);
             return result;
         }

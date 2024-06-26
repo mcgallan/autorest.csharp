@@ -226,8 +226,8 @@ namespace _Type.Property.Optionality.Samples
         {
             RequiredAndOptional client = new OptionalClient().GetRequiredAndOptionalClient();
 
-            RequiredAndOptionalProperty body = new RequiredAndOptionalProperty(1234);
-            Response response = client.PutAll(body);
+            RequiredAndOptionalProperty requiredAndOptionalProperty = new RequiredAndOptionalProperty(1234);
+            Response response = client.PutAll(requiredAndOptionalProperty);
         }
 
         [Test]
@@ -236,8 +236,8 @@ namespace _Type.Property.Optionality.Samples
         {
             RequiredAndOptional client = new OptionalClient().GetRequiredAndOptionalClient();
 
-            RequiredAndOptionalProperty body = new RequiredAndOptionalProperty(1234);
-            Response response = await client.PutAllAsync(body);
+            RequiredAndOptionalProperty requiredAndOptionalProperty = new RequiredAndOptionalProperty(1234);
+            Response response = await client.PutAllAsync(requiredAndOptionalProperty);
         }
 
         [Test]
@@ -278,11 +278,11 @@ namespace _Type.Property.Optionality.Samples
         {
             RequiredAndOptional client = new OptionalClient().GetRequiredAndOptionalClient();
 
-            RequiredAndOptionalProperty body = new RequiredAndOptionalProperty(1234)
+            RequiredAndOptionalProperty requiredAndOptionalProperty = new RequiredAndOptionalProperty(1234)
             {
                 OptionalProperty = "<optionalProperty>",
             };
-            Response response = client.PutAll(body);
+            Response response = client.PutAll(requiredAndOptionalProperty);
         }
 
         [Test]
@@ -291,11 +291,11 @@ namespace _Type.Property.Optionality.Samples
         {
             RequiredAndOptional client = new OptionalClient().GetRequiredAndOptionalClient();
 
-            RequiredAndOptionalProperty body = new RequiredAndOptionalProperty(1234)
+            RequiredAndOptionalProperty requiredAndOptionalProperty = new RequiredAndOptionalProperty(1234)
             {
                 OptionalProperty = "<optionalProperty>",
             };
-            Response response = await client.PutAllAsync(body);
+            Response response = await client.PutAllAsync(requiredAndOptionalProperty);
         }
 
         [Test]
@@ -334,8 +334,8 @@ namespace _Type.Property.Optionality.Samples
         {
             RequiredAndOptional client = new OptionalClient().GetRequiredAndOptionalClient();
 
-            RequiredAndOptionalProperty body = new RequiredAndOptionalProperty(1234);
-            Response response = client.PutRequiredOnly(body);
+            RequiredAndOptionalProperty requiredAndOptionalProperty = new RequiredAndOptionalProperty(1234);
+            Response response = client.PutRequiredOnly(requiredAndOptionalProperty);
         }
 
         [Test]
@@ -344,8 +344,8 @@ namespace _Type.Property.Optionality.Samples
         {
             RequiredAndOptional client = new OptionalClient().GetRequiredAndOptionalClient();
 
-            RequiredAndOptionalProperty body = new RequiredAndOptionalProperty(1234);
-            Response response = await client.PutRequiredOnlyAsync(body);
+            RequiredAndOptionalProperty requiredAndOptionalProperty = new RequiredAndOptionalProperty(1234);
+            Response response = await client.PutRequiredOnlyAsync(requiredAndOptionalProperty);
         }
 
         [Test]
@@ -386,11 +386,11 @@ namespace _Type.Property.Optionality.Samples
         {
             RequiredAndOptional client = new OptionalClient().GetRequiredAndOptionalClient();
 
-            RequiredAndOptionalProperty body = new RequiredAndOptionalProperty(1234)
+            RequiredAndOptionalProperty requiredAndOptionalProperty = new RequiredAndOptionalProperty(1234)
             {
                 OptionalProperty = "<optionalProperty>",
             };
-            Response response = client.PutRequiredOnly(body);
+            Response response = client.PutRequiredOnly(requiredAndOptionalProperty);
         }
 
         [Test]
@@ -399,11 +399,11 @@ namespace _Type.Property.Optionality.Samples
         {
             RequiredAndOptional client = new OptionalClient().GetRequiredAndOptionalClient();
 
-            RequiredAndOptionalProperty body = new RequiredAndOptionalProperty(1234)
+            RequiredAndOptionalProperty requiredAndOptionalProperty = new RequiredAndOptionalProperty(1234)
             {
                 OptionalProperty = "<optionalProperty>",
             };
-            Response response = await client.PutRequiredOnlyAsync(body);
+            Response response = await client.PutRequiredOnlyAsync(requiredAndOptionalProperty);
         }
     }
 }

@@ -155,18 +155,18 @@ This sample shows how to call PutAllAsync.
 <code><![CDATA[
 RequiredAndOptional client = new OptionalClient().GetRequiredAndOptionalClient();
 
-RequiredAndOptionalProperty body = new RequiredAndOptionalProperty(1234);
-Response response = await client.PutAllAsync(body);
+RequiredAndOptionalProperty requiredAndOptionalProperty = new RequiredAndOptionalProperty(1234);
+Response response = await client.PutAllAsync(requiredAndOptionalProperty);
 ]]></code>
 This sample shows how to call PutAllAsync with all parameters.
 <code><![CDATA[
 RequiredAndOptional client = new OptionalClient().GetRequiredAndOptionalClient();
 
-RequiredAndOptionalProperty body = new RequiredAndOptionalProperty(1234)
+RequiredAndOptionalProperty requiredAndOptionalProperty = new RequiredAndOptionalProperty(1234)
 {
     OptionalProperty = "<optionalProperty>",
 };
-Response response = await client.PutAllAsync(body);
+Response response = await client.PutAllAsync(requiredAndOptionalProperty);
 ]]></code></example>
     </member>
     <member name="PutAll(RequiredAndOptionalProperty,CancellationToken)">
@@ -175,18 +175,18 @@ This sample shows how to call PutAll.
 <code><![CDATA[
 RequiredAndOptional client = new OptionalClient().GetRequiredAndOptionalClient();
 
-RequiredAndOptionalProperty body = new RequiredAndOptionalProperty(1234);
-Response response = client.PutAll(body);
+RequiredAndOptionalProperty requiredAndOptionalProperty = new RequiredAndOptionalProperty(1234);
+Response response = client.PutAll(requiredAndOptionalProperty);
 ]]></code>
 This sample shows how to call PutAll with all parameters.
 <code><![CDATA[
 RequiredAndOptional client = new OptionalClient().GetRequiredAndOptionalClient();
 
-RequiredAndOptionalProperty body = new RequiredAndOptionalProperty(1234)
+RequiredAndOptionalProperty requiredAndOptionalProperty = new RequiredAndOptionalProperty(1234)
 {
     OptionalProperty = "<optionalProperty>",
 };
-Response response = client.PutAll(body);
+Response response = client.PutAll(requiredAndOptionalProperty);
 ]]></code></example>
     </member>
     <member name="PutAllAsync(RequestContent,RequestContext)">
@@ -251,18 +251,18 @@ This sample shows how to call PutRequiredOnlyAsync.
 <code><![CDATA[
 RequiredAndOptional client = new OptionalClient().GetRequiredAndOptionalClient();
 
-RequiredAndOptionalProperty body = new RequiredAndOptionalProperty(1234);
-Response response = await client.PutRequiredOnlyAsync(body);
+RequiredAndOptionalProperty requiredAndOptionalProperty = new RequiredAndOptionalProperty(1234);
+Response response = await client.PutRequiredOnlyAsync(requiredAndOptionalProperty);
 ]]></code>
 This sample shows how to call PutRequiredOnlyAsync with all parameters.
 <code><![CDATA[
 RequiredAndOptional client = new OptionalClient().GetRequiredAndOptionalClient();
 
-RequiredAndOptionalProperty body = new RequiredAndOptionalProperty(1234)
+RequiredAndOptionalProperty requiredAndOptionalProperty = new RequiredAndOptionalProperty(1234)
 {
     OptionalProperty = "<optionalProperty>",
 };
-Response response = await client.PutRequiredOnlyAsync(body);
+Response response = await client.PutRequiredOnlyAsync(requiredAndOptionalProperty);
 ]]></code></example>
     </member>
     <member name="PutRequiredOnly(RequiredAndOptionalProperty,CancellationToken)">
@@ -271,18 +271,18 @@ This sample shows how to call PutRequiredOnly.
 <code><![CDATA[
 RequiredAndOptional client = new OptionalClient().GetRequiredAndOptionalClient();
 
-RequiredAndOptionalProperty body = new RequiredAndOptionalProperty(1234);
-Response response = client.PutRequiredOnly(body);
+RequiredAndOptionalProperty requiredAndOptionalProperty = new RequiredAndOptionalProperty(1234);
+Response response = client.PutRequiredOnly(requiredAndOptionalProperty);
 ]]></code>
 This sample shows how to call PutRequiredOnly with all parameters.
 <code><![CDATA[
 RequiredAndOptional client = new OptionalClient().GetRequiredAndOptionalClient();
 
-RequiredAndOptionalProperty body = new RequiredAndOptionalProperty(1234)
+RequiredAndOptionalProperty requiredAndOptionalProperty = new RequiredAndOptionalProperty(1234)
 {
     OptionalProperty = "<optionalProperty>",
 };
-Response response = client.PutRequiredOnly(body);
+Response response = client.PutRequiredOnly(requiredAndOptionalProperty);
 ]]></code></example>
     </member>
     <member name="PutRequiredOnlyAsync(RequestContent,RequestContext)">

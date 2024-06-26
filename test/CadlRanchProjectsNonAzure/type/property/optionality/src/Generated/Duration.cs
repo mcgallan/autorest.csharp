@@ -159,25 +159,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="DurationProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutAllAsync(DurationProperty body)
+        /// <param name="durationProperty"> Model with a duration property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="durationProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutAllAsync(DurationProperty durationProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(durationProperty, nameof(durationProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = durationProperty.ToBinaryContent();
             ClientResult result = await PutAllAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="DurationProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutAll(DurationProperty body)
+        /// <param name="durationProperty"> Model with a duration property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="durationProperty"/> is null. </exception>
+        public virtual ClientResult PutAll(DurationProperty durationProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(durationProperty, nameof(durationProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = durationProperty.ToBinaryContent();
             ClientResult result = PutAll(content, null);
             return result;
         }
@@ -239,25 +239,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="DurationProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutDefaultAsync(DurationProperty body)
+        /// <param name="durationProperty"> Model with a duration property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="durationProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutDefaultAsync(DurationProperty durationProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(durationProperty, nameof(durationProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = durationProperty.ToBinaryContent();
             ClientResult result = await PutDefaultAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="DurationProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutDefault(DurationProperty body)
+        /// <param name="durationProperty"> Model with a duration property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="durationProperty"/> is null. </exception>
+        public virtual ClientResult PutDefault(DurationProperty durationProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(durationProperty, nameof(durationProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = durationProperty.ToBinaryContent();
             ClientResult result = PutDefault(content, null);
             return result;
         }

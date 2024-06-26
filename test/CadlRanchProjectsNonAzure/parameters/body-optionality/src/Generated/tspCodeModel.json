@@ -36,7 +36,6 @@
      "$id": "6",
      "Name": "requiredExplicit",
      "ResourceName": "BodyOptionality",
-     "Accessibility": "public",
      "Parameters": [
       {
        "$id": "7",
@@ -69,8 +68,8 @@
       },
       {
        "$id": "11",
-       "Name": "body",
-       "NameInRequest": "body",
+       "Name": "BodyModel",
+       "NameInRequest": "BodyModel",
        "Type": {
         "$ref": "2"
        },
@@ -163,7 +162,6 @@
      "$id": "19",
      "Name": "requiredImplicit",
      "ResourceName": "BodyOptionality",
-     "Accessibility": "public",
      "Parameters": [
       {
        "$ref": "7"
@@ -280,20 +278,19 @@
      "$id": "30",
      "Name": "set",
      "ResourceName": "OptionalExplicit",
-     "Accessibility": "public",
      "Parameters": [
       {
        "$ref": "7"
       },
       {
        "$id": "31",
-       "Name": "body",
-       "NameInRequest": "body",
+       "Name": "BodyModel",
+       "NameInRequest": "BodyModel",
        "Type": {
         "$ref": "2"
        },
        "Location": "Body",
-       "IsRequired": false,
+       "IsRequired": true,
        "IsApiVersion": false,
        "IsResourceParameter": false,
        "IsContentType": false,
@@ -381,20 +378,19 @@
      "$id": "39",
      "Name": "omit",
      "ResourceName": "OptionalExplicit",
-     "Accessibility": "public",
      "Parameters": [
       {
        "$ref": "7"
       },
       {
        "$id": "40",
-       "Name": "body",
-       "NameInRequest": "body",
+       "Name": "BodyModel",
+       "NameInRequest": "BodyModel",
        "Type": {
         "$ref": "2"
        },
        "Location": "Body",
-       "IsRequired": false,
+       "IsRequired": true,
        "IsApiVersion": false,
        "IsResourceParameter": false,
        "IsContentType": false,

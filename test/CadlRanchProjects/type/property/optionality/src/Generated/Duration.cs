@@ -225,30 +225,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="DurationProperty"/> to use. </param>
+        /// <param name="durationProperty"> Model with a duration property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="durationProperty"/> is null. </exception>
         /// <include file="Docs/Duration.xml" path="doc/members/member[@name='PutAllAsync(DurationProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutAllAsync(DurationProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAllAsync(DurationProperty durationProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(durationProperty, nameof(durationProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = durationProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAllAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="DurationProperty"/> to use. </param>
+        /// <param name="durationProperty"> Model with a duration property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="durationProperty"/> is null. </exception>
         /// <include file="Docs/Duration.xml" path="doc/members/member[@name='PutAll(DurationProperty,CancellationToken)']/*" />
-        public virtual Response PutAll(DurationProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutAll(DurationProperty durationProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(durationProperty, nameof(durationProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = durationProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutAll(content, context);
             return response;
@@ -333,30 +333,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="DurationProperty"/> to use. </param>
+        /// <param name="durationProperty"> Model with a duration property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="durationProperty"/> is null. </exception>
         /// <include file="Docs/Duration.xml" path="doc/members/member[@name='PutDefaultAsync(DurationProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutDefaultAsync(DurationProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutDefaultAsync(DurationProperty durationProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(durationProperty, nameof(durationProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = durationProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutDefaultAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="DurationProperty"/> to use. </param>
+        /// <param name="durationProperty"> Model with a duration property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="durationProperty"/> is null. </exception>
         /// <include file="Docs/Duration.xml" path="doc/members/member[@name='PutDefault(DurationProperty,CancellationToken)']/*" />
-        public virtual Response PutDefault(DurationProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutDefault(DurationProperty durationProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(durationProperty, nameof(durationProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = durationProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutDefault(content, context);
             return response;

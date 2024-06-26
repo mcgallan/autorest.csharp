@@ -159,25 +159,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="RequiredAndOptionalProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutAllAsync(RequiredAndOptionalProperty body)
+        /// <param name="requiredAndOptionalProperty"> Model with required and optional properties. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="requiredAndOptionalProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutAllAsync(RequiredAndOptionalProperty requiredAndOptionalProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(requiredAndOptionalProperty, nameof(requiredAndOptionalProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = requiredAndOptionalProperty.ToBinaryContent();
             ClientResult result = await PutAllAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="RequiredAndOptionalProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutAll(RequiredAndOptionalProperty body)
+        /// <param name="requiredAndOptionalProperty"> Model with required and optional properties. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="requiredAndOptionalProperty"/> is null. </exception>
+        public virtual ClientResult PutAll(RequiredAndOptionalProperty requiredAndOptionalProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(requiredAndOptionalProperty, nameof(requiredAndOptionalProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = requiredAndOptionalProperty.ToBinaryContent();
             ClientResult result = PutAll(content, null);
             return result;
         }
@@ -239,25 +239,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with only required properties. </summary>
-        /// <param name="body"> The <see cref="RequiredAndOptionalProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutRequiredOnlyAsync(RequiredAndOptionalProperty body)
+        /// <param name="requiredAndOptionalProperty"> Model with required and optional properties. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="requiredAndOptionalProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutRequiredOnlyAsync(RequiredAndOptionalProperty requiredAndOptionalProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(requiredAndOptionalProperty, nameof(requiredAndOptionalProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = requiredAndOptionalProperty.ToBinaryContent();
             ClientResult result = await PutRequiredOnlyAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with only required properties. </summary>
-        /// <param name="body"> The <see cref="RequiredAndOptionalProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutRequiredOnly(RequiredAndOptionalProperty body)
+        /// <param name="requiredAndOptionalProperty"> Model with required and optional properties. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="requiredAndOptionalProperty"/> is null. </exception>
+        public virtual ClientResult PutRequiredOnly(RequiredAndOptionalProperty requiredAndOptionalProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(requiredAndOptionalProperty, nameof(requiredAndOptionalProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = requiredAndOptionalProperty.ToBinaryContent();
             ClientResult result = PutRequiredOnly(content, null);
             return result;
         }

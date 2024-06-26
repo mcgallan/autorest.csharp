@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetDefaultAsync(CancellationToken)">
+      <example>
+This sample shows how to call GetDefaultAsync.
+<code><![CDATA[
+ReadOnlyModel client = new OptionalClient().GetReadOnlyModelClient();
+
+Response<ReadOnlyModelProperty> response = await client.GetDefaultAsync();
+]]></code>
+This sample shows how to call GetDefaultAsync with all parameters.
+<code><![CDATA[
+ReadOnlyModel client = new OptionalClient().GetReadOnlyModelClient();
+
+Response<ReadOnlyModelProperty> response = await client.GetDefaultAsync();
+]]></code></example>
+    </member>
+    <member name="GetDefault(CancellationToken)">
+      <example>
+This sample shows how to call GetDefault.
+<code><![CDATA[
+ReadOnlyModel client = new OptionalClient().GetReadOnlyModelClient();
+
+Response<ReadOnlyModelProperty> response = client.GetDefault();
+]]></code>
+This sample shows how to call GetDefault with all parameters.
+<code><![CDATA[
+ReadOnlyModel client = new OptionalClient().GetReadOnlyModelClient();
+
+Response<ReadOnlyModelProperty> response = client.GetDefault();
+]]></code></example>
+    </member>
+    <member name="GetDefaultAsync(RequestContext)">
+      <example>
+This sample shows how to call GetDefaultAsync and parse the result.
+<code><![CDATA[
+ReadOnlyModel client = new OptionalClient().GetReadOnlyModelClient();
+
+Response response = await client.GetDefaultAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call GetDefaultAsync with all parameters and parse the result.
+<code><![CDATA[
+ReadOnlyModel client = new OptionalClient().GetReadOnlyModelClient();
+
+Response response = await client.GetDefaultAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("property").GetProperty("name").ToString());
+]]></code></example>
+    </member>
+    <member name="GetDefault(RequestContext)">
+      <example>
+This sample shows how to call GetDefault and parse the result.
+<code><![CDATA[
+ReadOnlyModel client = new OptionalClient().GetReadOnlyModelClient();
+
+Response response = client.GetDefault(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call GetDefault with all parameters and parse the result.
+<code><![CDATA[
+ReadOnlyModel client = new OptionalClient().GetReadOnlyModelClient();
+
+Response response = client.GetDefault(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("property").GetProperty("name").ToString());
+]]></code></example>
+    </member>
+    <member name="GetAllAsync(CancellationToken)">
+      <example>
+This sample shows how to call GetAllAsync.
+<code><![CDATA[
+ReadOnlyModel client = new OptionalClient().GetReadOnlyModelClient();
+
+Response<ReadOnlyModelProperty> response = await client.GetAllAsync();
+]]></code>
+This sample shows how to call GetAllAsync with all parameters.
+<code><![CDATA[
+ReadOnlyModel client = new OptionalClient().GetReadOnlyModelClient();
+
+Response<ReadOnlyModelProperty> response = await client.GetAllAsync();
+]]></code></example>
+    </member>
+    <member name="GetAll(CancellationToken)">
+      <example>
+This sample shows how to call GetAll.
+<code><![CDATA[
+ReadOnlyModel client = new OptionalClient().GetReadOnlyModelClient();
+
+Response<ReadOnlyModelProperty> response = client.GetAll();
+]]></code>
+This sample shows how to call GetAll with all parameters.
+<code><![CDATA[
+ReadOnlyModel client = new OptionalClient().GetReadOnlyModelClient();
+
+Response<ReadOnlyModelProperty> response = client.GetAll();
+]]></code></example>
+    </member>
+    <member name="GetAllAsync(RequestContext)">
+      <example>
+This sample shows how to call GetAllAsync and parse the result.
+<code><![CDATA[
+ReadOnlyModel client = new OptionalClient().GetReadOnlyModelClient();
+
+Response response = await client.GetAllAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call GetAllAsync with all parameters and parse the result.
+<code><![CDATA[
+ReadOnlyModel client = new OptionalClient().GetReadOnlyModelClient();
+
+Response response = await client.GetAllAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("property").GetProperty("name").ToString());
+]]></code></example>
+    </member>
+    <member name="GetAll(RequestContext)">
+      <example>
+This sample shows how to call GetAll and parse the result.
+<code><![CDATA[
+ReadOnlyModel client = new OptionalClient().GetReadOnlyModelClient();
+
+Response response = client.GetAll(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call GetAll with all parameters and parse the result.
+<code><![CDATA[
+ReadOnlyModel client = new OptionalClient().GetReadOnlyModelClient();
+
+Response response = client.GetAll(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("property").GetProperty("name").ToString());
+]]></code></example>
+    </member>
+  </members>
+</doc>

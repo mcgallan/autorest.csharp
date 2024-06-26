@@ -151,18 +151,18 @@ This sample shows how to call PutAllAsync.
 <code><![CDATA[
 UnionIntLiteral client = new OptionalClient().GetUnionIntLiteralClient();
 
-UnionIntLiteralProperty body = new UnionIntLiteralProperty();
-Response response = await client.PutAllAsync(body);
+UnionIntLiteralProperty unionIntLiteralProperty = new UnionIntLiteralProperty();
+Response response = await client.PutAllAsync(unionIntLiteralProperty);
 ]]></code>
 This sample shows how to call PutAllAsync with all parameters.
 <code><![CDATA[
 UnionIntLiteral client = new OptionalClient().GetUnionIntLiteralClient();
 
-UnionIntLiteralProperty body = new UnionIntLiteralProperty
+UnionIntLiteralProperty unionIntLiteralProperty = new UnionIntLiteralProperty
 {
     Property = UnionIntLiteralPropertyProperty._1,
 };
-Response response = await client.PutAllAsync(body);
+Response response = await client.PutAllAsync(unionIntLiteralProperty);
 ]]></code></example>
     </member>
     <member name="PutAll(UnionIntLiteralProperty,CancellationToken)">
@@ -171,18 +171,18 @@ This sample shows how to call PutAll.
 <code><![CDATA[
 UnionIntLiteral client = new OptionalClient().GetUnionIntLiteralClient();
 
-UnionIntLiteralProperty body = new UnionIntLiteralProperty();
-Response response = client.PutAll(body);
+UnionIntLiteralProperty unionIntLiteralProperty = new UnionIntLiteralProperty();
+Response response = client.PutAll(unionIntLiteralProperty);
 ]]></code>
 This sample shows how to call PutAll with all parameters.
 <code><![CDATA[
 UnionIntLiteral client = new OptionalClient().GetUnionIntLiteralClient();
 
-UnionIntLiteralProperty body = new UnionIntLiteralProperty
+UnionIntLiteralProperty unionIntLiteralProperty = new UnionIntLiteralProperty
 {
     Property = UnionIntLiteralPropertyProperty._1,
 };
-Response response = client.PutAll(body);
+Response response = client.PutAll(unionIntLiteralProperty);
 ]]></code></example>
     </member>
     <member name="PutAllAsync(RequestContent,RequestContext)">
@@ -239,18 +239,18 @@ This sample shows how to call PutDefaultAsync.
 <code><![CDATA[
 UnionIntLiteral client = new OptionalClient().GetUnionIntLiteralClient();
 
-UnionIntLiteralProperty body = new UnionIntLiteralProperty();
-Response response = await client.PutDefaultAsync(body);
+UnionIntLiteralProperty unionIntLiteralProperty = new UnionIntLiteralProperty();
+Response response = await client.PutDefaultAsync(unionIntLiteralProperty);
 ]]></code>
 This sample shows how to call PutDefaultAsync with all parameters.
 <code><![CDATA[
 UnionIntLiteral client = new OptionalClient().GetUnionIntLiteralClient();
 
-UnionIntLiteralProperty body = new UnionIntLiteralProperty
+UnionIntLiteralProperty unionIntLiteralProperty = new UnionIntLiteralProperty
 {
     Property = UnionIntLiteralPropertyProperty._1,
 };
-Response response = await client.PutDefaultAsync(body);
+Response response = await client.PutDefaultAsync(unionIntLiteralProperty);
 ]]></code></example>
     </member>
     <member name="PutDefault(UnionIntLiteralProperty,CancellationToken)">
@@ -259,18 +259,18 @@ This sample shows how to call PutDefault.
 <code><![CDATA[
 UnionIntLiteral client = new OptionalClient().GetUnionIntLiteralClient();
 
-UnionIntLiteralProperty body = new UnionIntLiteralProperty();
-Response response = client.PutDefault(body);
+UnionIntLiteralProperty unionIntLiteralProperty = new UnionIntLiteralProperty();
+Response response = client.PutDefault(unionIntLiteralProperty);
 ]]></code>
 This sample shows how to call PutDefault with all parameters.
 <code><![CDATA[
 UnionIntLiteral client = new OptionalClient().GetUnionIntLiteralClient();
 
-UnionIntLiteralProperty body = new UnionIntLiteralProperty
+UnionIntLiteralProperty unionIntLiteralProperty = new UnionIntLiteralProperty
 {
     Property = UnionIntLiteralPropertyProperty._1,
 };
-Response response = client.PutDefault(body);
+Response response = client.PutDefault(unionIntLiteralProperty);
 ]]></code></example>
     </member>
     <member name="PutDefaultAsync(RequestContent,RequestContext)">

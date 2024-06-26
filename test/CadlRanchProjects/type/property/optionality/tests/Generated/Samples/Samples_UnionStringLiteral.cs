@@ -216,8 +216,8 @@ namespace _Type.Property.Optionality.Samples
         {
             UnionStringLiteral client = new OptionalClient().GetUnionStringLiteralClient();
 
-            UnionStringLiteralProperty body = new UnionStringLiteralProperty();
-            Response response = client.PutAll(body);
+            UnionStringLiteralProperty unionStringLiteralProperty = new UnionStringLiteralProperty();
+            Response response = client.PutAll(unionStringLiteralProperty);
         }
 
         [Test]
@@ -226,8 +226,8 @@ namespace _Type.Property.Optionality.Samples
         {
             UnionStringLiteral client = new OptionalClient().GetUnionStringLiteralClient();
 
-            UnionStringLiteralProperty body = new UnionStringLiteralProperty();
-            Response response = await client.PutAllAsync(body);
+            UnionStringLiteralProperty unionStringLiteralProperty = new UnionStringLiteralProperty();
+            Response response = await client.PutAllAsync(unionStringLiteralProperty);
         }
 
         [Test]
@@ -266,11 +266,11 @@ namespace _Type.Property.Optionality.Samples
         {
             UnionStringLiteral client = new OptionalClient().GetUnionStringLiteralClient();
 
-            UnionStringLiteralProperty body = new UnionStringLiteralProperty
+            UnionStringLiteralProperty unionStringLiteralProperty = new UnionStringLiteralProperty
             {
                 Property = UnionStringLiteralPropertyProperty.Hello,
             };
-            Response response = client.PutAll(body);
+            Response response = client.PutAll(unionStringLiteralProperty);
         }
 
         [Test]
@@ -279,11 +279,11 @@ namespace _Type.Property.Optionality.Samples
         {
             UnionStringLiteral client = new OptionalClient().GetUnionStringLiteralClient();
 
-            UnionStringLiteralProperty body = new UnionStringLiteralProperty
+            UnionStringLiteralProperty unionStringLiteralProperty = new UnionStringLiteralProperty
             {
                 Property = UnionStringLiteralPropertyProperty.Hello,
             };
-            Response response = await client.PutAllAsync(body);
+            Response response = await client.PutAllAsync(unionStringLiteralProperty);
         }
 
         [Test]
@@ -316,8 +316,8 @@ namespace _Type.Property.Optionality.Samples
         {
             UnionStringLiteral client = new OptionalClient().GetUnionStringLiteralClient();
 
-            UnionStringLiteralProperty body = new UnionStringLiteralProperty();
-            Response response = client.PutDefault(body);
+            UnionStringLiteralProperty unionStringLiteralProperty = new UnionStringLiteralProperty();
+            Response response = client.PutDefault(unionStringLiteralProperty);
         }
 
         [Test]
@@ -326,8 +326,8 @@ namespace _Type.Property.Optionality.Samples
         {
             UnionStringLiteral client = new OptionalClient().GetUnionStringLiteralClient();
 
-            UnionStringLiteralProperty body = new UnionStringLiteralProperty();
-            Response response = await client.PutDefaultAsync(body);
+            UnionStringLiteralProperty unionStringLiteralProperty = new UnionStringLiteralProperty();
+            Response response = await client.PutDefaultAsync(unionStringLiteralProperty);
         }
 
         [Test]
@@ -366,11 +366,11 @@ namespace _Type.Property.Optionality.Samples
         {
             UnionStringLiteral client = new OptionalClient().GetUnionStringLiteralClient();
 
-            UnionStringLiteralProperty body = new UnionStringLiteralProperty
+            UnionStringLiteralProperty unionStringLiteralProperty = new UnionStringLiteralProperty
             {
                 Property = UnionStringLiteralPropertyProperty.Hello,
             };
-            Response response = client.PutDefault(body);
+            Response response = client.PutDefault(unionStringLiteralProperty);
         }
 
         [Test]
@@ -379,11 +379,11 @@ namespace _Type.Property.Optionality.Samples
         {
             UnionStringLiteral client = new OptionalClient().GetUnionStringLiteralClient();
 
-            UnionStringLiteralProperty body = new UnionStringLiteralProperty
+            UnionStringLiteralProperty unionStringLiteralProperty = new UnionStringLiteralProperty
             {
                 Property = UnionStringLiteralPropertyProperty.Hello,
             };
-            Response response = await client.PutDefaultAsync(body);
+            Response response = await client.PutDefaultAsync(unionStringLiteralProperty);
         }
     }
 }

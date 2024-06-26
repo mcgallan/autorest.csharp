@@ -225,30 +225,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="StringProperty"/> to use. </param>
+        /// <param name="stringProperty"> Template type for testing models with optional property. Pass in the type of the property you are looking for. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="stringProperty"/> is null. </exception>
         /// <include file="Docs/String.xml" path="doc/members/member[@name='PutAllAsync(StringProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutAllAsync(StringProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAllAsync(StringProperty stringProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(stringProperty, nameof(stringProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = stringProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAllAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="StringProperty"/> to use. </param>
+        /// <param name="stringProperty"> Template type for testing models with optional property. Pass in the type of the property you are looking for. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="stringProperty"/> is null. </exception>
         /// <include file="Docs/String.xml" path="doc/members/member[@name='PutAll(StringProperty,CancellationToken)']/*" />
-        public virtual Response PutAll(StringProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutAll(StringProperty stringProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(stringProperty, nameof(stringProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = stringProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutAll(content, context);
             return response;
@@ -333,30 +333,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="StringProperty"/> to use. </param>
+        /// <param name="stringProperty"> Template type for testing models with optional property. Pass in the type of the property you are looking for. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="stringProperty"/> is null. </exception>
         /// <include file="Docs/String.xml" path="doc/members/member[@name='PutDefaultAsync(StringProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutDefaultAsync(StringProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutDefaultAsync(StringProperty stringProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(stringProperty, nameof(stringProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = stringProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutDefaultAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="StringProperty"/> to use. </param>
+        /// <param name="stringProperty"> Template type for testing models with optional property. Pass in the type of the property you are looking for. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="stringProperty"/> is null. </exception>
         /// <include file="Docs/String.xml" path="doc/members/member[@name='PutDefault(StringProperty,CancellationToken)']/*" />
-        public virtual Response PutDefault(StringProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutDefault(StringProperty stringProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(stringProperty, nameof(stringProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = stringProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutDefault(content, context);
             return response;

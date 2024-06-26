@@ -45,24 +45,30 @@ namespace Parameters.BodyOptionality
         }
 
         /// <summary> Set. </summary>
-        /// <param name="body"> The <see cref="BodyModel"/> to use. </param>
+        /// <param name="bodyModel"> The <see cref="BodyModel"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="bodyModel"/> is null. </exception>
         /// <include file="Docs/OptionalExplicit.xml" path="doc/members/member[@name='SetAsync(BodyModel,CancellationToken)']/*" />
-        public virtual async Task<Response> SetAsync(BodyModel body = null, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> SetAsync(BodyModel bodyModel, CancellationToken cancellationToken = default)
         {
-            using RequestContent content = body?.ToRequestContent();
+            Argument.AssertNotNull(bodyModel, nameof(bodyModel));
+
+            using RequestContent content = bodyModel.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await SetAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Set. </summary>
-        /// <param name="body"> The <see cref="BodyModel"/> to use. </param>
+        /// <param name="bodyModel"> The <see cref="BodyModel"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="bodyModel"/> is null. </exception>
         /// <include file="Docs/OptionalExplicit.xml" path="doc/members/member[@name='Set(BodyModel,CancellationToken)']/*" />
-        public virtual Response Set(BodyModel body = null, CancellationToken cancellationToken = default)
+        public virtual Response Set(BodyModel bodyModel, CancellationToken cancellationToken = default)
         {
-            using RequestContent content = body?.ToRequestContent();
+            Argument.AssertNotNull(bodyModel, nameof(bodyModel));
+
+            using RequestContent content = bodyModel.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = Set(content, context);
             return response;
@@ -85,11 +91,14 @@ namespace Parameters.BodyOptionality
         /// </summary>
         /// <param name="content"> The content to send as the body of the request. </param>
         /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
         /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
         /// <returns> The response returned from the service. </returns>
         /// <include file="Docs/OptionalExplicit.xml" path="doc/members/member[@name='SetAsync(RequestContent,RequestContext)']/*" />
         public virtual async Task<Response> SetAsync(RequestContent content, RequestContext context = null)
         {
+            Argument.AssertNotNull(content, nameof(content));
+
             using var scope = ClientDiagnostics.CreateScope("OptionalExplicit.Set");
             scope.Start();
             try
@@ -121,11 +130,14 @@ namespace Parameters.BodyOptionality
         /// </summary>
         /// <param name="content"> The content to send as the body of the request. </param>
         /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
         /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
         /// <returns> The response returned from the service. </returns>
         /// <include file="Docs/OptionalExplicit.xml" path="doc/members/member[@name='Set(RequestContent,RequestContext)']/*" />
         public virtual Response Set(RequestContent content, RequestContext context = null)
         {
+            Argument.AssertNotNull(content, nameof(content));
+
             using var scope = ClientDiagnostics.CreateScope("OptionalExplicit.Set");
             scope.Start();
             try
@@ -141,24 +153,30 @@ namespace Parameters.BodyOptionality
         }
 
         /// <summary> Omit. </summary>
-        /// <param name="body"> The <see cref="BodyModel"/> to use. </param>
+        /// <param name="bodyModel"> The <see cref="BodyModel"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="bodyModel"/> is null. </exception>
         /// <include file="Docs/OptionalExplicit.xml" path="doc/members/member[@name='OmitAsync(BodyModel,CancellationToken)']/*" />
-        public virtual async Task<Response> OmitAsync(BodyModel body = null, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> OmitAsync(BodyModel bodyModel, CancellationToken cancellationToken = default)
         {
-            using RequestContent content = body?.ToRequestContent();
+            Argument.AssertNotNull(bodyModel, nameof(bodyModel));
+
+            using RequestContent content = bodyModel.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await OmitAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Omit. </summary>
-        /// <param name="body"> The <see cref="BodyModel"/> to use. </param>
+        /// <param name="bodyModel"> The <see cref="BodyModel"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="bodyModel"/> is null. </exception>
         /// <include file="Docs/OptionalExplicit.xml" path="doc/members/member[@name='Omit(BodyModel,CancellationToken)']/*" />
-        public virtual Response Omit(BodyModel body = null, CancellationToken cancellationToken = default)
+        public virtual Response Omit(BodyModel bodyModel, CancellationToken cancellationToken = default)
         {
-            using RequestContent content = body?.ToRequestContent();
+            Argument.AssertNotNull(bodyModel, nameof(bodyModel));
+
+            using RequestContent content = bodyModel.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = Omit(content, context);
             return response;
@@ -181,11 +199,14 @@ namespace Parameters.BodyOptionality
         /// </summary>
         /// <param name="content"> The content to send as the body of the request. </param>
         /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
         /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
         /// <returns> The response returned from the service. </returns>
         /// <include file="Docs/OptionalExplicit.xml" path="doc/members/member[@name='OmitAsync(RequestContent,RequestContext)']/*" />
         public virtual async Task<Response> OmitAsync(RequestContent content, RequestContext context = null)
         {
+            Argument.AssertNotNull(content, nameof(content));
+
             using var scope = ClientDiagnostics.CreateScope("OptionalExplicit.Omit");
             scope.Start();
             try
@@ -217,11 +238,14 @@ namespace Parameters.BodyOptionality
         /// </summary>
         /// <param name="content"> The content to send as the body of the request. </param>
         /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
         /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
         /// <returns> The response returned from the service. </returns>
         /// <include file="Docs/OptionalExplicit.xml" path="doc/members/member[@name='Omit(RequestContent,RequestContext)']/*" />
         public virtual Response Omit(RequestContent content, RequestContext context = null)
         {
+            Argument.AssertNotNull(content, nameof(content));
+
             using var scope = ClientDiagnostics.CreateScope("OptionalExplicit.Omit");
             scope.Start();
             try

@@ -225,30 +225,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="DatetimeProperty"/> to use. </param>
+        /// <param name="datetimeProperty"> Model with a datetime property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="datetimeProperty"/> is null. </exception>
         /// <include file="Docs/Datetime.xml" path="doc/members/member[@name='PutAllAsync(DatetimeProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutAllAsync(DatetimeProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAllAsync(DatetimeProperty datetimeProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(datetimeProperty, nameof(datetimeProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = datetimeProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAllAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="DatetimeProperty"/> to use. </param>
+        /// <param name="datetimeProperty"> Model with a datetime property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="datetimeProperty"/> is null. </exception>
         /// <include file="Docs/Datetime.xml" path="doc/members/member[@name='PutAll(DatetimeProperty,CancellationToken)']/*" />
-        public virtual Response PutAll(DatetimeProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutAll(DatetimeProperty datetimeProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(datetimeProperty, nameof(datetimeProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = datetimeProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutAll(content, context);
             return response;
@@ -333,30 +333,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="DatetimeProperty"/> to use. </param>
+        /// <param name="datetimeProperty"> Model with a datetime property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="datetimeProperty"/> is null. </exception>
         /// <include file="Docs/Datetime.xml" path="doc/members/member[@name='PutDefaultAsync(DatetimeProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutDefaultAsync(DatetimeProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutDefaultAsync(DatetimeProperty datetimeProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(datetimeProperty, nameof(datetimeProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = datetimeProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutDefaultAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="DatetimeProperty"/> to use. </param>
+        /// <param name="datetimeProperty"> Model with a datetime property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="datetimeProperty"/> is null. </exception>
         /// <include file="Docs/Datetime.xml" path="doc/members/member[@name='PutDefault(DatetimeProperty,CancellationToken)']/*" />
-        public virtual Response PutDefault(DatetimeProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutDefault(DatetimeProperty datetimeProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(datetimeProperty, nameof(datetimeProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = datetimeProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutDefault(content, context);
             return response;

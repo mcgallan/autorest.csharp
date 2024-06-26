@@ -159,25 +159,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="CollectionsModelProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutAllAsync(CollectionsModelProperty body)
+        /// <param name="collectionsModelProperty"> Model with collection models properties. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="collectionsModelProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutAllAsync(CollectionsModelProperty collectionsModelProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(collectionsModelProperty, nameof(collectionsModelProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = collectionsModelProperty.ToBinaryContent();
             ClientResult result = await PutAllAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="CollectionsModelProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutAll(CollectionsModelProperty body)
+        /// <param name="collectionsModelProperty"> Model with collection models properties. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="collectionsModelProperty"/> is null. </exception>
+        public virtual ClientResult PutAll(CollectionsModelProperty collectionsModelProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(collectionsModelProperty, nameof(collectionsModelProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = collectionsModelProperty.ToBinaryContent();
             ClientResult result = PutAll(content, null);
             return result;
         }
@@ -239,25 +239,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="CollectionsModelProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutDefaultAsync(CollectionsModelProperty body)
+        /// <param name="collectionsModelProperty"> Model with collection models properties. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="collectionsModelProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutDefaultAsync(CollectionsModelProperty collectionsModelProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(collectionsModelProperty, nameof(collectionsModelProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = collectionsModelProperty.ToBinaryContent();
             ClientResult result = await PutDefaultAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="CollectionsModelProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutDefault(CollectionsModelProperty body)
+        /// <param name="collectionsModelProperty"> Model with collection models properties. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="collectionsModelProperty"/> is null. </exception>
+        public virtual ClientResult PutDefault(CollectionsModelProperty collectionsModelProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(collectionsModelProperty, nameof(collectionsModelProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = collectionsModelProperty.ToBinaryContent();
             ClientResult result = PutDefault(content, null);
             return result;
         }

@@ -40,25 +40,25 @@ namespace Scm.Parameters.BodyOptionality
         }
 
         /// <summary> Required explicit. </summary>
-        /// <param name="body"> The <see cref="BodyModel"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> RequiredExplicitAsync(BodyModel body)
+        /// <param name="bodyModel"> The <see cref="BodyModel"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="bodyModel"/> is null. </exception>
+        public virtual async Task<ClientResult> RequiredExplicitAsync(BodyModel bodyModel)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(bodyModel, nameof(bodyModel));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = bodyModel.ToBinaryContent();
             ClientResult result = await RequiredExplicitAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Required explicit. </summary>
-        /// <param name="body"> The <see cref="BodyModel"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult RequiredExplicit(BodyModel body)
+        /// <param name="bodyModel"> The <see cref="BodyModel"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="bodyModel"/> is null. </exception>
+        public virtual ClientResult RequiredExplicit(BodyModel bodyModel)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(bodyModel, nameof(bodyModel));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = bodyModel.ToBinaryContent();
             ClientResult result = RequiredExplicit(content, null);
             return result;
         }

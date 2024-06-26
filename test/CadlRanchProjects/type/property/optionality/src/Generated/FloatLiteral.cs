@@ -225,30 +225,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="FloatLiteralProperty"/> to use. </param>
+        /// <param name="floatLiteralProperty"> Model with float literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="floatLiteralProperty"/> is null. </exception>
         /// <include file="Docs/FloatLiteral.xml" path="doc/members/member[@name='PutAllAsync(FloatLiteralProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutAllAsync(FloatLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAllAsync(FloatLiteralProperty floatLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(floatLiteralProperty, nameof(floatLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = floatLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAllAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="FloatLiteralProperty"/> to use. </param>
+        /// <param name="floatLiteralProperty"> Model with float literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="floatLiteralProperty"/> is null. </exception>
         /// <include file="Docs/FloatLiteral.xml" path="doc/members/member[@name='PutAll(FloatLiteralProperty,CancellationToken)']/*" />
-        public virtual Response PutAll(FloatLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutAll(FloatLiteralProperty floatLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(floatLiteralProperty, nameof(floatLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = floatLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutAll(content, context);
             return response;
@@ -333,30 +333,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="FloatLiteralProperty"/> to use. </param>
+        /// <param name="floatLiteralProperty"> Model with float literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="floatLiteralProperty"/> is null. </exception>
         /// <include file="Docs/FloatLiteral.xml" path="doc/members/member[@name='PutDefaultAsync(FloatLiteralProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutDefaultAsync(FloatLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutDefaultAsync(FloatLiteralProperty floatLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(floatLiteralProperty, nameof(floatLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = floatLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutDefaultAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="FloatLiteralProperty"/> to use. </param>
+        /// <param name="floatLiteralProperty"> Model with float literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="floatLiteralProperty"/> is null. </exception>
         /// <include file="Docs/FloatLiteral.xml" path="doc/members/member[@name='PutDefault(FloatLiteralProperty,CancellationToken)']/*" />
-        public virtual Response PutDefault(FloatLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutDefault(FloatLiteralProperty floatLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(floatLiteralProperty, nameof(floatLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = floatLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutDefault(content, context);
             return response;

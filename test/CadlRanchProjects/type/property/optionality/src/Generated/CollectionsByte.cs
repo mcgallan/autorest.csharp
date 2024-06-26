@@ -225,30 +225,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="CollectionsByteProperty"/> to use. </param>
+        /// <param name="collectionsByteProperty"> Model with collection bytes properties. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="collectionsByteProperty"/> is null. </exception>
         /// <include file="Docs/CollectionsByte.xml" path="doc/members/member[@name='PutAllAsync(CollectionsByteProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutAllAsync(CollectionsByteProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAllAsync(CollectionsByteProperty collectionsByteProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(collectionsByteProperty, nameof(collectionsByteProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = collectionsByteProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAllAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="CollectionsByteProperty"/> to use. </param>
+        /// <param name="collectionsByteProperty"> Model with collection bytes properties. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="collectionsByteProperty"/> is null. </exception>
         /// <include file="Docs/CollectionsByte.xml" path="doc/members/member[@name='PutAll(CollectionsByteProperty,CancellationToken)']/*" />
-        public virtual Response PutAll(CollectionsByteProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutAll(CollectionsByteProperty collectionsByteProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(collectionsByteProperty, nameof(collectionsByteProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = collectionsByteProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutAll(content, context);
             return response;
@@ -333,30 +333,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="CollectionsByteProperty"/> to use. </param>
+        /// <param name="collectionsByteProperty"> Model with collection bytes properties. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="collectionsByteProperty"/> is null. </exception>
         /// <include file="Docs/CollectionsByte.xml" path="doc/members/member[@name='PutDefaultAsync(CollectionsByteProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutDefaultAsync(CollectionsByteProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutDefaultAsync(CollectionsByteProperty collectionsByteProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(collectionsByteProperty, nameof(collectionsByteProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = collectionsByteProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutDefaultAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="CollectionsByteProperty"/> to use. </param>
+        /// <param name="collectionsByteProperty"> Model with collection bytes properties. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="collectionsByteProperty"/> is null. </exception>
         /// <include file="Docs/CollectionsByte.xml" path="doc/members/member[@name='PutDefault(CollectionsByteProperty,CancellationToken)']/*" />
-        public virtual Response PutDefault(CollectionsByteProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutDefault(CollectionsByteProperty collectionsByteProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(collectionsByteProperty, nameof(collectionsByteProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = collectionsByteProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutDefault(content, context);
             return response;

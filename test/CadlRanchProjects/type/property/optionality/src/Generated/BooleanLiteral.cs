@@ -225,30 +225,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="BooleanLiteralProperty"/> to use. </param>
+        /// <param name="booleanLiteralProperty"> Model with boolean literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="booleanLiteralProperty"/> is null. </exception>
         /// <include file="Docs/BooleanLiteral.xml" path="doc/members/member[@name='PutAllAsync(BooleanLiteralProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutAllAsync(BooleanLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAllAsync(BooleanLiteralProperty booleanLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(booleanLiteralProperty, nameof(booleanLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = booleanLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAllAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="BooleanLiteralProperty"/> to use. </param>
+        /// <param name="booleanLiteralProperty"> Model with boolean literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="booleanLiteralProperty"/> is null. </exception>
         /// <include file="Docs/BooleanLiteral.xml" path="doc/members/member[@name='PutAll(BooleanLiteralProperty,CancellationToken)']/*" />
-        public virtual Response PutAll(BooleanLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutAll(BooleanLiteralProperty booleanLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(booleanLiteralProperty, nameof(booleanLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = booleanLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutAll(content, context);
             return response;
@@ -333,30 +333,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="BooleanLiteralProperty"/> to use. </param>
+        /// <param name="booleanLiteralProperty"> Model with boolean literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="booleanLiteralProperty"/> is null. </exception>
         /// <include file="Docs/BooleanLiteral.xml" path="doc/members/member[@name='PutDefaultAsync(BooleanLiteralProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutDefaultAsync(BooleanLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutDefaultAsync(BooleanLiteralProperty booleanLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(booleanLiteralProperty, nameof(booleanLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = booleanLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutDefaultAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="BooleanLiteralProperty"/> to use. </param>
+        /// <param name="booleanLiteralProperty"> Model with boolean literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="booleanLiteralProperty"/> is null. </exception>
         /// <include file="Docs/BooleanLiteral.xml" path="doc/members/member[@name='PutDefault(BooleanLiteralProperty,CancellationToken)']/*" />
-        public virtual Response PutDefault(BooleanLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutDefault(BooleanLiteralProperty booleanLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(booleanLiteralProperty, nameof(booleanLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = booleanLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutDefault(content, context);
             return response;

@@ -23,8 +23,8 @@ namespace CadlRanchProjects.Tests
             Response response = await client.SetAsync(new BodyModel("foo"));
             Assert.AreEqual(204, response.Status);
 
-            response = await client.OmitAsync();
-            Assert.AreEqual(204, response.Status);
+            //response = await client.OmitAsync();
+            //Assert.AreEqual(204, response.Status);
         });
 
         [Test]

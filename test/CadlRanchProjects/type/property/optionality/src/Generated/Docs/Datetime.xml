@@ -151,18 +151,18 @@ This sample shows how to call PutAllAsync.
 <code><![CDATA[
 Datetime client = new OptionalClient().GetDatetimeClient();
 
-DatetimeProperty body = new DatetimeProperty();
-Response response = await client.PutAllAsync(body);
+DatetimeProperty datetimeProperty = new DatetimeProperty();
+Response response = await client.PutAllAsync(datetimeProperty);
 ]]></code>
 This sample shows how to call PutAllAsync with all parameters.
 <code><![CDATA[
 Datetime client = new OptionalClient().GetDatetimeClient();
 
-DatetimeProperty body = new DatetimeProperty
+DatetimeProperty datetimeProperty = new DatetimeProperty
 {
     Property = DateTimeOffset.Parse("2022-05-10T18:57:31.2311892Z"),
 };
-Response response = await client.PutAllAsync(body);
+Response response = await client.PutAllAsync(datetimeProperty);
 ]]></code></example>
     </member>
     <member name="PutAll(DatetimeProperty,CancellationToken)">
@@ -171,18 +171,18 @@ This sample shows how to call PutAll.
 <code><![CDATA[
 Datetime client = new OptionalClient().GetDatetimeClient();
 
-DatetimeProperty body = new DatetimeProperty();
-Response response = client.PutAll(body);
+DatetimeProperty datetimeProperty = new DatetimeProperty();
+Response response = client.PutAll(datetimeProperty);
 ]]></code>
 This sample shows how to call PutAll with all parameters.
 <code><![CDATA[
 Datetime client = new OptionalClient().GetDatetimeClient();
 
-DatetimeProperty body = new DatetimeProperty
+DatetimeProperty datetimeProperty = new DatetimeProperty
 {
     Property = DateTimeOffset.Parse("2022-05-10T18:57:31.2311892Z"),
 };
-Response response = client.PutAll(body);
+Response response = client.PutAll(datetimeProperty);
 ]]></code></example>
     </member>
     <member name="PutAllAsync(RequestContent,RequestContext)">
@@ -239,18 +239,18 @@ This sample shows how to call PutDefaultAsync.
 <code><![CDATA[
 Datetime client = new OptionalClient().GetDatetimeClient();
 
-DatetimeProperty body = new DatetimeProperty();
-Response response = await client.PutDefaultAsync(body);
+DatetimeProperty datetimeProperty = new DatetimeProperty();
+Response response = await client.PutDefaultAsync(datetimeProperty);
 ]]></code>
 This sample shows how to call PutDefaultAsync with all parameters.
 <code><![CDATA[
 Datetime client = new OptionalClient().GetDatetimeClient();
 
-DatetimeProperty body = new DatetimeProperty
+DatetimeProperty datetimeProperty = new DatetimeProperty
 {
     Property = DateTimeOffset.Parse("2022-05-10T18:57:31.2311892Z"),
 };
-Response response = await client.PutDefaultAsync(body);
+Response response = await client.PutDefaultAsync(datetimeProperty);
 ]]></code></example>
     </member>
     <member name="PutDefault(DatetimeProperty,CancellationToken)">
@@ -259,18 +259,18 @@ This sample shows how to call PutDefault.
 <code><![CDATA[
 Datetime client = new OptionalClient().GetDatetimeClient();
 
-DatetimeProperty body = new DatetimeProperty();
-Response response = client.PutDefault(body);
+DatetimeProperty datetimeProperty = new DatetimeProperty();
+Response response = client.PutDefault(datetimeProperty);
 ]]></code>
 This sample shows how to call PutDefault with all parameters.
 <code><![CDATA[
 Datetime client = new OptionalClient().GetDatetimeClient();
 
-DatetimeProperty body = new DatetimeProperty
+DatetimeProperty datetimeProperty = new DatetimeProperty
 {
     Property = DateTimeOffset.Parse("2022-05-10T18:57:31.2311892Z"),
 };
-Response response = client.PutDefault(body);
+Response response = client.PutDefault(datetimeProperty);
 ]]></code></example>
     </member>
     <member name="PutDefaultAsync(RequestContent,RequestContext)">

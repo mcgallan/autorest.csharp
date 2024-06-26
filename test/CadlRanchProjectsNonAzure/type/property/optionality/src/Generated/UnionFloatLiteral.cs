@@ -159,25 +159,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="UnionFloatLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutAllAsync(UnionFloatLiteralProperty body)
+        /// <param name="unionFloatLiteralProperty"> Model with union of float literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionFloatLiteralProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutAllAsync(UnionFloatLiteralProperty unionFloatLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionFloatLiteralProperty, nameof(unionFloatLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = unionFloatLiteralProperty.ToBinaryContent();
             ClientResult result = await PutAllAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="UnionFloatLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutAll(UnionFloatLiteralProperty body)
+        /// <param name="unionFloatLiteralProperty"> Model with union of float literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionFloatLiteralProperty"/> is null. </exception>
+        public virtual ClientResult PutAll(UnionFloatLiteralProperty unionFloatLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionFloatLiteralProperty, nameof(unionFloatLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = unionFloatLiteralProperty.ToBinaryContent();
             ClientResult result = PutAll(content, null);
             return result;
         }
@@ -239,25 +239,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="UnionFloatLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutDefaultAsync(UnionFloatLiteralProperty body)
+        /// <param name="unionFloatLiteralProperty"> Model with union of float literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionFloatLiteralProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutDefaultAsync(UnionFloatLiteralProperty unionFloatLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionFloatLiteralProperty, nameof(unionFloatLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = unionFloatLiteralProperty.ToBinaryContent();
             ClientResult result = await PutDefaultAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="UnionFloatLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutDefault(UnionFloatLiteralProperty body)
+        /// <param name="unionFloatLiteralProperty"> Model with union of float literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionFloatLiteralProperty"/> is null. </exception>
+        public virtual ClientResult PutDefault(UnionFloatLiteralProperty unionFloatLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionFloatLiteralProperty, nameof(unionFloatLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = unionFloatLiteralProperty.ToBinaryContent();
             ClientResult result = PutDefault(content, null);
             return result;
         }

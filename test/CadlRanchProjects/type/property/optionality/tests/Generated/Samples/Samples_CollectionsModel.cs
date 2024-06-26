@@ -216,8 +216,8 @@ namespace _Type.Property.Optionality.Samples
         {
             CollectionsModel client = new OptionalClient().GetCollectionsModelClient();
 
-            CollectionsModelProperty body = new CollectionsModelProperty();
-            Response response = client.PutAll(body);
+            CollectionsModelProperty collectionsModelProperty = new CollectionsModelProperty();
+            Response response = client.PutAll(collectionsModelProperty);
         }
 
         [Test]
@@ -226,8 +226,8 @@ namespace _Type.Property.Optionality.Samples
         {
             CollectionsModel client = new OptionalClient().GetCollectionsModelClient();
 
-            CollectionsModelProperty body = new CollectionsModelProperty();
-            Response response = await client.PutAllAsync(body);
+            CollectionsModelProperty collectionsModelProperty = new CollectionsModelProperty();
+            Response response = await client.PutAllAsync(collectionsModelProperty);
         }
 
         [Test]
@@ -278,14 +278,14 @@ property = "<property>",
         {
             CollectionsModel client = new OptionalClient().GetCollectionsModelClient();
 
-            CollectionsModelProperty body = new CollectionsModelProperty
+            CollectionsModelProperty collectionsModelProperty = new CollectionsModelProperty
             {
                 Property = {new StringProperty
 {
 Property = "<property>",
 }},
             };
-            Response response = client.PutAll(body);
+            Response response = client.PutAll(collectionsModelProperty);
         }
 
         [Test]
@@ -294,14 +294,14 @@ Property = "<property>",
         {
             CollectionsModel client = new OptionalClient().GetCollectionsModelClient();
 
-            CollectionsModelProperty body = new CollectionsModelProperty
+            CollectionsModelProperty collectionsModelProperty = new CollectionsModelProperty
             {
                 Property = {new StringProperty
 {
 Property = "<property>",
 }},
             };
-            Response response = await client.PutAllAsync(body);
+            Response response = await client.PutAllAsync(collectionsModelProperty);
         }
 
         [Test]
@@ -334,8 +334,8 @@ Property = "<property>",
         {
             CollectionsModel client = new OptionalClient().GetCollectionsModelClient();
 
-            CollectionsModelProperty body = new CollectionsModelProperty();
-            Response response = client.PutDefault(body);
+            CollectionsModelProperty collectionsModelProperty = new CollectionsModelProperty();
+            Response response = client.PutDefault(collectionsModelProperty);
         }
 
         [Test]
@@ -344,8 +344,8 @@ Property = "<property>",
         {
             CollectionsModel client = new OptionalClient().GetCollectionsModelClient();
 
-            CollectionsModelProperty body = new CollectionsModelProperty();
-            Response response = await client.PutDefaultAsync(body);
+            CollectionsModelProperty collectionsModelProperty = new CollectionsModelProperty();
+            Response response = await client.PutDefaultAsync(collectionsModelProperty);
         }
 
         [Test]
@@ -396,14 +396,14 @@ property = "<property>",
         {
             CollectionsModel client = new OptionalClient().GetCollectionsModelClient();
 
-            CollectionsModelProperty body = new CollectionsModelProperty
+            CollectionsModelProperty collectionsModelProperty = new CollectionsModelProperty
             {
                 Property = {new StringProperty
 {
 Property = "<property>",
 }},
             };
-            Response response = client.PutDefault(body);
+            Response response = client.PutDefault(collectionsModelProperty);
         }
 
         [Test]
@@ -412,14 +412,14 @@ Property = "<property>",
         {
             CollectionsModel client = new OptionalClient().GetCollectionsModelClient();
 
-            CollectionsModelProperty body = new CollectionsModelProperty
+            CollectionsModelProperty collectionsModelProperty = new CollectionsModelProperty
             {
                 Property = {new StringProperty
 {
 Property = "<property>",
 }},
             };
-            Response response = await client.PutDefaultAsync(body);
+            Response response = await client.PutDefaultAsync(collectionsModelProperty);
         }
     }
 }

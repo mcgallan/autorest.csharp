@@ -216,8 +216,8 @@ namespace _Type.Property.Optionality.Samples
         {
             CollectionsByte client = new OptionalClient().GetCollectionsByteClient();
 
-            CollectionsByteProperty body = new CollectionsByteProperty();
-            Response response = client.PutAll(body);
+            CollectionsByteProperty collectionsByteProperty = new CollectionsByteProperty();
+            Response response = client.PutAll(collectionsByteProperty);
         }
 
         [Test]
@@ -226,8 +226,8 @@ namespace _Type.Property.Optionality.Samples
         {
             CollectionsByte client = new OptionalClient().GetCollectionsByteClient();
 
-            CollectionsByteProperty body = new CollectionsByteProperty();
-            Response response = await client.PutAllAsync(body);
+            CollectionsByteProperty collectionsByteProperty = new CollectionsByteProperty();
+            Response response = await client.PutAllAsync(collectionsByteProperty);
         }
 
         [Test]
@@ -272,11 +272,11 @@ new object()
         {
             CollectionsByte client = new OptionalClient().GetCollectionsByteClient();
 
-            CollectionsByteProperty body = new CollectionsByteProperty
+            CollectionsByteProperty collectionsByteProperty = new CollectionsByteProperty
             {
                 Property = { BinaryData.FromObjectAsJson(new object()) },
             };
-            Response response = client.PutAll(body);
+            Response response = client.PutAll(collectionsByteProperty);
         }
 
         [Test]
@@ -285,11 +285,11 @@ new object()
         {
             CollectionsByte client = new OptionalClient().GetCollectionsByteClient();
 
-            CollectionsByteProperty body = new CollectionsByteProperty
+            CollectionsByteProperty collectionsByteProperty = new CollectionsByteProperty
             {
                 Property = { BinaryData.FromObjectAsJson(new object()) },
             };
-            Response response = await client.PutAllAsync(body);
+            Response response = await client.PutAllAsync(collectionsByteProperty);
         }
 
         [Test]
@@ -322,8 +322,8 @@ new object()
         {
             CollectionsByte client = new OptionalClient().GetCollectionsByteClient();
 
-            CollectionsByteProperty body = new CollectionsByteProperty();
-            Response response = client.PutDefault(body);
+            CollectionsByteProperty collectionsByteProperty = new CollectionsByteProperty();
+            Response response = client.PutDefault(collectionsByteProperty);
         }
 
         [Test]
@@ -332,8 +332,8 @@ new object()
         {
             CollectionsByte client = new OptionalClient().GetCollectionsByteClient();
 
-            CollectionsByteProperty body = new CollectionsByteProperty();
-            Response response = await client.PutDefaultAsync(body);
+            CollectionsByteProperty collectionsByteProperty = new CollectionsByteProperty();
+            Response response = await client.PutDefaultAsync(collectionsByteProperty);
         }
 
         [Test]
@@ -378,11 +378,11 @@ new object()
         {
             CollectionsByte client = new OptionalClient().GetCollectionsByteClient();
 
-            CollectionsByteProperty body = new CollectionsByteProperty
+            CollectionsByteProperty collectionsByteProperty = new CollectionsByteProperty
             {
                 Property = { BinaryData.FromObjectAsJson(new object()) },
             };
-            Response response = client.PutDefault(body);
+            Response response = client.PutDefault(collectionsByteProperty);
         }
 
         [Test]
@@ -391,11 +391,11 @@ new object()
         {
             CollectionsByte client = new OptionalClient().GetCollectionsByteClient();
 
-            CollectionsByteProperty body = new CollectionsByteProperty
+            CollectionsByteProperty collectionsByteProperty = new CollectionsByteProperty
             {
                 Property = { BinaryData.FromObjectAsJson(new object()) },
             };
-            Response response = await client.PutDefaultAsync(body);
+            Response response = await client.PutDefaultAsync(collectionsByteProperty);
         }
     }
 }

@@ -159,25 +159,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="BytesProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutAllAsync(BytesProperty body)
+        /// <param name="bytesProperty"> Template type for testing models with optional property. Pass in the type of the property you are looking for. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="bytesProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutAllAsync(BytesProperty bytesProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(bytesProperty, nameof(bytesProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = bytesProperty.ToBinaryContent();
             ClientResult result = await PutAllAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="BytesProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutAll(BytesProperty body)
+        /// <param name="bytesProperty"> Template type for testing models with optional property. Pass in the type of the property you are looking for. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="bytesProperty"/> is null. </exception>
+        public virtual ClientResult PutAll(BytesProperty bytesProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(bytesProperty, nameof(bytesProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = bytesProperty.ToBinaryContent();
             ClientResult result = PutAll(content, null);
             return result;
         }
@@ -239,25 +239,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="BytesProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutDefaultAsync(BytesProperty body)
+        /// <param name="bytesProperty"> Template type for testing models with optional property. Pass in the type of the property you are looking for. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="bytesProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutDefaultAsync(BytesProperty bytesProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(bytesProperty, nameof(bytesProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = bytesProperty.ToBinaryContent();
             ClientResult result = await PutDefaultAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="BytesProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutDefault(BytesProperty body)
+        /// <param name="bytesProperty"> Template type for testing models with optional property. Pass in the type of the property you are looking for. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="bytesProperty"/> is null. </exception>
+        public virtual ClientResult PutDefault(BytesProperty bytesProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(bytesProperty, nameof(bytesProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = bytesProperty.ToBinaryContent();
             ClientResult result = PutDefault(content, null);
             return result;
         }

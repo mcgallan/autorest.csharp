@@ -216,8 +216,8 @@ namespace _Type.Property.Optionality.Samples
         {
             FloatLiteral client = new OptionalClient().GetFloatLiteralClient();
 
-            FloatLiteralProperty body = new FloatLiteralProperty();
-            Response response = client.PutAll(body);
+            FloatLiteralProperty floatLiteralProperty = new FloatLiteralProperty();
+            Response response = client.PutAll(floatLiteralProperty);
         }
 
         [Test]
@@ -226,8 +226,8 @@ namespace _Type.Property.Optionality.Samples
         {
             FloatLiteral client = new OptionalClient().GetFloatLiteralClient();
 
-            FloatLiteralProperty body = new FloatLiteralProperty();
-            Response response = await client.PutAllAsync(body);
+            FloatLiteralProperty floatLiteralProperty = new FloatLiteralProperty();
+            Response response = await client.PutAllAsync(floatLiteralProperty);
         }
 
         [Test]
@@ -266,11 +266,11 @@ namespace _Type.Property.Optionality.Samples
         {
             FloatLiteral client = new OptionalClient().GetFloatLiteralClient();
 
-            FloatLiteralProperty body = new FloatLiteralProperty
+            FloatLiteralProperty floatLiteralProperty = new FloatLiteralProperty
             {
                 Property = FloatLiteralPropertyProperty._125,
             };
-            Response response = client.PutAll(body);
+            Response response = client.PutAll(floatLiteralProperty);
         }
 
         [Test]
@@ -279,11 +279,11 @@ namespace _Type.Property.Optionality.Samples
         {
             FloatLiteral client = new OptionalClient().GetFloatLiteralClient();
 
-            FloatLiteralProperty body = new FloatLiteralProperty
+            FloatLiteralProperty floatLiteralProperty = new FloatLiteralProperty
             {
                 Property = FloatLiteralPropertyProperty._125,
             };
-            Response response = await client.PutAllAsync(body);
+            Response response = await client.PutAllAsync(floatLiteralProperty);
         }
 
         [Test]
@@ -316,8 +316,8 @@ namespace _Type.Property.Optionality.Samples
         {
             FloatLiteral client = new OptionalClient().GetFloatLiteralClient();
 
-            FloatLiteralProperty body = new FloatLiteralProperty();
-            Response response = client.PutDefault(body);
+            FloatLiteralProperty floatLiteralProperty = new FloatLiteralProperty();
+            Response response = client.PutDefault(floatLiteralProperty);
         }
 
         [Test]
@@ -326,8 +326,8 @@ namespace _Type.Property.Optionality.Samples
         {
             FloatLiteral client = new OptionalClient().GetFloatLiteralClient();
 
-            FloatLiteralProperty body = new FloatLiteralProperty();
-            Response response = await client.PutDefaultAsync(body);
+            FloatLiteralProperty floatLiteralProperty = new FloatLiteralProperty();
+            Response response = await client.PutDefaultAsync(floatLiteralProperty);
         }
 
         [Test]
@@ -366,11 +366,11 @@ namespace _Type.Property.Optionality.Samples
         {
             FloatLiteral client = new OptionalClient().GetFloatLiteralClient();
 
-            FloatLiteralProperty body = new FloatLiteralProperty
+            FloatLiteralProperty floatLiteralProperty = new FloatLiteralProperty
             {
                 Property = FloatLiteralPropertyProperty._125,
             };
-            Response response = client.PutDefault(body);
+            Response response = client.PutDefault(floatLiteralProperty);
         }
 
         [Test]
@@ -379,11 +379,11 @@ namespace _Type.Property.Optionality.Samples
         {
             FloatLiteral client = new OptionalClient().GetFloatLiteralClient();
 
-            FloatLiteralProperty body = new FloatLiteralProperty
+            FloatLiteralProperty floatLiteralProperty = new FloatLiteralProperty
             {
                 Property = FloatLiteralPropertyProperty._125,
             };
-            Response response = await client.PutDefaultAsync(body);
+            Response response = await client.PutDefaultAsync(floatLiteralProperty);
         }
     }
 }

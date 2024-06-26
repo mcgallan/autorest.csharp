@@ -159,25 +159,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="StringLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutAllAsync(StringLiteralProperty body)
+        /// <param name="stringLiteralProperty"> Model with string literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="stringLiteralProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutAllAsync(StringLiteralProperty stringLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(stringLiteralProperty, nameof(stringLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = stringLiteralProperty.ToBinaryContent();
             ClientResult result = await PutAllAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="StringLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutAll(StringLiteralProperty body)
+        /// <param name="stringLiteralProperty"> Model with string literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="stringLiteralProperty"/> is null. </exception>
+        public virtual ClientResult PutAll(StringLiteralProperty stringLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(stringLiteralProperty, nameof(stringLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = stringLiteralProperty.ToBinaryContent();
             ClientResult result = PutAll(content, null);
             return result;
         }
@@ -239,25 +239,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="StringLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutDefaultAsync(StringLiteralProperty body)
+        /// <param name="stringLiteralProperty"> Model with string literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="stringLiteralProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutDefaultAsync(StringLiteralProperty stringLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(stringLiteralProperty, nameof(stringLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = stringLiteralProperty.ToBinaryContent();
             ClientResult result = await PutDefaultAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="StringLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutDefault(StringLiteralProperty body)
+        /// <param name="stringLiteralProperty"> Model with string literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="stringLiteralProperty"/> is null. </exception>
+        public virtual ClientResult PutDefault(StringLiteralProperty stringLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(stringLiteralProperty, nameof(stringLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = stringLiteralProperty.ToBinaryContent();
             ClientResult result = PutDefault(content, null);
             return result;
         }

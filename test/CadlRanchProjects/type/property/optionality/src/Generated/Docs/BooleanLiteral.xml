@@ -151,18 +151,18 @@ This sample shows how to call PutAllAsync.
 <code><![CDATA[
 BooleanLiteral client = new OptionalClient().GetBooleanLiteralClient();
 
-BooleanLiteralProperty body = new BooleanLiteralProperty();
-Response response = await client.PutAllAsync(body);
+BooleanLiteralProperty booleanLiteralProperty = new BooleanLiteralProperty();
+Response response = await client.PutAllAsync(booleanLiteralProperty);
 ]]></code>
 This sample shows how to call PutAllAsync with all parameters.
 <code><![CDATA[
 BooleanLiteral client = new OptionalClient().GetBooleanLiteralClient();
 
-BooleanLiteralProperty body = new BooleanLiteralProperty
+BooleanLiteralProperty booleanLiteralProperty = new BooleanLiteralProperty
 {
     Property = true,
 };
-Response response = await client.PutAllAsync(body);
+Response response = await client.PutAllAsync(booleanLiteralProperty);
 ]]></code></example>
     </member>
     <member name="PutAll(BooleanLiteralProperty,CancellationToken)">
@@ -171,18 +171,18 @@ This sample shows how to call PutAll.
 <code><![CDATA[
 BooleanLiteral client = new OptionalClient().GetBooleanLiteralClient();
 
-BooleanLiteralProperty body = new BooleanLiteralProperty();
-Response response = client.PutAll(body);
+BooleanLiteralProperty booleanLiteralProperty = new BooleanLiteralProperty();
+Response response = client.PutAll(booleanLiteralProperty);
 ]]></code>
 This sample shows how to call PutAll with all parameters.
 <code><![CDATA[
 BooleanLiteral client = new OptionalClient().GetBooleanLiteralClient();
 
-BooleanLiteralProperty body = new BooleanLiteralProperty
+BooleanLiteralProperty booleanLiteralProperty = new BooleanLiteralProperty
 {
     Property = true,
 };
-Response response = client.PutAll(body);
+Response response = client.PutAll(booleanLiteralProperty);
 ]]></code></example>
     </member>
     <member name="PutAllAsync(RequestContent,RequestContext)">
@@ -239,18 +239,18 @@ This sample shows how to call PutDefaultAsync.
 <code><![CDATA[
 BooleanLiteral client = new OptionalClient().GetBooleanLiteralClient();
 
-BooleanLiteralProperty body = new BooleanLiteralProperty();
-Response response = await client.PutDefaultAsync(body);
+BooleanLiteralProperty booleanLiteralProperty = new BooleanLiteralProperty();
+Response response = await client.PutDefaultAsync(booleanLiteralProperty);
 ]]></code>
 This sample shows how to call PutDefaultAsync with all parameters.
 <code><![CDATA[
 BooleanLiteral client = new OptionalClient().GetBooleanLiteralClient();
 
-BooleanLiteralProperty body = new BooleanLiteralProperty
+BooleanLiteralProperty booleanLiteralProperty = new BooleanLiteralProperty
 {
     Property = true,
 };
-Response response = await client.PutDefaultAsync(body);
+Response response = await client.PutDefaultAsync(booleanLiteralProperty);
 ]]></code></example>
     </member>
     <member name="PutDefault(BooleanLiteralProperty,CancellationToken)">
@@ -259,18 +259,18 @@ This sample shows how to call PutDefault.
 <code><![CDATA[
 BooleanLiteral client = new OptionalClient().GetBooleanLiteralClient();
 
-BooleanLiteralProperty body = new BooleanLiteralProperty();
-Response response = client.PutDefault(body);
+BooleanLiteralProperty booleanLiteralProperty = new BooleanLiteralProperty();
+Response response = client.PutDefault(booleanLiteralProperty);
 ]]></code>
 This sample shows how to call PutDefault with all parameters.
 <code><![CDATA[
 BooleanLiteral client = new OptionalClient().GetBooleanLiteralClient();
 
-BooleanLiteralProperty body = new BooleanLiteralProperty
+BooleanLiteralProperty booleanLiteralProperty = new BooleanLiteralProperty
 {
     Property = true,
 };
-Response response = client.PutDefault(body);
+Response response = client.PutDefault(booleanLiteralProperty);
 ]]></code></example>
     </member>
     <member name="PutDefaultAsync(RequestContent,RequestContext)">

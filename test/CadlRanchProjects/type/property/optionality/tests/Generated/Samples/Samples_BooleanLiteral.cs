@@ -216,8 +216,8 @@ namespace _Type.Property.Optionality.Samples
         {
             BooleanLiteral client = new OptionalClient().GetBooleanLiteralClient();
 
-            BooleanLiteralProperty body = new BooleanLiteralProperty();
-            Response response = client.PutAll(body);
+            BooleanLiteralProperty booleanLiteralProperty = new BooleanLiteralProperty();
+            Response response = client.PutAll(booleanLiteralProperty);
         }
 
         [Test]
@@ -226,8 +226,8 @@ namespace _Type.Property.Optionality.Samples
         {
             BooleanLiteral client = new OptionalClient().GetBooleanLiteralClient();
 
-            BooleanLiteralProperty body = new BooleanLiteralProperty();
-            Response response = await client.PutAllAsync(body);
+            BooleanLiteralProperty booleanLiteralProperty = new BooleanLiteralProperty();
+            Response response = await client.PutAllAsync(booleanLiteralProperty);
         }
 
         [Test]
@@ -266,11 +266,11 @@ namespace _Type.Property.Optionality.Samples
         {
             BooleanLiteral client = new OptionalClient().GetBooleanLiteralClient();
 
-            BooleanLiteralProperty body = new BooleanLiteralProperty
+            BooleanLiteralProperty booleanLiteralProperty = new BooleanLiteralProperty
             {
                 Property = true,
             };
-            Response response = client.PutAll(body);
+            Response response = client.PutAll(booleanLiteralProperty);
         }
 
         [Test]
@@ -279,11 +279,11 @@ namespace _Type.Property.Optionality.Samples
         {
             BooleanLiteral client = new OptionalClient().GetBooleanLiteralClient();
 
-            BooleanLiteralProperty body = new BooleanLiteralProperty
+            BooleanLiteralProperty booleanLiteralProperty = new BooleanLiteralProperty
             {
                 Property = true,
             };
-            Response response = await client.PutAllAsync(body);
+            Response response = await client.PutAllAsync(booleanLiteralProperty);
         }
 
         [Test]
@@ -316,8 +316,8 @@ namespace _Type.Property.Optionality.Samples
         {
             BooleanLiteral client = new OptionalClient().GetBooleanLiteralClient();
 
-            BooleanLiteralProperty body = new BooleanLiteralProperty();
-            Response response = client.PutDefault(body);
+            BooleanLiteralProperty booleanLiteralProperty = new BooleanLiteralProperty();
+            Response response = client.PutDefault(booleanLiteralProperty);
         }
 
         [Test]
@@ -326,8 +326,8 @@ namespace _Type.Property.Optionality.Samples
         {
             BooleanLiteral client = new OptionalClient().GetBooleanLiteralClient();
 
-            BooleanLiteralProperty body = new BooleanLiteralProperty();
-            Response response = await client.PutDefaultAsync(body);
+            BooleanLiteralProperty booleanLiteralProperty = new BooleanLiteralProperty();
+            Response response = await client.PutDefaultAsync(booleanLiteralProperty);
         }
 
         [Test]
@@ -366,11 +366,11 @@ namespace _Type.Property.Optionality.Samples
         {
             BooleanLiteral client = new OptionalClient().GetBooleanLiteralClient();
 
-            BooleanLiteralProperty body = new BooleanLiteralProperty
+            BooleanLiteralProperty booleanLiteralProperty = new BooleanLiteralProperty
             {
                 Property = true,
             };
-            Response response = client.PutDefault(body);
+            Response response = client.PutDefault(booleanLiteralProperty);
         }
 
         [Test]
@@ -379,11 +379,11 @@ namespace _Type.Property.Optionality.Samples
         {
             BooleanLiteral client = new OptionalClient().GetBooleanLiteralClient();
 
-            BooleanLiteralProperty body = new BooleanLiteralProperty
+            BooleanLiteralProperty booleanLiteralProperty = new BooleanLiteralProperty
             {
                 Property = true,
             };
-            Response response = await client.PutDefaultAsync(body);
+            Response response = await client.PutDefaultAsync(booleanLiteralProperty);
         }
     }
 }

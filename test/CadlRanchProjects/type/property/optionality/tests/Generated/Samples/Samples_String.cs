@@ -216,8 +216,8 @@ namespace _Type.Property.Optionality.Samples
         {
             String client = new OptionalClient().GetStringClient();
 
-            StringProperty body = new StringProperty();
-            Response response = client.PutAll(body);
+            StringProperty stringProperty = new StringProperty();
+            Response response = client.PutAll(stringProperty);
         }
 
         [Test]
@@ -226,8 +226,8 @@ namespace _Type.Property.Optionality.Samples
         {
             String client = new OptionalClient().GetStringClient();
 
-            StringProperty body = new StringProperty();
-            Response response = await client.PutAllAsync(body);
+            StringProperty stringProperty = new StringProperty();
+            Response response = await client.PutAllAsync(stringProperty);
         }
 
         [Test]
@@ -266,11 +266,11 @@ namespace _Type.Property.Optionality.Samples
         {
             String client = new OptionalClient().GetStringClient();
 
-            StringProperty body = new StringProperty
+            StringProperty stringProperty = new StringProperty
             {
                 Property = "<property>",
             };
-            Response response = client.PutAll(body);
+            Response response = client.PutAll(stringProperty);
         }
 
         [Test]
@@ -279,11 +279,11 @@ namespace _Type.Property.Optionality.Samples
         {
             String client = new OptionalClient().GetStringClient();
 
-            StringProperty body = new StringProperty
+            StringProperty stringProperty = new StringProperty
             {
                 Property = "<property>",
             };
-            Response response = await client.PutAllAsync(body);
+            Response response = await client.PutAllAsync(stringProperty);
         }
 
         [Test]
@@ -316,8 +316,8 @@ namespace _Type.Property.Optionality.Samples
         {
             String client = new OptionalClient().GetStringClient();
 
-            StringProperty body = new StringProperty();
-            Response response = client.PutDefault(body);
+            StringProperty stringProperty = new StringProperty();
+            Response response = client.PutDefault(stringProperty);
         }
 
         [Test]
@@ -326,8 +326,8 @@ namespace _Type.Property.Optionality.Samples
         {
             String client = new OptionalClient().GetStringClient();
 
-            StringProperty body = new StringProperty();
-            Response response = await client.PutDefaultAsync(body);
+            StringProperty stringProperty = new StringProperty();
+            Response response = await client.PutDefaultAsync(stringProperty);
         }
 
         [Test]
@@ -366,11 +366,11 @@ namespace _Type.Property.Optionality.Samples
         {
             String client = new OptionalClient().GetStringClient();
 
-            StringProperty body = new StringProperty
+            StringProperty stringProperty = new StringProperty
             {
                 Property = "<property>",
             };
-            Response response = client.PutDefault(body);
+            Response response = client.PutDefault(stringProperty);
         }
 
         [Test]
@@ -379,11 +379,11 @@ namespace _Type.Property.Optionality.Samples
         {
             String client = new OptionalClient().GetStringClient();
 
-            StringProperty body = new StringProperty
+            StringProperty stringProperty = new StringProperty
             {
                 Property = "<property>",
             };
-            Response response = await client.PutDefaultAsync(body);
+            Response response = await client.PutDefaultAsync(stringProperty);
         }
     }
 }

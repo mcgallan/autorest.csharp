@@ -7,14 +7,15 @@ This sample shows how to call SetAsync.
 <code><![CDATA[
 OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-Response response = await client.SetAsync();
+BodyModel bodyModel = new BodyModel("<name>");
+Response response = await client.SetAsync(bodyModel);
 ]]></code>
 This sample shows how to call SetAsync with all parameters.
 <code><![CDATA[
 OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-BodyModel body = new BodyModel("<name>");
-Response response = await client.SetAsync(body: body);
+BodyModel bodyModel = new BodyModel("<name>");
+Response response = await client.SetAsync(bodyModel);
 ]]></code></example>
     </member>
     <member name="Set(BodyModel,CancellationToken)">
@@ -23,14 +24,15 @@ This sample shows how to call Set.
 <code><![CDATA[
 OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-Response response = client.Set();
+BodyModel bodyModel = new BodyModel("<name>");
+Response response = client.Set(bodyModel);
 ]]></code>
 This sample shows how to call Set with all parameters.
 <code><![CDATA[
 OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-BodyModel body = new BodyModel("<name>");
-Response response = client.Set(body: body);
+BodyModel bodyModel = new BodyModel("<name>");
+Response response = client.Set(bodyModel);
 ]]></code></example>
     </member>
     <member name="SetAsync(RequestContent,RequestContext)">
@@ -39,7 +41,10 @@ This sample shows how to call SetAsync.
 <code><![CDATA[
 OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-using RequestContent content = null;
+using RequestContent content = RequestContent.Create(new
+{
+    name = "<name>",
+});
 Response response = await client.SetAsync(content);
 
 Console.WriteLine(response.Status);
@@ -63,7 +68,10 @@ This sample shows how to call Set.
 <code><![CDATA[
 OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-using RequestContent content = null;
+using RequestContent content = RequestContent.Create(new
+{
+    name = "<name>",
+});
 Response response = client.Set(content);
 
 Console.WriteLine(response.Status);
@@ -87,14 +95,15 @@ This sample shows how to call OmitAsync.
 <code><![CDATA[
 OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-Response response = await client.OmitAsync();
+BodyModel bodyModel = new BodyModel("<name>");
+Response response = await client.OmitAsync(bodyModel);
 ]]></code>
 This sample shows how to call OmitAsync with all parameters.
 <code><![CDATA[
 OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-BodyModel body = new BodyModel("<name>");
-Response response = await client.OmitAsync(body: body);
+BodyModel bodyModel = new BodyModel("<name>");
+Response response = await client.OmitAsync(bodyModel);
 ]]></code></example>
     </member>
     <member name="Omit(BodyModel,CancellationToken)">
@@ -103,14 +112,15 @@ This sample shows how to call Omit.
 <code><![CDATA[
 OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-Response response = client.Omit();
+BodyModel bodyModel = new BodyModel("<name>");
+Response response = client.Omit(bodyModel);
 ]]></code>
 This sample shows how to call Omit with all parameters.
 <code><![CDATA[
 OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-BodyModel body = new BodyModel("<name>");
-Response response = client.Omit(body: body);
+BodyModel bodyModel = new BodyModel("<name>");
+Response response = client.Omit(bodyModel);
 ]]></code></example>
     </member>
     <member name="OmitAsync(RequestContent,RequestContext)">
@@ -119,7 +129,10 @@ This sample shows how to call OmitAsync.
 <code><![CDATA[
 OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-using RequestContent content = null;
+using RequestContent content = RequestContent.Create(new
+{
+    name = "<name>",
+});
 Response response = await client.OmitAsync(content);
 
 Console.WriteLine(response.Status);
@@ -143,7 +156,10 @@ This sample shows how to call Omit.
 <code><![CDATA[
 OptionalExplicit client = new BodyOptionalityClient().GetOptionalExplicitClient();
 
-using RequestContent content = null;
+using RequestContent content = RequestContent.Create(new
+{
+    name = "<name>",
+});
 Response response = client.Omit(content);
 
 Console.WriteLine(response.Status);

@@ -225,30 +225,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="CollectionsModelProperty"/> to use. </param>
+        /// <param name="collectionsModelProperty"> Model with collection models properties. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="collectionsModelProperty"/> is null. </exception>
         /// <include file="Docs/CollectionsModel.xml" path="doc/members/member[@name='PutAllAsync(CollectionsModelProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutAllAsync(CollectionsModelProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAllAsync(CollectionsModelProperty collectionsModelProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(collectionsModelProperty, nameof(collectionsModelProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = collectionsModelProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAllAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="CollectionsModelProperty"/> to use. </param>
+        /// <param name="collectionsModelProperty"> Model with collection models properties. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="collectionsModelProperty"/> is null. </exception>
         /// <include file="Docs/CollectionsModel.xml" path="doc/members/member[@name='PutAll(CollectionsModelProperty,CancellationToken)']/*" />
-        public virtual Response PutAll(CollectionsModelProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutAll(CollectionsModelProperty collectionsModelProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(collectionsModelProperty, nameof(collectionsModelProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = collectionsModelProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutAll(content, context);
             return response;
@@ -333,30 +333,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="CollectionsModelProperty"/> to use. </param>
+        /// <param name="collectionsModelProperty"> Model with collection models properties. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="collectionsModelProperty"/> is null. </exception>
         /// <include file="Docs/CollectionsModel.xml" path="doc/members/member[@name='PutDefaultAsync(CollectionsModelProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutDefaultAsync(CollectionsModelProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutDefaultAsync(CollectionsModelProperty collectionsModelProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(collectionsModelProperty, nameof(collectionsModelProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = collectionsModelProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutDefaultAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="CollectionsModelProperty"/> to use. </param>
+        /// <param name="collectionsModelProperty"> Model with collection models properties. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="collectionsModelProperty"/> is null. </exception>
         /// <include file="Docs/CollectionsModel.xml" path="doc/members/member[@name='PutDefault(CollectionsModelProperty,CancellationToken)']/*" />
-        public virtual Response PutDefault(CollectionsModelProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutDefault(CollectionsModelProperty collectionsModelProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(collectionsModelProperty, nameof(collectionsModelProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = collectionsModelProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutDefault(content, context);
             return response;

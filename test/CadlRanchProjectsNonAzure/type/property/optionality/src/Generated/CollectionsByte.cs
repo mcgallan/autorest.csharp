@@ -159,25 +159,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="CollectionsByteProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutAllAsync(CollectionsByteProperty body)
+        /// <param name="collectionsByteProperty"> Model with collection bytes properties. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="collectionsByteProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutAllAsync(CollectionsByteProperty collectionsByteProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(collectionsByteProperty, nameof(collectionsByteProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = collectionsByteProperty.ToBinaryContent();
             ClientResult result = await PutAllAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="CollectionsByteProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutAll(CollectionsByteProperty body)
+        /// <param name="collectionsByteProperty"> Model with collection bytes properties. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="collectionsByteProperty"/> is null. </exception>
+        public virtual ClientResult PutAll(CollectionsByteProperty collectionsByteProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(collectionsByteProperty, nameof(collectionsByteProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = collectionsByteProperty.ToBinaryContent();
             ClientResult result = PutAll(content, null);
             return result;
         }
@@ -239,25 +239,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="CollectionsByteProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutDefaultAsync(CollectionsByteProperty body)
+        /// <param name="collectionsByteProperty"> Model with collection bytes properties. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="collectionsByteProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutDefaultAsync(CollectionsByteProperty collectionsByteProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(collectionsByteProperty, nameof(collectionsByteProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = collectionsByteProperty.ToBinaryContent();
             ClientResult result = await PutDefaultAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="CollectionsByteProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutDefault(CollectionsByteProperty body)
+        /// <param name="collectionsByteProperty"> Model with collection bytes properties. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="collectionsByteProperty"/> is null. </exception>
+        public virtual ClientResult PutDefault(CollectionsByteProperty collectionsByteProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(collectionsByteProperty, nameof(collectionsByteProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = collectionsByteProperty.ToBinaryContent();
             ClientResult result = PutDefault(content, null);
             return result;
         }

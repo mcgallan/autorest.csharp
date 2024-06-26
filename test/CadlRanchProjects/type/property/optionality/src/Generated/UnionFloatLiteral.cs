@@ -225,30 +225,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="UnionFloatLiteralProperty"/> to use. </param>
+        /// <param name="unionFloatLiteralProperty"> Model with union of float literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionFloatLiteralProperty"/> is null. </exception>
         /// <include file="Docs/UnionFloatLiteral.xml" path="doc/members/member[@name='PutAllAsync(UnionFloatLiteralProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutAllAsync(UnionFloatLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAllAsync(UnionFloatLiteralProperty unionFloatLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionFloatLiteralProperty, nameof(unionFloatLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = unionFloatLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAllAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="UnionFloatLiteralProperty"/> to use. </param>
+        /// <param name="unionFloatLiteralProperty"> Model with union of float literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionFloatLiteralProperty"/> is null. </exception>
         /// <include file="Docs/UnionFloatLiteral.xml" path="doc/members/member[@name='PutAll(UnionFloatLiteralProperty,CancellationToken)']/*" />
-        public virtual Response PutAll(UnionFloatLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutAll(UnionFloatLiteralProperty unionFloatLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionFloatLiteralProperty, nameof(unionFloatLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = unionFloatLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutAll(content, context);
             return response;
@@ -333,30 +333,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="UnionFloatLiteralProperty"/> to use. </param>
+        /// <param name="unionFloatLiteralProperty"> Model with union of float literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionFloatLiteralProperty"/> is null. </exception>
         /// <include file="Docs/UnionFloatLiteral.xml" path="doc/members/member[@name='PutDefaultAsync(UnionFloatLiteralProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutDefaultAsync(UnionFloatLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutDefaultAsync(UnionFloatLiteralProperty unionFloatLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionFloatLiteralProperty, nameof(unionFloatLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = unionFloatLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutDefaultAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="UnionFloatLiteralProperty"/> to use. </param>
+        /// <param name="unionFloatLiteralProperty"> Model with union of float literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionFloatLiteralProperty"/> is null. </exception>
         /// <include file="Docs/UnionFloatLiteral.xml" path="doc/members/member[@name='PutDefault(UnionFloatLiteralProperty,CancellationToken)']/*" />
-        public virtual Response PutDefault(UnionFloatLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutDefault(UnionFloatLiteralProperty unionFloatLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionFloatLiteralProperty, nameof(unionFloatLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = unionFloatLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutDefault(content, context);
             return response;

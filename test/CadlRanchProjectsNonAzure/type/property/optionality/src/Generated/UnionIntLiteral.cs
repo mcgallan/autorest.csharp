@@ -159,25 +159,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="UnionIntLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutAllAsync(UnionIntLiteralProperty body)
+        /// <param name="unionIntLiteralProperty"> Model with union of int literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionIntLiteralProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutAllAsync(UnionIntLiteralProperty unionIntLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionIntLiteralProperty, nameof(unionIntLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = unionIntLiteralProperty.ToBinaryContent();
             ClientResult result = await PutAllAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="UnionIntLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutAll(UnionIntLiteralProperty body)
+        /// <param name="unionIntLiteralProperty"> Model with union of int literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionIntLiteralProperty"/> is null. </exception>
+        public virtual ClientResult PutAll(UnionIntLiteralProperty unionIntLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionIntLiteralProperty, nameof(unionIntLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = unionIntLiteralProperty.ToBinaryContent();
             ClientResult result = PutAll(content, null);
             return result;
         }
@@ -239,25 +239,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="UnionIntLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutDefaultAsync(UnionIntLiteralProperty body)
+        /// <param name="unionIntLiteralProperty"> Model with union of int literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionIntLiteralProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutDefaultAsync(UnionIntLiteralProperty unionIntLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionIntLiteralProperty, nameof(unionIntLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = unionIntLiteralProperty.ToBinaryContent();
             ClientResult result = await PutDefaultAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="UnionIntLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutDefault(UnionIntLiteralProperty body)
+        /// <param name="unionIntLiteralProperty"> Model with union of int literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionIntLiteralProperty"/> is null. </exception>
+        public virtual ClientResult PutDefault(UnionIntLiteralProperty unionIntLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionIntLiteralProperty, nameof(unionIntLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = unionIntLiteralProperty.ToBinaryContent();
             ClientResult result = PutDefault(content, null);
             return result;
         }

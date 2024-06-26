@@ -216,8 +216,8 @@ namespace _Type.Property.Optionality.Samples
         {
             IntLiteral client = new OptionalClient().GetIntLiteralClient();
 
-            IntLiteralProperty body = new IntLiteralProperty();
-            Response response = client.PutAll(body);
+            IntLiteralProperty intLiteralProperty = new IntLiteralProperty();
+            Response response = client.PutAll(intLiteralProperty);
         }
 
         [Test]
@@ -226,8 +226,8 @@ namespace _Type.Property.Optionality.Samples
         {
             IntLiteral client = new OptionalClient().GetIntLiteralClient();
 
-            IntLiteralProperty body = new IntLiteralProperty();
-            Response response = await client.PutAllAsync(body);
+            IntLiteralProperty intLiteralProperty = new IntLiteralProperty();
+            Response response = await client.PutAllAsync(intLiteralProperty);
         }
 
         [Test]
@@ -266,11 +266,11 @@ namespace _Type.Property.Optionality.Samples
         {
             IntLiteral client = new OptionalClient().GetIntLiteralClient();
 
-            IntLiteralProperty body = new IntLiteralProperty
+            IntLiteralProperty intLiteralProperty = new IntLiteralProperty
             {
                 Property = IntLiteralPropertyProperty._1,
             };
-            Response response = client.PutAll(body);
+            Response response = client.PutAll(intLiteralProperty);
         }
 
         [Test]
@@ -279,11 +279,11 @@ namespace _Type.Property.Optionality.Samples
         {
             IntLiteral client = new OptionalClient().GetIntLiteralClient();
 
-            IntLiteralProperty body = new IntLiteralProperty
+            IntLiteralProperty intLiteralProperty = new IntLiteralProperty
             {
                 Property = IntLiteralPropertyProperty._1,
             };
-            Response response = await client.PutAllAsync(body);
+            Response response = await client.PutAllAsync(intLiteralProperty);
         }
 
         [Test]
@@ -316,8 +316,8 @@ namespace _Type.Property.Optionality.Samples
         {
             IntLiteral client = new OptionalClient().GetIntLiteralClient();
 
-            IntLiteralProperty body = new IntLiteralProperty();
-            Response response = client.PutDefault(body);
+            IntLiteralProperty intLiteralProperty = new IntLiteralProperty();
+            Response response = client.PutDefault(intLiteralProperty);
         }
 
         [Test]
@@ -326,8 +326,8 @@ namespace _Type.Property.Optionality.Samples
         {
             IntLiteral client = new OptionalClient().GetIntLiteralClient();
 
-            IntLiteralProperty body = new IntLiteralProperty();
-            Response response = await client.PutDefaultAsync(body);
+            IntLiteralProperty intLiteralProperty = new IntLiteralProperty();
+            Response response = await client.PutDefaultAsync(intLiteralProperty);
         }
 
         [Test]
@@ -366,11 +366,11 @@ namespace _Type.Property.Optionality.Samples
         {
             IntLiteral client = new OptionalClient().GetIntLiteralClient();
 
-            IntLiteralProperty body = new IntLiteralProperty
+            IntLiteralProperty intLiteralProperty = new IntLiteralProperty
             {
                 Property = IntLiteralPropertyProperty._1,
             };
-            Response response = client.PutDefault(body);
+            Response response = client.PutDefault(intLiteralProperty);
         }
 
         [Test]
@@ -379,11 +379,11 @@ namespace _Type.Property.Optionality.Samples
         {
             IntLiteral client = new OptionalClient().GetIntLiteralClient();
 
-            IntLiteralProperty body = new IntLiteralProperty
+            IntLiteralProperty intLiteralProperty = new IntLiteralProperty
             {
                 Property = IntLiteralPropertyProperty._1,
             };
-            Response response = await client.PutDefaultAsync(body);
+            Response response = await client.PutDefaultAsync(intLiteralProperty);
         }
     }
 }

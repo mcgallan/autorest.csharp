@@ -225,30 +225,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="StringLiteralProperty"/> to use. </param>
+        /// <param name="stringLiteralProperty"> Model with string literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="stringLiteralProperty"/> is null. </exception>
         /// <include file="Docs/StringLiteral.xml" path="doc/members/member[@name='PutAllAsync(StringLiteralProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutAllAsync(StringLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAllAsync(StringLiteralProperty stringLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(stringLiteralProperty, nameof(stringLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = stringLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAllAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="StringLiteralProperty"/> to use. </param>
+        /// <param name="stringLiteralProperty"> Model with string literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="stringLiteralProperty"/> is null. </exception>
         /// <include file="Docs/StringLiteral.xml" path="doc/members/member[@name='PutAll(StringLiteralProperty,CancellationToken)']/*" />
-        public virtual Response PutAll(StringLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutAll(StringLiteralProperty stringLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(stringLiteralProperty, nameof(stringLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = stringLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutAll(content, context);
             return response;
@@ -333,30 +333,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="StringLiteralProperty"/> to use. </param>
+        /// <param name="stringLiteralProperty"> Model with string literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="stringLiteralProperty"/> is null. </exception>
         /// <include file="Docs/StringLiteral.xml" path="doc/members/member[@name='PutDefaultAsync(StringLiteralProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutDefaultAsync(StringLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutDefaultAsync(StringLiteralProperty stringLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(stringLiteralProperty, nameof(stringLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = stringLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutDefaultAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="StringLiteralProperty"/> to use. </param>
+        /// <param name="stringLiteralProperty"> Model with string literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="stringLiteralProperty"/> is null. </exception>
         /// <include file="Docs/StringLiteral.xml" path="doc/members/member[@name='PutDefault(StringLiteralProperty,CancellationToken)']/*" />
-        public virtual Response PutDefault(StringLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutDefault(StringLiteralProperty stringLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(stringLiteralProperty, nameof(stringLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = stringLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutDefault(content, context);
             return response;

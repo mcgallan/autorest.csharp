@@ -35,19 +35,25 @@ namespace Scm.Parameters.BodyOptionality
         }
 
         /// <summary> Set. </summary>
-        /// <param name="body"> The <see cref="BodyModel"/> to use. </param>
-        public virtual async Task<ClientResult> SetAsync(BodyModel body = null)
+        /// <param name="bodyModel"> The <see cref="BodyModel"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="bodyModel"/> is null. </exception>
+        public virtual async Task<ClientResult> SetAsync(BodyModel bodyModel)
         {
-            using BinaryContent content = body?.ToBinaryContent();
+            Argument.AssertNotNull(bodyModel, nameof(bodyModel));
+
+            using BinaryContent content = bodyModel.ToBinaryContent();
             ClientResult result = await SetAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Set. </summary>
-        /// <param name="body"> The <see cref="BodyModel"/> to use. </param>
-        public virtual ClientResult Set(BodyModel body = null)
+        /// <param name="bodyModel"> The <see cref="BodyModel"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="bodyModel"/> is null. </exception>
+        public virtual ClientResult Set(BodyModel bodyModel)
         {
-            using BinaryContent content = body?.ToBinaryContent();
+            Argument.AssertNotNull(bodyModel, nameof(bodyModel));
+
+            using BinaryContent content = bodyModel.ToBinaryContent();
             ClientResult result = Set(content, null);
             return result;
         }
@@ -69,10 +75,13 @@ namespace Scm.Parameters.BodyOptionality
         /// </summary>
         /// <param name="content"> The content to send as the body of the request. </param>
         /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
         /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
         /// <returns> The response returned from the service. </returns>
         public virtual async Task<ClientResult> SetAsync(BinaryContent content, RequestOptions options = null)
         {
+            Argument.AssertNotNull(content, nameof(content));
+
             using PipelineMessage message = CreateSetRequest(content, options);
             return ClientResult.FromResponse(await _pipeline.ProcessMessageAsync(message, options).ConfigureAwait(false));
         }
@@ -94,28 +103,37 @@ namespace Scm.Parameters.BodyOptionality
         /// </summary>
         /// <param name="content"> The content to send as the body of the request. </param>
         /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
         /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
         /// <returns> The response returned from the service. </returns>
         public virtual ClientResult Set(BinaryContent content, RequestOptions options = null)
         {
+            Argument.AssertNotNull(content, nameof(content));
+
             using PipelineMessage message = CreateSetRequest(content, options);
             return ClientResult.FromResponse(_pipeline.ProcessMessage(message, options));
         }
 
         /// <summary> Omit. </summary>
-        /// <param name="body"> The <see cref="BodyModel"/> to use. </param>
-        public virtual async Task<ClientResult> OmitAsync(BodyModel body = null)
+        /// <param name="bodyModel"> The <see cref="BodyModel"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="bodyModel"/> is null. </exception>
+        public virtual async Task<ClientResult> OmitAsync(BodyModel bodyModel)
         {
-            using BinaryContent content = body?.ToBinaryContent();
+            Argument.AssertNotNull(bodyModel, nameof(bodyModel));
+
+            using BinaryContent content = bodyModel.ToBinaryContent();
             ClientResult result = await OmitAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Omit. </summary>
-        /// <param name="body"> The <see cref="BodyModel"/> to use. </param>
-        public virtual ClientResult Omit(BodyModel body = null)
+        /// <param name="bodyModel"> The <see cref="BodyModel"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="bodyModel"/> is null. </exception>
+        public virtual ClientResult Omit(BodyModel bodyModel)
         {
-            using BinaryContent content = body?.ToBinaryContent();
+            Argument.AssertNotNull(bodyModel, nameof(bodyModel));
+
+            using BinaryContent content = bodyModel.ToBinaryContent();
             ClientResult result = Omit(content, null);
             return result;
         }
@@ -137,10 +155,13 @@ namespace Scm.Parameters.BodyOptionality
         /// </summary>
         /// <param name="content"> The content to send as the body of the request. </param>
         /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
         /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
         /// <returns> The response returned from the service. </returns>
         public virtual async Task<ClientResult> OmitAsync(BinaryContent content, RequestOptions options = null)
         {
+            Argument.AssertNotNull(content, nameof(content));
+
             using PipelineMessage message = CreateOmitRequest(content, options);
             return ClientResult.FromResponse(await _pipeline.ProcessMessageAsync(message, options).ConfigureAwait(false));
         }
@@ -162,10 +183,13 @@ namespace Scm.Parameters.BodyOptionality
         /// </summary>
         /// <param name="content"> The content to send as the body of the request. </param>
         /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
         /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
         /// <returns> The response returned from the service. </returns>
         public virtual ClientResult Omit(BinaryContent content, RequestOptions options = null)
         {
+            Argument.AssertNotNull(content, nameof(content));
+
             using PipelineMessage message = CreateOmitRequest(content, options);
             return ClientResult.FromResponse(_pipeline.ProcessMessage(message, options));
         }

@@ -216,8 +216,8 @@ namespace _Type.Property.Optionality.Samples
         {
             StringLiteral client = new OptionalClient().GetStringLiteralClient();
 
-            StringLiteralProperty body = new StringLiteralProperty();
-            Response response = client.PutAll(body);
+            StringLiteralProperty stringLiteralProperty = new StringLiteralProperty();
+            Response response = client.PutAll(stringLiteralProperty);
         }
 
         [Test]
@@ -226,8 +226,8 @@ namespace _Type.Property.Optionality.Samples
         {
             StringLiteral client = new OptionalClient().GetStringLiteralClient();
 
-            StringLiteralProperty body = new StringLiteralProperty();
-            Response response = await client.PutAllAsync(body);
+            StringLiteralProperty stringLiteralProperty = new StringLiteralProperty();
+            Response response = await client.PutAllAsync(stringLiteralProperty);
         }
 
         [Test]
@@ -266,11 +266,11 @@ namespace _Type.Property.Optionality.Samples
         {
             StringLiteral client = new OptionalClient().GetStringLiteralClient();
 
-            StringLiteralProperty body = new StringLiteralProperty
+            StringLiteralProperty stringLiteralProperty = new StringLiteralProperty
             {
                 Property = StringLiteralPropertyProperty.Hello,
             };
-            Response response = client.PutAll(body);
+            Response response = client.PutAll(stringLiteralProperty);
         }
 
         [Test]
@@ -279,11 +279,11 @@ namespace _Type.Property.Optionality.Samples
         {
             StringLiteral client = new OptionalClient().GetStringLiteralClient();
 
-            StringLiteralProperty body = new StringLiteralProperty
+            StringLiteralProperty stringLiteralProperty = new StringLiteralProperty
             {
                 Property = StringLiteralPropertyProperty.Hello,
             };
-            Response response = await client.PutAllAsync(body);
+            Response response = await client.PutAllAsync(stringLiteralProperty);
         }
 
         [Test]
@@ -316,8 +316,8 @@ namespace _Type.Property.Optionality.Samples
         {
             StringLiteral client = new OptionalClient().GetStringLiteralClient();
 
-            StringLiteralProperty body = new StringLiteralProperty();
-            Response response = client.PutDefault(body);
+            StringLiteralProperty stringLiteralProperty = new StringLiteralProperty();
+            Response response = client.PutDefault(stringLiteralProperty);
         }
 
         [Test]
@@ -326,8 +326,8 @@ namespace _Type.Property.Optionality.Samples
         {
             StringLiteral client = new OptionalClient().GetStringLiteralClient();
 
-            StringLiteralProperty body = new StringLiteralProperty();
-            Response response = await client.PutDefaultAsync(body);
+            StringLiteralProperty stringLiteralProperty = new StringLiteralProperty();
+            Response response = await client.PutDefaultAsync(stringLiteralProperty);
         }
 
         [Test]
@@ -366,11 +366,11 @@ namespace _Type.Property.Optionality.Samples
         {
             StringLiteral client = new OptionalClient().GetStringLiteralClient();
 
-            StringLiteralProperty body = new StringLiteralProperty
+            StringLiteralProperty stringLiteralProperty = new StringLiteralProperty
             {
                 Property = StringLiteralPropertyProperty.Hello,
             };
-            Response response = client.PutDefault(body);
+            Response response = client.PutDefault(stringLiteralProperty);
         }
 
         [Test]
@@ -379,11 +379,11 @@ namespace _Type.Property.Optionality.Samples
         {
             StringLiteral client = new OptionalClient().GetStringLiteralClient();
 
-            StringLiteralProperty body = new StringLiteralProperty
+            StringLiteralProperty stringLiteralProperty = new StringLiteralProperty
             {
                 Property = StringLiteralPropertyProperty.Hello,
             };
-            Response response = await client.PutDefaultAsync(body);
+            Response response = await client.PutDefaultAsync(stringLiteralProperty);
         }
     }
 }

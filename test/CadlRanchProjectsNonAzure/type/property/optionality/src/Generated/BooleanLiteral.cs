@@ -159,25 +159,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="BooleanLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutAllAsync(BooleanLiteralProperty body)
+        /// <param name="booleanLiteralProperty"> Model with boolean literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="booleanLiteralProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutAllAsync(BooleanLiteralProperty booleanLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(booleanLiteralProperty, nameof(booleanLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = booleanLiteralProperty.ToBinaryContent();
             ClientResult result = await PutAllAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="BooleanLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutAll(BooleanLiteralProperty body)
+        /// <param name="booleanLiteralProperty"> Model with boolean literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="booleanLiteralProperty"/> is null. </exception>
+        public virtual ClientResult PutAll(BooleanLiteralProperty booleanLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(booleanLiteralProperty, nameof(booleanLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = booleanLiteralProperty.ToBinaryContent();
             ClientResult result = PutAll(content, null);
             return result;
         }
@@ -239,25 +239,25 @@ namespace Scm._Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="BooleanLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutDefaultAsync(BooleanLiteralProperty body)
+        /// <param name="booleanLiteralProperty"> Model with boolean literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="booleanLiteralProperty"/> is null. </exception>
+        public virtual async Task<ClientResult> PutDefaultAsync(BooleanLiteralProperty booleanLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(booleanLiteralProperty, nameof(booleanLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = booleanLiteralProperty.ToBinaryContent();
             ClientResult result = await PutDefaultAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="BooleanLiteralProperty"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult PutDefault(BooleanLiteralProperty body)
+        /// <param name="booleanLiteralProperty"> Model with boolean literal property. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="booleanLiteralProperty"/> is null. </exception>
+        public virtual ClientResult PutDefault(BooleanLiteralProperty booleanLiteralProperty)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(booleanLiteralProperty, nameof(booleanLiteralProperty));
 
-            using BinaryContent content = body.ToBinaryContent();
+            using BinaryContent content = booleanLiteralProperty.ToBinaryContent();
             ClientResult result = PutDefault(content, null);
             return result;
         }

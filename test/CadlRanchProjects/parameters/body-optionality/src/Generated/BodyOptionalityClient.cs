@@ -48,30 +48,30 @@ namespace Parameters.BodyOptionality
         }
 
         /// <summary> Required explicit. </summary>
-        /// <param name="body"> The <see cref="BodyModel"/> to use. </param>
+        /// <param name="bodyModel"> The <see cref="BodyModel"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="bodyModel"/> is null. </exception>
         /// <include file="Docs/BodyOptionalityClient.xml" path="doc/members/member[@name='RequiredExplicitAsync(BodyModel,CancellationToken)']/*" />
-        public virtual async Task<Response> RequiredExplicitAsync(BodyModel body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> RequiredExplicitAsync(BodyModel bodyModel, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(bodyModel, nameof(bodyModel));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = bodyModel.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await RequiredExplicitAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Required explicit. </summary>
-        /// <param name="body"> The <see cref="BodyModel"/> to use. </param>
+        /// <param name="bodyModel"> The <see cref="BodyModel"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="bodyModel"/> is null. </exception>
         /// <include file="Docs/BodyOptionalityClient.xml" path="doc/members/member[@name='RequiredExplicit(BodyModel,CancellationToken)']/*" />
-        public virtual Response RequiredExplicit(BodyModel body, CancellationToken cancellationToken = default)
+        public virtual Response RequiredExplicit(BodyModel bodyModel, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(bodyModel, nameof(bodyModel));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = bodyModel.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = RequiredExplicit(content, context);
             return response;

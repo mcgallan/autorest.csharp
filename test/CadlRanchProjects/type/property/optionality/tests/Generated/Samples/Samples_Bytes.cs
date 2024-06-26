@@ -216,8 +216,8 @@ namespace _Type.Property.Optionality.Samples
         {
             Bytes client = new OptionalClient().GetBytesClient();
 
-            BytesProperty body = new BytesProperty();
-            Response response = client.PutAll(body);
+            BytesProperty bytesProperty = new BytesProperty();
+            Response response = client.PutAll(bytesProperty);
         }
 
         [Test]
@@ -226,8 +226,8 @@ namespace _Type.Property.Optionality.Samples
         {
             Bytes client = new OptionalClient().GetBytesClient();
 
-            BytesProperty body = new BytesProperty();
-            Response response = await client.PutAllAsync(body);
+            BytesProperty bytesProperty = new BytesProperty();
+            Response response = await client.PutAllAsync(bytesProperty);
         }
 
         [Test]
@@ -266,11 +266,11 @@ namespace _Type.Property.Optionality.Samples
         {
             Bytes client = new OptionalClient().GetBytesClient();
 
-            BytesProperty body = new BytesProperty
+            BytesProperty bytesProperty = new BytesProperty
             {
                 Property = BinaryData.FromObjectAsJson(new object()),
             };
-            Response response = client.PutAll(body);
+            Response response = client.PutAll(bytesProperty);
         }
 
         [Test]
@@ -279,11 +279,11 @@ namespace _Type.Property.Optionality.Samples
         {
             Bytes client = new OptionalClient().GetBytesClient();
 
-            BytesProperty body = new BytesProperty
+            BytesProperty bytesProperty = new BytesProperty
             {
                 Property = BinaryData.FromObjectAsJson(new object()),
             };
-            Response response = await client.PutAllAsync(body);
+            Response response = await client.PutAllAsync(bytesProperty);
         }
 
         [Test]
@@ -316,8 +316,8 @@ namespace _Type.Property.Optionality.Samples
         {
             Bytes client = new OptionalClient().GetBytesClient();
 
-            BytesProperty body = new BytesProperty();
-            Response response = client.PutDefault(body);
+            BytesProperty bytesProperty = new BytesProperty();
+            Response response = client.PutDefault(bytesProperty);
         }
 
         [Test]
@@ -326,8 +326,8 @@ namespace _Type.Property.Optionality.Samples
         {
             Bytes client = new OptionalClient().GetBytesClient();
 
-            BytesProperty body = new BytesProperty();
-            Response response = await client.PutDefaultAsync(body);
+            BytesProperty bytesProperty = new BytesProperty();
+            Response response = await client.PutDefaultAsync(bytesProperty);
         }
 
         [Test]
@@ -366,11 +366,11 @@ namespace _Type.Property.Optionality.Samples
         {
             Bytes client = new OptionalClient().GetBytesClient();
 
-            BytesProperty body = new BytesProperty
+            BytesProperty bytesProperty = new BytesProperty
             {
                 Property = BinaryData.FromObjectAsJson(new object()),
             };
-            Response response = client.PutDefault(body);
+            Response response = client.PutDefault(bytesProperty);
         }
 
         [Test]
@@ -379,11 +379,11 @@ namespace _Type.Property.Optionality.Samples
         {
             Bytes client = new OptionalClient().GetBytesClient();
 
-            BytesProperty body = new BytesProperty
+            BytesProperty bytesProperty = new BytesProperty
             {
                 Property = BinaryData.FromObjectAsJson(new object()),
             };
-            Response response = await client.PutDefaultAsync(body);
+            Response response = await client.PutDefaultAsync(bytesProperty);
         }
     }
 }

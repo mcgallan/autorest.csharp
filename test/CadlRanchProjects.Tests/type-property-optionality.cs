@@ -477,5 +477,90 @@ namespace CadlRanchProjects.Tests
             var response = await new OptionalClient(host, null).GetUnionStringLiteralClient().PutDefaultAsync(new UnionStringLiteralProperty());
             Assert.AreEqual(204, response.Status);
         });
+
+        [Test]
+        public Task Type_Property_Optional_ReadOnlyString_getAll() => Test(async (host) =>
+        {
+            var response = await new OptionalClient(host, null).GetReadOnlyStringClient().GetAllAsync();
+            Assert.AreEqual("hello", response.Value.Property);
+        });
+
+        [Test]
+        public Task Type_Property_Optional_ReadOnlyString_getDefault() => Test(async (host) =>
+        {
+            var response = await new OptionalClient(host, null).GetReadOnlyStringClient().GetDefaultAsync();
+            Assert.AreEqual(null, response.Value.Property);
+        });
+
+        [Test]
+        public Task Type_Type_Property_Optional_ReadOnlyStringList_getAll() => Test(async (host) =>
+        {
+            var response = await new OptionalClient(host, null).GetReadOnlyStringListClient().GetAllAsync();
+            CollectionAssert.AreEqual(new[] { "hello", "world" }, response.Value.Property);
+        });
+
+        [Test]
+        public Task Type_Property_Optional_ReadOnlyStringList_getDefault() => Test(async (host) =>
+        {
+            var response = await new OptionalClient(host, null).GetReadOnlyStringListClient().GetDefaultAsync();
+            Assert.AreEqual(0, response.Value.Property.Count);
+        });
+
+        [Test]
+        public Task Type_Type_Property_Optional_ReadOnlyStringRecord_getAll() => Test(async (host) =>
+        {
+            var response = await new OptionalClient(host, null).GetReadOnlyStringRecordClient().GetAllAsync();
+            Assert.AreEqual("hello", response.Value.Property["key1"]);
+        });
+
+        [Test]
+        public Task Type_Property_Optional_ReadOnlyStringRecord_getDefault() => Test(async (host) =>
+        {
+            var response = await new OptionalClient(host, null).GetReadOnlyStringRecordClient().GetDefaultAsync();
+            Assert.AreEqual(0, response.Value.Property.Count);
+        });
+
+        [Test]
+        public Task Type_PrType_Property_Optional_ReadOnlyModel_getAll() => Test(async (host) =>
+        {
+            var response = await new OptionalClient(host, null).GetReadOnlyModelClient().GetAllAsync();
+            Assert.AreEqual("hello", response.Value.Property.Name);
+        });
+
+        [Test]
+        public Task Type_Property_Optional_ReadOnlyModel_getDefault() => Test(async (host) =>
+        {
+            var response = await new OptionalClient(host, null).GetReadOnlyModelClient().GetDefaultAsync();
+            Assert.AreEqual(null, response.Value.Property);
+        });
+
+        [Test]
+        public Task Type_Property_Optional_ReadOnlyModelRecord_getAll() => Test(async (host) =>
+        {
+            var response = await new OptionalClient(host, null).GetReadOnlyModelRecordClient().GetAllAsync();
+            Assert.AreEqual("hello", response.Value.Property["key1"].Name);
+        });
+
+        [Test]
+        public Task Type_Property_Optional_ReadOnlyModelRecord_getDefault() => Test(async (host) =>
+        {
+            var response = await new OptionalClient(host, null).GetReadOnlyModelRecordClient().GetDefaultAsync();
+            Assert.AreEqual(0, response.Value.Property.Count);
+        });
+
+        [Test]
+        public Task Type_Property_Optional_ReadOnlyModelList_getAll() => Test(async (host) =>
+        {
+            var response = await new OptionalClient(host, null).GetReadOnlyModelListClient().GetAllAsync();
+            Assert.AreEqual("hello", response.Value.Property[0].Name);
+            Assert.AreEqual("world", response.Value.Property[1].Name);
+        });
+
+        [Test]
+        public Task Type_Property_Optional_ReadOnlyModelList_getDefault() => Test(async (host) =>
+        {
+            var response = await new OptionalClient(host, null).GetReadOnlyModelListClient().GetDefaultAsync();
+            Assert.AreEqual(0, response.Value.Property.Count);
+        });
     }
 }

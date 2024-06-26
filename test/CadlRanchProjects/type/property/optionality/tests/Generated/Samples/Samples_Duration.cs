@@ -217,8 +217,8 @@ namespace _Type.Property.Optionality.Samples
         {
             Duration client = new OptionalClient().GetDurationClient();
 
-            DurationProperty body = new DurationProperty();
-            Response response = client.PutAll(body);
+            DurationProperty durationProperty = new DurationProperty();
+            Response response = client.PutAll(durationProperty);
         }
 
         [Test]
@@ -227,8 +227,8 @@ namespace _Type.Property.Optionality.Samples
         {
             Duration client = new OptionalClient().GetDurationClient();
 
-            DurationProperty body = new DurationProperty();
-            Response response = await client.PutAllAsync(body);
+            DurationProperty durationProperty = new DurationProperty();
+            Response response = await client.PutAllAsync(durationProperty);
         }
 
         [Test]
@@ -267,11 +267,11 @@ namespace _Type.Property.Optionality.Samples
         {
             Duration client = new OptionalClient().GetDurationClient();
 
-            DurationProperty body = new DurationProperty
+            DurationProperty durationProperty = new DurationProperty
             {
                 Property = XmlConvert.ToTimeSpan("PT1H23M45S"),
             };
-            Response response = client.PutAll(body);
+            Response response = client.PutAll(durationProperty);
         }
 
         [Test]
@@ -280,11 +280,11 @@ namespace _Type.Property.Optionality.Samples
         {
             Duration client = new OptionalClient().GetDurationClient();
 
-            DurationProperty body = new DurationProperty
+            DurationProperty durationProperty = new DurationProperty
             {
                 Property = XmlConvert.ToTimeSpan("PT1H23M45S"),
             };
-            Response response = await client.PutAllAsync(body);
+            Response response = await client.PutAllAsync(durationProperty);
         }
 
         [Test]
@@ -317,8 +317,8 @@ namespace _Type.Property.Optionality.Samples
         {
             Duration client = new OptionalClient().GetDurationClient();
 
-            DurationProperty body = new DurationProperty();
-            Response response = client.PutDefault(body);
+            DurationProperty durationProperty = new DurationProperty();
+            Response response = client.PutDefault(durationProperty);
         }
 
         [Test]
@@ -327,8 +327,8 @@ namespace _Type.Property.Optionality.Samples
         {
             Duration client = new OptionalClient().GetDurationClient();
 
-            DurationProperty body = new DurationProperty();
-            Response response = await client.PutDefaultAsync(body);
+            DurationProperty durationProperty = new DurationProperty();
+            Response response = await client.PutDefaultAsync(durationProperty);
         }
 
         [Test]
@@ -367,11 +367,11 @@ namespace _Type.Property.Optionality.Samples
         {
             Duration client = new OptionalClient().GetDurationClient();
 
-            DurationProperty body = new DurationProperty
+            DurationProperty durationProperty = new DurationProperty
             {
                 Property = XmlConvert.ToTimeSpan("PT1H23M45S"),
             };
-            Response response = client.PutDefault(body);
+            Response response = client.PutDefault(durationProperty);
         }
 
         [Test]
@@ -380,11 +380,11 @@ namespace _Type.Property.Optionality.Samples
         {
             Duration client = new OptionalClient().GetDurationClient();
 
-            DurationProperty body = new DurationProperty
+            DurationProperty durationProperty = new DurationProperty
             {
                 Property = XmlConvert.ToTimeSpan("PT1H23M45S"),
             };
-            Response response = await client.PutDefaultAsync(body);
+            Response response = await client.PutDefaultAsync(durationProperty);
         }
     }
 }

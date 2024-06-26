@@ -225,30 +225,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="UnionIntLiteralProperty"/> to use. </param>
+        /// <param name="unionIntLiteralProperty"> Model with union of int literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionIntLiteralProperty"/> is null. </exception>
         /// <include file="Docs/UnionIntLiteral.xml" path="doc/members/member[@name='PutAllAsync(UnionIntLiteralProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutAllAsync(UnionIntLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAllAsync(UnionIntLiteralProperty unionIntLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionIntLiteralProperty, nameof(unionIntLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = unionIntLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAllAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="UnionIntLiteralProperty"/> to use. </param>
+        /// <param name="unionIntLiteralProperty"> Model with union of int literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionIntLiteralProperty"/> is null. </exception>
         /// <include file="Docs/UnionIntLiteral.xml" path="doc/members/member[@name='PutAll(UnionIntLiteralProperty,CancellationToken)']/*" />
-        public virtual Response PutAll(UnionIntLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutAll(UnionIntLiteralProperty unionIntLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionIntLiteralProperty, nameof(unionIntLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = unionIntLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutAll(content, context);
             return response;
@@ -333,30 +333,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="UnionIntLiteralProperty"/> to use. </param>
+        /// <param name="unionIntLiteralProperty"> Model with union of int literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionIntLiteralProperty"/> is null. </exception>
         /// <include file="Docs/UnionIntLiteral.xml" path="doc/members/member[@name='PutDefaultAsync(UnionIntLiteralProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutDefaultAsync(UnionIntLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutDefaultAsync(UnionIntLiteralProperty unionIntLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionIntLiteralProperty, nameof(unionIntLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = unionIntLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutDefaultAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="UnionIntLiteralProperty"/> to use. </param>
+        /// <param name="unionIntLiteralProperty"> Model with union of int literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionIntLiteralProperty"/> is null. </exception>
         /// <include file="Docs/UnionIntLiteral.xml" path="doc/members/member[@name='PutDefault(UnionIntLiteralProperty,CancellationToken)']/*" />
-        public virtual Response PutDefault(UnionIntLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutDefault(UnionIntLiteralProperty unionIntLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionIntLiteralProperty, nameof(unionIntLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = unionIntLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutDefault(content, context);
             return response;

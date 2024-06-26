@@ -225,30 +225,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="UnionStringLiteralProperty"/> to use. </param>
+        /// <param name="unionStringLiteralProperty"> Model with union of string literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionStringLiteralProperty"/> is null. </exception>
         /// <include file="Docs/UnionStringLiteral.xml" path="doc/members/member[@name='PutAllAsync(UnionStringLiteralProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutAllAsync(UnionStringLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAllAsync(UnionStringLiteralProperty unionStringLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionStringLiteralProperty, nameof(unionStringLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = unionStringLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAllAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="UnionStringLiteralProperty"/> to use. </param>
+        /// <param name="unionStringLiteralProperty"> Model with union of string literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionStringLiteralProperty"/> is null. </exception>
         /// <include file="Docs/UnionStringLiteral.xml" path="doc/members/member[@name='PutAll(UnionStringLiteralProperty,CancellationToken)']/*" />
-        public virtual Response PutAll(UnionStringLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutAll(UnionStringLiteralProperty unionStringLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionStringLiteralProperty, nameof(unionStringLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = unionStringLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutAll(content, context);
             return response;
@@ -333,30 +333,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="UnionStringLiteralProperty"/> to use. </param>
+        /// <param name="unionStringLiteralProperty"> Model with union of string literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionStringLiteralProperty"/> is null. </exception>
         /// <include file="Docs/UnionStringLiteral.xml" path="doc/members/member[@name='PutDefaultAsync(UnionStringLiteralProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutDefaultAsync(UnionStringLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutDefaultAsync(UnionStringLiteralProperty unionStringLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionStringLiteralProperty, nameof(unionStringLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = unionStringLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutDefaultAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="UnionStringLiteralProperty"/> to use. </param>
+        /// <param name="unionStringLiteralProperty"> Model with union of string literal property. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="unionStringLiteralProperty"/> is null. </exception>
         /// <include file="Docs/UnionStringLiteral.xml" path="doc/members/member[@name='PutDefault(UnionStringLiteralProperty,CancellationToken)']/*" />
-        public virtual Response PutDefault(UnionStringLiteralProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutDefault(UnionStringLiteralProperty unionStringLiteralProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(unionStringLiteralProperty, nameof(unionStringLiteralProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = unionStringLiteralProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutDefault(content, context);
             return response;

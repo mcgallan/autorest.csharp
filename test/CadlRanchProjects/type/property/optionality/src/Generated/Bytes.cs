@@ -225,30 +225,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="BytesProperty"/> to use. </param>
+        /// <param name="bytesProperty"> Template type for testing models with optional property. Pass in the type of the property you are looking for. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="bytesProperty"/> is null. </exception>
         /// <include file="Docs/Bytes.xml" path="doc/members/member[@name='PutAllAsync(BytesProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutAllAsync(BytesProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAllAsync(BytesProperty bytesProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(bytesProperty, nameof(bytesProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = bytesProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAllAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with all properties present. </summary>
-        /// <param name="body"> The <see cref="BytesProperty"/> to use. </param>
+        /// <param name="bytesProperty"> Template type for testing models with optional property. Pass in the type of the property you are looking for. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="bytesProperty"/> is null. </exception>
         /// <include file="Docs/Bytes.xml" path="doc/members/member[@name='PutAll(BytesProperty,CancellationToken)']/*" />
-        public virtual Response PutAll(BytesProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutAll(BytesProperty bytesProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(bytesProperty, nameof(bytesProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = bytesProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutAll(content, context);
             return response;
@@ -333,30 +333,30 @@ namespace _Type.Property.Optionality
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="BytesProperty"/> to use. </param>
+        /// <param name="bytesProperty"> Template type for testing models with optional property. Pass in the type of the property you are looking for. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="bytesProperty"/> is null. </exception>
         /// <include file="Docs/Bytes.xml" path="doc/members/member[@name='PutDefaultAsync(BytesProperty,CancellationToken)']/*" />
-        public virtual async Task<Response> PutDefaultAsync(BytesProperty body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutDefaultAsync(BytesProperty bytesProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(bytesProperty, nameof(bytesProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = bytesProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutDefaultAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put a body with default properties. </summary>
-        /// <param name="body"> The <see cref="BytesProperty"/> to use. </param>
+        /// <param name="bytesProperty"> Template type for testing models with optional property. Pass in the type of the property you are looking for. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="bytesProperty"/> is null. </exception>
         /// <include file="Docs/Bytes.xml" path="doc/members/member[@name='PutDefault(BytesProperty,CancellationToken)']/*" />
-        public virtual Response PutDefault(BytesProperty body, CancellationToken cancellationToken = default)
+        public virtual Response PutDefault(BytesProperty bytesProperty, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(bytesProperty, nameof(bytesProperty));
 
-            using RequestContent content = body.ToRequestContent();
+            using RequestContent content = bytesProperty.ToRequestContent();
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = PutDefault(content, context);
             return response;

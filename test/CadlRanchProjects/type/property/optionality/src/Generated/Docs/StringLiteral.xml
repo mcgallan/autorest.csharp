@@ -151,18 +151,18 @@ This sample shows how to call PutAllAsync.
 <code><![CDATA[
 StringLiteral client = new OptionalClient().GetStringLiteralClient();
 
-StringLiteralProperty body = new StringLiteralProperty();
-Response response = await client.PutAllAsync(body);
+StringLiteralProperty stringLiteralProperty = new StringLiteralProperty();
+Response response = await client.PutAllAsync(stringLiteralProperty);
 ]]></code>
 This sample shows how to call PutAllAsync with all parameters.
 <code><![CDATA[
 StringLiteral client = new OptionalClient().GetStringLiteralClient();
 
-StringLiteralProperty body = new StringLiteralProperty
+StringLiteralProperty stringLiteralProperty = new StringLiteralProperty
 {
     Property = StringLiteralPropertyProperty.Hello,
 };
-Response response = await client.PutAllAsync(body);
+Response response = await client.PutAllAsync(stringLiteralProperty);
 ]]></code></example>
     </member>
     <member name="PutAll(StringLiteralProperty,CancellationToken)">
@@ -171,18 +171,18 @@ This sample shows how to call PutAll.
 <code><![CDATA[
 StringLiteral client = new OptionalClient().GetStringLiteralClient();
 
-StringLiteralProperty body = new StringLiteralProperty();
-Response response = client.PutAll(body);
+StringLiteralProperty stringLiteralProperty = new StringLiteralProperty();
+Response response = client.PutAll(stringLiteralProperty);
 ]]></code>
 This sample shows how to call PutAll with all parameters.
 <code><![CDATA[
 StringLiteral client = new OptionalClient().GetStringLiteralClient();
 
-StringLiteralProperty body = new StringLiteralProperty
+StringLiteralProperty stringLiteralProperty = new StringLiteralProperty
 {
     Property = StringLiteralPropertyProperty.Hello,
 };
-Response response = client.PutAll(body);
+Response response = client.PutAll(stringLiteralProperty);
 ]]></code></example>
     </member>
     <member name="PutAllAsync(RequestContent,RequestContext)">
@@ -239,18 +239,18 @@ This sample shows how to call PutDefaultAsync.
 <code><![CDATA[
 StringLiteral client = new OptionalClient().GetStringLiteralClient();
 
-StringLiteralProperty body = new StringLiteralProperty();
-Response response = await client.PutDefaultAsync(body);
+StringLiteralProperty stringLiteralProperty = new StringLiteralProperty();
+Response response = await client.PutDefaultAsync(stringLiteralProperty);
 ]]></code>
 This sample shows how to call PutDefaultAsync with all parameters.
 <code><![CDATA[
 StringLiteral client = new OptionalClient().GetStringLiteralClient();
 
-StringLiteralProperty body = new StringLiteralProperty
+StringLiteralProperty stringLiteralProperty = new StringLiteralProperty
 {
     Property = StringLiteralPropertyProperty.Hello,
 };
-Response response = await client.PutDefaultAsync(body);
+Response response = await client.PutDefaultAsync(stringLiteralProperty);
 ]]></code></example>
     </member>
     <member name="PutDefault(StringLiteralProperty,CancellationToken)">
@@ -259,18 +259,18 @@ This sample shows how to call PutDefault.
 <code><![CDATA[
 StringLiteral client = new OptionalClient().GetStringLiteralClient();
 
-StringLiteralProperty body = new StringLiteralProperty();
-Response response = client.PutDefault(body);
+StringLiteralProperty stringLiteralProperty = new StringLiteralProperty();
+Response response = client.PutDefault(stringLiteralProperty);
 ]]></code>
 This sample shows how to call PutDefault with all parameters.
 <code><![CDATA[
 StringLiteral client = new OptionalClient().GetStringLiteralClient();
 
-StringLiteralProperty body = new StringLiteralProperty
+StringLiteralProperty stringLiteralProperty = new StringLiteralProperty
 {
     Property = StringLiteralPropertyProperty.Hello,
 };
-Response response = client.PutDefault(body);
+Response response = client.PutDefault(stringLiteralProperty);
 ]]></code></example>
     </member>
     <member name="PutDefaultAsync(RequestContent,RequestContext)">
