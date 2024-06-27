@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetReadOnlyModelValueAsync(CancellationToken)">
+      <example>
+This sample shows how to call GetReadOnlyModelValueAsync.
+<code><![CDATA[
+ReadOnlyModelValue client = new ArrayClient().GetReadOnlyModelValueClient();
+
+Response<IReadOnlyList<RequiredReadOnlyModelProperty>> response = await client.GetReadOnlyModelValueAsync();
+]]></code>
+This sample shows how to call GetReadOnlyModelValueAsync with all parameters.
+<code><![CDATA[
+ReadOnlyModelValue client = new ArrayClient().GetReadOnlyModelValueClient();
+
+Response<IReadOnlyList<RequiredReadOnlyModelProperty>> response = await client.GetReadOnlyModelValueAsync();
+]]></code></example>
+    </member>
+    <member name="GetReadOnlyModelValue(CancellationToken)">
+      <example>
+This sample shows how to call GetReadOnlyModelValue.
+<code><![CDATA[
+ReadOnlyModelValue client = new ArrayClient().GetReadOnlyModelValueClient();
+
+Response<IReadOnlyList<RequiredReadOnlyModelProperty>> response = client.GetReadOnlyModelValue();
+]]></code>
+This sample shows how to call GetReadOnlyModelValue with all parameters.
+<code><![CDATA[
+ReadOnlyModelValue client = new ArrayClient().GetReadOnlyModelValueClient();
+
+Response<IReadOnlyList<RequiredReadOnlyModelProperty>> response = client.GetReadOnlyModelValue();
+]]></code></example>
+    </member>
+    <member name="GetReadOnlyModelValueAsync(RequestContext)">
+      <example>
+This sample shows how to call GetReadOnlyModelValueAsync and parse the result.
+<code><![CDATA[
+ReadOnlyModelValue client = new ArrayClient().GetReadOnlyModelValueClient();
+
+Response response = await client.GetReadOnlyModelValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].GetProperty("property").GetProperty("name").ToString());
+]]></code>
+This sample shows how to call GetReadOnlyModelValueAsync with all parameters and parse the result.
+<code><![CDATA[
+ReadOnlyModelValue client = new ArrayClient().GetReadOnlyModelValueClient();
+
+Response response = await client.GetReadOnlyModelValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].GetProperty("property").GetProperty("name").ToString());
+]]></code></example>
+    </member>
+    <member name="GetReadOnlyModelValue(RequestContext)">
+      <example>
+This sample shows how to call GetReadOnlyModelValue and parse the result.
+<code><![CDATA[
+ReadOnlyModelValue client = new ArrayClient().GetReadOnlyModelValueClient();
+
+Response response = client.GetReadOnlyModelValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].GetProperty("property").GetProperty("name").ToString());
+]]></code>
+This sample shows how to call GetReadOnlyModelValue with all parameters and parse the result.
+<code><![CDATA[
+ReadOnlyModelValue client = new ArrayClient().GetReadOnlyModelValueClient();
+
+Response response = client.GetReadOnlyModelValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].GetProperty("property").GetProperty("name").ToString());
+]]></code></example>
+    </member>
+  </members>
+</doc>

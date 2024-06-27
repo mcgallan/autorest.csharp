@@ -45,6 +45,9 @@ namespace Scm._Type._Array
         private DurationValue _cachedDurationValue;
         private UnknownValue _cachedUnknownValue;
         private ModelValue _cachedModelValue;
+        private ReadOnlyStringValue _cachedReadOnlyStringValue;
+        private ReadOnlyIntValue _cachedReadOnlyIntValue;
+        private ReadOnlyModelValue _cachedReadOnlyModelValue;
         private NullableFloatValue _cachedNullableFloatValue;
         private NullableInt32Value _cachedNullableInt32Value;
         private NullableBooleanValue _cachedNullableBooleanValue;
@@ -103,6 +106,24 @@ namespace Scm._Type._Array
         public virtual ModelValue GetModelValueClient()
         {
             return Volatile.Read(ref _cachedModelValue) ?? Interlocked.CompareExchange(ref _cachedModelValue, new ModelValue(_pipeline, _endpoint), null) ?? _cachedModelValue;
+        }
+
+        /// <summary> Initializes a new instance of ReadOnlyStringValue. </summary>
+        public virtual ReadOnlyStringValue GetReadOnlyStringValueClient()
+        {
+            return Volatile.Read(ref _cachedReadOnlyStringValue) ?? Interlocked.CompareExchange(ref _cachedReadOnlyStringValue, new ReadOnlyStringValue(_pipeline, _endpoint), null) ?? _cachedReadOnlyStringValue;
+        }
+
+        /// <summary> Initializes a new instance of ReadOnlyIntValue. </summary>
+        public virtual ReadOnlyIntValue GetReadOnlyIntValueClient()
+        {
+            return Volatile.Read(ref _cachedReadOnlyIntValue) ?? Interlocked.CompareExchange(ref _cachedReadOnlyIntValue, new ReadOnlyIntValue(_pipeline, _endpoint), null) ?? _cachedReadOnlyIntValue;
+        }
+
+        /// <summary> Initializes a new instance of ReadOnlyModelValue. </summary>
+        public virtual ReadOnlyModelValue GetReadOnlyModelValueClient()
+        {
+            return Volatile.Read(ref _cachedReadOnlyModelValue) ?? Interlocked.CompareExchange(ref _cachedReadOnlyModelValue, new ReadOnlyModelValue(_pipeline, _endpoint), null) ?? _cachedReadOnlyModelValue;
         }
 
         /// <summary> Initializes a new instance of NullableFloatValue. </summary>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetReadOnlyIntValueAsync(CancellationToken)">
+      <example>
+This sample shows how to call GetReadOnlyIntValueAsync.
+<code><![CDATA[
+ReadOnlyIntValue client = new ArrayClient().GetReadOnlyIntValueClient();
+
+Response<IReadOnlyList<RequiredReadOnlyIntProperty>> response = await client.GetReadOnlyIntValueAsync();
+]]></code>
+This sample shows how to call GetReadOnlyIntValueAsync with all parameters.
+<code><![CDATA[
+ReadOnlyIntValue client = new ArrayClient().GetReadOnlyIntValueClient();
+
+Response<IReadOnlyList<RequiredReadOnlyIntProperty>> response = await client.GetReadOnlyIntValueAsync();
+]]></code></example>
+    </member>
+    <member name="GetReadOnlyIntValue(CancellationToken)">
+      <example>
+This sample shows how to call GetReadOnlyIntValue.
+<code><![CDATA[
+ReadOnlyIntValue client = new ArrayClient().GetReadOnlyIntValueClient();
+
+Response<IReadOnlyList<RequiredReadOnlyIntProperty>> response = client.GetReadOnlyIntValue();
+]]></code>
+This sample shows how to call GetReadOnlyIntValue with all parameters.
+<code><![CDATA[
+ReadOnlyIntValue client = new ArrayClient().GetReadOnlyIntValueClient();
+
+Response<IReadOnlyList<RequiredReadOnlyIntProperty>> response = client.GetReadOnlyIntValue();
+]]></code></example>
+    </member>
+    <member name="GetReadOnlyIntValueAsync(RequestContext)">
+      <example>
+This sample shows how to call GetReadOnlyIntValueAsync and parse the result.
+<code><![CDATA[
+ReadOnlyIntValue client = new ArrayClient().GetReadOnlyIntValueClient();
+
+Response response = await client.GetReadOnlyIntValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].GetProperty("property").ToString());
+]]></code>
+This sample shows how to call GetReadOnlyIntValueAsync with all parameters and parse the result.
+<code><![CDATA[
+ReadOnlyIntValue client = new ArrayClient().GetReadOnlyIntValueClient();
+
+Response response = await client.GetReadOnlyIntValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].GetProperty("property").ToString());
+]]></code></example>
+    </member>
+    <member name="GetReadOnlyIntValue(RequestContext)">
+      <example>
+This sample shows how to call GetReadOnlyIntValue and parse the result.
+<code><![CDATA[
+ReadOnlyIntValue client = new ArrayClient().GetReadOnlyIntValueClient();
+
+Response response = client.GetReadOnlyIntValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].GetProperty("property").ToString());
+]]></code>
+This sample shows how to call GetReadOnlyIntValue with all parameters and parse the result.
+<code><![CDATA[
+ReadOnlyIntValue client = new ArrayClient().GetReadOnlyIntValueClient();
+
+Response response = client.GetReadOnlyIntValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].GetProperty("property").ToString());
+]]></code></example>
+    </member>
+  </members>
+</doc>

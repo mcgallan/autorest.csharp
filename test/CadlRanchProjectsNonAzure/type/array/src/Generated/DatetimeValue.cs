@@ -114,25 +114,25 @@ namespace Scm._Type._Array
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="DateTimeOffset"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutAsync(IEnumerable<DateTimeOffset> body)
+        /// <param name="arrayutcDateTime"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="DateTimeOffset"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="arrayutcDateTime"/> is null. </exception>
+        public virtual async Task<ClientResult> PutAsync(IEnumerable<DateTimeOffset> arrayutcDateTime)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(arrayutcDateTime, nameof(arrayutcDateTime));
 
-            using BinaryContent content = BinaryContentHelper.FromEnumerable(body);
+            using BinaryContent content = BinaryContentHelper.FromEnumerable(arrayutcDateTime);
             ClientResult result = await PutAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="DateTimeOffset"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult Put(IEnumerable<DateTimeOffset> body)
+        /// <param name="arrayutcDateTime"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="DateTimeOffset"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="arrayutcDateTime"/> is null. </exception>
+        public virtual ClientResult Put(IEnumerable<DateTimeOffset> arrayutcDateTime)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(arrayutcDateTime, nameof(arrayutcDateTime));
 
-            using BinaryContent content = BinaryContentHelper.FromEnumerable(body);
+            using BinaryContent content = BinaryContentHelper.FromEnumerable(arrayutcDateTime);
             ClientResult result = Put(content, null);
             return result;
         }

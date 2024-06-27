@@ -153,30 +153,30 @@ namespace _Type._Array
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="InnerModel"/> to use. </param>
+        /// <param name="arrayInnerModel"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="InnerModel"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="arrayInnerModel"/> is null. </exception>
         /// <include file="Docs/ModelValue.xml" path="doc/members/member[@name='PutAsync(IEnumerable{InnerModel},CancellationToken)']/*" />
-        public virtual async Task<Response> PutAsync(IEnumerable<InnerModel> body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAsync(IEnumerable<InnerModel> arrayInnerModel, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(arrayInnerModel, nameof(arrayInnerModel));
 
-            using RequestContent content = RequestContentHelper.FromEnumerable(body);
+            using RequestContent content = RequestContentHelper.FromEnumerable(arrayInnerModel);
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="InnerModel"/> to use. </param>
+        /// <param name="arrayInnerModel"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="InnerModel"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="arrayInnerModel"/> is null. </exception>
         /// <include file="Docs/ModelValue.xml" path="doc/members/member[@name='Put(IEnumerable{InnerModel},CancellationToken)']/*" />
-        public virtual Response Put(IEnumerable<InnerModel> body, CancellationToken cancellationToken = default)
+        public virtual Response Put(IEnumerable<InnerModel> arrayInnerModel, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(arrayInnerModel, nameof(arrayInnerModel));
 
-            using RequestContent content = RequestContentHelper.FromEnumerable(body);
+            using RequestContent content = RequestContentHelper.FromEnumerable(arrayInnerModel);
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = Put(content, context);
             return response;

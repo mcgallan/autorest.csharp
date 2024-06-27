@@ -152,30 +152,30 @@ namespace _Type._Array
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="DateTimeOffset"/> to use. </param>
+        /// <param name="arrayutcDateTime"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="DateTimeOffset"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="arrayutcDateTime"/> is null. </exception>
         /// <include file="Docs/DatetimeValue.xml" path="doc/members/member[@name='PutAsync(IEnumerable{DateTimeOffset},CancellationToken)']/*" />
-        public virtual async Task<Response> PutAsync(IEnumerable<DateTimeOffset> body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAsync(IEnumerable<DateTimeOffset> arrayutcDateTime, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(arrayutcDateTime, nameof(arrayutcDateTime));
 
-            using RequestContent content = RequestContentHelper.FromEnumerable(body);
+            using RequestContent content = RequestContentHelper.FromEnumerable(arrayutcDateTime);
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="DateTimeOffset"/> to use. </param>
+        /// <param name="arrayutcDateTime"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="DateTimeOffset"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="arrayutcDateTime"/> is null. </exception>
         /// <include file="Docs/DatetimeValue.xml" path="doc/members/member[@name='Put(IEnumerable{DateTimeOffset},CancellationToken)']/*" />
-        public virtual Response Put(IEnumerable<DateTimeOffset> body, CancellationToken cancellationToken = default)
+        public virtual Response Put(IEnumerable<DateTimeOffset> arrayutcDateTime, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(arrayutcDateTime, nameof(arrayutcDateTime));
 
-            using RequestContent content = RequestContentHelper.FromEnumerable(body);
+            using RequestContent content = RequestContentHelper.FromEnumerable(arrayutcDateTime);
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = Put(content, context);
             return response;

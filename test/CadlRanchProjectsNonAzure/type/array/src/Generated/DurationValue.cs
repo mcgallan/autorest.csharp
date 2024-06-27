@@ -114,25 +114,25 @@ namespace Scm._Type._Array
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="TimeSpan"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutAsync(IEnumerable<TimeSpan> body)
+        /// <param name="arrayduration"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="TimeSpan"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="arrayduration"/> is null. </exception>
+        public virtual async Task<ClientResult> PutAsync(IEnumerable<TimeSpan> arrayduration)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(arrayduration, nameof(arrayduration));
 
-            using BinaryContent content = BinaryContentHelper.FromEnumerable(body);
+            using BinaryContent content = BinaryContentHelper.FromEnumerable(arrayduration);
             ClientResult result = await PutAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="TimeSpan"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult Put(IEnumerable<TimeSpan> body)
+        /// <param name="arrayduration"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="TimeSpan"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="arrayduration"/> is null. </exception>
+        public virtual ClientResult Put(IEnumerable<TimeSpan> arrayduration)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(arrayduration, nameof(arrayduration));
 
-            using BinaryContent content = BinaryContentHelper.FromEnumerable(body);
+            using BinaryContent content = BinaryContentHelper.FromEnumerable(arrayduration);
             ClientResult result = Put(content, null);
             return result;
         }

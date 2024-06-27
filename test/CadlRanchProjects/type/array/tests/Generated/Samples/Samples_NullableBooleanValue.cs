@@ -48,7 +48,7 @@ namespace _Type._Array.Samples
         {
             NullableBooleanValue client = new ArrayClient().GetNullableBooleanValueClient();
 
-            Response<IReadOnlyList<bool?>> response = client.GetNullableBooleanValue();
+            Response<IReadOnlyList<bool>> response = client.GetNullableBooleanValue();
         }
 
         [Test]
@@ -57,7 +57,7 @@ namespace _Type._Array.Samples
         {
             NullableBooleanValue client = new ArrayClient().GetNullableBooleanValueClient();
 
-            Response<IReadOnlyList<bool?>> response = await client.GetNullableBooleanValueAsync();
+            Response<IReadOnlyList<bool>> response = await client.GetNullableBooleanValueAsync();
         }
 
         [Test]
@@ -90,7 +90,7 @@ namespace _Type._Array.Samples
         {
             NullableBooleanValue client = new ArrayClient().GetNullableBooleanValueClient();
 
-            Response<IReadOnlyList<bool?>> response = client.GetNullableBooleanValue();
+            Response<IReadOnlyList<bool>> response = client.GetNullableBooleanValue();
         }
 
         [Test]
@@ -99,7 +99,7 @@ namespace _Type._Array.Samples
         {
             NullableBooleanValue client = new ArrayClient().GetNullableBooleanValueClient();
 
-            Response<IReadOnlyList<bool?>> response = await client.GetNullableBooleanValueAsync();
+            Response<IReadOnlyList<bool>> response = await client.GetNullableBooleanValueAsync();
         }
 
         [Test]
@@ -138,7 +138,7 @@ true
         {
             NullableBooleanValue client = new ArrayClient().GetNullableBooleanValueClient();
 
-            Response response = client.Put(new bool?[] { true });
+            Response response = client.Put(new bool[] { true });
         }
 
         [Test]
@@ -147,7 +147,7 @@ true
         {
             NullableBooleanValue client = new ArrayClient().GetNullableBooleanValueClient();
 
-            Response response = await client.PutAsync(new bool?[] { true });
+            Response response = await client.PutAsync(new bool[] { true });
         }
 
         [Test]
@@ -186,7 +186,7 @@ true
         {
             NullableBooleanValue client = new ArrayClient().GetNullableBooleanValueClient();
 
-            Response response = client.Put(new bool?[] { true });
+            Response response = client.Put(new bool[] { true });
         }
 
         [Test]
@@ -195,7 +195,7 @@ true
         {
             NullableBooleanValue client = new ArrayClient().GetNullableBooleanValueClient();
 
-            Response response = await client.PutAsync(new bool?[] { true });
+            Response response = await client.PutAsync(new bool[] { true });
         }
     }
 }

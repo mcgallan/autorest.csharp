@@ -158,8 +158,16 @@ namespace CadlRanchProjects.Tests
         [Test]
         public Task Type_Array_NullableFloatValue_put() => Test(async (host) =>
         {
-            var response = await new ArrayClient(host, null).GetNullableFloatValueClient().PutAsync(new List<float?> { 1.25f, null, 3.0f });
+            var response = await new ArrayClient(host, null).GetNullableFloatValueClient().PutAsync(new List<float> { 1.25f, 3.0f });
             Assert.AreEqual(204, response.Status);
+        });
+
+        [Test]
+        public Task Type_Array_ReadOnlyStringValue_get() => Test(async (host) =>
+        {
+            var response = await new ArrayClient(host, null).GetReadOnlyStringValueClient().GetReadOnlyStringValueAsync();
+            CollectionAssert.AreEqual("hello", response.Value[0].Property);
+            CollectionAssert.AreEqual("world", response.Value[1].Property);
         });
     }
 }

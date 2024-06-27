@@ -152,30 +152,30 @@ namespace _Type._Array
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="string"/> to use. </param>
+        /// <param name="array"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="string"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="array"/> is null. </exception>
         /// <include file="Docs/NullableStringValue.xml" path="doc/members/member[@name='PutAsync(IEnumerable{string},CancellationToken)']/*" />
-        public virtual async Task<Response> PutAsync(IEnumerable<string> body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAsync(IEnumerable<string> array, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(array, nameof(array));
 
-            using RequestContent content = RequestContentHelper.FromEnumerable(body);
+            using RequestContent content = RequestContentHelper.FromEnumerable(array);
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="string"/> to use. </param>
+        /// <param name="array"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="string"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="array"/> is null. </exception>
         /// <include file="Docs/NullableStringValue.xml" path="doc/members/member[@name='Put(IEnumerable{string},CancellationToken)']/*" />
-        public virtual Response Put(IEnumerable<string> body, CancellationToken cancellationToken = default)
+        public virtual Response Put(IEnumerable<string> array, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(array, nameof(array));
 
-            using RequestContent content = RequestContentHelper.FromEnumerable(body);
+            using RequestContent content = RequestContentHelper.FromEnumerable(array);
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = Put(content, context);
             return response;

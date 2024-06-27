@@ -166,30 +166,30 @@ namespace _Type._Array
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="BinaryData"/> to use. </param>
+        /// <param name="arrayunknown"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="BinaryData"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="arrayunknown"/> is null. </exception>
         /// <include file="Docs/UnknownValue.xml" path="doc/members/member[@name='PutAsync(IEnumerable{BinaryData},CancellationToken)']/*" />
-        public virtual async Task<Response> PutAsync(IEnumerable<BinaryData> body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAsync(IEnumerable<BinaryData> arrayunknown, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(arrayunknown, nameof(arrayunknown));
 
-            using RequestContent content = RequestContentHelper.FromEnumerable(body);
+            using RequestContent content = RequestContentHelper.FromEnumerable(arrayunknown);
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="BinaryData"/> to use. </param>
+        /// <param name="arrayunknown"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="BinaryData"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="arrayunknown"/> is null. </exception>
         /// <include file="Docs/UnknownValue.xml" path="doc/members/member[@name='Put(IEnumerable{BinaryData},CancellationToken)']/*" />
-        public virtual Response Put(IEnumerable<BinaryData> body, CancellationToken cancellationToken = default)
+        public virtual Response Put(IEnumerable<BinaryData> arrayunknown, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(arrayunknown, nameof(arrayunknown));
 
-            using RequestContent content = RequestContentHelper.FromEnumerable(body);
+            using RequestContent content = RequestContentHelper.FromEnumerable(arrayunknown);
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = Put(content, context);
             return response;

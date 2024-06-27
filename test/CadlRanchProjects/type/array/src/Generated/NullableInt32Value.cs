@@ -48,23 +48,16 @@ namespace _Type._Array
         /// <summary> Get. </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <include file="Docs/NullableInt32Value.xml" path="doc/members/member[@name='GetNullableInt32ValueAsync(CancellationToken)']/*" />
-        public virtual async Task<Response<IReadOnlyList<int?>>> GetNullableInt32ValueAsync(CancellationToken cancellationToken = default)
+        public virtual async Task<Response<IReadOnlyList<int>>> GetNullableInt32ValueAsync(CancellationToken cancellationToken = default)
         {
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await GetNullableInt32ValueAsync(context).ConfigureAwait(false);
-            IReadOnlyList<int?> value = default;
+            IReadOnlyList<int> value = default;
             using var document = await JsonDocument.ParseAsync(response.ContentStream, default, cancellationToken).ConfigureAwait(false);
-            List<int?> array = new List<int?>();
+            List<int> array = new List<int>();
             foreach (var item in document.RootElement.EnumerateArray())
             {
-                if (item.ValueKind == JsonValueKind.Null)
-                {
-                    array.Add(null);
-                }
-                else
-                {
-                    array.Add(item.GetInt32());
-                }
+                array.Add(item.GetInt32());
             }
             value = array;
             return Response.FromValue(value, response);
@@ -73,23 +66,16 @@ namespace _Type._Array
         /// <summary> Get. </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <include file="Docs/NullableInt32Value.xml" path="doc/members/member[@name='GetNullableInt32Value(CancellationToken)']/*" />
-        public virtual Response<IReadOnlyList<int?>> GetNullableInt32Value(CancellationToken cancellationToken = default)
+        public virtual Response<IReadOnlyList<int>> GetNullableInt32Value(CancellationToken cancellationToken = default)
         {
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = GetNullableInt32Value(context);
-            IReadOnlyList<int?> value = default;
+            IReadOnlyList<int> value = default;
             using var document = JsonDocument.Parse(response.ContentStream);
-            List<int?> array = new List<int?>();
+            List<int> array = new List<int>();
             foreach (var item in document.RootElement.EnumerateArray())
             {
-                if (item.ValueKind == JsonValueKind.Null)
-                {
-                    array.Add(null);
-                }
-                else
-                {
-                    array.Add(item.GetInt32());
-                }
+                array.Add(item.GetInt32());
             }
             value = array;
             return Response.FromValue(value, response);
@@ -166,30 +152,30 @@ namespace _Type._Array
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="int"/>? to use. </param>
+        /// <param name="array"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="int"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        /// <include file="Docs/NullableInt32Value.xml" path="doc/members/member[@name='PutAsync(IEnumerable{int?},CancellationToken)']/*" />
-        public virtual async Task<Response> PutAsync(IEnumerable<int?> body, CancellationToken cancellationToken = default)
+        /// <exception cref="ArgumentNullException"> <paramref name="array"/> is null. </exception>
+        /// <include file="Docs/NullableInt32Value.xml" path="doc/members/member[@name='PutAsync(IEnumerable{int},CancellationToken)']/*" />
+        public virtual async Task<Response> PutAsync(IEnumerable<int> array, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(array, nameof(array));
 
-            using RequestContent content = RequestContentHelper.FromEnumerable(body);
+            using RequestContent content = RequestContentHelper.FromEnumerable(array);
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="int"/>? to use. </param>
+        /// <param name="array"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="int"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        /// <include file="Docs/NullableInt32Value.xml" path="doc/members/member[@name='Put(IEnumerable{int?},CancellationToken)']/*" />
-        public virtual Response Put(IEnumerable<int?> body, CancellationToken cancellationToken = default)
+        /// <exception cref="ArgumentNullException"> <paramref name="array"/> is null. </exception>
+        /// <include file="Docs/NullableInt32Value.xml" path="doc/members/member[@name='Put(IEnumerable{int},CancellationToken)']/*" />
+        public virtual Response Put(IEnumerable<int> array, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(array, nameof(array));
 
-            using RequestContent content = RequestContentHelper.FromEnumerable(body);
+            using RequestContent content = RequestContentHelper.FromEnumerable(array);
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = Put(content, context);
             return response;
@@ -205,7 +191,7 @@ namespace _Type._Array
         /// </item>
         /// <item>
         /// <description>
-        /// Please try the simpler <see cref="PutAsync(IEnumerable{int?},CancellationToken)"/> convenience overload with strongly typed models first.
+        /// Please try the simpler <see cref="PutAsync(IEnumerable{int},CancellationToken)"/> convenience overload with strongly typed models first.
         /// </description>
         /// </item>
         /// </list>
@@ -244,7 +230,7 @@ namespace _Type._Array
         /// </item>
         /// <item>
         /// <description>
-        /// Please try the simpler <see cref="Put(IEnumerable{int?},CancellationToken)"/> convenience overload with strongly typed models first.
+        /// Please try the simpler <see cref="Put(IEnumerable{int},CancellationToken)"/> convenience overload with strongly typed models first.
         /// </description>
         /// </item>
         /// </list>

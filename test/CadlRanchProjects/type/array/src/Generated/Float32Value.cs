@@ -152,30 +152,30 @@ namespace _Type._Array
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="float"/> to use. </param>
+        /// <param name="arrayfloat32"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="float"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="arrayfloat32"/> is null. </exception>
         /// <include file="Docs/Float32Value.xml" path="doc/members/member[@name='PutAsync(IEnumerable{float},CancellationToken)']/*" />
-        public virtual async Task<Response> PutAsync(IEnumerable<float> body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAsync(IEnumerable<float> arrayfloat32, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(arrayfloat32, nameof(arrayfloat32));
 
-            using RequestContent content = RequestContentHelper.FromEnumerable(body);
+            using RequestContent content = RequestContentHelper.FromEnumerable(arrayfloat32);
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="float"/> to use. </param>
+        /// <param name="arrayfloat32"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="float"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="arrayfloat32"/> is null. </exception>
         /// <include file="Docs/Float32Value.xml" path="doc/members/member[@name='Put(IEnumerable{float},CancellationToken)']/*" />
-        public virtual Response Put(IEnumerable<float> body, CancellationToken cancellationToken = default)
+        public virtual Response Put(IEnumerable<float> arrayfloat32, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(arrayfloat32, nameof(arrayfloat32));
 
-            using RequestContent content = RequestContentHelper.FromEnumerable(body);
+            using RequestContent content = RequestContentHelper.FromEnumerable(arrayfloat32);
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = Put(content, context);
             return response;

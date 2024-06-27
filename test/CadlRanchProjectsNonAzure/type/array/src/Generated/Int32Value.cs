@@ -114,25 +114,25 @@ namespace Scm._Type._Array
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="int"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutAsync(IEnumerable<int> body)
+        /// <param name="arrayint32"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="int"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="arrayint32"/> is null. </exception>
+        public virtual async Task<ClientResult> PutAsync(IEnumerable<int> arrayint32)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(arrayint32, nameof(arrayint32));
 
-            using BinaryContent content = BinaryContentHelper.FromEnumerable(body);
+            using BinaryContent content = BinaryContentHelper.FromEnumerable(arrayint32);
             ClientResult result = await PutAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="int"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult Put(IEnumerable<int> body)
+        /// <param name="arrayint32"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="int"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="arrayint32"/> is null. </exception>
+        public virtual ClientResult Put(IEnumerable<int> arrayint32)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(arrayint32, nameof(arrayint32));
 
-            using BinaryContent content = BinaryContentHelper.FromEnumerable(body);
+            using BinaryContent content = BinaryContentHelper.FromEnumerable(arrayint32);
             ClientResult result = Put(content, null);
             return result;
         }

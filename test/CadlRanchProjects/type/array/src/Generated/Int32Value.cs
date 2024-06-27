@@ -152,30 +152,30 @@ namespace _Type._Array
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="int"/> to use. </param>
+        /// <param name="arrayint32"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="int"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="arrayint32"/> is null. </exception>
         /// <include file="Docs/Int32Value.xml" path="doc/members/member[@name='PutAsync(IEnumerable{int},CancellationToken)']/*" />
-        public virtual async Task<Response> PutAsync(IEnumerable<int> body, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> PutAsync(IEnumerable<int> arrayint32, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(arrayint32, nameof(arrayint32));
 
-            using RequestContent content = RequestContentHelper.FromEnumerable(body);
+            using RequestContent content = RequestContentHelper.FromEnumerable(arrayint32);
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = await PutAsync(content, context).ConfigureAwait(false);
             return response;
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="int"/> to use. </param>
+        /// <param name="arrayint32"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="int"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="arrayint32"/> is null. </exception>
         /// <include file="Docs/Int32Value.xml" path="doc/members/member[@name='Put(IEnumerable{int},CancellationToken)']/*" />
-        public virtual Response Put(IEnumerable<int> body, CancellationToken cancellationToken = default)
+        public virtual Response Put(IEnumerable<int> arrayint32, CancellationToken cancellationToken = default)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(arrayint32, nameof(arrayint32));
 
-            using RequestContent content = RequestContentHelper.FromEnumerable(body);
+            using RequestContent content = RequestContentHelper.FromEnumerable(arrayint32);
             RequestContext context = FromCancellationToken(cancellationToken);
             Response response = Put(content, context);
             return response;

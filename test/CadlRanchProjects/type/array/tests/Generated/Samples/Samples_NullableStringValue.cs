@@ -110,7 +110,7 @@ namespace _Type._Array.Samples
 
             using RequestContent content = RequestContent.Create(new object[]
             {
-"<body>"
+"<Array>"
             });
             Response response = client.Put(content);
 
@@ -125,7 +125,7 @@ namespace _Type._Array.Samples
 
             using RequestContent content = RequestContent.Create(new object[]
             {
-"<body>"
+"<Array>"
             });
             Response response = await client.PutAsync(content);
 
@@ -138,7 +138,7 @@ namespace _Type._Array.Samples
         {
             NullableStringValue client = new ArrayClient().GetNullableStringValueClient();
 
-            Response response = client.Put(new string[] { "<body>" });
+            Response response = client.Put(new string[] { "<Array>" });
         }
 
         [Test]
@@ -147,7 +147,7 @@ namespace _Type._Array.Samples
         {
             NullableStringValue client = new ArrayClient().GetNullableStringValueClient();
 
-            Response response = await client.PutAsync(new string[] { "<body>" });
+            Response response = await client.PutAsync(new string[] { "<Array>" });
         }
 
         [Test]
@@ -158,7 +158,7 @@ namespace _Type._Array.Samples
 
             using RequestContent content = RequestContent.Create(new object[]
             {
-"<body>"
+"<Array>"
             });
             Response response = client.Put(content);
 
@@ -173,7 +173,7 @@ namespace _Type._Array.Samples
 
             using RequestContent content = RequestContent.Create(new object[]
             {
-"<body>"
+"<Array>"
             });
             Response response = await client.PutAsync(content);
 
@@ -186,7 +186,7 @@ namespace _Type._Array.Samples
         {
             NullableStringValue client = new ArrayClient().GetNullableStringValueClient();
 
-            Response response = client.Put(new string[] { "<body>" });
+            Response response = client.Put(new string[] { "<Array>" });
         }
 
         [Test]
@@ -195,7 +195,7 @@ namespace _Type._Array.Samples
         {
             NullableStringValue client = new ArrayClient().GetNullableStringValueClient();
 
-            Response response = await client.PutAsync(new string[] { "<body>" });
+            Response response = await client.PutAsync(new string[] { "<Array>" });
         }
     }
 }

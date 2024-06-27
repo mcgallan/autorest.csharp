@@ -36,44 +36,30 @@ namespace Scm._Type._Array
         }
 
         /// <summary> Get. </summary>
-        public virtual async Task<ClientResult<IReadOnlyList<bool?>>> GetNullableBooleanValueAsync()
+        public virtual async Task<ClientResult<IReadOnlyList<bool>>> GetNullableBooleanValueAsync()
         {
             ClientResult result = await GetNullableBooleanValueAsync(null).ConfigureAwait(false);
-            IReadOnlyList<bool?> value = default;
+            IReadOnlyList<bool> value = default;
             using var document = await JsonDocument.ParseAsync(result.GetRawResponse().ContentStream, default, default).ConfigureAwait(false);
-            List<bool?> array = new List<bool?>();
+            List<bool> array = new List<bool>();
             foreach (var item in document.RootElement.EnumerateArray())
             {
-                if (item.ValueKind == JsonValueKind.Null)
-                {
-                    array.Add(null);
-                }
-                else
-                {
-                    array.Add(item.GetBoolean());
-                }
+                array.Add(item.GetBoolean());
             }
             value = array;
             return ClientResult.FromValue(value, result.GetRawResponse());
         }
 
         /// <summary> Get. </summary>
-        public virtual ClientResult<IReadOnlyList<bool?>> GetNullableBooleanValue()
+        public virtual ClientResult<IReadOnlyList<bool>> GetNullableBooleanValue()
         {
             ClientResult result = GetNullableBooleanValue(null);
-            IReadOnlyList<bool?> value = default;
+            IReadOnlyList<bool> value = default;
             using var document = JsonDocument.Parse(result.GetRawResponse().ContentStream);
-            List<bool?> array = new List<bool?>();
+            List<bool> array = new List<bool>();
             foreach (var item in document.RootElement.EnumerateArray())
             {
-                if (item.ValueKind == JsonValueKind.Null)
-                {
-                    array.Add(null);
-                }
-                else
-                {
-                    array.Add(item.GetBoolean());
-                }
+                array.Add(item.GetBoolean());
             }
             value = array;
             return ClientResult.FromValue(value, result.GetRawResponse());
@@ -128,25 +114,25 @@ namespace Scm._Type._Array
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="bool"/>? to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> PutAsync(IEnumerable<bool?> body)
+        /// <param name="array"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="bool"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="array"/> is null. </exception>
+        public virtual async Task<ClientResult> PutAsync(IEnumerable<bool> array)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(array, nameof(array));
 
-            using BinaryContent content = BinaryContentHelper.FromEnumerable(body);
+            using BinaryContent content = BinaryContentHelper.FromEnumerable(array);
             ClientResult result = await PutAsync(content, null).ConfigureAwait(false);
             return result;
         }
 
         /// <summary> Put. </summary>
-        /// <param name="body"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="bool"/>? to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult Put(IEnumerable<bool?> body)
+        /// <param name="array"> The <see cref="IEnumerable{T}"/> where <c>T</c> is of type <see cref="bool"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="array"/> is null. </exception>
+        public virtual ClientResult Put(IEnumerable<bool> array)
         {
-            Argument.AssertNotNull(body, nameof(body));
+            Argument.AssertNotNull(array, nameof(array));
 
-            using BinaryContent content = BinaryContentHelper.FromEnumerable(body);
+            using BinaryContent content = BinaryContentHelper.FromEnumerable(array);
             ClientResult result = Put(content, null);
             return result;
         }
@@ -161,7 +147,7 @@ namespace Scm._Type._Array
         /// </item>
         /// <item>
         /// <description>
-        /// Please try the simpler <see cref="PutAsync(IEnumerable{bool?})"/> convenience overload with strongly typed models first.
+        /// Please try the simpler <see cref="PutAsync(IEnumerable{bool})"/> convenience overload with strongly typed models first.
         /// </description>
         /// </item>
         /// </list>
@@ -189,7 +175,7 @@ namespace Scm._Type._Array
         /// </item>
         /// <item>
         /// <description>
-        /// Please try the simpler <see cref="Put(IEnumerable{bool?})"/> convenience overload with strongly typed models first.
+        /// Please try the simpler <see cref="Put(IEnumerable{bool})"/> convenience overload with strongly typed models first.
         /// </description>
         /// </item>
         /// </list>

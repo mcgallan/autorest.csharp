@@ -110,7 +110,7 @@ namespace _Type._Array.Samples
 
             using RequestContent content = RequestContent.Create(new object[]
             {
-"<body>"
+"<Arraystring>"
             });
             Response response = client.Put(content);
 
@@ -125,7 +125,7 @@ namespace _Type._Array.Samples
 
             using RequestContent content = RequestContent.Create(new object[]
             {
-"<body>"
+"<Arraystring>"
             });
             Response response = await client.PutAsync(content);
 
@@ -138,7 +138,7 @@ namespace _Type._Array.Samples
         {
             StringValue client = new ArrayClient().GetStringValueClient();
 
-            Response response = client.Put(new string[] { "<body>" });
+            Response response = client.Put(new string[] { "<Arraystring>" });
         }
 
         [Test]
@@ -147,7 +147,7 @@ namespace _Type._Array.Samples
         {
             StringValue client = new ArrayClient().GetStringValueClient();
 
-            Response response = await client.PutAsync(new string[] { "<body>" });
+            Response response = await client.PutAsync(new string[] { "<Arraystring>" });
         }
 
         [Test]
@@ -158,7 +158,7 @@ namespace _Type._Array.Samples
 
             using RequestContent content = RequestContent.Create(new object[]
             {
-"<body>"
+"<Arraystring>"
             });
             Response response = client.Put(content);
 
@@ -173,7 +173,7 @@ namespace _Type._Array.Samples
 
             using RequestContent content = RequestContent.Create(new object[]
             {
-"<body>"
+"<Arraystring>"
             });
             Response response = await client.PutAsync(content);
 
@@ -186,7 +186,7 @@ namespace _Type._Array.Samples
         {
             StringValue client = new ArrayClient().GetStringValueClient();
 
-            Response response = client.Put(new string[] { "<body>" });
+            Response response = client.Put(new string[] { "<Arraystring>" });
         }
 
         [Test]
@@ -195,7 +195,7 @@ namespace _Type._Array.Samples
         {
             StringValue client = new ArrayClient().GetStringValueClient();
 
-            Response response = await client.PutAsync(new string[] { "<body>" });
+            Response response = await client.PutAsync(new string[] { "<Arraystring>" });
         }
     }
 }

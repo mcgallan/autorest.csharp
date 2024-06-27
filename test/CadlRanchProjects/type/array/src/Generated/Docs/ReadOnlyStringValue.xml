@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetReadOnlyStringValueAsync(CancellationToken)">
+      <example>
+This sample shows how to call GetReadOnlyStringValueAsync.
+<code><![CDATA[
+ReadOnlyStringValue client = new ArrayClient().GetReadOnlyStringValueClient();
+
+Response<IReadOnlyList<RequiredReadOnlyStringProperty>> response = await client.GetReadOnlyStringValueAsync();
+]]></code>
+This sample shows how to call GetReadOnlyStringValueAsync with all parameters.
+<code><![CDATA[
+ReadOnlyStringValue client = new ArrayClient().GetReadOnlyStringValueClient();
+
+Response<IReadOnlyList<RequiredReadOnlyStringProperty>> response = await client.GetReadOnlyStringValueAsync();
+]]></code></example>
+    </member>
+    <member name="GetReadOnlyStringValue(CancellationToken)">
+      <example>
+This sample shows how to call GetReadOnlyStringValue.
+<code><![CDATA[
+ReadOnlyStringValue client = new ArrayClient().GetReadOnlyStringValueClient();
+
+Response<IReadOnlyList<RequiredReadOnlyStringProperty>> response = client.GetReadOnlyStringValue();
+]]></code>
+This sample shows how to call GetReadOnlyStringValue with all parameters.
+<code><![CDATA[
+ReadOnlyStringValue client = new ArrayClient().GetReadOnlyStringValueClient();
+
+Response<IReadOnlyList<RequiredReadOnlyStringProperty>> response = client.GetReadOnlyStringValue();
+]]></code></example>
+    </member>
+    <member name="GetReadOnlyStringValueAsync(RequestContext)">
+      <example>
+This sample shows how to call GetReadOnlyStringValueAsync and parse the result.
+<code><![CDATA[
+ReadOnlyStringValue client = new ArrayClient().GetReadOnlyStringValueClient();
+
+Response response = await client.GetReadOnlyStringValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].GetProperty("property").ToString());
+]]></code>
+This sample shows how to call GetReadOnlyStringValueAsync with all parameters and parse the result.
+<code><![CDATA[
+ReadOnlyStringValue client = new ArrayClient().GetReadOnlyStringValueClient();
+
+Response response = await client.GetReadOnlyStringValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].GetProperty("property").ToString());
+]]></code></example>
+    </member>
+    <member name="GetReadOnlyStringValue(RequestContext)">
+      <example>
+This sample shows how to call GetReadOnlyStringValue and parse the result.
+<code><![CDATA[
+ReadOnlyStringValue client = new ArrayClient().GetReadOnlyStringValueClient();
+
+Response response = client.GetReadOnlyStringValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].GetProperty("property").ToString());
+]]></code>
+This sample shows how to call GetReadOnlyStringValue with all parameters and parse the result.
+<code><![CDATA[
+ReadOnlyStringValue client = new ArrayClient().GetReadOnlyStringValueClient();
+
+Response response = client.GetReadOnlyStringValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result[0].GetProperty("property").ToString());
+]]></code></example>
+    </member>
+  </members>
+</doc>

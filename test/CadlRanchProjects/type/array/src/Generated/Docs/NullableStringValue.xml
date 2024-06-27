@@ -79,13 +79,13 @@ This sample shows how to call PutAsync.
 <code><![CDATA[
 NullableStringValue client = new ArrayClient().GetNullableStringValueClient();
 
-Response response = await client.PutAsync(new string[] { "<body>" });
+Response response = await client.PutAsync(new string[] { "<Array>" });
 ]]></code>
 This sample shows how to call PutAsync with all parameters.
 <code><![CDATA[
 NullableStringValue client = new ArrayClient().GetNullableStringValueClient();
 
-Response response = await client.PutAsync(new string[] { "<body>" });
+Response response = await client.PutAsync(new string[] { "<Array>" });
 ]]></code></example>
     </member>
     <member name="Put(IEnumerable{string},CancellationToken)">
@@ -94,13 +94,13 @@ This sample shows how to call Put.
 <code><![CDATA[
 NullableStringValue client = new ArrayClient().GetNullableStringValueClient();
 
-Response response = client.Put(new string[] { "<body>" });
+Response response = client.Put(new string[] { "<Array>" });
 ]]></code>
 This sample shows how to call Put with all parameters.
 <code><![CDATA[
 NullableStringValue client = new ArrayClient().GetNullableStringValueClient();
 
-Response response = client.Put(new string[] { "<body>" });
+Response response = client.Put(new string[] { "<Array>" });
 ]]></code></example>
     </member>
     <member name="PutAsync(RequestContent,RequestContext)">
@@ -111,7 +111,7 @@ NullableStringValue client = new ArrayClient().GetNullableStringValueClient();
 
 using RequestContent content = RequestContent.Create(new object[]
 {
-    "<body>"
+    "<Array>"
 });
 Response response = await client.PutAsync(content);
 
@@ -123,7 +123,7 @@ NullableStringValue client = new ArrayClient().GetNullableStringValueClient();
 
 using RequestContent content = RequestContent.Create(new object[]
 {
-    "<body>"
+    "<Array>"
 });
 Response response = await client.PutAsync(content);
 
@@ -138,7 +138,7 @@ NullableStringValue client = new ArrayClient().GetNullableStringValueClient();
 
 using RequestContent content = RequestContent.Create(new object[]
 {
-    "<body>"
+    "<Array>"
 });
 Response response = client.Put(content);
 
@@ -150,7 +150,7 @@ NullableStringValue client = new ArrayClient().GetNullableStringValueClient();
 
 using RequestContent content = RequestContent.Create(new object[]
 {
-    "<body>"
+    "<Array>"
 });
 Response response = client.Put(content);
 

@@ -48,7 +48,7 @@ namespace _Type._Array.Samples
         {
             NullableFloatValue client = new ArrayClient().GetNullableFloatValueClient();
 
-            Response<IReadOnlyList<float?>> response = client.GetNullableFloatValue();
+            Response<IReadOnlyList<float>> response = client.GetNullableFloatValue();
         }
 
         [Test]
@@ -57,7 +57,7 @@ namespace _Type._Array.Samples
         {
             NullableFloatValue client = new ArrayClient().GetNullableFloatValueClient();
 
-            Response<IReadOnlyList<float?>> response = await client.GetNullableFloatValueAsync();
+            Response<IReadOnlyList<float>> response = await client.GetNullableFloatValueAsync();
         }
 
         [Test]
@@ -90,7 +90,7 @@ namespace _Type._Array.Samples
         {
             NullableFloatValue client = new ArrayClient().GetNullableFloatValueClient();
 
-            Response<IReadOnlyList<float?>> response = client.GetNullableFloatValue();
+            Response<IReadOnlyList<float>> response = client.GetNullableFloatValue();
         }
 
         [Test]
@@ -99,7 +99,7 @@ namespace _Type._Array.Samples
         {
             NullableFloatValue client = new ArrayClient().GetNullableFloatValueClient();
 
-            Response<IReadOnlyList<float?>> response = await client.GetNullableFloatValueAsync();
+            Response<IReadOnlyList<float>> response = await client.GetNullableFloatValueAsync();
         }
 
         [Test]
@@ -138,7 +138,7 @@ namespace _Type._Array.Samples
         {
             NullableFloatValue client = new ArrayClient().GetNullableFloatValueClient();
 
-            Response response = client.Put(new float?[] { 123.45F });
+            Response response = client.Put(new float[] { 123.45F });
         }
 
         [Test]
@@ -147,7 +147,7 @@ namespace _Type._Array.Samples
         {
             NullableFloatValue client = new ArrayClient().GetNullableFloatValueClient();
 
-            Response response = await client.PutAsync(new float?[] { 123.45F });
+            Response response = await client.PutAsync(new float[] { 123.45F });
         }
 
         [Test]
@@ -186,7 +186,7 @@ namespace _Type._Array.Samples
         {
             NullableFloatValue client = new ArrayClient().GetNullableFloatValueClient();
 
-            Response response = client.Put(new float?[] { 123.45F });
+            Response response = client.Put(new float[] { 123.45F });
         }
 
         [Test]
@@ -195,7 +195,7 @@ namespace _Type._Array.Samples
         {
             NullableFloatValue client = new ArrayClient().GetNullableFloatValueClient();
 
-            Response response = await client.PutAsync(new float?[] { 123.45F });
+            Response response = await client.PutAsync(new float[] { 123.45F });
         }
     }
 }

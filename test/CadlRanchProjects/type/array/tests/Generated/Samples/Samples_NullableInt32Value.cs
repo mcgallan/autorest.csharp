@@ -48,7 +48,7 @@ namespace _Type._Array.Samples
         {
             NullableInt32Value client = new ArrayClient().GetNullableInt32ValueClient();
 
-            Response<IReadOnlyList<int?>> response = client.GetNullableInt32Value();
+            Response<IReadOnlyList<int>> response = client.GetNullableInt32Value();
         }
 
         [Test]
@@ -57,7 +57,7 @@ namespace _Type._Array.Samples
         {
             NullableInt32Value client = new ArrayClient().GetNullableInt32ValueClient();
 
-            Response<IReadOnlyList<int?>> response = await client.GetNullableInt32ValueAsync();
+            Response<IReadOnlyList<int>> response = await client.GetNullableInt32ValueAsync();
         }
 
         [Test]
@@ -90,7 +90,7 @@ namespace _Type._Array.Samples
         {
             NullableInt32Value client = new ArrayClient().GetNullableInt32ValueClient();
 
-            Response<IReadOnlyList<int?>> response = client.GetNullableInt32Value();
+            Response<IReadOnlyList<int>> response = client.GetNullableInt32Value();
         }
 
         [Test]
@@ -99,7 +99,7 @@ namespace _Type._Array.Samples
         {
             NullableInt32Value client = new ArrayClient().GetNullableInt32ValueClient();
 
-            Response<IReadOnlyList<int?>> response = await client.GetNullableInt32ValueAsync();
+            Response<IReadOnlyList<int>> response = await client.GetNullableInt32ValueAsync();
         }
 
         [Test]
@@ -138,7 +138,7 @@ namespace _Type._Array.Samples
         {
             NullableInt32Value client = new ArrayClient().GetNullableInt32ValueClient();
 
-            Response response = client.Put(new int?[] { 1234 });
+            Response response = client.Put(new int[] { 1234 });
         }
 
         [Test]
@@ -147,7 +147,7 @@ namespace _Type._Array.Samples
         {
             NullableInt32Value client = new ArrayClient().GetNullableInt32ValueClient();
 
-            Response response = await client.PutAsync(new int?[] { 1234 });
+            Response response = await client.PutAsync(new int[] { 1234 });
         }
 
         [Test]
@@ -186,7 +186,7 @@ namespace _Type._Array.Samples
         {
             NullableInt32Value client = new ArrayClient().GetNullableInt32ValueClient();
 
-            Response response = client.Put(new int?[] { 1234 });
+            Response response = client.Put(new int[] { 1234 });
         }
 
         [Test]
@@ -195,7 +195,7 @@ namespace _Type._Array.Samples
         {
             NullableInt32Value client = new ArrayClient().GetNullableInt32ValueClient();
 
-            Response response = await client.PutAsync(new int?[] { 1234 });
+            Response response = await client.PutAsync(new int[] { 1234 });
         }
     }
 }
