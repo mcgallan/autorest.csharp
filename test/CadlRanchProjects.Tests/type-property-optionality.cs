@@ -3,6 +3,7 @@
 
 using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using System.Xml;
 using _Type.Property.Optionality;
 using _Type.Property.Optionality.Models;
@@ -476,6 +477,52 @@ namespace CadlRanchProjects.Tests
         {
             var response = await new OptionalClient(host, null).GetUnionStringLiteralClient().PutDefaultAsync(new UnionStringLiteralProperty());
             Assert.AreEqual(204, response.Status);
+        });
+
+        [Test]
+        public Task Type_Property_Optional_InputToRoundTripOptional() => Test(async (host) =>
+        {
+            RoundTripOptionalModel input = new()
+            {
+                OptionalPlainDate = DateTimeOffset.Parse("2023-02-14Z02:08:47"),
+                OptionalPlainTime = new TimeSpan(1, 2, 59, 59),
+            };
+            input.OptionalCollectionWithNullableIntElement.Add(123);
+            input.OptionalCollectionWithNullableIntElement.Add(null);
+
+            RoundTripOptionalModel result = await new OptionalClient(host, null).InputToRoundTripOptionalAsync(input);
+
+            CollectionAssert.AreEqual(new int?[] { null, 123 }, result.OptionalCollectionWithNullableIntElement);
+        });
+
+        [Test]
+        public Task Type_Property_Optional_inputToRoundTrip() => Test(async (host) =>
+        {
+            InputModel input = new("test", 2, null, null, new DerivedModel(new CollectionItem[] { null }), new DerivedModel(new CollectionItem[] { null }), new int[] { 1, 2 }, new string[] { "a", null }, new CollectionItem[] { new CollectionItem(new Dictionary<string, RecordItem>()) }, new Dictionary<string, RecordItem>(), Array.Empty<float?>(), Array.Empty<bool?>(), null, null, null);
+            RoundTripModel result = await new OptionalClient(host, null).InputToRoundTripAsync(input);
+
+            Assert.AreEqual("test", result.RequiredString);
+            Assert.AreEqual(2, result.RequiredInt);
+            Assert.IsNull(result.RequiredNullableString);
+            Assert.IsNull(result.RequiredNullableInt);
+            Assert.AreEqual(3, result.RequiredReadonlyInt);
+            Assert.AreEqual("1", result.RequiredFixedStringEnum);
+            Assert.AreEqual(2, result.RequiredFixedIntEnum);
+            Assert.AreEqual("1", result.RequiredExtensibleEnum);
+            Assert.IsNotNull(result.RequiredList);
+            Assert.IsTrue(result.RequiredList.Count == 1);
+            Assert.AreEqual(1, result.RequiredIntRecord["1"]);
+            Assert.AreEqual("1", result.RequiredStringRecord["1"]);
+            Assert.IsNull(result.RequiredModelRecord);
+            Assert.AreEqual("aGVsbG8=", result.RequiredBytes);
+            Assert.IsTrue(result.RequiredUint8Array.Count == 0 && result.RequiredUint8Array[0] == 1);
+            Assert.AreEqual("unknown", result.RequiredUnknown);
+            Assert.IsTrue(result.RequiredInt8Array.Count == 2 && result.RequiredInt8Array[0] == 1);
+            Assert.IsTrue(result.RequiredNullableIntList.Count == 3 && result.RequiredNullableIntList[0] == 1);
+            Assert.AreEqual("a", result.RequiredNullableStringList[0]);
+            Assert.IsTrue(result.NonRequiredNullableIntList.Count == 0 && result.NonRequiredNullableIntList[0] == 1);
+            Assert.AreEqual("a", result.NonRequiredNullableStringList[0]);
+
         });
     }
 }

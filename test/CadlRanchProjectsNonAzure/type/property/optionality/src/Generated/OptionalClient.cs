@@ -3,13 +3,16 @@
 #nullable disable
 
 using System;
+using System.ClientModel;
 using System.ClientModel.Primitives;
 using System.Threading;
+using System.Threading.Tasks;
+using Scm._Type.Property.Optionality.Models;
 
 namespace Scm._Type.Property.Optionality
 {
     // Data plane generated client.
-    /// <summary> The Optional service client. </summary>
+    /// <summary> Illustrates models with optional properties. </summary>
     public partial class OptionalClient
     {
         private readonly ClientPipeline _pipeline;
@@ -34,6 +37,166 @@ namespace Scm._Type.Property.Optionality
 
             _pipeline = ClientPipeline.Create(options, Array.Empty<PipelinePolicy>(), Array.Empty<PipelinePolicy>(), Array.Empty<PipelinePolicy>());
             _endpoint = endpoint;
+        }
+
+        /// <summary> Input to RoundTrip. </summary>
+        /// <param name="input"> The <see cref="InputModel"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="input"/> is null. </exception>
+        public virtual async Task<ClientResult<RoundTripModel>> InputToRoundTripAsync(InputModel input)
+        {
+            Argument.AssertNotNull(input, nameof(input));
+
+            using BinaryContent content = input.ToBinaryContent();
+            ClientResult result = await InputToRoundTripAsync(content, null).ConfigureAwait(false);
+            return ClientResult.FromValue(RoundTripModel.FromResponse(result.GetRawResponse()), result.GetRawResponse());
+        }
+
+        /// <summary> Input to RoundTrip. </summary>
+        /// <param name="input"> The <see cref="InputModel"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="input"/> is null. </exception>
+        public virtual ClientResult<RoundTripModel> InputToRoundTrip(InputModel input)
+        {
+            Argument.AssertNotNull(input, nameof(input));
+
+            using BinaryContent content = input.ToBinaryContent();
+            ClientResult result = InputToRoundTrip(content, null);
+            return ClientResult.FromValue(RoundTripModel.FromResponse(result.GetRawResponse()), result.GetRawResponse());
+        }
+
+        /// <summary>
+        /// [Protocol Method] Input to RoundTrip
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="InputToRoundTripAsync(InputModel)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+        /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        public virtual async Task<ClientResult> InputToRoundTripAsync(BinaryContent content, RequestOptions options = null)
+        {
+            Argument.AssertNotNull(content, nameof(content));
+
+            using PipelineMessage message = CreateInputToRoundTripRequest(content, options);
+            return ClientResult.FromResponse(await _pipeline.ProcessMessageAsync(message, options).ConfigureAwait(false));
+        }
+
+        /// <summary>
+        /// [Protocol Method] Input to RoundTrip
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="InputToRoundTrip(InputModel)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+        /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        public virtual ClientResult InputToRoundTrip(BinaryContent content, RequestOptions options = null)
+        {
+            Argument.AssertNotNull(content, nameof(content));
+
+            using PipelineMessage message = CreateInputToRoundTripRequest(content, options);
+            return ClientResult.FromResponse(_pipeline.ProcessMessage(message, options));
+        }
+
+        /// <summary> Input to RoundTripOptional. </summary>
+        /// <param name="input"> The <see cref="RoundTripOptionalModel"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="input"/> is null. </exception>
+        public virtual async Task<ClientResult<RoundTripOptionalModel>> InputToRoundTripOptionalAsync(RoundTripOptionalModel input)
+        {
+            Argument.AssertNotNull(input, nameof(input));
+
+            using BinaryContent content = input.ToBinaryContent();
+            ClientResult result = await InputToRoundTripOptionalAsync(content, null).ConfigureAwait(false);
+            return ClientResult.FromValue(RoundTripOptionalModel.FromResponse(result.GetRawResponse()), result.GetRawResponse());
+        }
+
+        /// <summary> Input to RoundTripOptional. </summary>
+        /// <param name="input"> The <see cref="RoundTripOptionalModel"/> to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="input"/> is null. </exception>
+        public virtual ClientResult<RoundTripOptionalModel> InputToRoundTripOptional(RoundTripOptionalModel input)
+        {
+            Argument.AssertNotNull(input, nameof(input));
+
+            using BinaryContent content = input.ToBinaryContent();
+            ClientResult result = InputToRoundTripOptional(content, null);
+            return ClientResult.FromValue(RoundTripOptionalModel.FromResponse(result.GetRawResponse()), result.GetRawResponse());
+        }
+
+        /// <summary>
+        /// [Protocol Method] Input to RoundTripOptional
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="InputToRoundTripOptionalAsync(RoundTripOptionalModel)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+        /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        public virtual async Task<ClientResult> InputToRoundTripOptionalAsync(BinaryContent content, RequestOptions options = null)
+        {
+            Argument.AssertNotNull(content, nameof(content));
+
+            using PipelineMessage message = CreateInputToRoundTripOptionalRequest(content, options);
+            return ClientResult.FromResponse(await _pipeline.ProcessMessageAsync(message, options).ConfigureAwait(false));
+        }
+
+        /// <summary>
+        /// [Protocol Method] Input to RoundTripOptional
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="InputToRoundTripOptional(RoundTripOptionalModel)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+        /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        public virtual ClientResult InputToRoundTripOptional(BinaryContent content, RequestOptions options = null)
+        {
+            Argument.AssertNotNull(content, nameof(content));
+
+            using PipelineMessage message = CreateInputToRoundTripOptionalRequest(content, options);
+            return ClientResult.FromResponse(_pipeline.ProcessMessage(message, options));
         }
 
         private String _cachedString;
@@ -134,5 +297,42 @@ namespace Scm._Type.Property.Optionality
         {
             return Volatile.Read(ref _cachedRequiredAndOptional) ?? Interlocked.CompareExchange(ref _cachedRequiredAndOptional, new RequiredAndOptional(_pipeline, _endpoint), null) ?? _cachedRequiredAndOptional;
         }
+
+        internal PipelineMessage CreateInputToRoundTripRequest(BinaryContent content, RequestOptions options)
+        {
+            var message = _pipeline.CreateMessage();
+            message.ResponseClassifier = PipelineMessageClassifier200;
+            var request = message.Request;
+            request.Method = "GET";
+            var uri = new ClientUriBuilder();
+            uri.Reset(_endpoint);
+            uri.AppendPath("/type/property/optional/inputToRoundTrip", false);
+            request.Uri = uri.ToUri();
+            request.Headers.Set("Accept", "application/json");
+            request.Headers.Set("Content-Type", "application/json");
+            request.Content = content;
+            message.Apply(options);
+            return message;
+        }
+
+        internal PipelineMessage CreateInputToRoundTripOptionalRequest(BinaryContent content, RequestOptions options)
+        {
+            var message = _pipeline.CreateMessage();
+            message.ResponseClassifier = PipelineMessageClassifier200;
+            var request = message.Request;
+            request.Method = "GET";
+            var uri = new ClientUriBuilder();
+            uri.Reset(_endpoint);
+            uri.AppendPath("/type/property/optional/inputToRoundTripOptional", false);
+            request.Uri = uri.ToUri();
+            request.Headers.Set("Accept", "application/json");
+            request.Headers.Set("Content-Type", "application/json");
+            request.Content = content;
+            message.Apply(options);
+            return message;
+        }
+
+        private static PipelineMessageClassifier _pipelineMessageClassifier200;
+        private static PipelineMessageClassifier PipelineMessageClassifier200 => _pipelineMessageClassifier200 ??= PipelineMessageClassifier.Create(stackalloc ushort[] { 200 });
     }
 }

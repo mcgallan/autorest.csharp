@@ -7,13 +7,16 @@
 
 using System;
 using System.Threading;
+using System.Threading.Tasks;
+using Azure;
 using Azure.Core;
 using Azure.Core.Pipeline;
+using _Type.Property.Optionality.Models;
 
 namespace _Type.Property.Optionality
 {
     // Data plane generated client.
-    /// <summary> The Optional service client. </summary>
+    /// <summary> Illustrates models with optional properties. </summary>
     public partial class OptionalClient
     {
         private readonly HttpPipeline _pipeline;
@@ -42,6 +45,222 @@ namespace _Type.Property.Optionality
             ClientDiagnostics = new ClientDiagnostics(options, true);
             _pipeline = HttpPipelineBuilder.Build(options, Array.Empty<HttpPipelinePolicy>(), Array.Empty<HttpPipelinePolicy>(), new ResponseClassifier());
             _endpoint = endpoint;
+        }
+
+        /// <summary> Input to RoundTrip. </summary>
+        /// <param name="input"> The <see cref="InputModel"/> to use. </param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="input"/> is null. </exception>
+        /// <include file="Docs/OptionalClient.xml" path="doc/members/member[@name='InputToRoundTripAsync(InputModel,CancellationToken)']/*" />
+        public virtual async Task<Response<RoundTripModel>> InputToRoundTripAsync(InputModel input, CancellationToken cancellationToken = default)
+        {
+            Argument.AssertNotNull(input, nameof(input));
+
+            using RequestContent content = input.ToRequestContent();
+            RequestContext context = FromCancellationToken(cancellationToken);
+            Response response = await InputToRoundTripAsync(content, context).ConfigureAwait(false);
+            return Response.FromValue(RoundTripModel.FromResponse(response), response);
+        }
+
+        /// <summary> Input to RoundTrip. </summary>
+        /// <param name="input"> The <see cref="InputModel"/> to use. </param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="input"/> is null. </exception>
+        /// <include file="Docs/OptionalClient.xml" path="doc/members/member[@name='InputToRoundTrip(InputModel,CancellationToken)']/*" />
+        public virtual Response<RoundTripModel> InputToRoundTrip(InputModel input, CancellationToken cancellationToken = default)
+        {
+            Argument.AssertNotNull(input, nameof(input));
+
+            using RequestContent content = input.ToRequestContent();
+            RequestContext context = FromCancellationToken(cancellationToken);
+            Response response = InputToRoundTrip(content, context);
+            return Response.FromValue(RoundTripModel.FromResponse(response), response);
+        }
+
+        /// <summary>
+        /// [Protocol Method] Input to RoundTrip
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="InputToRoundTripAsync(InputModel,CancellationToken)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        /// <include file="Docs/OptionalClient.xml" path="doc/members/member[@name='InputToRoundTripAsync(RequestContent,RequestContext)']/*" />
+        public virtual async Task<Response> InputToRoundTripAsync(RequestContent content, RequestContext context = null)
+        {
+            Argument.AssertNotNull(content, nameof(content));
+
+            using var scope = ClientDiagnostics.CreateScope("OptionalClient.InputToRoundTrip");
+            scope.Start();
+            try
+            {
+                using HttpMessage message = CreateInputToRoundTripRequest(content, context);
+                return await _pipeline.ProcessMessageAsync(message, context).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                scope.Failed(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// [Protocol Method] Input to RoundTrip
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="InputToRoundTrip(InputModel,CancellationToken)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        /// <include file="Docs/OptionalClient.xml" path="doc/members/member[@name='InputToRoundTrip(RequestContent,RequestContext)']/*" />
+        public virtual Response InputToRoundTrip(RequestContent content, RequestContext context = null)
+        {
+            Argument.AssertNotNull(content, nameof(content));
+
+            using var scope = ClientDiagnostics.CreateScope("OptionalClient.InputToRoundTrip");
+            scope.Start();
+            try
+            {
+                using HttpMessage message = CreateInputToRoundTripRequest(content, context);
+                return _pipeline.ProcessMessage(message, context);
+            }
+            catch (Exception e)
+            {
+                scope.Failed(e);
+                throw;
+            }
+        }
+
+        /// <summary> Input to RoundTripOptional. </summary>
+        /// <param name="input"> The <see cref="RoundTripOptionalModel"/> to use. </param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="input"/> is null. </exception>
+        /// <include file="Docs/OptionalClient.xml" path="doc/members/member[@name='InputToRoundTripOptionalAsync(RoundTripOptionalModel,CancellationToken)']/*" />
+        public virtual async Task<Response<RoundTripOptionalModel>> InputToRoundTripOptionalAsync(RoundTripOptionalModel input, CancellationToken cancellationToken = default)
+        {
+            Argument.AssertNotNull(input, nameof(input));
+
+            using RequestContent content = input.ToRequestContent();
+            RequestContext context = FromCancellationToken(cancellationToken);
+            Response response = await InputToRoundTripOptionalAsync(content, context).ConfigureAwait(false);
+            return Response.FromValue(RoundTripOptionalModel.FromResponse(response), response);
+        }
+
+        /// <summary> Input to RoundTripOptional. </summary>
+        /// <param name="input"> The <see cref="RoundTripOptionalModel"/> to use. </param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="input"/> is null. </exception>
+        /// <include file="Docs/OptionalClient.xml" path="doc/members/member[@name='InputToRoundTripOptional(RoundTripOptionalModel,CancellationToken)']/*" />
+        public virtual Response<RoundTripOptionalModel> InputToRoundTripOptional(RoundTripOptionalModel input, CancellationToken cancellationToken = default)
+        {
+            Argument.AssertNotNull(input, nameof(input));
+
+            using RequestContent content = input.ToRequestContent();
+            RequestContext context = FromCancellationToken(cancellationToken);
+            Response response = InputToRoundTripOptional(content, context);
+            return Response.FromValue(RoundTripOptionalModel.FromResponse(response), response);
+        }
+
+        /// <summary>
+        /// [Protocol Method] Input to RoundTripOptional
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="InputToRoundTripOptionalAsync(RoundTripOptionalModel,CancellationToken)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        /// <include file="Docs/OptionalClient.xml" path="doc/members/member[@name='InputToRoundTripOptionalAsync(RequestContent,RequestContext)']/*" />
+        public virtual async Task<Response> InputToRoundTripOptionalAsync(RequestContent content, RequestContext context = null)
+        {
+            Argument.AssertNotNull(content, nameof(content));
+
+            using var scope = ClientDiagnostics.CreateScope("OptionalClient.InputToRoundTripOptional");
+            scope.Start();
+            try
+            {
+                using HttpMessage message = CreateInputToRoundTripOptionalRequest(content, context);
+                return await _pipeline.ProcessMessageAsync(message, context).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                scope.Failed(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// [Protocol Method] Input to RoundTripOptional
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="InputToRoundTripOptional(RoundTripOptionalModel,CancellationToken)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        /// <include file="Docs/OptionalClient.xml" path="doc/members/member[@name='InputToRoundTripOptional(RequestContent,RequestContext)']/*" />
+        public virtual Response InputToRoundTripOptional(RequestContent content, RequestContext context = null)
+        {
+            Argument.AssertNotNull(content, nameof(content));
+
+            using var scope = ClientDiagnostics.CreateScope("OptionalClient.InputToRoundTripOptional");
+            scope.Start();
+            try
+            {
+                using HttpMessage message = CreateInputToRoundTripOptionalRequest(content, context);
+                return _pipeline.ProcessMessage(message, context);
+            }
+            catch (Exception e)
+            {
+                scope.Failed(e);
+                throw;
+            }
         }
 
         private String _cachedString;
@@ -142,5 +361,49 @@ namespace _Type.Property.Optionality
         {
             return Volatile.Read(ref _cachedRequiredAndOptional) ?? Interlocked.CompareExchange(ref _cachedRequiredAndOptional, new RequiredAndOptional(ClientDiagnostics, _pipeline, _endpoint), null) ?? _cachedRequiredAndOptional;
         }
+
+        internal HttpMessage CreateInputToRoundTripRequest(RequestContent content, RequestContext context)
+        {
+            var message = _pipeline.CreateMessage(context, ResponseClassifier200);
+            var request = message.Request;
+            request.Method = RequestMethod.Get;
+            var uri = new RawRequestUriBuilder();
+            uri.Reset(_endpoint);
+            uri.AppendPath("/type/property/optional/inputToRoundTrip", false);
+            request.Uri = uri;
+            request.Headers.Add("Accept", "application/json");
+            request.Headers.Add("Content-Type", "application/json");
+            request.Content = content;
+            return message;
+        }
+
+        internal HttpMessage CreateInputToRoundTripOptionalRequest(RequestContent content, RequestContext context)
+        {
+            var message = _pipeline.CreateMessage(context, ResponseClassifier200);
+            var request = message.Request;
+            request.Method = RequestMethod.Get;
+            var uri = new RawRequestUriBuilder();
+            uri.Reset(_endpoint);
+            uri.AppendPath("/type/property/optional/inputToRoundTripOptional", false);
+            request.Uri = uri;
+            request.Headers.Add("Accept", "application/json");
+            request.Headers.Add("Content-Type", "application/json");
+            request.Content = content;
+            return message;
+        }
+
+        private static RequestContext DefaultRequestContext = new RequestContext();
+        internal static RequestContext FromCancellationToken(CancellationToken cancellationToken = default)
+        {
+            if (!cancellationToken.CanBeCanceled)
+            {
+                return DefaultRequestContext;
+            }
+
+            return new RequestContext() { CancellationToken = cancellationToken };
+        }
+
+        private static ResponseClassifier _responseClassifier200;
+        private static ResponseClassifier ResponseClassifier200 => _responseClassifier200 ??= new StatusCodeClassifier(stackalloc ushort[] { 200 });
     }
 }

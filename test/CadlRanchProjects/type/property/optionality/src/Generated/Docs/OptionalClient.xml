@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="InputToRoundTripAsync(InputModel,CancellationToken)">
+      <example>
+This sample shows how to call InputToRoundTripAsync.
+<code><![CDATA[
+OptionalClient client = new OptionalClient();
+
+InputModel input = new InputModel(
+"<requiredString>",
+1234,
+1234,
+"<requiredNullableString>",
+new BaseModel(),
+default,
+new int[] { 1234 },
+new string[] { "<requiredStringList>" },
+new CollectionItem[]
+{
+    new CollectionItem(new Dictionary<string, RecordItem>
+    {
+        ["key"] = new RecordItem(new CollectionItem[]
+        {
+            default
+        })
+    })
+},
+new Dictionary<string, RecordItem>
+{
+    ["key"] = default
+},
+new float?[] { 123.45F },
+new bool?[] { true },
+new CollectionItem[]
+{
+    default
+},
+new string[] { "<requiredNullableStringList>" },
+new int[] { 1234 });
+Response<RoundTripModel> response = await client.InputToRoundTripAsync(input);
+]]></code>
+This sample shows how to call InputToRoundTripAsync with all parameters.
+<code><![CDATA[
+OptionalClient client = new OptionalClient();
+
+InputModel input = new InputModel(
+"<requiredString>",
+1234,
+1234,
+"<requiredNullableString>",
+new BaseModel(),
+default,
+new int[] { 1234 },
+new string[] { "<requiredStringList>" },
+new CollectionItem[]
+{
+    new CollectionItem(new Dictionary<string, RecordItem>
+    {
+        ["key"] = new RecordItem(new CollectionItem[]
+        {
+            default
+        })
+    })
+},
+new Dictionary<string, RecordItem>
+{
+    ["key"] = default
+},
+new float?[] { 123.45F },
+new bool?[] { true },
+new CollectionItem[]
+{
+    default
+},
+new string[] { "<requiredNullableStringList>" },
+new int[] { 1234 })
+{
+    NonRequiredNullableInt = 1234,
+    NonRequiredNullableString = "<nonRequiredNullableString>",
+    NonRequiredModelList = { default },
+    NonRequiredStringList = { "<nonRequiredStringList>" },
+    NonRequiredIntList = { 1234 },
+    NonRequiredNullableModelList = { default },
+    NonRequiredNullableStringList = { "<nonRequiredNullableStringList>" },
+    NonRequiredNullableIntList = { 1234 },
+};
+Response<RoundTripModel> response = await client.InputToRoundTripAsync(input);
+]]></code></example>
+    </member>
+    <member name="InputToRoundTrip(InputModel,CancellationToken)">
+      <example>
+This sample shows how to call InputToRoundTrip.
+<code><![CDATA[
+OptionalClient client = new OptionalClient();
+
+InputModel input = new InputModel(
+"<requiredString>",
+1234,
+1234,
+"<requiredNullableString>",
+new BaseModel(),
+default,
+new int[] { 1234 },
+new string[] { "<requiredStringList>" },
+new CollectionItem[]
+{
+    new CollectionItem(new Dictionary<string, RecordItem>
+    {
+        ["key"] = new RecordItem(new CollectionItem[]
+        {
+            default
+        })
+    })
+},
+new Dictionary<string, RecordItem>
+{
+    ["key"] = default
+},
+new float?[] { 123.45F },
+new bool?[] { true },
+new CollectionItem[]
+{
+    default
+},
+new string[] { "<requiredNullableStringList>" },
+new int[] { 1234 });
+Response<RoundTripModel> response = client.InputToRoundTrip(input);
+]]></code>
+This sample shows how to call InputToRoundTrip with all parameters.
+<code><![CDATA[
+OptionalClient client = new OptionalClient();
+
+InputModel input = new InputModel(
+"<requiredString>",
+1234,
+1234,
+"<requiredNullableString>",
+new BaseModel(),
+default,
+new int[] { 1234 },
+new string[] { "<requiredStringList>" },
+new CollectionItem[]
+{
+    new CollectionItem(new Dictionary<string, RecordItem>
+    {
+        ["key"] = new RecordItem(new CollectionItem[]
+        {
+            default
+        })
+    })
+},
+new Dictionary<string, RecordItem>
+{
+    ["key"] = default
+},
+new float?[] { 123.45F },
+new bool?[] { true },
+new CollectionItem[]
+{
+    default
+},
+new string[] { "<requiredNullableStringList>" },
+new int[] { 1234 })
+{
+    NonRequiredNullableInt = 1234,
+    NonRequiredNullableString = "<nonRequiredNullableString>",
+    NonRequiredModelList = { default },
+    NonRequiredStringList = { "<nonRequiredStringList>" },
+    NonRequiredIntList = { 1234 },
+    NonRequiredNullableModelList = { default },
+    NonRequiredNullableStringList = { "<nonRequiredNullableStringList>" },
+    NonRequiredNullableIntList = { 1234 },
+};
+Response<RoundTripModel> response = client.InputToRoundTrip(input);
+]]></code></example>
+    </member>
+    <member name="InputToRoundTripAsync(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call InputToRoundTripAsync and parse the result.
+<code><![CDATA[
+OptionalClient client = new OptionalClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    requiredString = "<requiredString>",
+    requiredInt = 1234,
+    requiredNullableInt = 1234,
+    requiredNullableString = "<requiredNullableString>",
+    requiredModel = new object(),
+    requiredIntList = new object[]
+    {
+        1234
+    },
+    requiredStringList = new object[]
+    {
+        "<requiredStringList>"
+    },
+    requiredModelList = new object[]
+    {
+        new
+        {
+            requiredModelRecord = new
+            {
+                key = new
+                {
+                    requiredList = new object[]
+                    {
+                        null
+                    },
+                },
+            },
+        }
+    },
+    requiredModelRecord = new { },
+    requiredCollectionWithNullableFloatElement = new object[]
+    {
+        123.45F
+    },
+    requiredCollectionWithNullableBooleanElement = new object[]
+    {
+        true
+    },
+    requiredNullableModelList = new object[]
+    {
+        null
+    },
+    requiredNullableStringList = new object[]
+    {
+        "<requiredNullableStringList>"
+    },
+    requiredNullableIntList = new object[]
+    {
+        1234
+    },
+});
+Response response = await client.InputToRoundTripAsync(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("requiredString").ToString());
+Console.WriteLine(result.GetProperty("requiredInt").ToString());
+Console.WriteLine(result.GetProperty("requiredNullableInt").ToString());
+Console.WriteLine(result.GetProperty("requiredNullableString").ToString());
+Console.WriteLine(result.GetProperty("requiredReadonlyInt").ToString());
+Console.WriteLine(result.GetProperty("requiredFixedStringEnum").ToString());
+Console.WriteLine(result.GetProperty("requiredFixedIntEnum").ToString());
+Console.WriteLine(result.GetProperty("requiredExtensibleEnum").ToString());
+Console.WriteLine(result.GetProperty("requiredIntRecord").GetProperty("<key>").ToString());
+Console.WriteLine(result.GetProperty("requiredStringRecord").GetProperty("<key>").ToString());
+Console.WriteLine(result.GetProperty("requiredBytes").ToString());
+Console.WriteLine(result.GetProperty("requiredUint8Array")[0].ToString());
+Console.WriteLine(result.GetProperty("requiredUnknown").ToString());
+Console.WriteLine(result.GetProperty("requiredInt8Array")[0].ToString());
+Console.WriteLine(result.GetProperty("requiredNullableIntList")[0].ToString());
+Console.WriteLine(result.GetProperty("requiredNullableStringList")[0].ToString());
+]]></code>
+This sample shows how to call InputToRoundTripAsync with all request content and parse the result.
+<code><![CDATA[
+OptionalClient client = new OptionalClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    requiredString = "<requiredString>",
+    requiredInt = 1234,
+    requiredNullableInt = 1234,
+    requiredNullableString = "<requiredNullableString>",
+    nonRequiredNullableInt = 1234,
+    nonRequiredNullableString = "<nonRequiredNullableString>",
+    requiredModel = new object(),
+    requiredIntList = new object[]
+    {
+        1234
+    },
+    requiredStringList = new object[]
+    {
+        "<requiredStringList>"
+    },
+    requiredModelList = new object[]
+    {
+        new
+        {
+            requiredModelRecord = new
+            {
+                key = new
+                {
+                    requiredList = new object[]
+                    {
+                        null
+                    },
+                },
+            },
+        }
+    },
+    requiredModelRecord = new { },
+    requiredCollectionWithNullableFloatElement = new object[]
+    {
+        123.45F
+    },
+    requiredCollectionWithNullableBooleanElement = new object[]
+    {
+        true
+    },
+    requiredNullableModelList = new object[]
+    {
+        null
+    },
+    requiredNullableStringList = new object[]
+    {
+        "<requiredNullableStringList>"
+    },
+    requiredNullableIntList = new object[]
+    {
+        1234
+    },
+    nonRequiredModelList = new object[]
+    {
+        null
+    },
+    nonRequiredStringList = new object[]
+    {
+        "<nonRequiredStringList>"
+    },
+    nonRequiredIntList = new object[]
+    {
+        1234
+    },
+    nonRequiredNullableModelList = new object[]
+    {
+        null
+    },
+    nonRequiredNullableStringList = new object[]
+    {
+        "<nonRequiredNullableStringList>"
+    },
+    nonRequiredNullableIntList = new object[]
+    {
+        1234
+    },
+});
+Response response = await client.InputToRoundTripAsync(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("requiredString").ToString());
+Console.WriteLine(result.GetProperty("requiredInt").ToString());
+Console.WriteLine(result.GetProperty("nonRequiredString").ToString());
+Console.WriteLine(result.GetProperty("nonRequiredInt").ToString());
+Console.WriteLine(result.GetProperty("requiredNullableInt").ToString());
+Console.WriteLine(result.GetProperty("requiredNullableString").ToString());
+Console.WriteLine(result.GetProperty("nonRequiredNullableInt").ToString());
+Console.WriteLine(result.GetProperty("nonRequiredNullableString").ToString());
+Console.WriteLine(result.GetProperty("requiredReadonlyInt").ToString());
+Console.WriteLine(result.GetProperty("nonRequiredReadonlyInt").ToString());
+Console.WriteLine(result.GetProperty("requiredFixedStringEnum").ToString());
+Console.WriteLine(result.GetProperty("requiredFixedIntEnum").ToString());
+Console.WriteLine(result.GetProperty("requiredExtensibleEnum").ToString());
+Console.WriteLine(result.GetProperty("requiredIntRecord").GetProperty("<key>").ToString());
+Console.WriteLine(result.GetProperty("requiredStringRecord").GetProperty("<key>").ToString());
+Console.WriteLine(result.GetProperty("requiredBytes").ToString());
+Console.WriteLine(result.GetProperty("optionalBytes").ToString());
+Console.WriteLine(result.GetProperty("requiredUint8Array")[0].ToString());
+Console.WriteLine(result.GetProperty("optionalUint8Array")[0].ToString());
+Console.WriteLine(result.GetProperty("requiredUnknown").ToString());
+Console.WriteLine(result.GetProperty("optionalUnknown").ToString());
+Console.WriteLine(result.GetProperty("requiredInt8Array")[0].ToString());
+Console.WriteLine(result.GetProperty("optionalInt8Array")[0].ToString());
+Console.WriteLine(result.GetProperty("requiredNullableIntList")[0].ToString());
+Console.WriteLine(result.GetProperty("requiredNullableStringList")[0].ToString());
+Console.WriteLine(result.GetProperty("nonRequiredNullableIntList")[0].ToString());
+Console.WriteLine(result.GetProperty("nonRequiredNullableStringList")[0].ToString());
+]]></code></example>
+    </member>
+    <member name="InputToRoundTrip(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call InputToRoundTrip and parse the result.
+<code><![CDATA[
+OptionalClient client = new OptionalClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    requiredString = "<requiredString>",
+    requiredInt = 1234,
+    requiredNullableInt = 1234,
+    requiredNullableString = "<requiredNullableString>",
+    requiredModel = new object(),
+    requiredIntList = new object[]
+    {
+        1234
+    },
+    requiredStringList = new object[]
+    {
+        "<requiredStringList>"
+    },
+    requiredModelList = new object[]
+    {
+        new
+        {
+            requiredModelRecord = new
+            {
+                key = new
+                {
+                    requiredList = new object[]
+                    {
+                        null
+                    },
+                },
+            },
+        }
+    },
+    requiredModelRecord = new { },
+    requiredCollectionWithNullableFloatElement = new object[]
+    {
+        123.45F
+    },
+    requiredCollectionWithNullableBooleanElement = new object[]
+    {
+        true
+    },
+    requiredNullableModelList = new object[]
+    {
+        null
+    },
+    requiredNullableStringList = new object[]
+    {
+        "<requiredNullableStringList>"
+    },
+    requiredNullableIntList = new object[]
+    {
+        1234
+    },
+});
+Response response = client.InputToRoundTrip(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("requiredString").ToString());
+Console.WriteLine(result.GetProperty("requiredInt").ToString());
+Console.WriteLine(result.GetProperty("requiredNullableInt").ToString());
+Console.WriteLine(result.GetProperty("requiredNullableString").ToString());
+Console.WriteLine(result.GetProperty("requiredReadonlyInt").ToString());
+Console.WriteLine(result.GetProperty("requiredFixedStringEnum").ToString());
+Console.WriteLine(result.GetProperty("requiredFixedIntEnum").ToString());
+Console.WriteLine(result.GetProperty("requiredExtensibleEnum").ToString());
+Console.WriteLine(result.GetProperty("requiredIntRecord").GetProperty("<key>").ToString());
+Console.WriteLine(result.GetProperty("requiredStringRecord").GetProperty("<key>").ToString());
+Console.WriteLine(result.GetProperty("requiredBytes").ToString());
+Console.WriteLine(result.GetProperty("requiredUint8Array")[0].ToString());
+Console.WriteLine(result.GetProperty("requiredUnknown").ToString());
+Console.WriteLine(result.GetProperty("requiredInt8Array")[0].ToString());
+Console.WriteLine(result.GetProperty("requiredNullableIntList")[0].ToString());
+Console.WriteLine(result.GetProperty("requiredNullableStringList")[0].ToString());
+]]></code>
+This sample shows how to call InputToRoundTrip with all request content and parse the result.
+<code><![CDATA[
+OptionalClient client = new OptionalClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    requiredString = "<requiredString>",
+    requiredInt = 1234,
+    requiredNullableInt = 1234,
+    requiredNullableString = "<requiredNullableString>",
+    nonRequiredNullableInt = 1234,
+    nonRequiredNullableString = "<nonRequiredNullableString>",
+    requiredModel = new object(),
+    requiredIntList = new object[]
+    {
+        1234
+    },
+    requiredStringList = new object[]
+    {
+        "<requiredStringList>"
+    },
+    requiredModelList = new object[]
+    {
+        new
+        {
+            requiredModelRecord = new
+            {
+                key = new
+                {
+                    requiredList = new object[]
+                    {
+                        null
+                    },
+                },
+            },
+        }
+    },
+    requiredModelRecord = new { },
+    requiredCollectionWithNullableFloatElement = new object[]
+    {
+        123.45F
+    },
+    requiredCollectionWithNullableBooleanElement = new object[]
+    {
+        true
+    },
+    requiredNullableModelList = new object[]
+    {
+        null
+    },
+    requiredNullableStringList = new object[]
+    {
+        "<requiredNullableStringList>"
+    },
+    requiredNullableIntList = new object[]
+    {
+        1234
+    },
+    nonRequiredModelList = new object[]
+    {
+        null
+    },
+    nonRequiredStringList = new object[]
+    {
+        "<nonRequiredStringList>"
+    },
+    nonRequiredIntList = new object[]
+    {
+        1234
+    },
+    nonRequiredNullableModelList = new object[]
+    {
+        null
+    },
+    nonRequiredNullableStringList = new object[]
+    {
+        "<nonRequiredNullableStringList>"
+    },
+    nonRequiredNullableIntList = new object[]
+    {
+        1234
+    },
+});
+Response response = client.InputToRoundTrip(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("requiredString").ToString());
+Console.WriteLine(result.GetProperty("requiredInt").ToString());
+Console.WriteLine(result.GetProperty("nonRequiredString").ToString());
+Console.WriteLine(result.GetProperty("nonRequiredInt").ToString());
+Console.WriteLine(result.GetProperty("requiredNullableInt").ToString());
+Console.WriteLine(result.GetProperty("requiredNullableString").ToString());
+Console.WriteLine(result.GetProperty("nonRequiredNullableInt").ToString());
+Console.WriteLine(result.GetProperty("nonRequiredNullableString").ToString());
+Console.WriteLine(result.GetProperty("requiredReadonlyInt").ToString());
+Console.WriteLine(result.GetProperty("nonRequiredReadonlyInt").ToString());
+Console.WriteLine(result.GetProperty("requiredFixedStringEnum").ToString());
+Console.WriteLine(result.GetProperty("requiredFixedIntEnum").ToString());
+Console.WriteLine(result.GetProperty("requiredExtensibleEnum").ToString());
+Console.WriteLine(result.GetProperty("requiredIntRecord").GetProperty("<key>").ToString());
+Console.WriteLine(result.GetProperty("requiredStringRecord").GetProperty("<key>").ToString());
+Console.WriteLine(result.GetProperty("requiredBytes").ToString());
+Console.WriteLine(result.GetProperty("optionalBytes").ToString());
+Console.WriteLine(result.GetProperty("requiredUint8Array")[0].ToString());
+Console.WriteLine(result.GetProperty("optionalUint8Array")[0].ToString());
+Console.WriteLine(result.GetProperty("requiredUnknown").ToString());
+Console.WriteLine(result.GetProperty("optionalUnknown").ToString());
+Console.WriteLine(result.GetProperty("requiredInt8Array")[0].ToString());
+Console.WriteLine(result.GetProperty("optionalInt8Array")[0].ToString());
+Console.WriteLine(result.GetProperty("requiredNullableIntList")[0].ToString());
+Console.WriteLine(result.GetProperty("requiredNullableStringList")[0].ToString());
+Console.WriteLine(result.GetProperty("nonRequiredNullableIntList")[0].ToString());
+Console.WriteLine(result.GetProperty("nonRequiredNullableStringList")[0].ToString());
+]]></code></example>
+    </member>
+    <member name="InputToRoundTripOptionalAsync(RoundTripOptionalModel,CancellationToken)">
+      <example>
+This sample shows how to call InputToRoundTripOptionalAsync.
+<code><![CDATA[
+OptionalClient client = new OptionalClient();
+
+RoundTripOptionalModel input = new RoundTripOptionalModel();
+Response<RoundTripOptionalModel> response = await client.InputToRoundTripOptionalAsync(input);
+]]></code>
+This sample shows how to call InputToRoundTripOptionalAsync with all parameters.
+<code><![CDATA[
+OptionalClient client = new OptionalClient();
+
+RoundTripOptionalModel input = new RoundTripOptionalModel
+{
+    OptionalString = "<optionalString>",
+    OptionalInt = 1234,
+    OptionalStringList = { "<optionalStringList>" },
+    OptionalIntList = { 1234 },
+    OptionalModelList = {new CollectionItem(new Dictionary<string, RecordItem>
+    {
+        ["key"] = new RecordItem(new CollectionItem[]
+        {
+            default
+        })
+    })},
+    OptionalModel = new DerivedModel(new CollectionItem[]
+    {
+        default
+    }),
+    OptionalModelWithPropertiesOnBase = new DerivedModelWithProperties(new string[] { "<requiredList>" }),
+    OptionalFixedStringEnum = FixedStringEnum.One,
+    OptionalExtensibleEnum = ExtensibleEnum.One,
+    OptionalIntRecord =
+    {
+        ["key"] = 1234
+    },
+    OptionalStringRecord =
+    {
+        ["key"] = "<optionalStringRecord>"
+    },
+    OptionalModelRecord =
+    {
+        ["key"] = default
+    },
+    OptionalPlainDate = DateTimeOffset.Parse("2022-05-10"),
+    OptionalPlainTime = TimeSpan.Parse("01:23:45"),
+    OptionalCollectionWithNullableIntElement = { 1234 },
+};
+Response<RoundTripOptionalModel> response = await client.InputToRoundTripOptionalAsync(input);
+]]></code></example>
+    </member>
+    <member name="InputToRoundTripOptional(RoundTripOptionalModel,CancellationToken)">
+      <example>
+This sample shows how to call InputToRoundTripOptional.
+<code><![CDATA[
+OptionalClient client = new OptionalClient();
+
+RoundTripOptionalModel input = new RoundTripOptionalModel();
+Response<RoundTripOptionalModel> response = client.InputToRoundTripOptional(input);
+]]></code>
+This sample shows how to call InputToRoundTripOptional with all parameters.
+<code><![CDATA[
+OptionalClient client = new OptionalClient();
+
+RoundTripOptionalModel input = new RoundTripOptionalModel
+{
+    OptionalString = "<optionalString>",
+    OptionalInt = 1234,
+    OptionalStringList = { "<optionalStringList>" },
+    OptionalIntList = { 1234 },
+    OptionalModelList = {new CollectionItem(new Dictionary<string, RecordItem>
+    {
+        ["key"] = new RecordItem(new CollectionItem[]
+        {
+            default
+        })
+    })},
+    OptionalModel = new DerivedModel(new CollectionItem[]
+    {
+        default
+    }),
+    OptionalModelWithPropertiesOnBase = new DerivedModelWithProperties(new string[] { "<requiredList>" }),
+    OptionalFixedStringEnum = FixedStringEnum.One,
+    OptionalExtensibleEnum = ExtensibleEnum.One,
+    OptionalIntRecord =
+    {
+        ["key"] = 1234
+    },
+    OptionalStringRecord =
+    {
+        ["key"] = "<optionalStringRecord>"
+    },
+    OptionalModelRecord =
+    {
+        ["key"] = default
+    },
+    OptionalPlainDate = DateTimeOffset.Parse("2022-05-10"),
+    OptionalPlainTime = TimeSpan.Parse("01:23:45"),
+    OptionalCollectionWithNullableIntElement = { 1234 },
+};
+Response<RoundTripOptionalModel> response = client.InputToRoundTripOptional(input);
+]]></code></example>
+    </member>
+    <member name="InputToRoundTripOptionalAsync(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call InputToRoundTripOptionalAsync and parse the result.
+<code><![CDATA[
+OptionalClient client = new OptionalClient();
+
+using RequestContent content = RequestContent.Create(new object());
+Response response = await client.InputToRoundTripOptionalAsync(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call InputToRoundTripOptionalAsync with all request content and parse the result.
+<code><![CDATA[
+OptionalClient client = new OptionalClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    optionalString = "<optionalString>",
+    optionalInt = 1234,
+    optionalStringList = new object[]
+    {
+        "<optionalStringList>"
+    },
+    optionalIntList = new object[]
+    {
+        1234
+    },
+    optionalModelList = new object[]
+    {
+        new
+        {
+            requiredModelRecord = new
+            {
+                key = new
+                {
+                    requiredList = new object[]
+                    {
+                        null
+                    },
+                },
+            },
+        }
+    },
+    optionalModel = new
+    {
+        requiredList = new object[]
+        {
+            null
+        },
+    },
+    optionalModelWithPropertiesOnBase = new
+    {
+        requiredList = new object[]
+        {
+            "<requiredList>"
+        },
+    },
+    optionalFixedStringEnum = "1",
+    optionalExtensibleEnum = "1",
+    optionalIntRecord = new
+    {
+        key = 1234,
+    },
+    optionalStringRecord = new
+    {
+        key = "<optionalStringRecord>",
+    },
+    optionalModelRecord = new { },
+    optionalPlainDate = "2022-05-10",
+    optionalPlainTime = "01:23:45",
+    optionalCollectionWithNullableIntElement = new object[]
+    {
+        1234
+    },
+});
+Response response = await client.InputToRoundTripOptionalAsync(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("optionalString").ToString());
+Console.WriteLine(result.GetProperty("optionalInt").ToString());
+Console.WriteLine(result.GetProperty("optionalStringList")[0].ToString());
+Console.WriteLine(result.GetProperty("optionalIntList")[0].ToString());
+Console.WriteLine(result.GetProperty("optionalModelWithPropertiesOnBase").GetProperty("requiredList")[0].ToString());
+Console.WriteLine(result.GetProperty("optionalFixedStringEnum").ToString());
+Console.WriteLine(result.GetProperty("optionalExtensibleEnum").ToString());
+Console.WriteLine(result.GetProperty("optionalIntRecord").GetProperty("<key>").ToString());
+Console.WriteLine(result.GetProperty("optionalStringRecord").GetProperty("<key>").ToString());
+Console.WriteLine(result.GetProperty("optionalPlainDate").ToString());
+Console.WriteLine(result.GetProperty("optionalPlainTime").ToString());
+Console.WriteLine(result.GetProperty("optionalCollectionWithNullableIntElement")[0].ToString());
+]]></code></example>
+    </member>
+    <member name="InputToRoundTripOptional(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call InputToRoundTripOptional and parse the result.
+<code><![CDATA[
+OptionalClient client = new OptionalClient();
+
+using RequestContent content = RequestContent.Create(new object());
+Response response = client.InputToRoundTripOptional(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call InputToRoundTripOptional with all request content and parse the result.
+<code><![CDATA[
+OptionalClient client = new OptionalClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    optionalString = "<optionalString>",
+    optionalInt = 1234,
+    optionalStringList = new object[]
+    {
+        "<optionalStringList>"
+    },
+    optionalIntList = new object[]
+    {
+        1234
+    },
+    optionalModelList = new object[]
+    {
+        new
+        {
+            requiredModelRecord = new
+            {
+                key = new
+                {
+                    requiredList = new object[]
+                    {
+                        null
+                    },
+                },
+            },
+        }
+    },
+    optionalModel = new
+    {
+        requiredList = new object[]
+        {
+            null
+        },
+    },
+    optionalModelWithPropertiesOnBase = new
+    {
+        requiredList = new object[]
+        {
+            "<requiredList>"
+        },
+    },
+    optionalFixedStringEnum = "1",
+    optionalExtensibleEnum = "1",
+    optionalIntRecord = new
+    {
+        key = 1234,
+    },
+    optionalStringRecord = new
+    {
+        key = "<optionalStringRecord>",
+    },
+    optionalModelRecord = new { },
+    optionalPlainDate = "2022-05-10",
+    optionalPlainTime = "01:23:45",
+    optionalCollectionWithNullableIntElement = new object[]
+    {
+        1234
+    },
+});
+Response response = client.InputToRoundTripOptional(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("optionalString").ToString());
+Console.WriteLine(result.GetProperty("optionalInt").ToString());
+Console.WriteLine(result.GetProperty("optionalStringList")[0].ToString());
+Console.WriteLine(result.GetProperty("optionalIntList")[0].ToString());
+Console.WriteLine(result.GetProperty("optionalModelWithPropertiesOnBase").GetProperty("requiredList")[0].ToString());
+Console.WriteLine(result.GetProperty("optionalFixedStringEnum").ToString());
+Console.WriteLine(result.GetProperty("optionalExtensibleEnum").ToString());
+Console.WriteLine(result.GetProperty("optionalIntRecord").GetProperty("<key>").ToString());
+Console.WriteLine(result.GetProperty("optionalStringRecord").GetProperty("<key>").ToString());
+Console.WriteLine(result.GetProperty("optionalPlainDate").ToString());
+Console.WriteLine(result.GetProperty("optionalPlainTime").ToString());
+Console.WriteLine(result.GetProperty("optionalCollectionWithNullableIntElement")[0].ToString());
+]]></code></example>
+    </member>
+  </members>
+</doc>
