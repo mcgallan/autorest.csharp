@@ -423,7 +423,7 @@ namespace Server.Versions.Versioned
             var uri = new RawRequestUriBuilder();
             uri.Reset(_endpoint);
             uri.AppendPath("/server/versions/versioned/with-query-unknown-api-version", false);
-            uri.AppendQuery("apiVersion", "2022-07-09", true);
+            uri.AppendQuery("api-version", "2022-07-09", true);
             request.Uri = uri;
             return message;
         }
