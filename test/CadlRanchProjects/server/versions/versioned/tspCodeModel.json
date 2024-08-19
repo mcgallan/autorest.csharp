@@ -15,29 +15,25 @@
     "$id": "3",
     "Kind": "string",
     "Name": "string",
-    "CrossLanguageDefinitionId": "TypeSpec.string",
-    "Decorators": []
+    "CrossLanguageDefinitionId": "TypeSpec.string"
    },
    "Values": [
     {
      "$id": "4",
      "Name": "v2021_01_01_preview",
      "Value": "2021-01-01-preview",
-     "Description": "The version 2022-12-01-preview.",
-     "Decorators": []
+     "Description": "The version 2022-12-01-preview."
     },
     {
      "$id": "5",
      "Name": "v2022_12_01_preview",
      "Value": "2022-12-01-preview",
-     "Description": "The version 2022-12-01-preview.",
-     "Decorators": []
+     "Description": "The version 2022-12-01-preview."
     }
    ],
    "Description": "The version of the API.",
    "IsExtensible": false,
-   "Usage": "ApiVersionEnum",
-   "Decorators": []
+   "Usage": "ApiVersionEnum"
   }
  ],
  "Models": [],
@@ -93,8 +89,7 @@
      "BufferResponse": true,
      "GenerateProtocolMethod": true,
      "GenerateConvenienceMethod": true,
-     "CrossLanguageDefinitionId": "Server.Versions.Versioned.withoutApiVersion",
-     "Decorators": []
+     "CrossLanguageDefinitionId": "Server.Versions.Versioned.withoutApiVersion"
     },
     {
      "$id": "11",
@@ -113,8 +108,7 @@
         "$id": "13",
         "Kind": "string",
         "Name": "string",
-        "CrossLanguageDefinitionId": "TypeSpec.string",
-        "Decorators": []
+        "CrossLanguageDefinitionId": "TypeSpec.string"
        },
        "Location": "Query",
        "IsApiVersion": true,
@@ -132,8 +126,7 @@
          "CrossLanguageDefinitionId": "TypeSpec.string"
         },
         "Value": "2022-12-01-preview"
-       },
-       "Decorators": []
+       }
       }
      ],
      "Responses": [
@@ -154,8 +147,7 @@
      "BufferResponse": true,
      "GenerateProtocolMethod": true,
      "GenerateConvenienceMethod": true,
-     "CrossLanguageDefinitionId": "Server.Versions.Versioned.withQueryApiVersion",
-     "Decorators": []
+     "CrossLanguageDefinitionId": "Server.Versions.Versioned.withQueryApiVersion"
     },
     {
      "$id": "17",
@@ -174,8 +166,7 @@
         "$id": "19",
         "Kind": "string",
         "Name": "string",
-        "CrossLanguageDefinitionId": "TypeSpec.string",
-        "Decorators": []
+        "CrossLanguageDefinitionId": "TypeSpec.string"
        },
        "Location": "Path",
        "IsApiVersion": true,
@@ -193,8 +184,7 @@
          "CrossLanguageDefinitionId": "TypeSpec.string"
         },
         "Value": "2022-12-01-preview"
-       },
-       "Decorators": []
+       }
       }
      ],
      "Responses": [
@@ -215,8 +205,7 @@
      "BufferResponse": true,
      "GenerateProtocolMethod": true,
      "GenerateConvenienceMethod": true,
-     "CrossLanguageDefinitionId": "Server.Versions.Versioned.withPathApiVersion",
-     "Decorators": []
+     "CrossLanguageDefinitionId": "Server.Versions.Versioned.withPathApiVersion"
     },
     {
      "$id": "23",
@@ -235,8 +224,7 @@
         "$id": "25",
         "Kind": "string",
         "Name": "string",
-        "CrossLanguageDefinitionId": "TypeSpec.string",
-        "Decorators": []
+        "CrossLanguageDefinitionId": "TypeSpec.string"
        },
        "Location": "Query",
        "IsApiVersion": true,
@@ -254,8 +242,7 @@
          "CrossLanguageDefinitionId": "TypeSpec.string"
         },
         "Value": "2022-12-01-preview"
-       },
-       "Decorators": []
+       }
       }
      ],
      "Responses": [
@@ -276,19 +263,70 @@
      "BufferResponse": true,
      "GenerateProtocolMethod": true,
      "GenerateConvenienceMethod": true,
-     "CrossLanguageDefinitionId": "Server.Versions.Versioned.withQueryOldApiVersion",
-     "Decorators": []
+     "CrossLanguageDefinitionId": "Server.Versions.Versioned.withQueryOldApiVersion"
+    },
+    {
+     "$id": "29",
+     "Name": "withQueryUnknownApiVersion",
+     "ResourceName": "Versioned",
+     "Accessibility": "public",
+     "Parameters": [
+      {
+       "$ref": "8"
+      },
+      {
+       "$id": "30",
+       "Name": "apiVersion",
+       "NameInRequest": "apiVersion",
+       "Type": {
+        "$id": "31",
+        "Kind": "constant",
+        "ValueType": {
+         "$id": "32",
+         "Kind": "string",
+         "Name": "string",
+         "CrossLanguageDefinitionId": "TypeSpec.string"
+        },
+        "Value": "2022-07-09"
+       },
+       "Location": "Query",
+       "IsApiVersion": true,
+       "IsContentType": false,
+       "IsEndpoint": false,
+       "Explode": false,
+       "IsRequired": true,
+       "Kind": "Constant"
+      }
+     ],
+     "Responses": [
+      {
+       "$id": "33",
+       "StatusCodes": [
+        200
+       ],
+       "BodyMediaType": "Json",
+       "Headers": [],
+       "IsErrorResponse": false
+      }
+     ],
+     "HttpMethod": "HEAD",
+     "RequestBodyMediaType": "None",
+     "Uri": "{endpoint}",
+     "Path": "/server/versions/versioned/with-query-unknown-api-version",
+     "BufferResponse": true,
+     "GenerateProtocolMethod": true,
+     "GenerateConvenienceMethod": true,
+     "CrossLanguageDefinitionId": "Server.Versions.Versioned.withQueryUnknownApiVersion"
     }
    ],
    "Protocol": {
-    "$id": "29"
+    "$id": "34"
    },
    "Parameters": [
     {
      "$ref": "8"
     }
-   ],
-   "Decorators": []
+   ]
   }
  ]
 }
