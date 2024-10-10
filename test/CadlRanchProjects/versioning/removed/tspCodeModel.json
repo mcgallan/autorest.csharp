@@ -448,7 +448,7 @@
      "$id": "45",
      "Name": "modelV3",
      "ResourceName": "Removed",
-     "Description": "This operation will return different paths and request bodies based on different versions.",
+     "Description": "This operation will pass different paths and different request bodies based on different versions.",
      "Accessibility": "public",
      "Parameters": [
       {

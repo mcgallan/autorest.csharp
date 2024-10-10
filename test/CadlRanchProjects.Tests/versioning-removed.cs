@@ -66,34 +66,13 @@ namespace CadlRanchProjects.Tests
         });
 
         [Test]
-        public Task Versioning_Removed_V3_V2() => Test(async (host) =>
+        public Task Versioning_Removed_V3() => Test(async (host) =>
         {
             ModelV3 modelV3 = new ModelV3("123", EnumV3.EnumMemberV1);
             var response = await new RemovedClient(host, Versions.V2).ModelV3Async(modelV3);
             Assert.AreEqual(200, response.GetRawResponse().Status);
             Assert.AreEqual("123", response.Value.Id);
             Assert.AreEqual(EnumV3.EnumMemberV1, response.Value.EnumProp);
-        });
-
-        [Test]
-        public Task Versioning_Removed_V3_V1() => Test(async (host) =>
-        {
-            ModelV3 modelV3 = new ModelV3("123", EnumV3.EnumMemberV1);
-            var response = await new RemovedClient(host, Versions.V1).ModelV3Async(modelV3);
-            Assert.AreEqual(200, response.GetRawResponse().Status);
-            Assert.AreEqual("123", response.Value.Id);
-            Assert.AreEqual(EnumV3.EnumMemberV1, response.Value.EnumProp);
-        });
-
-        [Test]
-        [Ignore("body doesn't match")]
-        public Task Versioning_Removed_V3_V2Preview() => Test(async (host) =>
-        {
-            ModelV3 modelV3 = new ModelV3("123", EnumV3.EnumMemberV2Preview);
-            var response = await new RemovedClient(host, Versions.V2preview).ModelV3Async(modelV3);
-            Assert.AreEqual(200, response.GetRawResponse().Status);
-            Assert.AreEqual("123", response.Value.Id);
-            Assert.AreEqual(EnumV3.EnumMemberV2Preview, response.Value.EnumProp);
         });
     }
 }

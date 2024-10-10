@@ -166,7 +166,7 @@ namespace Versioning.Removed
             }
         }
 
-        /// <summary> This operation will return different paths and request bodies based on different versions. </summary>
+        /// <summary> This operation will pass different paths and different request bodies based on different versions. </summary>
         /// <param name="body"> The <see cref="Models.ModelV3"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
@@ -181,7 +181,7 @@ namespace Versioning.Removed
             return Response.FromValue(Models.ModelV3.FromResponse(response), response);
         }
 
-        /// <summary> This operation will return different paths and request bodies based on different versions. </summary>
+        /// <summary> This operation will pass different paths and different request bodies based on different versions. </summary>
         /// <param name="body"> The <see cref="Models.ModelV3"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
@@ -197,7 +197,7 @@ namespace Versioning.Removed
         }
 
         /// <summary>
-        /// [Protocol Method] This operation will return different paths and request bodies based on different versions.
+        /// [Protocol Method] This operation will pass different paths and different request bodies based on different versions.
         /// <list type="bullet">
         /// <item>
         /// <description>
@@ -236,7 +236,7 @@ namespace Versioning.Removed
         }
 
         /// <summary>
-        /// [Protocol Method] This operation will return different paths and request bodies based on different versions.
+        /// [Protocol Method] This operation will pass different paths and different request bodies based on different versions.
         /// <list type="bullet">
         /// <item>
         /// <description>
