@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetModelWithEncodedNamesValueAsync(CancellationToken)">
+      <example>
+This sample shows how to call GetModelWithEncodedNamesValueAsync.
+<code><![CDATA[
+ModelWithEncodedNamesValue client = new XmlClient().GetModelWithEncodedNamesValueClient();
+
+Response<ModelWithEncodedNames> response = await client.GetModelWithEncodedNamesValueAsync();
+]]></code>
+This sample shows how to call GetModelWithEncodedNamesValueAsync with all parameters.
+<code><![CDATA[
+ModelWithEncodedNamesValue client = new XmlClient().GetModelWithEncodedNamesValueClient();
+
+Response<ModelWithEncodedNames> response = await client.GetModelWithEncodedNamesValueAsync();
+]]></code></example>
+    </member>
+    <member name="GetModelWithEncodedNamesValue(CancellationToken)">
+      <example>
+This sample shows how to call GetModelWithEncodedNamesValue.
+<code><![CDATA[
+ModelWithEncodedNamesValue client = new XmlClient().GetModelWithEncodedNamesValueClient();
+
+Response<ModelWithEncodedNames> response = client.GetModelWithEncodedNamesValue();
+]]></code>
+This sample shows how to call GetModelWithEncodedNamesValue with all parameters.
+<code><![CDATA[
+ModelWithEncodedNamesValue client = new XmlClient().GetModelWithEncodedNamesValueClient();
+
+Response<ModelWithEncodedNames> response = client.GetModelWithEncodedNamesValue();
+]]></code></example>
+    </member>
+    <member name="GetModelWithEncodedNamesValueAsync(RequestContext)">
+      <example>
+This sample shows how to call GetModelWithEncodedNamesValueAsync and parse the result.
+<code><![CDATA[
+ModelWithEncodedNamesValue client = new XmlClient().GetModelWithEncodedNamesValueClient();
+
+Response response = await client.GetModelWithEncodedNamesValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("modelData").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("modelData").GetProperty("age").ToString());
+Console.WriteLine(result.GetProperty("colors")[0].ToString());
+]]></code>
+This sample shows how to call GetModelWithEncodedNamesValueAsync with all parameters and parse the result.
+<code><![CDATA[
+ModelWithEncodedNamesValue client = new XmlClient().GetModelWithEncodedNamesValueClient();
+
+Response response = await client.GetModelWithEncodedNamesValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("modelData").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("modelData").GetProperty("age").ToString());
+Console.WriteLine(result.GetProperty("colors")[0].ToString());
+]]></code></example>
+    </member>
+    <member name="GetModelWithEncodedNamesValue(RequestContext)">
+      <example>
+This sample shows how to call GetModelWithEncodedNamesValue and parse the result.
+<code><![CDATA[
+ModelWithEncodedNamesValue client = new XmlClient().GetModelWithEncodedNamesValueClient();
+
+Response response = client.GetModelWithEncodedNamesValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("modelData").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("modelData").GetProperty("age").ToString());
+Console.WriteLine(result.GetProperty("colors")[0].ToString());
+]]></code>
+This sample shows how to call GetModelWithEncodedNamesValue with all parameters and parse the result.
+<code><![CDATA[
+ModelWithEncodedNamesValue client = new XmlClient().GetModelWithEncodedNamesValueClient();
+
+Response response = client.GetModelWithEncodedNamesValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("modelData").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("modelData").GetProperty("age").ToString());
+Console.WriteLine(result.GetProperty("colors")[0].ToString());
+]]></code></example>
+    </member>
+    <member name="PutAsync(ModelWithEncodedNames,CancellationToken)">
+      <example>
+This sample shows how to call PutAsync.
+<code><![CDATA[
+ModelWithEncodedNamesValue client = new XmlClient().GetModelWithEncodedNamesValueClient();
+
+ModelWithEncodedNames input = new ModelWithEncodedNames(new SimpleModel("<name>", 1234), new string[] { "<colors>" });
+Response response = await client.PutAsync(input);
+]]></code>
+This sample shows how to call PutAsync with all parameters.
+<code><![CDATA[
+ModelWithEncodedNamesValue client = new XmlClient().GetModelWithEncodedNamesValueClient();
+
+ModelWithEncodedNames input = new ModelWithEncodedNames(new SimpleModel("<name>", 1234), new string[] { "<colors>" });
+Response response = await client.PutAsync(input);
+]]></code></example>
+    </member>
+    <member name="Put(ModelWithEncodedNames,CancellationToken)">
+      <example>
+This sample shows how to call Put.
+<code><![CDATA[
+ModelWithEncodedNamesValue client = new XmlClient().GetModelWithEncodedNamesValueClient();
+
+ModelWithEncodedNames input = new ModelWithEncodedNames(new SimpleModel("<name>", 1234), new string[] { "<colors>" });
+Response response = client.Put(input);
+]]></code>
+This sample shows how to call Put with all parameters.
+<code><![CDATA[
+ModelWithEncodedNamesValue client = new XmlClient().GetModelWithEncodedNamesValueClient();
+
+ModelWithEncodedNames input = new ModelWithEncodedNames(new SimpleModel("<name>", 1234), new string[] { "<colors>" });
+Response response = client.Put(input);
+]]></code></example>
+    </member>
+    <member name="PutAsync(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call PutAsync.
+<code><![CDATA[
+ModelWithEncodedNamesValue client = new XmlClient().GetModelWithEncodedNamesValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    modelData = new
+    {
+        name = "<name>",
+        age = 1234,
+    },
+    colors = new object[]
+    {
+        "<colors>"
+    },
+});
+Response response = await client.PutAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call PutAsync with all request content.
+<code><![CDATA[
+ModelWithEncodedNamesValue client = new XmlClient().GetModelWithEncodedNamesValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    modelData = new
+    {
+        name = "<name>",
+        age = 1234,
+    },
+    colors = new object[]
+    {
+        "<colors>"
+    },
+});
+Response response = await client.PutAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="Put(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call Put.
+<code><![CDATA[
+ModelWithEncodedNamesValue client = new XmlClient().GetModelWithEncodedNamesValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    modelData = new
+    {
+        name = "<name>",
+        age = 1234,
+    },
+    colors = new object[]
+    {
+        "<colors>"
+    },
+});
+Response response = client.Put(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call Put with all request content.
+<code><![CDATA[
+ModelWithEncodedNamesValue client = new XmlClient().GetModelWithEncodedNamesValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    modelData = new
+    {
+        name = "<name>",
+        age = 1234,
+    },
+    colors = new object[]
+    {
+        "<colors>"
+    },
+});
+Response response = client.Put(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+  </members>
+</doc>

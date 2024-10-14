@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetModelWithRenamedFieldsValueAsync(CancellationToken)">
+      <example>
+This sample shows how to call GetModelWithRenamedFieldsValueAsync.
+<code><![CDATA[
+ModelWithRenamedFieldsValue client = new XmlClient().GetModelWithRenamedFieldsValueClient();
+
+Response<ModelWithRenamedFields> response = await client.GetModelWithRenamedFieldsValueAsync();
+]]></code>
+This sample shows how to call GetModelWithRenamedFieldsValueAsync with all parameters.
+<code><![CDATA[
+ModelWithRenamedFieldsValue client = new XmlClient().GetModelWithRenamedFieldsValueClient();
+
+Response<ModelWithRenamedFields> response = await client.GetModelWithRenamedFieldsValueAsync();
+]]></code></example>
+    </member>
+    <member name="GetModelWithRenamedFieldsValue(CancellationToken)">
+      <example>
+This sample shows how to call GetModelWithRenamedFieldsValue.
+<code><![CDATA[
+ModelWithRenamedFieldsValue client = new XmlClient().GetModelWithRenamedFieldsValueClient();
+
+Response<ModelWithRenamedFields> response = client.GetModelWithRenamedFieldsValue();
+]]></code>
+This sample shows how to call GetModelWithRenamedFieldsValue with all parameters.
+<code><![CDATA[
+ModelWithRenamedFieldsValue client = new XmlClient().GetModelWithRenamedFieldsValueClient();
+
+Response<ModelWithRenamedFields> response = client.GetModelWithRenamedFieldsValue();
+]]></code></example>
+    </member>
+    <member name="GetModelWithRenamedFieldsValueAsync(RequestContext)">
+      <example>
+This sample shows how to call GetModelWithRenamedFieldsValueAsync and parse the result.
+<code><![CDATA[
+ModelWithRenamedFieldsValue client = new XmlClient().GetModelWithRenamedFieldsValueClient();
+
+Response response = await client.GetModelWithRenamedFieldsValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("inputData").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("inputData").GetProperty("age").ToString());
+Console.WriteLine(result.GetProperty("outputData").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("outputData").GetProperty("age").ToString());
+]]></code>
+This sample shows how to call GetModelWithRenamedFieldsValueAsync with all parameters and parse the result.
+<code><![CDATA[
+ModelWithRenamedFieldsValue client = new XmlClient().GetModelWithRenamedFieldsValueClient();
+
+Response response = await client.GetModelWithRenamedFieldsValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("inputData").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("inputData").GetProperty("age").ToString());
+Console.WriteLine(result.GetProperty("outputData").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("outputData").GetProperty("age").ToString());
+]]></code></example>
+    </member>
+    <member name="GetModelWithRenamedFieldsValue(RequestContext)">
+      <example>
+This sample shows how to call GetModelWithRenamedFieldsValue and parse the result.
+<code><![CDATA[
+ModelWithRenamedFieldsValue client = new XmlClient().GetModelWithRenamedFieldsValueClient();
+
+Response response = client.GetModelWithRenamedFieldsValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("inputData").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("inputData").GetProperty("age").ToString());
+Console.WriteLine(result.GetProperty("outputData").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("outputData").GetProperty("age").ToString());
+]]></code>
+This sample shows how to call GetModelWithRenamedFieldsValue with all parameters and parse the result.
+<code><![CDATA[
+ModelWithRenamedFieldsValue client = new XmlClient().GetModelWithRenamedFieldsValueClient();
+
+Response response = client.GetModelWithRenamedFieldsValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("inputData").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("inputData").GetProperty("age").ToString());
+Console.WriteLine(result.GetProperty("outputData").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("outputData").GetProperty("age").ToString());
+]]></code></example>
+    </member>
+    <member name="PutAsync(ModelWithRenamedFields,CancellationToken)">
+      <example>
+This sample shows how to call PutAsync.
+<code><![CDATA[
+ModelWithRenamedFieldsValue client = new XmlClient().GetModelWithRenamedFieldsValueClient();
+
+ModelWithRenamedFields input = new ModelWithRenamedFields(new SimpleModel("<name>", 1234), default);
+Response response = await client.PutAsync(input);
+]]></code>
+This sample shows how to call PutAsync with all parameters.
+<code><![CDATA[
+ModelWithRenamedFieldsValue client = new XmlClient().GetModelWithRenamedFieldsValueClient();
+
+ModelWithRenamedFields input = new ModelWithRenamedFields(new SimpleModel("<name>", 1234), default);
+Response response = await client.PutAsync(input);
+]]></code></example>
+    </member>
+    <member name="Put(ModelWithRenamedFields,CancellationToken)">
+      <example>
+This sample shows how to call Put.
+<code><![CDATA[
+ModelWithRenamedFieldsValue client = new XmlClient().GetModelWithRenamedFieldsValueClient();
+
+ModelWithRenamedFields input = new ModelWithRenamedFields(new SimpleModel("<name>", 1234), default);
+Response response = client.Put(input);
+]]></code>
+This sample shows how to call Put with all parameters.
+<code><![CDATA[
+ModelWithRenamedFieldsValue client = new XmlClient().GetModelWithRenamedFieldsValueClient();
+
+ModelWithRenamedFields input = new ModelWithRenamedFields(new SimpleModel("<name>", 1234), default);
+Response response = client.Put(input);
+]]></code></example>
+    </member>
+    <member name="PutAsync(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call PutAsync.
+<code><![CDATA[
+ModelWithRenamedFieldsValue client = new XmlClient().GetModelWithRenamedFieldsValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    inputData = new
+    {
+        name = "<name>",
+        age = 1234,
+    },
+});
+Response response = await client.PutAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call PutAsync with all request content.
+<code><![CDATA[
+ModelWithRenamedFieldsValue client = new XmlClient().GetModelWithRenamedFieldsValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    inputData = new
+    {
+        name = "<name>",
+        age = 1234,
+    },
+});
+Response response = await client.PutAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="Put(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call Put.
+<code><![CDATA[
+ModelWithRenamedFieldsValue client = new XmlClient().GetModelWithRenamedFieldsValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    inputData = new
+    {
+        name = "<name>",
+        age = 1234,
+    },
+});
+Response response = client.Put(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call Put with all request content.
+<code><![CDATA[
+ModelWithRenamedFieldsValue client = new XmlClient().GetModelWithRenamedFieldsValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    inputData = new
+    {
+        name = "<name>",
+        age = 1234,
+    },
+});
+Response response = client.Put(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+  </members>
+</doc>

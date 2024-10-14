@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetSimpleModelValueAsync(CancellationToken)">
+      <example>
+This sample shows how to call GetSimpleModelValueAsync.
+<code><![CDATA[
+SimpleModelValue client = new XmlClient().GetSimpleModelValueClient();
+
+Response<SimpleModel> response = await client.GetSimpleModelValueAsync();
+]]></code>
+This sample shows how to call GetSimpleModelValueAsync with all parameters.
+<code><![CDATA[
+SimpleModelValue client = new XmlClient().GetSimpleModelValueClient();
+
+Response<SimpleModel> response = await client.GetSimpleModelValueAsync();
+]]></code></example>
+    </member>
+    <member name="GetSimpleModelValue(CancellationToken)">
+      <example>
+This sample shows how to call GetSimpleModelValue.
+<code><![CDATA[
+SimpleModelValue client = new XmlClient().GetSimpleModelValueClient();
+
+Response<SimpleModel> response = client.GetSimpleModelValue();
+]]></code>
+This sample shows how to call GetSimpleModelValue with all parameters.
+<code><![CDATA[
+SimpleModelValue client = new XmlClient().GetSimpleModelValueClient();
+
+Response<SimpleModel> response = client.GetSimpleModelValue();
+]]></code></example>
+    </member>
+    <member name="GetSimpleModelValueAsync(RequestContext)">
+      <example>
+This sample shows how to call GetSimpleModelValueAsync and parse the result.
+<code><![CDATA[
+SimpleModelValue client = new XmlClient().GetSimpleModelValueClient();
+
+Response response = await client.GetSimpleModelValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("age").ToString());
+]]></code>
+This sample shows how to call GetSimpleModelValueAsync with all parameters and parse the result.
+<code><![CDATA[
+SimpleModelValue client = new XmlClient().GetSimpleModelValueClient();
+
+Response response = await client.GetSimpleModelValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("age").ToString());
+]]></code></example>
+    </member>
+    <member name="GetSimpleModelValue(RequestContext)">
+      <example>
+This sample shows how to call GetSimpleModelValue and parse the result.
+<code><![CDATA[
+SimpleModelValue client = new XmlClient().GetSimpleModelValueClient();
+
+Response response = client.GetSimpleModelValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("age").ToString());
+]]></code>
+This sample shows how to call GetSimpleModelValue with all parameters and parse the result.
+<code><![CDATA[
+SimpleModelValue client = new XmlClient().GetSimpleModelValueClient();
+
+Response response = client.GetSimpleModelValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("age").ToString());
+]]></code></example>
+    </member>
+    <member name="PutAsync(SimpleModel,CancellationToken)">
+      <example>
+This sample shows how to call PutAsync.
+<code><![CDATA[
+SimpleModelValue client = new XmlClient().GetSimpleModelValueClient();
+
+SimpleModel input = new SimpleModel("<name>", 1234);
+Response response = await client.PutAsync(input);
+]]></code>
+This sample shows how to call PutAsync with all parameters.
+<code><![CDATA[
+SimpleModelValue client = new XmlClient().GetSimpleModelValueClient();
+
+SimpleModel input = new SimpleModel("<name>", 1234);
+Response response = await client.PutAsync(input);
+]]></code></example>
+    </member>
+    <member name="Put(SimpleModel,CancellationToken)">
+      <example>
+This sample shows how to call Put.
+<code><![CDATA[
+SimpleModelValue client = new XmlClient().GetSimpleModelValueClient();
+
+SimpleModel input = new SimpleModel("<name>", 1234);
+Response response = client.Put(input);
+]]></code>
+This sample shows how to call Put with all parameters.
+<code><![CDATA[
+SimpleModelValue client = new XmlClient().GetSimpleModelValueClient();
+
+SimpleModel input = new SimpleModel("<name>", 1234);
+Response response = client.Put(input);
+]]></code></example>
+    </member>
+    <member name="PutAsync(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call PutAsync.
+<code><![CDATA[
+SimpleModelValue client = new XmlClient().GetSimpleModelValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    name = "<name>",
+    age = 1234,
+});
+Response response = await client.PutAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call PutAsync with all request content.
+<code><![CDATA[
+SimpleModelValue client = new XmlClient().GetSimpleModelValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    name = "<name>",
+    age = 1234,
+});
+Response response = await client.PutAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="Put(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call Put.
+<code><![CDATA[
+SimpleModelValue client = new XmlClient().GetSimpleModelValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    name = "<name>",
+    age = 1234,
+});
+Response response = client.Put(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call Put with all request content.
+<code><![CDATA[
+SimpleModelValue client = new XmlClient().GetSimpleModelValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    name = "<name>",
+    age = 1234,
+});
+Response response = client.Put(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+  </members>
+</doc>

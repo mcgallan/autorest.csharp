@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetModelWithRenamedArraysValueAsync(CancellationToken)">
+      <example>
+This sample shows how to call GetModelWithRenamedArraysValueAsync.
+<code><![CDATA[
+ModelWithRenamedArraysValue client = new XmlClient().GetModelWithRenamedArraysValueClient();
+
+Response<ModelWithRenamedArrays> response = await client.GetModelWithRenamedArraysValueAsync();
+]]></code>
+This sample shows how to call GetModelWithRenamedArraysValueAsync with all parameters.
+<code><![CDATA[
+ModelWithRenamedArraysValue client = new XmlClient().GetModelWithRenamedArraysValueClient();
+
+Response<ModelWithRenamedArrays> response = await client.GetModelWithRenamedArraysValueAsync();
+]]></code></example>
+    </member>
+    <member name="GetModelWithRenamedArraysValue(CancellationToken)">
+      <example>
+This sample shows how to call GetModelWithRenamedArraysValue.
+<code><![CDATA[
+ModelWithRenamedArraysValue client = new XmlClient().GetModelWithRenamedArraysValueClient();
+
+Response<ModelWithRenamedArrays> response = client.GetModelWithRenamedArraysValue();
+]]></code>
+This sample shows how to call GetModelWithRenamedArraysValue with all parameters.
+<code><![CDATA[
+ModelWithRenamedArraysValue client = new XmlClient().GetModelWithRenamedArraysValueClient();
+
+Response<ModelWithRenamedArrays> response = client.GetModelWithRenamedArraysValue();
+]]></code></example>
+    </member>
+    <member name="GetModelWithRenamedArraysValueAsync(RequestContext)">
+      <example>
+This sample shows how to call GetModelWithRenamedArraysValueAsync and parse the result.
+<code><![CDATA[
+ModelWithRenamedArraysValue client = new XmlClient().GetModelWithRenamedArraysValueClient();
+
+Response response = await client.GetModelWithRenamedArraysValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("colors")[0].ToString());
+Console.WriteLine(result.GetProperty("counts")[0].ToString());
+]]></code>
+This sample shows how to call GetModelWithRenamedArraysValueAsync with all parameters and parse the result.
+<code><![CDATA[
+ModelWithRenamedArraysValue client = new XmlClient().GetModelWithRenamedArraysValueClient();
+
+Response response = await client.GetModelWithRenamedArraysValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("colors")[0].ToString());
+Console.WriteLine(result.GetProperty("counts")[0].ToString());
+]]></code></example>
+    </member>
+    <member name="GetModelWithRenamedArraysValue(RequestContext)">
+      <example>
+This sample shows how to call GetModelWithRenamedArraysValue and parse the result.
+<code><![CDATA[
+ModelWithRenamedArraysValue client = new XmlClient().GetModelWithRenamedArraysValueClient();
+
+Response response = client.GetModelWithRenamedArraysValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("colors")[0].ToString());
+Console.WriteLine(result.GetProperty("counts")[0].ToString());
+]]></code>
+This sample shows how to call GetModelWithRenamedArraysValue with all parameters and parse the result.
+<code><![CDATA[
+ModelWithRenamedArraysValue client = new XmlClient().GetModelWithRenamedArraysValueClient();
+
+Response response = client.GetModelWithRenamedArraysValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("colors")[0].ToString());
+Console.WriteLine(result.GetProperty("counts")[0].ToString());
+]]></code></example>
+    </member>
+    <member name="PutAsync(ModelWithRenamedArrays,CancellationToken)">
+      <example>
+This sample shows how to call PutAsync.
+<code><![CDATA[
+ModelWithRenamedArraysValue client = new XmlClient().GetModelWithRenamedArraysValueClient();
+
+ModelWithRenamedArrays input = new ModelWithRenamedArrays(new string[] { "<colors>" }, new int[] { 1234 });
+Response response = await client.PutAsync(input);
+]]></code>
+This sample shows how to call PutAsync with all parameters.
+<code><![CDATA[
+ModelWithRenamedArraysValue client = new XmlClient().GetModelWithRenamedArraysValueClient();
+
+ModelWithRenamedArrays input = new ModelWithRenamedArrays(new string[] { "<colors>" }, new int[] { 1234 });
+Response response = await client.PutAsync(input);
+]]></code></example>
+    </member>
+    <member name="Put(ModelWithRenamedArrays,CancellationToken)">
+      <example>
+This sample shows how to call Put.
+<code><![CDATA[
+ModelWithRenamedArraysValue client = new XmlClient().GetModelWithRenamedArraysValueClient();
+
+ModelWithRenamedArrays input = new ModelWithRenamedArrays(new string[] { "<colors>" }, new int[] { 1234 });
+Response response = client.Put(input);
+]]></code>
+This sample shows how to call Put with all parameters.
+<code><![CDATA[
+ModelWithRenamedArraysValue client = new XmlClient().GetModelWithRenamedArraysValueClient();
+
+ModelWithRenamedArrays input = new ModelWithRenamedArrays(new string[] { "<colors>" }, new int[] { 1234 });
+Response response = client.Put(input);
+]]></code></example>
+    </member>
+    <member name="PutAsync(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call PutAsync.
+<code><![CDATA[
+ModelWithRenamedArraysValue client = new XmlClient().GetModelWithRenamedArraysValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    colors = new object[]
+    {
+        "<colors>"
+    },
+    counts = new object[]
+    {
+        1234
+    },
+});
+Response response = await client.PutAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call PutAsync with all request content.
+<code><![CDATA[
+ModelWithRenamedArraysValue client = new XmlClient().GetModelWithRenamedArraysValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    colors = new object[]
+    {
+        "<colors>"
+    },
+    counts = new object[]
+    {
+        1234
+    },
+});
+Response response = await client.PutAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="Put(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call Put.
+<code><![CDATA[
+ModelWithRenamedArraysValue client = new XmlClient().GetModelWithRenamedArraysValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    colors = new object[]
+    {
+        "<colors>"
+    },
+    counts = new object[]
+    {
+        1234
+    },
+});
+Response response = client.Put(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call Put with all request content.
+<code><![CDATA[
+ModelWithRenamedArraysValue client = new XmlClient().GetModelWithRenamedArraysValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    colors = new object[]
+    {
+        "<colors>"
+    },
+    counts = new object[]
+    {
+        1234
+    },
+});
+Response response = client.Put(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+  </members>
+</doc>

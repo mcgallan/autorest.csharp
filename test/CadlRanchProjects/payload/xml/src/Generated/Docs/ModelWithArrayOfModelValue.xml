@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetModelWithArrayOfModelValueAsync(CancellationToken)">
+      <example>
+This sample shows how to call GetModelWithArrayOfModelValueAsync.
+<code><![CDATA[
+ModelWithArrayOfModelValue client = new XmlClient().GetModelWithArrayOfModelValueClient();
+
+Response<ModelWithArrayOfModel> response = await client.GetModelWithArrayOfModelValueAsync();
+]]></code>
+This sample shows how to call GetModelWithArrayOfModelValueAsync with all parameters.
+<code><![CDATA[
+ModelWithArrayOfModelValue client = new XmlClient().GetModelWithArrayOfModelValueClient();
+
+Response<ModelWithArrayOfModel> response = await client.GetModelWithArrayOfModelValueAsync();
+]]></code></example>
+    </member>
+    <member name="GetModelWithArrayOfModelValue(CancellationToken)">
+      <example>
+This sample shows how to call GetModelWithArrayOfModelValue.
+<code><![CDATA[
+ModelWithArrayOfModelValue client = new XmlClient().GetModelWithArrayOfModelValueClient();
+
+Response<ModelWithArrayOfModel> response = client.GetModelWithArrayOfModelValue();
+]]></code>
+This sample shows how to call GetModelWithArrayOfModelValue with all parameters.
+<code><![CDATA[
+ModelWithArrayOfModelValue client = new XmlClient().GetModelWithArrayOfModelValueClient();
+
+Response<ModelWithArrayOfModel> response = client.GetModelWithArrayOfModelValue();
+]]></code></example>
+    </member>
+    <member name="GetModelWithArrayOfModelValueAsync(RequestContext)">
+      <example>
+This sample shows how to call GetModelWithArrayOfModelValueAsync and parse the result.
+<code><![CDATA[
+ModelWithArrayOfModelValue client = new XmlClient().GetModelWithArrayOfModelValueClient();
+
+Response response = await client.GetModelWithArrayOfModelValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("items")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("items")[0].GetProperty("age").ToString());
+]]></code>
+This sample shows how to call GetModelWithArrayOfModelValueAsync with all parameters and parse the result.
+<code><![CDATA[
+ModelWithArrayOfModelValue client = new XmlClient().GetModelWithArrayOfModelValueClient();
+
+Response response = await client.GetModelWithArrayOfModelValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("items")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("items")[0].GetProperty("age").ToString());
+]]></code></example>
+    </member>
+    <member name="GetModelWithArrayOfModelValue(RequestContext)">
+      <example>
+This sample shows how to call GetModelWithArrayOfModelValue and parse the result.
+<code><![CDATA[
+ModelWithArrayOfModelValue client = new XmlClient().GetModelWithArrayOfModelValueClient();
+
+Response response = client.GetModelWithArrayOfModelValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("items")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("items")[0].GetProperty("age").ToString());
+]]></code>
+This sample shows how to call GetModelWithArrayOfModelValue with all parameters and parse the result.
+<code><![CDATA[
+ModelWithArrayOfModelValue client = new XmlClient().GetModelWithArrayOfModelValueClient();
+
+Response response = client.GetModelWithArrayOfModelValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("items")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("items")[0].GetProperty("age").ToString());
+]]></code></example>
+    </member>
+    <member name="PutAsync(ModelWithArrayOfModel,CancellationToken)">
+      <example>
+This sample shows how to call PutAsync.
+<code><![CDATA[
+ModelWithArrayOfModelValue client = new XmlClient().GetModelWithArrayOfModelValueClient();
+
+ModelWithArrayOfModel input = new ModelWithArrayOfModel(new SimpleModel[]
+{
+    new SimpleModel("<name>", 1234)
+});
+Response response = await client.PutAsync(input);
+]]></code>
+This sample shows how to call PutAsync with all parameters.
+<code><![CDATA[
+ModelWithArrayOfModelValue client = new XmlClient().GetModelWithArrayOfModelValueClient();
+
+ModelWithArrayOfModel input = new ModelWithArrayOfModel(new SimpleModel[]
+{
+    new SimpleModel("<name>", 1234)
+});
+Response response = await client.PutAsync(input);
+]]></code></example>
+    </member>
+    <member name="Put(ModelWithArrayOfModel,CancellationToken)">
+      <example>
+This sample shows how to call Put.
+<code><![CDATA[
+ModelWithArrayOfModelValue client = new XmlClient().GetModelWithArrayOfModelValueClient();
+
+ModelWithArrayOfModel input = new ModelWithArrayOfModel(new SimpleModel[]
+{
+    new SimpleModel("<name>", 1234)
+});
+Response response = client.Put(input);
+]]></code>
+This sample shows how to call Put with all parameters.
+<code><![CDATA[
+ModelWithArrayOfModelValue client = new XmlClient().GetModelWithArrayOfModelValueClient();
+
+ModelWithArrayOfModel input = new ModelWithArrayOfModel(new SimpleModel[]
+{
+    new SimpleModel("<name>", 1234)
+});
+Response response = client.Put(input);
+]]></code></example>
+    </member>
+    <member name="PutAsync(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call PutAsync.
+<code><![CDATA[
+ModelWithArrayOfModelValue client = new XmlClient().GetModelWithArrayOfModelValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    items = new object[]
+    {
+        new
+        {
+            name = "<name>",
+            age = 1234,
+        }
+    },
+});
+Response response = await client.PutAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call PutAsync with all request content.
+<code><![CDATA[
+ModelWithArrayOfModelValue client = new XmlClient().GetModelWithArrayOfModelValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    items = new object[]
+    {
+        new
+        {
+            name = "<name>",
+            age = 1234,
+        }
+    },
+});
+Response response = await client.PutAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="Put(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call Put.
+<code><![CDATA[
+ModelWithArrayOfModelValue client = new XmlClient().GetModelWithArrayOfModelValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    items = new object[]
+    {
+        new
+        {
+            name = "<name>",
+            age = 1234,
+        }
+    },
+});
+Response response = client.Put(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call Put with all request content.
+<code><![CDATA[
+ModelWithArrayOfModelValue client = new XmlClient().GetModelWithArrayOfModelValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    items = new object[]
+    {
+        new
+        {
+            name = "<name>",
+            age = 1234,
+        }
+    },
+});
+Response response = client.Put(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+  </members>
+</doc>

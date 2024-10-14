@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetModelWithUnwrappedArrayValueAsync(CancellationToken)">
+      <example>
+This sample shows how to call GetModelWithUnwrappedArrayValueAsync.
+<code><![CDATA[
+ModelWithUnwrappedArrayValue client = new XmlClient().GetModelWithUnwrappedArrayValueClient();
+
+Response<ModelWithUnwrappedArray> response = await client.GetModelWithUnwrappedArrayValueAsync();
+]]></code>
+This sample shows how to call GetModelWithUnwrappedArrayValueAsync with all parameters.
+<code><![CDATA[
+ModelWithUnwrappedArrayValue client = new XmlClient().GetModelWithUnwrappedArrayValueClient();
+
+Response<ModelWithUnwrappedArray> response = await client.GetModelWithUnwrappedArrayValueAsync();
+]]></code></example>
+    </member>
+    <member name="GetModelWithUnwrappedArrayValue(CancellationToken)">
+      <example>
+This sample shows how to call GetModelWithUnwrappedArrayValue.
+<code><![CDATA[
+ModelWithUnwrappedArrayValue client = new XmlClient().GetModelWithUnwrappedArrayValueClient();
+
+Response<ModelWithUnwrappedArray> response = client.GetModelWithUnwrappedArrayValue();
+]]></code>
+This sample shows how to call GetModelWithUnwrappedArrayValue with all parameters.
+<code><![CDATA[
+ModelWithUnwrappedArrayValue client = new XmlClient().GetModelWithUnwrappedArrayValueClient();
+
+Response<ModelWithUnwrappedArray> response = client.GetModelWithUnwrappedArrayValue();
+]]></code></example>
+    </member>
+    <member name="GetModelWithUnwrappedArrayValueAsync(RequestContext)">
+      <example>
+This sample shows how to call GetModelWithUnwrappedArrayValueAsync and parse the result.
+<code><![CDATA[
+ModelWithUnwrappedArrayValue client = new XmlClient().GetModelWithUnwrappedArrayValueClient();
+
+Response response = await client.GetModelWithUnwrappedArrayValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("colors")[0].ToString());
+Console.WriteLine(result.GetProperty("counts")[0].ToString());
+]]></code>
+This sample shows how to call GetModelWithUnwrappedArrayValueAsync with all parameters and parse the result.
+<code><![CDATA[
+ModelWithUnwrappedArrayValue client = new XmlClient().GetModelWithUnwrappedArrayValueClient();
+
+Response response = await client.GetModelWithUnwrappedArrayValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("colors")[0].ToString());
+Console.WriteLine(result.GetProperty("counts")[0].ToString());
+]]></code></example>
+    </member>
+    <member name="GetModelWithUnwrappedArrayValue(RequestContext)">
+      <example>
+This sample shows how to call GetModelWithUnwrappedArrayValue and parse the result.
+<code><![CDATA[
+ModelWithUnwrappedArrayValue client = new XmlClient().GetModelWithUnwrappedArrayValueClient();
+
+Response response = client.GetModelWithUnwrappedArrayValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("colors")[0].ToString());
+Console.WriteLine(result.GetProperty("counts")[0].ToString());
+]]></code>
+This sample shows how to call GetModelWithUnwrappedArrayValue with all parameters and parse the result.
+<code><![CDATA[
+ModelWithUnwrappedArrayValue client = new XmlClient().GetModelWithUnwrappedArrayValueClient();
+
+Response response = client.GetModelWithUnwrappedArrayValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("colors")[0].ToString());
+Console.WriteLine(result.GetProperty("counts")[0].ToString());
+]]></code></example>
+    </member>
+    <member name="PutAsync(ModelWithUnwrappedArray,CancellationToken)">
+      <example>
+This sample shows how to call PutAsync.
+<code><![CDATA[
+ModelWithUnwrappedArrayValue client = new XmlClient().GetModelWithUnwrappedArrayValueClient();
+
+ModelWithUnwrappedArray input = new ModelWithUnwrappedArray(new string[] { "<colors>" }, new int[] { 1234 });
+Response response = await client.PutAsync(input);
+]]></code>
+This sample shows how to call PutAsync with all parameters.
+<code><![CDATA[
+ModelWithUnwrappedArrayValue client = new XmlClient().GetModelWithUnwrappedArrayValueClient();
+
+ModelWithUnwrappedArray input = new ModelWithUnwrappedArray(new string[] { "<colors>" }, new int[] { 1234 });
+Response response = await client.PutAsync(input);
+]]></code></example>
+    </member>
+    <member name="Put(ModelWithUnwrappedArray,CancellationToken)">
+      <example>
+This sample shows how to call Put.
+<code><![CDATA[
+ModelWithUnwrappedArrayValue client = new XmlClient().GetModelWithUnwrappedArrayValueClient();
+
+ModelWithUnwrappedArray input = new ModelWithUnwrappedArray(new string[] { "<colors>" }, new int[] { 1234 });
+Response response = client.Put(input);
+]]></code>
+This sample shows how to call Put with all parameters.
+<code><![CDATA[
+ModelWithUnwrappedArrayValue client = new XmlClient().GetModelWithUnwrappedArrayValueClient();
+
+ModelWithUnwrappedArray input = new ModelWithUnwrappedArray(new string[] { "<colors>" }, new int[] { 1234 });
+Response response = client.Put(input);
+]]></code></example>
+    </member>
+    <member name="PutAsync(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call PutAsync.
+<code><![CDATA[
+ModelWithUnwrappedArrayValue client = new XmlClient().GetModelWithUnwrappedArrayValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    colors = new object[]
+    {
+        "<colors>"
+    },
+    counts = new object[]
+    {
+        1234
+    },
+});
+Response response = await client.PutAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call PutAsync with all request content.
+<code><![CDATA[
+ModelWithUnwrappedArrayValue client = new XmlClient().GetModelWithUnwrappedArrayValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    colors = new object[]
+    {
+        "<colors>"
+    },
+    counts = new object[]
+    {
+        1234
+    },
+});
+Response response = await client.PutAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="Put(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call Put.
+<code><![CDATA[
+ModelWithUnwrappedArrayValue client = new XmlClient().GetModelWithUnwrappedArrayValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    colors = new object[]
+    {
+        "<colors>"
+    },
+    counts = new object[]
+    {
+        1234
+    },
+});
+Response response = client.Put(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call Put with all request content.
+<code><![CDATA[
+ModelWithUnwrappedArrayValue client = new XmlClient().GetModelWithUnwrappedArrayValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    colors = new object[]
+    {
+        "<colors>"
+    },
+    counts = new object[]
+    {
+        1234
+    },
+});
+Response response = client.Put(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+  </members>
+</doc>

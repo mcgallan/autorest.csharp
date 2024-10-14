@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetModelWithOptionalFieldValueAsync(CancellationToken)">
+      <example>
+This sample shows how to call GetModelWithOptionalFieldValueAsync.
+<code><![CDATA[
+ModelWithOptionalFieldValue client = new XmlClient().GetModelWithOptionalFieldValueClient();
+
+Response<ModelWithOptionalField> response = await client.GetModelWithOptionalFieldValueAsync();
+]]></code>
+This sample shows how to call GetModelWithOptionalFieldValueAsync with all parameters.
+<code><![CDATA[
+ModelWithOptionalFieldValue client = new XmlClient().GetModelWithOptionalFieldValueClient();
+
+Response<ModelWithOptionalField> response = await client.GetModelWithOptionalFieldValueAsync();
+]]></code></example>
+    </member>
+    <member name="GetModelWithOptionalFieldValue(CancellationToken)">
+      <example>
+This sample shows how to call GetModelWithOptionalFieldValue.
+<code><![CDATA[
+ModelWithOptionalFieldValue client = new XmlClient().GetModelWithOptionalFieldValueClient();
+
+Response<ModelWithOptionalField> response = client.GetModelWithOptionalFieldValue();
+]]></code>
+This sample shows how to call GetModelWithOptionalFieldValue with all parameters.
+<code><![CDATA[
+ModelWithOptionalFieldValue client = new XmlClient().GetModelWithOptionalFieldValueClient();
+
+Response<ModelWithOptionalField> response = client.GetModelWithOptionalFieldValue();
+]]></code></example>
+    </member>
+    <member name="GetModelWithOptionalFieldValueAsync(RequestContext)">
+      <example>
+This sample shows how to call GetModelWithOptionalFieldValueAsync and parse the result.
+<code><![CDATA[
+ModelWithOptionalFieldValue client = new XmlClient().GetModelWithOptionalFieldValueClient();
+
+Response response = await client.GetModelWithOptionalFieldValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("item").ToString());
+]]></code>
+This sample shows how to call GetModelWithOptionalFieldValueAsync with all parameters and parse the result.
+<code><![CDATA[
+ModelWithOptionalFieldValue client = new XmlClient().GetModelWithOptionalFieldValueClient();
+
+Response response = await client.GetModelWithOptionalFieldValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("item").ToString());
+Console.WriteLine(result.GetProperty("value").ToString());
+]]></code></example>
+    </member>
+    <member name="GetModelWithOptionalFieldValue(RequestContext)">
+      <example>
+This sample shows how to call GetModelWithOptionalFieldValue and parse the result.
+<code><![CDATA[
+ModelWithOptionalFieldValue client = new XmlClient().GetModelWithOptionalFieldValueClient();
+
+Response response = client.GetModelWithOptionalFieldValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("item").ToString());
+]]></code>
+This sample shows how to call GetModelWithOptionalFieldValue with all parameters and parse the result.
+<code><![CDATA[
+ModelWithOptionalFieldValue client = new XmlClient().GetModelWithOptionalFieldValueClient();
+
+Response response = client.GetModelWithOptionalFieldValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("item").ToString());
+Console.WriteLine(result.GetProperty("value").ToString());
+]]></code></example>
+    </member>
+    <member name="PutAsync(ModelWithOptionalField,CancellationToken)">
+      <example>
+This sample shows how to call PutAsync.
+<code><![CDATA[
+ModelWithOptionalFieldValue client = new XmlClient().GetModelWithOptionalFieldValueClient();
+
+ModelWithOptionalField input = new ModelWithOptionalField("<item>");
+Response response = await client.PutAsync(input);
+]]></code>
+This sample shows how to call PutAsync with all parameters.
+<code><![CDATA[
+ModelWithOptionalFieldValue client = new XmlClient().GetModelWithOptionalFieldValueClient();
+
+ModelWithOptionalField input = new ModelWithOptionalField("<item>")
+{
+    Value = 1234,
+};
+Response response = await client.PutAsync(input);
+]]></code></example>
+    </member>
+    <member name="Put(ModelWithOptionalField,CancellationToken)">
+      <example>
+This sample shows how to call Put.
+<code><![CDATA[
+ModelWithOptionalFieldValue client = new XmlClient().GetModelWithOptionalFieldValueClient();
+
+ModelWithOptionalField input = new ModelWithOptionalField("<item>");
+Response response = client.Put(input);
+]]></code>
+This sample shows how to call Put with all parameters.
+<code><![CDATA[
+ModelWithOptionalFieldValue client = new XmlClient().GetModelWithOptionalFieldValueClient();
+
+ModelWithOptionalField input = new ModelWithOptionalField("<item>")
+{
+    Value = 1234,
+};
+Response response = client.Put(input);
+]]></code></example>
+    </member>
+    <member name="PutAsync(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call PutAsync.
+<code><![CDATA[
+ModelWithOptionalFieldValue client = new XmlClient().GetModelWithOptionalFieldValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    item = "<item>",
+});
+Response response = await client.PutAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call PutAsync with all request content.
+<code><![CDATA[
+ModelWithOptionalFieldValue client = new XmlClient().GetModelWithOptionalFieldValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    item = "<item>",
+    value = 1234,
+});
+Response response = await client.PutAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="Put(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call Put.
+<code><![CDATA[
+ModelWithOptionalFieldValue client = new XmlClient().GetModelWithOptionalFieldValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    item = "<item>",
+});
+Response response = client.Put(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call Put with all request content.
+<code><![CDATA[
+ModelWithOptionalFieldValue client = new XmlClient().GetModelWithOptionalFieldValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    item = "<item>",
+    value = 1234,
+});
+Response response = client.Put(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+  </members>
+</doc>

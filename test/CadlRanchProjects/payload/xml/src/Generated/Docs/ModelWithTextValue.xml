@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetModelWithTextValueAsync(CancellationToken)">
+      <example>
+This sample shows how to call GetModelWithTextValueAsync.
+<code><![CDATA[
+ModelWithTextValue client = new XmlClient().GetModelWithTextValueClient();
+
+Response<ModelWithText> response = await client.GetModelWithTextValueAsync();
+]]></code>
+This sample shows how to call GetModelWithTextValueAsync with all parameters.
+<code><![CDATA[
+ModelWithTextValue client = new XmlClient().GetModelWithTextValueClient();
+
+Response<ModelWithText> response = await client.GetModelWithTextValueAsync();
+]]></code></example>
+    </member>
+    <member name="GetModelWithTextValue(CancellationToken)">
+      <example>
+This sample shows how to call GetModelWithTextValue.
+<code><![CDATA[
+ModelWithTextValue client = new XmlClient().GetModelWithTextValueClient();
+
+Response<ModelWithText> response = client.GetModelWithTextValue();
+]]></code>
+This sample shows how to call GetModelWithTextValue with all parameters.
+<code><![CDATA[
+ModelWithTextValue client = new XmlClient().GetModelWithTextValueClient();
+
+Response<ModelWithText> response = client.GetModelWithTextValue();
+]]></code></example>
+    </member>
+    <member name="GetModelWithTextValueAsync(RequestContext)">
+      <example>
+This sample shows how to call GetModelWithTextValueAsync and parse the result.
+<code><![CDATA[
+ModelWithTextValue client = new XmlClient().GetModelWithTextValueClient();
+
+Response response = await client.GetModelWithTextValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("language").ToString());
+Console.WriteLine(result.GetProperty("content").ToString());
+]]></code>
+This sample shows how to call GetModelWithTextValueAsync with all parameters and parse the result.
+<code><![CDATA[
+ModelWithTextValue client = new XmlClient().GetModelWithTextValueClient();
+
+Response response = await client.GetModelWithTextValueAsync(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("language").ToString());
+Console.WriteLine(result.GetProperty("content").ToString());
+]]></code></example>
+    </member>
+    <member name="GetModelWithTextValue(RequestContext)">
+      <example>
+This sample shows how to call GetModelWithTextValue and parse the result.
+<code><![CDATA[
+ModelWithTextValue client = new XmlClient().GetModelWithTextValueClient();
+
+Response response = client.GetModelWithTextValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("language").ToString());
+Console.WriteLine(result.GetProperty("content").ToString());
+]]></code>
+This sample shows how to call GetModelWithTextValue with all parameters and parse the result.
+<code><![CDATA[
+ModelWithTextValue client = new XmlClient().GetModelWithTextValueClient();
+
+Response response = client.GetModelWithTextValue(null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("language").ToString());
+Console.WriteLine(result.GetProperty("content").ToString());
+]]></code></example>
+    </member>
+    <member name="PutAsync(ModelWithText,CancellationToken)">
+      <example>
+This sample shows how to call PutAsync.
+<code><![CDATA[
+ModelWithTextValue client = new XmlClient().GetModelWithTextValueClient();
+
+ModelWithText input = new ModelWithText("<language>", "<content>");
+Response response = await client.PutAsync(input);
+]]></code>
+This sample shows how to call PutAsync with all parameters.
+<code><![CDATA[
+ModelWithTextValue client = new XmlClient().GetModelWithTextValueClient();
+
+ModelWithText input = new ModelWithText("<language>", "<content>");
+Response response = await client.PutAsync(input);
+]]></code></example>
+    </member>
+    <member name="Put(ModelWithText,CancellationToken)">
+      <example>
+This sample shows how to call Put.
+<code><![CDATA[
+ModelWithTextValue client = new XmlClient().GetModelWithTextValueClient();
+
+ModelWithText input = new ModelWithText("<language>", "<content>");
+Response response = client.Put(input);
+]]></code>
+This sample shows how to call Put with all parameters.
+<code><![CDATA[
+ModelWithTextValue client = new XmlClient().GetModelWithTextValueClient();
+
+ModelWithText input = new ModelWithText("<language>", "<content>");
+Response response = client.Put(input);
+]]></code></example>
+    </member>
+    <member name="PutAsync(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call PutAsync.
+<code><![CDATA[
+ModelWithTextValue client = new XmlClient().GetModelWithTextValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    language = "<language>",
+    content = "<content>",
+});
+Response response = await client.PutAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call PutAsync with all request content.
+<code><![CDATA[
+ModelWithTextValue client = new XmlClient().GetModelWithTextValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    language = "<language>",
+    content = "<content>",
+});
+Response response = await client.PutAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="Put(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call Put.
+<code><![CDATA[
+ModelWithTextValue client = new XmlClient().GetModelWithTextValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    language = "<language>",
+    content = "<content>",
+});
+Response response = client.Put(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call Put with all request content.
+<code><![CDATA[
+ModelWithTextValue client = new XmlClient().GetModelWithTextValueClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    language = "<language>",
+    content = "<content>",
+});
+Response response = client.Put(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+  </members>
+</doc>
