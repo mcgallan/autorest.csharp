@@ -28,5 +28,20 @@ namespace CadlRanchProjects.Tests
             Assert.AreEqual("bar", response.Value.Items[1].Name);
             Assert.AreEqual(456, response.Value.Items[1].Age);
         });
+
+        [Test]
+        public Task SimpleModel_Get() => Test(async (host) =>
+        {
+            var response = await new XmlClient(host, null).GetSimpleModelValueClient().GetSimpleModelValueAsync();
+            Assert.AreEqual("foo", response.Value.Name);
+            Assert.AreEqual(123, response.Value.Age);
+        });
+
+        [Test]
+        public Task SimpleModel_Put() => Test(async (host) =>
+        {
+            var input = new SimpleModel("foo", 123);
+            var response = await new XmlClient(host, null).GetSimpleModelValueClient().PutAsync(input);
+        });
     }
 }
