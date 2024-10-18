@@ -33,5 +33,16 @@ namespace CadlRanchProjects.Tests
             Response response = await new BodyOptionalityClient(host, null).RequiredImplicitAsync("foo");
             Assert.AreEqual(204, response.Status);
         });
+
+        [Test]
+        public Task Paramter_BodyOptionality_OptionalityOrdering() => Test(async (host) =>
+        {
+            var client = new BodyOptionalityClient(host, null).GetOptionalityOrderingClient();
+            var response = await client.OrderingWithRequiredStartAsync("required");
+            Assert.AreEqual(204, response.Status);
+
+            response = await client.OrderingWithOptionalStartAsync("required");
+            Assert.AreEqual(204, response.Status);
+        });
     }
 }
