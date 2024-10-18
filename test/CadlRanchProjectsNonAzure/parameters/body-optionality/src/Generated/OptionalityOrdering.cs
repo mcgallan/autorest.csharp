@@ -6,15 +6,14 @@ using System;
 using System.ClientModel;
 using System.ClientModel.Primitives;
 using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
 using Scm.Parameters.BodyOptionality.Models;
 
 namespace Scm.Parameters.BodyOptionality
 {
-    // Data plane generated client.
-    /// <summary> Test describing optionality of the request body. </summary>
-    public partial class BodyOptionalityClient
+    // Data plane generated sub-client.
+    /// <summary> The OptionalityOrdering sub-client. </summary>
+    public partial class OptionalityOrdering
     {
         private readonly ClientPipeline _pipeline;
         private readonly Uri _endpoint;
@@ -22,208 +21,193 @@ namespace Scm.Parameters.BodyOptionality
         /// <summary> The HTTP pipeline for sending and receiving REST requests and responses. </summary>
         public virtual ClientPipeline Pipeline => _pipeline;
 
-        /// <summary> Initializes a new instance of BodyOptionalityClient. </summary>
-        public BodyOptionalityClient() : this(new Uri("http://localhost:3000"), new BodyOptionalityClientOptions())
+        /// <summary> Initializes a new instance of OptionalityOrdering for mocking. </summary>
+        protected OptionalityOrdering()
         {
-        }
-
-        /// <summary> Initializes a new instance of BodyOptionalityClient. </summary>
-        /// <param name="endpoint"> Service host. </param>
-        /// <param name="options"> The options for configuring the client. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="endpoint"/> is null. </exception>
-        public BodyOptionalityClient(Uri endpoint, BodyOptionalityClientOptions options)
-        {
-            Argument.AssertNotNull(endpoint, nameof(endpoint));
-            options ??= new BodyOptionalityClientOptions();
-
-            _pipeline = ClientPipeline.Create(options, Array.Empty<PipelinePolicy>(), Array.Empty<PipelinePolicy>(), Array.Empty<PipelinePolicy>());
-            _endpoint = endpoint;
-        }
-
-        /// <summary> Required explicit. </summary>
-        /// <param name="body"> The <see cref="BodyModel"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual async Task<ClientResult> RequiredExplicitAsync(BodyModel body)
-        {
-            Argument.AssertNotNull(body, nameof(body));
-
-            using BinaryContent content = body.ToBinaryContent();
-            ClientResult result = await RequiredExplicitAsync(content, null).ConfigureAwait(false);
-            return result;
-        }
-
-        /// <summary> Required explicit. </summary>
-        /// <param name="body"> The <see cref="BodyModel"/> to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        public virtual ClientResult RequiredExplicit(BodyModel body)
-        {
-            Argument.AssertNotNull(body, nameof(body));
-
-            using BinaryContent content = body.ToBinaryContent();
-            ClientResult result = RequiredExplicit(content, null);
-            return result;
-        }
-
-        /// <summary>
-        /// [Protocol Method] Required explicit.
-        /// <list type="bullet">
-        /// <item>
-        /// <description>
-        /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-        /// </description>
-        /// </item>
-        /// <item>
-        /// <description>
-        /// Please try the simpler <see cref="RequiredExplicitAsync(BodyModel)"/> convenience overload with strongly typed models first.
-        /// </description>
-        /// </item>
-        /// </list>
-        /// </summary>
-        /// <param name="content"> The content to send as the body of the request. </param>
-        /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
-        /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
-        /// <returns> The response returned from the service. </returns>
-        public virtual async Task<ClientResult> RequiredExplicitAsync(BinaryContent content, RequestOptions options = null)
-        {
-            Argument.AssertNotNull(content, nameof(content));
-
-            using PipelineMessage message = CreateRequiredExplicitRequest(content, options);
-            return ClientResult.FromResponse(await _pipeline.ProcessMessageAsync(message, options).ConfigureAwait(false));
-        }
-
-        /// <summary>
-        /// [Protocol Method] Required explicit.
-        /// <list type="bullet">
-        /// <item>
-        /// <description>
-        /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-        /// </description>
-        /// </item>
-        /// <item>
-        /// <description>
-        /// Please try the simpler <see cref="RequiredExplicit(BodyModel)"/> convenience overload with strongly typed models first.
-        /// </description>
-        /// </item>
-        /// </list>
-        /// </summary>
-        /// <param name="content"> The content to send as the body of the request. </param>
-        /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
-        /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
-        /// <returns> The response returned from the service. </returns>
-        public virtual ClientResult RequiredExplicit(BinaryContent content, RequestOptions options = null)
-        {
-            Argument.AssertNotNull(content, nameof(content));
-
-            using PipelineMessage message = CreateRequiredExplicitRequest(content, options);
-            return ClientResult.FromResponse(_pipeline.ProcessMessage(message, options));
-        }
-
-        /// <summary> Required implicit. </summary>
-        /// <param name="name"></param>
-        /// <exception cref="ArgumentNullException"> <paramref name="name"/> is null. </exception>
-        public virtual async Task<ClientResult> RequiredImplicitAsync(string name)
-        {
-            Argument.AssertNotNull(name, nameof(name));
-
-            BodyModel bodyModel = new BodyModel(name, null);
-            ClientResult result = await RequiredImplicitAsync(bodyModel.ToBinaryContent(), null).ConfigureAwait(false);
-            return result;
-        }
-
-        /// <summary> Required implicit. </summary>
-        /// <param name="name"></param>
-        /// <exception cref="ArgumentNullException"> <paramref name="name"/> is null. </exception>
-        public virtual ClientResult RequiredImplicit(string name)
-        {
-            Argument.AssertNotNull(name, nameof(name));
-
-            BodyModel bodyModel = new BodyModel(name, null);
-            ClientResult result = RequiredImplicit(bodyModel.ToBinaryContent(), null);
-            return result;
-        }
-
-        /// <summary>
-        /// [Protocol Method] Required implicit.
-        /// <list type="bullet">
-        /// <item>
-        /// <description>
-        /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-        /// </description>
-        /// </item>
-        /// <item>
-        /// <description>
-        /// Please try the simpler <see cref="RequiredImplicitAsync(string)"/> convenience overload with strongly typed models first.
-        /// </description>
-        /// </item>
-        /// </list>
-        /// </summary>
-        /// <param name="content"> The content to send as the body of the request. </param>
-        /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
-        /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
-        /// <returns> The response returned from the service. </returns>
-        public virtual async Task<ClientResult> RequiredImplicitAsync(BinaryContent content, RequestOptions options = null)
-        {
-            Argument.AssertNotNull(content, nameof(content));
-
-            using PipelineMessage message = CreateRequiredImplicitRequest(content, options);
-            return ClientResult.FromResponse(await _pipeline.ProcessMessageAsync(message, options).ConfigureAwait(false));
-        }
-
-        /// <summary>
-        /// [Protocol Method] Required implicit.
-        /// <list type="bullet">
-        /// <item>
-        /// <description>
-        /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-        /// </description>
-        /// </item>
-        /// <item>
-        /// <description>
-        /// Please try the simpler <see cref="RequiredImplicit(string)"/> convenience overload with strongly typed models first.
-        /// </description>
-        /// </item>
-        /// </list>
-        /// </summary>
-        /// <param name="content"> The content to send as the body of the request. </param>
-        /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
-        /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
-        /// <returns> The response returned from the service. </returns>
-        public virtual ClientResult RequiredImplicit(BinaryContent content, RequestOptions options = null)
-        {
-            Argument.AssertNotNull(content, nameof(content));
-
-            using PipelineMessage message = CreateRequiredImplicitRequest(content, options);
-            return ClientResult.FromResponse(_pipeline.ProcessMessage(message, options));
-        }
-
-        private OptionalExplicit _cachedOptionalExplicit;
-        private OptionalityOrdering _cachedOptionalityOrdering;
-
-        /// <summary> Initializes a new instance of OptionalExplicit. </summary>
-        public virtual OptionalExplicit GetOptionalExplicitClient()
-        {
-            return Volatile.Read(ref _cachedOptionalExplicit) ?? Interlocked.CompareExchange(ref _cachedOptionalExplicit, new OptionalExplicit(_pipeline, _endpoint), null) ?? _cachedOptionalExplicit;
         }
 
         /// <summary> Initializes a new instance of OptionalityOrdering. </summary>
-        public virtual OptionalityOrdering GetOptionalityOrderingClient()
+        /// <param name="pipeline"> The HTTP pipeline for sending and receiving REST requests and responses. </param>
+        /// <param name="endpoint"> Service host. </param>
+        internal OptionalityOrdering(ClientPipeline pipeline, Uri endpoint)
         {
-            return Volatile.Read(ref _cachedOptionalityOrdering) ?? Interlocked.CompareExchange(ref _cachedOptionalityOrdering, new OptionalityOrdering(_pipeline, _endpoint), null) ?? _cachedOptionalityOrdering;
+            _pipeline = pipeline;
+            _endpoint = endpoint;
         }
 
-        internal PipelineMessage CreateRequiredExplicitRequest(BinaryContent content, RequestOptions options)
+        /// <summary> Ordering with required start. </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <exception cref="ArgumentNullException"> <paramref name="start"/> is null. </exception>
+        public virtual async Task<ClientResult> OrderingWithRequiredStartAsync(string start, string end = null)
+        {
+            Argument.AssertNotNull(start, nameof(start));
+
+            OrderingWithRequiredStartRequest orderingWithRequiredStartRequest = new OrderingWithRequiredStartRequest(start, end, null);
+            ClientResult result = await OrderingWithRequiredStartAsync(orderingWithRequiredStartRequest.ToBinaryContent(), null).ConfigureAwait(false);
+            return result;
+        }
+
+        /// <summary> Ordering with required start. </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <exception cref="ArgumentNullException"> <paramref name="start"/> is null. </exception>
+        public virtual ClientResult OrderingWithRequiredStart(string start, string end = null)
+        {
+            Argument.AssertNotNull(start, nameof(start));
+
+            OrderingWithRequiredStartRequest orderingWithRequiredStartRequest = new OrderingWithRequiredStartRequest(start, end, null);
+            ClientResult result = OrderingWithRequiredStart(orderingWithRequiredStartRequest.ToBinaryContent(), null);
+            return result;
+        }
+
+        /// <summary>
+        /// [Protocol Method] Ordering with required start.
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="OrderingWithRequiredStartAsync(string,string)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+        /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        public virtual async Task<ClientResult> OrderingWithRequiredStartAsync(BinaryContent content, RequestOptions options = null)
+        {
+            Argument.AssertNotNull(content, nameof(content));
+
+            using PipelineMessage message = CreateOrderingWithRequiredStartRequest(content, options);
+            return ClientResult.FromResponse(await _pipeline.ProcessMessageAsync(message, options).ConfigureAwait(false));
+        }
+
+        /// <summary>
+        /// [Protocol Method] Ordering with required start.
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="OrderingWithRequiredStart(string,string)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+        /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        public virtual ClientResult OrderingWithRequiredStart(BinaryContent content, RequestOptions options = null)
+        {
+            Argument.AssertNotNull(content, nameof(content));
+
+            using PipelineMessage message = CreateOrderingWithRequiredStartRequest(content, options);
+            return ClientResult.FromResponse(_pipeline.ProcessMessage(message, options));
+        }
+
+        /// <summary> Ordering with optional start. </summary>
+        /// <param name="end"></param>
+        /// <param name="start"></param>
+        /// <exception cref="ArgumentNullException"> <paramref name="end"/> is null. </exception>
+        public virtual async Task<ClientResult> OrderingWithOptionalStartAsync(string end, string start = null)
+        {
+            Argument.AssertNotNull(end, nameof(end));
+
+            OrderingWithOptionalStartRequest orderingWithOptionalStartRequest = new OrderingWithOptionalStartRequest(start, end, null);
+            ClientResult result = await OrderingWithOptionalStartAsync(orderingWithOptionalStartRequest.ToBinaryContent(), null).ConfigureAwait(false);
+            return result;
+        }
+
+        /// <summary> Ordering with optional start. </summary>
+        /// <param name="end"></param>
+        /// <param name="start"></param>
+        /// <exception cref="ArgumentNullException"> <paramref name="end"/> is null. </exception>
+        public virtual ClientResult OrderingWithOptionalStart(string end, string start = null)
+        {
+            Argument.AssertNotNull(end, nameof(end));
+
+            OrderingWithOptionalStartRequest orderingWithOptionalStartRequest = new OrderingWithOptionalStartRequest(start, end, null);
+            ClientResult result = OrderingWithOptionalStart(orderingWithOptionalStartRequest.ToBinaryContent(), null);
+            return result;
+        }
+
+        /// <summary>
+        /// [Protocol Method] Ordering with optional start.
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="OrderingWithOptionalStartAsync(string,string)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+        /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        public virtual async Task<ClientResult> OrderingWithOptionalStartAsync(BinaryContent content, RequestOptions options = null)
+        {
+            Argument.AssertNotNull(content, nameof(content));
+
+            using PipelineMessage message = CreateOrderingWithOptionalStartRequest(content, options);
+            return ClientResult.FromResponse(await _pipeline.ProcessMessageAsync(message, options).ConfigureAwait(false));
+        }
+
+        /// <summary>
+        /// [Protocol Method] Ordering with optional start.
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="OrderingWithOptionalStart(string,string)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+        /// <exception cref="ClientResultException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        public virtual ClientResult OrderingWithOptionalStart(BinaryContent content, RequestOptions options = null)
+        {
+            Argument.AssertNotNull(content, nameof(content));
+
+            using PipelineMessage message = CreateOrderingWithOptionalStartRequest(content, options);
+            return ClientResult.FromResponse(_pipeline.ProcessMessage(message, options));
+        }
+
+        internal PipelineMessage CreateOrderingWithRequiredStartRequest(BinaryContent content, RequestOptions options)
         {
             var message = _pipeline.CreateMessage();
             message.ResponseClassifier = PipelineMessageClassifier204;
             var request = message.Request;
-            request.Method = "POST";
+            request.Method = "HEAD";
             var uri = new ClientUriBuilder();
             uri.Reset(_endpoint);
-            uri.AppendPath("/parameters/body-optionality/required-explicit", false);
+            uri.AppendPath("/parameters/body-optionality/optional-ordering/startwithequired", false);
             request.Uri = uri.ToUri();
             request.Headers.Set("Content-Type", "application/json");
             request.Content = content;
@@ -231,15 +215,15 @@ namespace Scm.Parameters.BodyOptionality
             return message;
         }
 
-        internal PipelineMessage CreateRequiredImplicitRequest(BinaryContent content, RequestOptions options)
+        internal PipelineMessage CreateOrderingWithOptionalStartRequest(BinaryContent content, RequestOptions options)
         {
             var message = _pipeline.CreateMessage();
             message.ResponseClassifier = PipelineMessageClassifier204;
             var request = message.Request;
-            request.Method = "POST";
+            request.Method = "HEAD";
             var uri = new ClientUriBuilder();
             uri.Reset(_endpoint);
-            uri.AppendPath("/parameters/body-optionality/required-implicit", false);
+            uri.AppendPath("/parameters/body-optionality/optional-ordering/startwithoptional", false);
             request.Uri = uri.ToUri();
             request.Headers.Set("Content-Type", "application/json");
             request.Content = content;

@@ -32,27 +32,123 @@
      "crossLanguageDefinitionId": "Parameters.BodyOptionality.BodyModel.name"
     }
    ]
+  },
+  {
+   "$id": "5",
+   "kind": "model",
+   "name": "OrderingWithRequiredStartRequest",
+   "crossLanguageDefinitionId": "Parameters.BodyOptionality.OptionalityOrdering.OrderingWithRequiredStart.Request.anonymous",
+   "usage": "Spread,Json",
+   "decorators": [],
+   "properties": [
+    {
+     "$id": "6",
+     "kind": "property",
+     "name": "start",
+     "serializedName": "start",
+     "type": {
+      "$id": "7",
+      "kind": "string",
+      "name": "string",
+      "crossLanguageDefinitionId": "TypeSpec.string",
+      "decorators": []
+     },
+     "optional": false,
+     "readOnly": false,
+     "discriminator": false,
+     "flatten": false,
+     "decorators": [],
+     "crossLanguageDefinitionId": "Parameters.BodyOptionality.OptionalityOrdering.OrderingWithRequiredStart.Request.anonymous.start"
+    },
+    {
+     "$id": "8",
+     "kind": "property",
+     "name": "end",
+     "serializedName": "end",
+     "type": {
+      "$id": "9",
+      "kind": "string",
+      "name": "string",
+      "crossLanguageDefinitionId": "TypeSpec.string",
+      "decorators": []
+     },
+     "optional": true,
+     "readOnly": false,
+     "discriminator": false,
+     "flatten": false,
+     "decorators": [],
+     "crossLanguageDefinitionId": "Parameters.BodyOptionality.OptionalityOrdering.OrderingWithRequiredStart.Request.anonymous.end"
+    }
+   ]
+  },
+  {
+   "$id": "10",
+   "kind": "model",
+   "name": "OrderingWithOptionalStartRequest",
+   "crossLanguageDefinitionId": "Parameters.BodyOptionality.OptionalityOrdering.OrderingWithOptionalStart.Request.anonymous",
+   "usage": "Spread,Json",
+   "decorators": [],
+   "properties": [
+    {
+     "$id": "11",
+     "kind": "property",
+     "name": "start",
+     "serializedName": "start",
+     "type": {
+      "$id": "12",
+      "kind": "string",
+      "name": "string",
+      "crossLanguageDefinitionId": "TypeSpec.string",
+      "decorators": []
+     },
+     "optional": true,
+     "readOnly": false,
+     "discriminator": false,
+     "flatten": false,
+     "decorators": [],
+     "crossLanguageDefinitionId": "Parameters.BodyOptionality.OptionalityOrdering.OrderingWithOptionalStart.Request.anonymous.start"
+    },
+    {
+     "$id": "13",
+     "kind": "property",
+     "name": "end",
+     "serializedName": "end",
+     "type": {
+      "$id": "14",
+      "kind": "string",
+      "name": "string",
+      "crossLanguageDefinitionId": "TypeSpec.string",
+      "decorators": []
+     },
+     "optional": false,
+     "readOnly": false,
+     "discriminator": false,
+     "flatten": false,
+     "decorators": [],
+     "crossLanguageDefinitionId": "Parameters.BodyOptionality.OptionalityOrdering.OrderingWithOptionalStart.Request.anonymous.end"
+    }
+   ]
   }
  ],
  "Clients": [
   {
-   "$id": "5",
+   "$id": "15",
    "Name": "BodyOptionalityClient",
    "Description": "Test describing optionality of the request body.",
    "Operations": [
     {
-     "$id": "6",
+     "$id": "16",
      "Name": "requiredExplicit",
      "ResourceName": "BodyOptionality",
      "Accessibility": "public",
      "Parameters": [
       {
-       "$id": "7",
+       "$id": "17",
        "Name": "endpoint",
        "NameInRequest": "endpoint",
        "Description": "Service host",
        "Type": {
-        "$id": "8",
+        "$id": "18",
         "kind": "url",
         "name": "url",
         "crossLanguageDefinitionId": "TypeSpec.url"
@@ -67,9 +163,9 @@
        "Explode": false,
        "Kind": "Client",
        "DefaultValue": {
-        "$id": "9",
+        "$id": "19",
         "Type": {
-         "$id": "10",
+         "$id": "20",
          "kind": "string",
          "name": "string",
          "crossLanguageDefinitionId": "TypeSpec.string"
@@ -78,15 +174,15 @@
        }
       },
       {
-       "$id": "11",
+       "$id": "21",
        "Name": "contentType",
        "NameInRequest": "Content-Type",
        "Description": "Body parameter's content type. Known values are application/json",
        "Type": {
-        "$id": "12",
+        "$id": "22",
         "kind": "constant",
         "valueType": {
-         "$id": "13",
+         "$id": "23",
          "kind": "string",
          "name": "string",
          "crossLanguageDefinitionId": "TypeSpec.string",
@@ -106,7 +202,7 @@
        "SkipUrlEncoding": false
       },
       {
-       "$id": "14",
+       "$id": "24",
        "Name": "body",
        "NameInRequest": "body",
        "Type": {
@@ -125,7 +221,7 @@
      ],
      "Responses": [
       {
-       "$id": "15",
+       "$id": "25",
        "StatusCodes": [
         204
        ],
@@ -148,24 +244,24 @@
      "Decorators": []
     },
     {
-     "$id": "16",
+     "$id": "26",
      "Name": "requiredImplicit",
      "ResourceName": "BodyOptionality",
      "Accessibility": "public",
      "Parameters": [
       {
-       "$ref": "7"
+       "$ref": "17"
       },
       {
-       "$id": "17",
+       "$id": "27",
        "Name": "contentType",
        "NameInRequest": "Content-Type",
        "Description": "Body parameter's content type. Known values are application/json",
        "Type": {
-        "$id": "18",
+        "$id": "28",
         "kind": "constant",
         "valueType": {
-         "$id": "19",
+         "$id": "29",
          "kind": "string",
          "name": "string",
          "crossLanguageDefinitionId": "TypeSpec.string",
@@ -185,7 +281,7 @@
        "SkipUrlEncoding": false
       },
       {
-       "$id": "20",
+       "$id": "30",
        "Name": "bodyModel",
        "NameInRequest": "bodyModel",
        "Type": {
@@ -204,7 +300,7 @@
      ],
      "Responses": [
       {
-       "$id": "21",
+       "$id": "31",
        "StatusCodes": [
         204
        ],
@@ -228,32 +324,32 @@
     }
    ],
    "Protocol": {
-    "$id": "22"
+    "$id": "32"
    },
    "Parameters": [
     {
-     "$ref": "7"
+     "$ref": "17"
     }
    ],
    "Decorators": []
   },
   {
-   "$id": "23",
+   "$id": "33",
    "Name": "OptionalExplicit",
    "Operations": [
     {
-     "$id": "24",
+     "$id": "34",
      "Name": "set",
      "ResourceName": "OptionalExplicit",
      "Accessibility": "public",
      "Parameters": [
       {
-       "$id": "25",
+       "$id": "35",
        "Name": "endpoint",
        "NameInRequest": "endpoint",
        "Description": "Service host",
        "Type": {
-        "$id": "26",
+        "$id": "36",
         "kind": "url",
         "name": "url",
         "crossLanguageDefinitionId": "TypeSpec.url"
@@ -268,9 +364,9 @@
        "Explode": false,
        "Kind": "Client",
        "DefaultValue": {
-        "$id": "27",
+        "$id": "37",
         "Type": {
-         "$id": "28",
+         "$id": "38",
          "kind": "string",
          "name": "string",
          "crossLanguageDefinitionId": "TypeSpec.string"
@@ -279,15 +375,15 @@
        }
       },
       {
-       "$id": "29",
+       "$id": "39",
        "Name": "contentType",
        "NameInRequest": "Content-Type",
        "Description": "Body parameter's content type. Known values are application/json",
        "Type": {
-        "$id": "30",
+        "$id": "40",
         "kind": "constant",
         "valueType": {
-         "$id": "31",
+         "$id": "41",
          "kind": "string",
          "name": "string",
          "crossLanguageDefinitionId": "TypeSpec.string",
@@ -307,7 +403,7 @@
        "SkipUrlEncoding": false
       },
       {
-       "$id": "32",
+       "$id": "42",
        "Name": "body",
        "NameInRequest": "body",
        "Type": {
@@ -326,7 +422,7 @@
      ],
      "Responses": [
       {
-       "$id": "33",
+       "$id": "43",
        "StatusCodes": [
         204
        ],
@@ -349,24 +445,24 @@
      "Decorators": []
     },
     {
-     "$id": "34",
+     "$id": "44",
      "Name": "omit",
      "ResourceName": "OptionalExplicit",
      "Accessibility": "public",
      "Parameters": [
       {
-       "$ref": "25"
+       "$ref": "35"
       },
       {
-       "$id": "35",
+       "$id": "45",
        "Name": "contentType",
        "NameInRequest": "Content-Type",
        "Description": "Body parameter's content type. Known values are application/json",
        "Type": {
-        "$id": "36",
+        "$id": "46",
         "kind": "constant",
         "valueType": {
-         "$id": "37",
+         "$id": "47",
          "kind": "string",
          "name": "string",
          "crossLanguageDefinitionId": "TypeSpec.string",
@@ -386,7 +482,7 @@
        "SkipUrlEncoding": false
       },
       {
-       "$id": "38",
+       "$id": "48",
        "Name": "body",
        "NameInRequest": "body",
        "Type": {
@@ -405,7 +501,7 @@
      ],
      "Responses": [
       {
-       "$id": "39",
+       "$id": "49",
        "StatusCodes": [
         204
        ],
@@ -429,12 +525,214 @@
     }
    ],
    "Protocol": {
-    "$id": "40"
+    "$id": "50"
    },
    "Parent": "BodyOptionalityClient",
    "Parameters": [
     {
-     "$ref": "25"
+     "$ref": "35"
+    }
+   ],
+   "Decorators": []
+  },
+  {
+   "$id": "51",
+   "Name": "OptionalityOrdering",
+   "Operations": [
+    {
+     "$id": "52",
+     "Name": "OrderingWithRequiredStart",
+     "ResourceName": "OptionalityOrdering",
+     "Accessibility": "public",
+     "Parameters": [
+      {
+       "$id": "53",
+       "Name": "endpoint",
+       "NameInRequest": "endpoint",
+       "Description": "Service host",
+       "Type": {
+        "$id": "54",
+        "kind": "url",
+        "name": "url",
+        "crossLanguageDefinitionId": "TypeSpec.url"
+       },
+       "Location": "Uri",
+       "IsApiVersion": false,
+       "IsResourceParameter": false,
+       "IsContentType": false,
+       "IsRequired": true,
+       "IsEndpoint": true,
+       "SkipUrlEncoding": false,
+       "Explode": false,
+       "Kind": "Client",
+       "DefaultValue": {
+        "$id": "55",
+        "Type": {
+         "$id": "56",
+         "kind": "string",
+         "name": "string",
+         "crossLanguageDefinitionId": "TypeSpec.string"
+        },
+        "Value": "http://localhost:3000"
+       }
+      },
+      {
+       "$id": "57",
+       "Name": "contentType",
+       "NameInRequest": "Content-Type",
+       "Description": "Body parameter's content type. Known values are application/json",
+       "Type": {
+        "$id": "58",
+        "kind": "constant",
+        "valueType": {
+         "$id": "59",
+         "kind": "string",
+         "name": "string",
+         "crossLanguageDefinitionId": "TypeSpec.string",
+         "decorators": []
+        },
+        "value": "application/json",
+        "decorators": []
+       },
+       "Location": "Header",
+       "IsApiVersion": false,
+       "IsContentType": true,
+       "IsEndpoint": false,
+       "Explode": false,
+       "IsRequired": true,
+       "Kind": "Constant",
+       "Decorators": [],
+       "SkipUrlEncoding": false
+      },
+      {
+       "$id": "60",
+       "Name": "orderingWithRequiredStartRequest",
+       "NameInRequest": "orderingWithRequiredStartRequest",
+       "Type": {
+        "$ref": "5"
+       },
+       "Location": "Body",
+       "IsApiVersion": false,
+       "IsContentType": false,
+       "IsEndpoint": false,
+       "Explode": false,
+       "IsRequired": true,
+       "Kind": "Spread",
+       "Decorators": [],
+       "SkipUrlEncoding": false
+      }
+     ],
+     "Responses": [
+      {
+       "$id": "61",
+       "StatusCodes": [
+        204
+       ],
+       "BodyMediaType": "Json",
+       "Headers": [],
+       "IsErrorResponse": false
+      }
+     ],
+     "HttpMethod": "HEAD",
+     "RequestBodyMediaType": "Json",
+     "Uri": "{endpoint}",
+     "Path": "/parameters/body-optionality/optional-ordering/startwithequired",
+     "RequestMediaTypes": [
+      "application/json"
+     ],
+     "BufferResponse": true,
+     "GenerateProtocolMethod": true,
+     "GenerateConvenienceMethod": true,
+     "CrossLanguageDefinitionId": "Parameters.BodyOptionality.OptionalityOrdering.OrderingWithRequiredStart",
+     "Decorators": []
+    },
+    {
+     "$id": "62",
+     "Name": "OrderingWithOptionalStart",
+     "ResourceName": "OptionalityOrdering",
+     "Accessibility": "public",
+     "Parameters": [
+      {
+       "$ref": "53"
+      },
+      {
+       "$id": "63",
+       "Name": "contentType",
+       "NameInRequest": "Content-Type",
+       "Description": "Body parameter's content type. Known values are application/json",
+       "Type": {
+        "$id": "64",
+        "kind": "constant",
+        "valueType": {
+         "$id": "65",
+         "kind": "string",
+         "name": "string",
+         "crossLanguageDefinitionId": "TypeSpec.string",
+         "decorators": []
+        },
+        "value": "application/json",
+        "decorators": []
+       },
+       "Location": "Header",
+       "IsApiVersion": false,
+       "IsContentType": true,
+       "IsEndpoint": false,
+       "Explode": false,
+       "IsRequired": true,
+       "Kind": "Constant",
+       "Decorators": [],
+       "SkipUrlEncoding": false
+      },
+      {
+       "$id": "66",
+       "Name": "orderingWithOptionalStartRequest",
+       "NameInRequest": "orderingWithOptionalStartRequest",
+       "Type": {
+        "$ref": "10"
+       },
+       "Location": "Body",
+       "IsApiVersion": false,
+       "IsContentType": false,
+       "IsEndpoint": false,
+       "Explode": false,
+       "IsRequired": true,
+       "Kind": "Spread",
+       "Decorators": [],
+       "SkipUrlEncoding": false
+      }
+     ],
+     "Responses": [
+      {
+       "$id": "67",
+       "StatusCodes": [
+        204
+       ],
+       "BodyMediaType": "Json",
+       "Headers": [],
+       "IsErrorResponse": false
+      }
+     ],
+     "HttpMethod": "HEAD",
+     "RequestBodyMediaType": "Json",
+     "Uri": "{endpoint}",
+     "Path": "/parameters/body-optionality/optional-ordering/startwithoptional",
+     "RequestMediaTypes": [
+      "application/json"
+     ],
+     "BufferResponse": true,
+     "GenerateProtocolMethod": true,
+     "GenerateConvenienceMethod": true,
+     "CrossLanguageDefinitionId": "Parameters.BodyOptionality.OptionalityOrdering.OrderingWithOptionalStart",
+     "Decorators": []
+    }
+   ],
+   "Protocol": {
+    "$id": "68"
+   },
+   "Parent": "BodyOptionalityClient",
+   "Parameters": [
+    {
+     "$ref": "53"
     }
    ],
    "Decorators": []

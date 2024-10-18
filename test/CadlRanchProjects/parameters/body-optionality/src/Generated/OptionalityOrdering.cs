@@ -16,9 +16,9 @@ using Parameters.BodyOptionality.Models;
 
 namespace Parameters.BodyOptionality
 {
-    // Data plane generated client.
-    /// <summary> Test describing optionality of the request body. </summary>
-    public partial class BodyOptionalityClient
+    // Data plane generated sub-client.
+    /// <summary> The OptionalityOrdering sub-client. </summary>
+    public partial class OptionalityOrdering
     {
         private readonly HttpPipeline _pipeline;
         private readonly Uri _endpoint;
@@ -29,278 +29,264 @@ namespace Parameters.BodyOptionality
         /// <summary> The HTTP pipeline for sending and receiving REST requests and responses. </summary>
         public virtual HttpPipeline Pipeline => _pipeline;
 
-        /// <summary> Initializes a new instance of BodyOptionalityClient. </summary>
-        public BodyOptionalityClient() : this(new Uri("http://localhost:3000"), new BodyOptionalityClientOptions())
+        /// <summary> Initializes a new instance of OptionalityOrdering for mocking. </summary>
+        protected OptionalityOrdering()
         {
-        }
-
-        /// <summary> Initializes a new instance of BodyOptionalityClient. </summary>
-        /// <param name="endpoint"> Service host. </param>
-        /// <param name="options"> The options for configuring the client. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="endpoint"/> is null. </exception>
-        public BodyOptionalityClient(Uri endpoint, BodyOptionalityClientOptions options)
-        {
-            Argument.AssertNotNull(endpoint, nameof(endpoint));
-            options ??= new BodyOptionalityClientOptions();
-
-            ClientDiagnostics = new ClientDiagnostics(options, true);
-            _pipeline = HttpPipelineBuilder.Build(options, Array.Empty<HttpPipelinePolicy>(), Array.Empty<HttpPipelinePolicy>(), new ResponseClassifier());
-            _endpoint = endpoint;
-        }
-
-        /// <summary> Required explicit. </summary>
-        /// <param name="body"> The <see cref="BodyModel"/> to use. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        /// <include file="Docs/BodyOptionalityClient.xml" path="doc/members/member[@name='RequiredExplicitAsync(BodyModel,CancellationToken)']/*" />
-        public virtual async Task<Response> RequiredExplicitAsync(BodyModel body, CancellationToken cancellationToken = default)
-        {
-            Argument.AssertNotNull(body, nameof(body));
-
-            using RequestContent content = body.ToRequestContent();
-            RequestContext context = FromCancellationToken(cancellationToken);
-            Response response = await RequiredExplicitAsync(content, context).ConfigureAwait(false);
-            return response;
-        }
-
-        /// <summary> Required explicit. </summary>
-        /// <param name="body"> The <see cref="BodyModel"/> to use. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="body"/> is null. </exception>
-        /// <include file="Docs/BodyOptionalityClient.xml" path="doc/members/member[@name='RequiredExplicit(BodyModel,CancellationToken)']/*" />
-        public virtual Response RequiredExplicit(BodyModel body, CancellationToken cancellationToken = default)
-        {
-            Argument.AssertNotNull(body, nameof(body));
-
-            using RequestContent content = body.ToRequestContent();
-            RequestContext context = FromCancellationToken(cancellationToken);
-            Response response = RequiredExplicit(content, context);
-            return response;
-        }
-
-        /// <summary>
-        /// [Protocol Method] Required explicit.
-        /// <list type="bullet">
-        /// <item>
-        /// <description>
-        /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-        /// </description>
-        /// </item>
-        /// <item>
-        /// <description>
-        /// Please try the simpler <see cref="RequiredExplicitAsync(BodyModel,CancellationToken)"/> convenience overload with strongly typed models first.
-        /// </description>
-        /// </item>
-        /// </list>
-        /// </summary>
-        /// <param name="content"> The content to send as the body of the request. </param>
-        /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
-        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
-        /// <returns> The response returned from the service. </returns>
-        /// <include file="Docs/BodyOptionalityClient.xml" path="doc/members/member[@name='RequiredExplicitAsync(RequestContent,RequestContext)']/*" />
-        public virtual async Task<Response> RequiredExplicitAsync(RequestContent content, RequestContext context = null)
-        {
-            Argument.AssertNotNull(content, nameof(content));
-
-            using var scope = ClientDiagnostics.CreateScope("BodyOptionalityClient.RequiredExplicit");
-            scope.Start();
-            try
-            {
-                using HttpMessage message = CreateRequiredExplicitRequest(content, context);
-                return await _pipeline.ProcessMessageAsync(message, context).ConfigureAwait(false);
-            }
-            catch (Exception e)
-            {
-                scope.Failed(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// [Protocol Method] Required explicit.
-        /// <list type="bullet">
-        /// <item>
-        /// <description>
-        /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-        /// </description>
-        /// </item>
-        /// <item>
-        /// <description>
-        /// Please try the simpler <see cref="RequiredExplicit(BodyModel,CancellationToken)"/> convenience overload with strongly typed models first.
-        /// </description>
-        /// </item>
-        /// </list>
-        /// </summary>
-        /// <param name="content"> The content to send as the body of the request. </param>
-        /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
-        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
-        /// <returns> The response returned from the service. </returns>
-        /// <include file="Docs/BodyOptionalityClient.xml" path="doc/members/member[@name='RequiredExplicit(RequestContent,RequestContext)']/*" />
-        public virtual Response RequiredExplicit(RequestContent content, RequestContext context = null)
-        {
-            Argument.AssertNotNull(content, nameof(content));
-
-            using var scope = ClientDiagnostics.CreateScope("BodyOptionalityClient.RequiredExplicit");
-            scope.Start();
-            try
-            {
-                using HttpMessage message = CreateRequiredExplicitRequest(content, context);
-                return _pipeline.ProcessMessage(message, context);
-            }
-            catch (Exception e)
-            {
-                scope.Failed(e);
-                throw;
-            }
-        }
-
-        /// <summary> Required implicit. </summary>
-        /// <param name="name"></param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="name"/> is null. </exception>
-        /// <include file="Docs/BodyOptionalityClient.xml" path="doc/members/member[@name='RequiredImplicitAsync(string,CancellationToken)']/*" />
-        public virtual async Task<Response> RequiredImplicitAsync(string name, CancellationToken cancellationToken = default)
-        {
-            Argument.AssertNotNull(name, nameof(name));
-
-            BodyModel bodyModel = new BodyModel(name, null);
-            RequestContext context = FromCancellationToken(cancellationToken);
-            Response response = await RequiredImplicitAsync(bodyModel.ToRequestContent(), context).ConfigureAwait(false);
-            return response;
-        }
-
-        /// <summary> Required implicit. </summary>
-        /// <param name="name"></param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="name"/> is null. </exception>
-        /// <include file="Docs/BodyOptionalityClient.xml" path="doc/members/member[@name='RequiredImplicit(string,CancellationToken)']/*" />
-        public virtual Response RequiredImplicit(string name, CancellationToken cancellationToken = default)
-        {
-            Argument.AssertNotNull(name, nameof(name));
-
-            BodyModel bodyModel = new BodyModel(name, null);
-            RequestContext context = FromCancellationToken(cancellationToken);
-            Response response = RequiredImplicit(bodyModel.ToRequestContent(), context);
-            return response;
-        }
-
-        /// <summary>
-        /// [Protocol Method] Required implicit.
-        /// <list type="bullet">
-        /// <item>
-        /// <description>
-        /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-        /// </description>
-        /// </item>
-        /// <item>
-        /// <description>
-        /// Please try the simpler <see cref="RequiredImplicitAsync(string,CancellationToken)"/> convenience overload with strongly typed models first.
-        /// </description>
-        /// </item>
-        /// </list>
-        /// </summary>
-        /// <param name="content"> The content to send as the body of the request. </param>
-        /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
-        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
-        /// <returns> The response returned from the service. </returns>
-        /// <include file="Docs/BodyOptionalityClient.xml" path="doc/members/member[@name='RequiredImplicitAsync(RequestContent,RequestContext)']/*" />
-        public virtual async Task<Response> RequiredImplicitAsync(RequestContent content, RequestContext context = null)
-        {
-            Argument.AssertNotNull(content, nameof(content));
-
-            using var scope = ClientDiagnostics.CreateScope("BodyOptionalityClient.RequiredImplicit");
-            scope.Start();
-            try
-            {
-                using HttpMessage message = CreateRequiredImplicitRequest(content, context);
-                return await _pipeline.ProcessMessageAsync(message, context).ConfigureAwait(false);
-            }
-            catch (Exception e)
-            {
-                scope.Failed(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// [Protocol Method] Required implicit.
-        /// <list type="bullet">
-        /// <item>
-        /// <description>
-        /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-        /// </description>
-        /// </item>
-        /// <item>
-        /// <description>
-        /// Please try the simpler <see cref="RequiredImplicit(string,CancellationToken)"/> convenience overload with strongly typed models first.
-        /// </description>
-        /// </item>
-        /// </list>
-        /// </summary>
-        /// <param name="content"> The content to send as the body of the request. </param>
-        /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
-        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
-        /// <returns> The response returned from the service. </returns>
-        /// <include file="Docs/BodyOptionalityClient.xml" path="doc/members/member[@name='RequiredImplicit(RequestContent,RequestContext)']/*" />
-        public virtual Response RequiredImplicit(RequestContent content, RequestContext context = null)
-        {
-            Argument.AssertNotNull(content, nameof(content));
-
-            using var scope = ClientDiagnostics.CreateScope("BodyOptionalityClient.RequiredImplicit");
-            scope.Start();
-            try
-            {
-                using HttpMessage message = CreateRequiredImplicitRequest(content, context);
-                return _pipeline.ProcessMessage(message, context);
-            }
-            catch (Exception e)
-            {
-                scope.Failed(e);
-                throw;
-            }
-        }
-
-        private OptionalExplicit _cachedOptionalExplicit;
-        private OptionalityOrdering _cachedOptionalityOrdering;
-
-        /// <summary> Initializes a new instance of OptionalExplicit. </summary>
-        public virtual OptionalExplicit GetOptionalExplicitClient()
-        {
-            return Volatile.Read(ref _cachedOptionalExplicit) ?? Interlocked.CompareExchange(ref _cachedOptionalExplicit, new OptionalExplicit(ClientDiagnostics, _pipeline, _endpoint), null) ?? _cachedOptionalExplicit;
         }
 
         /// <summary> Initializes a new instance of OptionalityOrdering. </summary>
-        public virtual OptionalityOrdering GetOptionalityOrderingClient()
+        /// <param name="clientDiagnostics"> The handler for diagnostic messaging in the client. </param>
+        /// <param name="pipeline"> The HTTP pipeline for sending and receiving REST requests and responses. </param>
+        /// <param name="endpoint"> Service host. </param>
+        internal OptionalityOrdering(ClientDiagnostics clientDiagnostics, HttpPipeline pipeline, Uri endpoint)
         {
-            return Volatile.Read(ref _cachedOptionalityOrdering) ?? Interlocked.CompareExchange(ref _cachedOptionalityOrdering, new OptionalityOrdering(ClientDiagnostics, _pipeline, _endpoint), null) ?? _cachedOptionalityOrdering;
+            ClientDiagnostics = clientDiagnostics;
+            _pipeline = pipeline;
+            _endpoint = endpoint;
         }
 
-        internal HttpMessage CreateRequiredExplicitRequest(RequestContent content, RequestContext context)
+        /// <summary> Ordering with required start. </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="start"/> is null. </exception>
+        /// <include file="Docs/OptionalityOrdering.xml" path="doc/members/member[@name='OrderingWithRequiredStartAsync(string,string,CancellationToken)']/*" />
+        public virtual async Task<Response> OrderingWithRequiredStartAsync(string start, string end = null, CancellationToken cancellationToken = default)
+        {
+            Argument.AssertNotNull(start, nameof(start));
+
+            OrderingWithRequiredStartRequest orderingWithRequiredStartRequest = new OrderingWithRequiredStartRequest(start, end, null);
+            RequestContext context = FromCancellationToken(cancellationToken);
+            Response response = await OrderingWithRequiredStartAsync(orderingWithRequiredStartRequest.ToRequestContent(), context).ConfigureAwait(false);
+            return response;
+        }
+
+        /// <summary> Ordering with required start. </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="start"/> is null. </exception>
+        /// <include file="Docs/OptionalityOrdering.xml" path="doc/members/member[@name='OrderingWithRequiredStart(string,string,CancellationToken)']/*" />
+        public virtual Response OrderingWithRequiredStart(string start, string end = null, CancellationToken cancellationToken = default)
+        {
+            Argument.AssertNotNull(start, nameof(start));
+
+            OrderingWithRequiredStartRequest orderingWithRequiredStartRequest = new OrderingWithRequiredStartRequest(start, end, null);
+            RequestContext context = FromCancellationToken(cancellationToken);
+            Response response = OrderingWithRequiredStart(orderingWithRequiredStartRequest.ToRequestContent(), context);
+            return response;
+        }
+
+        /// <summary>
+        /// [Protocol Method] Ordering with required start.
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="OrderingWithRequiredStartAsync(string,string,CancellationToken)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        /// <include file="Docs/OptionalityOrdering.xml" path="doc/members/member[@name='OrderingWithRequiredStartAsync(RequestContent,RequestContext)']/*" />
+        public virtual async Task<Response> OrderingWithRequiredStartAsync(RequestContent content, RequestContext context = null)
+        {
+            Argument.AssertNotNull(content, nameof(content));
+
+            using var scope = ClientDiagnostics.CreateScope("OptionalityOrdering.OrderingWithRequiredStart");
+            scope.Start();
+            try
+            {
+                using HttpMessage message = CreateOrderingWithRequiredStartRequest(content, context);
+                return await _pipeline.ProcessMessageAsync(message, context).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                scope.Failed(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// [Protocol Method] Ordering with required start.
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="OrderingWithRequiredStart(string,string,CancellationToken)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        /// <include file="Docs/OptionalityOrdering.xml" path="doc/members/member[@name='OrderingWithRequiredStart(RequestContent,RequestContext)']/*" />
+        public virtual Response OrderingWithRequiredStart(RequestContent content, RequestContext context = null)
+        {
+            Argument.AssertNotNull(content, nameof(content));
+
+            using var scope = ClientDiagnostics.CreateScope("OptionalityOrdering.OrderingWithRequiredStart");
+            scope.Start();
+            try
+            {
+                using HttpMessage message = CreateOrderingWithRequiredStartRequest(content, context);
+                return _pipeline.ProcessMessage(message, context);
+            }
+            catch (Exception e)
+            {
+                scope.Failed(e);
+                throw;
+            }
+        }
+
+        /// <summary> Ordering with optional start. </summary>
+        /// <param name="end"></param>
+        /// <param name="start"></param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="end"/> is null. </exception>
+        /// <include file="Docs/OptionalityOrdering.xml" path="doc/members/member[@name='OrderingWithOptionalStartAsync(string,string,CancellationToken)']/*" />
+        public virtual async Task<Response> OrderingWithOptionalStartAsync(string end, string start = null, CancellationToken cancellationToken = default)
+        {
+            Argument.AssertNotNull(end, nameof(end));
+
+            OrderingWithOptionalStartRequest orderingWithOptionalStartRequest = new OrderingWithOptionalStartRequest(start, end, null);
+            RequestContext context = FromCancellationToken(cancellationToken);
+            Response response = await OrderingWithOptionalStartAsync(orderingWithOptionalStartRequest.ToRequestContent(), context).ConfigureAwait(false);
+            return response;
+        }
+
+        /// <summary> Ordering with optional start. </summary>
+        /// <param name="end"></param>
+        /// <param name="start"></param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="end"/> is null. </exception>
+        /// <include file="Docs/OptionalityOrdering.xml" path="doc/members/member[@name='OrderingWithOptionalStart(string,string,CancellationToken)']/*" />
+        public virtual Response OrderingWithOptionalStart(string end, string start = null, CancellationToken cancellationToken = default)
+        {
+            Argument.AssertNotNull(end, nameof(end));
+
+            OrderingWithOptionalStartRequest orderingWithOptionalStartRequest = new OrderingWithOptionalStartRequest(start, end, null);
+            RequestContext context = FromCancellationToken(cancellationToken);
+            Response response = OrderingWithOptionalStart(orderingWithOptionalStartRequest.ToRequestContent(), context);
+            return response;
+        }
+
+        /// <summary>
+        /// [Protocol Method] Ordering with optional start.
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="OrderingWithOptionalStartAsync(string,string,CancellationToken)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        /// <include file="Docs/OptionalityOrdering.xml" path="doc/members/member[@name='OrderingWithOptionalStartAsync(RequestContent,RequestContext)']/*" />
+        public virtual async Task<Response> OrderingWithOptionalStartAsync(RequestContent content, RequestContext context = null)
+        {
+            Argument.AssertNotNull(content, nameof(content));
+
+            using var scope = ClientDiagnostics.CreateScope("OptionalityOrdering.OrderingWithOptionalStart");
+            scope.Start();
+            try
+            {
+                using HttpMessage message = CreateOrderingWithOptionalStartRequest(content, context);
+                return await _pipeline.ProcessMessageAsync(message, context).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                scope.Failed(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// [Protocol Method] Ordering with optional start.
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// Please try the simpler <see cref="OrderingWithOptionalStart(string,string,CancellationToken)"/> convenience overload with strongly typed models first.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        /// <include file="Docs/OptionalityOrdering.xml" path="doc/members/member[@name='OrderingWithOptionalStart(RequestContent,RequestContext)']/*" />
+        public virtual Response OrderingWithOptionalStart(RequestContent content, RequestContext context = null)
+        {
+            Argument.AssertNotNull(content, nameof(content));
+
+            using var scope = ClientDiagnostics.CreateScope("OptionalityOrdering.OrderingWithOptionalStart");
+            scope.Start();
+            try
+            {
+                using HttpMessage message = CreateOrderingWithOptionalStartRequest(content, context);
+                return _pipeline.ProcessMessage(message, context);
+            }
+            catch (Exception e)
+            {
+                scope.Failed(e);
+                throw;
+            }
+        }
+
+        internal HttpMessage CreateOrderingWithRequiredStartRequest(RequestContent content, RequestContext context)
         {
             var message = _pipeline.CreateMessage(context, ResponseClassifier204);
             var request = message.Request;
-            request.Method = RequestMethod.Post;
+            request.Method = RequestMethod.Head;
             var uri = new RawRequestUriBuilder();
             uri.Reset(_endpoint);
-            uri.AppendPath("/parameters/body-optionality/required-explicit", false);
+            uri.AppendPath("/parameters/body-optionality/optional-ordering/startwithequired", false);
             request.Uri = uri;
             request.Headers.Add("Content-Type", "application/json");
             request.Content = content;
             return message;
         }
 
-        internal HttpMessage CreateRequiredImplicitRequest(RequestContent content, RequestContext context)
+        internal HttpMessage CreateOrderingWithOptionalStartRequest(RequestContent content, RequestContext context)
         {
             var message = _pipeline.CreateMessage(context, ResponseClassifier204);
             var request = message.Request;
-            request.Method = RequestMethod.Post;
+            request.Method = RequestMethod.Head;
             var uri = new RawRequestUriBuilder();
             uri.Reset(_endpoint);
-            uri.AppendPath("/parameters/body-optionality/required-implicit", false);
+            uri.AppendPath("/parameters/body-optionality/optional-ordering/startwithoptional", false);
             request.Uri = uri;
             request.Headers.Add("Content-Type", "application/json");
             request.Content = content;

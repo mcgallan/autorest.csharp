@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="OrderingWithRequiredStartAsync(string,string,CancellationToken)">
+      <example>
+This sample shows how to call OrderingWithRequiredStartAsync.
+<code><![CDATA[
+OptionalityOrdering client = new BodyOptionalityClient().GetOptionalityOrderingClient();
+
+Response response = await client.OrderingWithRequiredStartAsync("<start>");
+]]></code>
+This sample shows how to call OrderingWithRequiredStartAsync with all parameters.
+<code><![CDATA[
+OptionalityOrdering client = new BodyOptionalityClient().GetOptionalityOrderingClient();
+
+Response response = await client.OrderingWithRequiredStartAsync("<start>", end: "<end>");
+]]></code></example>
+    </member>
+    <member name="OrderingWithRequiredStart(string,string,CancellationToken)">
+      <example>
+This sample shows how to call OrderingWithRequiredStart.
+<code><![CDATA[
+OptionalityOrdering client = new BodyOptionalityClient().GetOptionalityOrderingClient();
+
+Response response = client.OrderingWithRequiredStart("<start>");
+]]></code>
+This sample shows how to call OrderingWithRequiredStart with all parameters.
+<code><![CDATA[
+OptionalityOrdering client = new BodyOptionalityClient().GetOptionalityOrderingClient();
+
+Response response = client.OrderingWithRequiredStart("<start>", end: "<end>");
+]]></code></example>
+    </member>
+    <member name="OrderingWithRequiredStartAsync(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call OrderingWithRequiredStartAsync.
+<code><![CDATA[
+OptionalityOrdering client = new BodyOptionalityClient().GetOptionalityOrderingClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    start = "<start>",
+});
+Response response = await client.OrderingWithRequiredStartAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call OrderingWithRequiredStartAsync with all request content.
+<code><![CDATA[
+OptionalityOrdering client = new BodyOptionalityClient().GetOptionalityOrderingClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    start = "<start>",
+    end = "<end>",
+});
+Response response = await client.OrderingWithRequiredStartAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="OrderingWithRequiredStart(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call OrderingWithRequiredStart.
+<code><![CDATA[
+OptionalityOrdering client = new BodyOptionalityClient().GetOptionalityOrderingClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    start = "<start>",
+});
+Response response = client.OrderingWithRequiredStart(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call OrderingWithRequiredStart with all request content.
+<code><![CDATA[
+OptionalityOrdering client = new BodyOptionalityClient().GetOptionalityOrderingClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    start = "<start>",
+    end = "<end>",
+});
+Response response = client.OrderingWithRequiredStart(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="OrderingWithOptionalStartAsync(string,string,CancellationToken)">
+      <example>
+This sample shows how to call OrderingWithOptionalStartAsync.
+<code><![CDATA[
+OptionalityOrdering client = new BodyOptionalityClient().GetOptionalityOrderingClient();
+
+Response response = await client.OrderingWithOptionalStartAsync("<end>");
+]]></code>
+This sample shows how to call OrderingWithOptionalStartAsync with all parameters.
+<code><![CDATA[
+OptionalityOrdering client = new BodyOptionalityClient().GetOptionalityOrderingClient();
+
+Response response = await client.OrderingWithOptionalStartAsync("<end>", start: "<start>");
+]]></code></example>
+    </member>
+    <member name="OrderingWithOptionalStart(string,string,CancellationToken)">
+      <example>
+This sample shows how to call OrderingWithOptionalStart.
+<code><![CDATA[
+OptionalityOrdering client = new BodyOptionalityClient().GetOptionalityOrderingClient();
+
+Response response = client.OrderingWithOptionalStart("<end>");
+]]></code>
+This sample shows how to call OrderingWithOptionalStart with all parameters.
+<code><![CDATA[
+OptionalityOrdering client = new BodyOptionalityClient().GetOptionalityOrderingClient();
+
+Response response = client.OrderingWithOptionalStart("<end>", start: "<start>");
+]]></code></example>
+    </member>
+    <member name="OrderingWithOptionalStartAsync(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call OrderingWithOptionalStartAsync.
+<code><![CDATA[
+OptionalityOrdering client = new BodyOptionalityClient().GetOptionalityOrderingClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    end = "<end>",
+});
+Response response = await client.OrderingWithOptionalStartAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call OrderingWithOptionalStartAsync with all request content.
+<code><![CDATA[
+OptionalityOrdering client = new BodyOptionalityClient().GetOptionalityOrderingClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    start = "<start>",
+    end = "<end>",
+});
+Response response = await client.OrderingWithOptionalStartAsync(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="OrderingWithOptionalStart(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call OrderingWithOptionalStart.
+<code><![CDATA[
+OptionalityOrdering client = new BodyOptionalityClient().GetOptionalityOrderingClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    end = "<end>",
+});
+Response response = client.OrderingWithOptionalStart(content);
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call OrderingWithOptionalStart with all request content.
+<code><![CDATA[
+OptionalityOrdering client = new BodyOptionalityClient().GetOptionalityOrderingClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    start = "<start>",
+    end = "<end>",
+});
+Response response = client.OrderingWithOptionalStart(content);
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+  </members>
+</doc>
