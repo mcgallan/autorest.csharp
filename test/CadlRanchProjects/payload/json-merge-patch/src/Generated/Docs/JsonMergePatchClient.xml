@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="CreateResourceAsync(Resource,CancellationToken)">
+      <example>
+This sample shows how to call CreateResourceAsync.
+<code><![CDATA[
+JsonMergePatchClient client = new JsonMergePatchClient();
+
+Resource body = new Resource("<name>");
+Response<Resource> response = await client.CreateResourceAsync(body);
+]]></code>
+This sample shows how to call CreateResourceAsync with all parameters.
+<code><![CDATA[
+JsonMergePatchClient client = new JsonMergePatchClient();
+
+Resource body = new Resource("<name>")
+{
+    Description = "<description>",
+    Map =
+    {
+        ["key"] = new InnerModel
+        {
+            Name = "<name>",
+            Description = "<description>",
+        }
+    },
+    Array = { default },
+    IntValue = 1234,
+    FloatValue = 123.45F,
+    InnerModel = default,
+    IntArray = { 1234 },
+};
+Response<Resource> response = await client.CreateResourceAsync(body);
+]]></code></example>
+    </member>
+    <member name="CreateResource(Resource,CancellationToken)">
+      <example>
+This sample shows how to call CreateResource.
+<code><![CDATA[
+JsonMergePatchClient client = new JsonMergePatchClient();
+
+Resource body = new Resource("<name>");
+Response<Resource> response = client.CreateResource(body);
+]]></code>
+This sample shows how to call CreateResource with all parameters.
+<code><![CDATA[
+JsonMergePatchClient client = new JsonMergePatchClient();
+
+Resource body = new Resource("<name>")
+{
+    Description = "<description>",
+    Map =
+    {
+        ["key"] = new InnerModel
+        {
+            Name = "<name>",
+            Description = "<description>",
+        }
+    },
+    Array = { default },
+    IntValue = 1234,
+    FloatValue = 123.45F,
+    InnerModel = default,
+    IntArray = { 1234 },
+};
+Response<Resource> response = client.CreateResource(body);
+]]></code></example>
+    </member>
+    <member name="CreateResourceAsync(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call CreateResourceAsync and parse the result.
+<code><![CDATA[
+JsonMergePatchClient client = new JsonMergePatchClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    name = "<name>",
+});
+Response response = await client.CreateResourceAsync(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("name").ToString());
+]]></code>
+This sample shows how to call CreateResourceAsync with all request content and parse the result.
+<code><![CDATA[
+JsonMergePatchClient client = new JsonMergePatchClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    name = "<name>",
+    description = "<description>",
+    map = new
+    {
+        key = new
+        {
+            name = "<name>",
+            description = "<description>",
+        },
+    },
+    array = new object[]
+    {
+        null
+    },
+    intValue = 1234,
+    floatValue = 123.45F,
+    intArray = new object[]
+    {
+        1234
+    },
+});
+Response response = await client.CreateResourceAsync(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("map").GetProperty("<key>").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("map").GetProperty("<key>").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("array")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("array")[0].GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("intValue").ToString());
+Console.WriteLine(result.GetProperty("floatValue").ToString());
+Console.WriteLine(result.GetProperty("innerModel").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("innerModel").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("intArray")[0].ToString());
+]]></code></example>
+    </member>
+    <member name="CreateResource(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call CreateResource and parse the result.
+<code><![CDATA[
+JsonMergePatchClient client = new JsonMergePatchClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    name = "<name>",
+});
+Response response = client.CreateResource(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("name").ToString());
+]]></code>
+This sample shows how to call CreateResource with all request content and parse the result.
+<code><![CDATA[
+JsonMergePatchClient client = new JsonMergePatchClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    name = "<name>",
+    description = "<description>",
+    map = new
+    {
+        key = new
+        {
+            name = "<name>",
+            description = "<description>",
+        },
+    },
+    array = new object[]
+    {
+        null
+    },
+    intValue = 1234,
+    floatValue = 123.45F,
+    intArray = new object[]
+    {
+        1234
+    },
+});
+Response response = client.CreateResource(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("map").GetProperty("<key>").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("map").GetProperty("<key>").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("array")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("array")[0].GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("intValue").ToString());
+Console.WriteLine(result.GetProperty("floatValue").ToString());
+Console.WriteLine(result.GetProperty("innerModel").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("innerModel").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("intArray")[0].ToString());
+]]></code></example>
+    </member>
+    <member name="UpdateResourceAsync(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call UpdateResourceAsync and parse the result.
+<code><![CDATA[
+JsonMergePatchClient client = new JsonMergePatchClient();
+
+using RequestContent content = RequestContent.Create(new object());
+Response response = await client.UpdateResourceAsync(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("name").ToString());
+]]></code>
+This sample shows how to call UpdateResourceAsync with all request content and parse the result.
+<code><![CDATA[
+JsonMergePatchClient client = new JsonMergePatchClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    description = "<description>",
+    map = new
+    {
+        key = new
+        {
+            name = "<name>",
+            description = "<description>",
+        },
+    },
+    array = new object[]
+    {
+        null
+    },
+    intValue = 1234,
+    floatValue = 123.45F,
+    intArray = new object[]
+    {
+        1234
+    },
+});
+Response response = await client.UpdateResourceAsync(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("map").GetProperty("<key>").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("map").GetProperty("<key>").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("array")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("array")[0].GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("intValue").ToString());
+Console.WriteLine(result.GetProperty("floatValue").ToString());
+Console.WriteLine(result.GetProperty("innerModel").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("innerModel").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("intArray")[0].ToString());
+]]></code></example>
+    </member>
+    <member name="UpdateResource(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call UpdateResource and parse the result.
+<code><![CDATA[
+JsonMergePatchClient client = new JsonMergePatchClient();
+
+using RequestContent content = RequestContent.Create(new object());
+Response response = client.UpdateResource(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("name").ToString());
+]]></code>
+This sample shows how to call UpdateResource with all request content and parse the result.
+<code><![CDATA[
+JsonMergePatchClient client = new JsonMergePatchClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    description = "<description>",
+    map = new
+    {
+        key = new
+        {
+            name = "<name>",
+            description = "<description>",
+        },
+    },
+    array = new object[]
+    {
+        null
+    },
+    intValue = 1234,
+    floatValue = 123.45F,
+    intArray = new object[]
+    {
+        1234
+    },
+});
+Response response = client.UpdateResource(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("map").GetProperty("<key>").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("map").GetProperty("<key>").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("array")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("array")[0].GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("intValue").ToString());
+Console.WriteLine(result.GetProperty("floatValue").ToString());
+Console.WriteLine(result.GetProperty("innerModel").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("innerModel").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("intArray")[0].ToString());
+]]></code></example>
+    </member>
+    <member name="UpdateOptionalResourceAsync(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call UpdateOptionalResourceAsync and parse the result.
+<code><![CDATA[
+JsonMergePatchClient client = new JsonMergePatchClient();
+
+using RequestContent content = null;
+Response response = await client.UpdateOptionalResourceAsync(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("name").ToString());
+]]></code>
+This sample shows how to call UpdateOptionalResourceAsync with all request content and parse the result.
+<code><![CDATA[
+JsonMergePatchClient client = new JsonMergePatchClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    description = "<description>",
+    map = new
+    {
+        key = new
+        {
+            name = "<name>",
+            description = "<description>",
+        },
+    },
+    array = new object[]
+    {
+        null
+    },
+    intValue = 1234,
+    floatValue = 123.45F,
+    intArray = new object[]
+    {
+        1234
+    },
+});
+Response response = await client.UpdateOptionalResourceAsync(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("map").GetProperty("<key>").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("map").GetProperty("<key>").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("array")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("array")[0].GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("intValue").ToString());
+Console.WriteLine(result.GetProperty("floatValue").ToString());
+Console.WriteLine(result.GetProperty("innerModel").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("innerModel").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("intArray")[0].ToString());
+]]></code></example>
+    </member>
+    <member name="UpdateOptionalResource(RequestContent,RequestContext)">
+      <example>
+This sample shows how to call UpdateOptionalResource and parse the result.
+<code><![CDATA[
+JsonMergePatchClient client = new JsonMergePatchClient();
+
+using RequestContent content = null;
+Response response = client.UpdateOptionalResource(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("name").ToString());
+]]></code>
+This sample shows how to call UpdateOptionalResource with all request content and parse the result.
+<code><![CDATA[
+JsonMergePatchClient client = new JsonMergePatchClient();
+
+using RequestContent content = RequestContent.Create(new
+{
+    description = "<description>",
+    map = new
+    {
+        key = new
+        {
+            name = "<name>",
+            description = "<description>",
+        },
+    },
+    array = new object[]
+    {
+        null
+    },
+    intValue = 1234,
+    floatValue = 123.45F,
+    intArray = new object[]
+    {
+        1234
+    },
+});
+Response response = client.UpdateOptionalResource(content);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("map").GetProperty("<key>").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("map").GetProperty("<key>").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("array")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("array")[0].GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("intValue").ToString());
+Console.WriteLine(result.GetProperty("floatValue").ToString());
+Console.WriteLine(result.GetProperty("innerModel").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("innerModel").GetProperty("description").ToString());
+Console.WriteLine(result.GetProperty("intArray")[0].ToString());
+]]></code></example>
+    </member>
+  </members>
+</doc>

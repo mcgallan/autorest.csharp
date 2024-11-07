@@ -41,6 +41,7 @@
         "payload/content-negotiation",
         "payload/media-type",
         "payload/multipart",
+        "payload/json-merge-patch",
         "payload/pageable",
         "serialization/encoded-name/json",
         "server/endpoint/not-defined",
