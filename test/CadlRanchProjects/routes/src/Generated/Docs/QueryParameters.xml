@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="TemplateOnlyAsync(string,RequestContext)">
+      <example>
+This sample shows how to call TemplateOnlyAsync.
+<code><![CDATA[
+QueryParameters client = new RoutesClient().GetQueryParametersClient();
+
+Response response = await client.TemplateOnlyAsync("<param>");
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call TemplateOnlyAsync with all parameters.
+<code><![CDATA[
+QueryParameters client = new RoutesClient().GetQueryParametersClient();
+
+Response response = await client.TemplateOnlyAsync("<param>");
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="TemplateOnly(string,RequestContext)">
+      <example>
+This sample shows how to call TemplateOnly.
+<code><![CDATA[
+QueryParameters client = new RoutesClient().GetQueryParametersClient();
+
+Response response = client.TemplateOnly("<param>");
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call TemplateOnly with all parameters.
+<code><![CDATA[
+QueryParameters client = new RoutesClient().GetQueryParametersClient();
+
+Response response = client.TemplateOnly("<param>");
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="ExplicitAsync(string,RequestContext)">
+      <example>
+This sample shows how to call ExplicitAsync.
+<code><![CDATA[
+QueryParameters client = new RoutesClient().GetQueryParametersClient();
+
+Response response = await client.ExplicitAsync("<param>");
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call ExplicitAsync with all parameters.
+<code><![CDATA[
+QueryParameters client = new RoutesClient().GetQueryParametersClient();
+
+Response response = await client.ExplicitAsync("<param>");
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="Explicit(string,RequestContext)">
+      <example>
+This sample shows how to call Explicit.
+<code><![CDATA[
+QueryParameters client = new RoutesClient().GetQueryParametersClient();
+
+Response response = client.Explicit("<param>");
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call Explicit with all parameters.
+<code><![CDATA[
+QueryParameters client = new RoutesClient().GetQueryParametersClient();
+
+Response response = client.Explicit("<param>");
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="AnnotationOnlyAsync(string,RequestContext)">
+      <example>
+This sample shows how to call AnnotationOnlyAsync.
+<code><![CDATA[
+QueryParameters client = new RoutesClient().GetQueryParametersClient();
+
+Response response = await client.AnnotationOnlyAsync("<param>");
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call AnnotationOnlyAsync with all parameters.
+<code><![CDATA[
+QueryParameters client = new RoutesClient().GetQueryParametersClient();
+
+Response response = await client.AnnotationOnlyAsync("<param>");
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="AnnotationOnly(string,RequestContext)">
+      <example>
+This sample shows how to call AnnotationOnly.
+<code><![CDATA[
+QueryParameters client = new RoutesClient().GetQueryParametersClient();
+
+Response response = client.AnnotationOnly("<param>");
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call AnnotationOnly with all parameters.
+<code><![CDATA[
+QueryParameters client = new RoutesClient().GetQueryParametersClient();
+
+Response response = client.AnnotationOnly("<param>");
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+  </members>
+</doc>

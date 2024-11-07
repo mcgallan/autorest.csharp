@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="PrimitiveAsync(string,RequestContext)">
+      <example>
+This sample shows how to call PrimitiveAsync.
+<code><![CDATA[
+PathParametersSimpleExpansionExplode client = new RoutesClient().GetPathParametersClient().GetPathParametersSimpleExpansionClient().GetPathParametersSimpleExpansionExplodeClient();
+
+Response response = await client.PrimitiveAsync("<param>");
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call PrimitiveAsync with all parameters.
+<code><![CDATA[
+PathParametersSimpleExpansionExplode client = new RoutesClient().GetPathParametersClient().GetPathParametersSimpleExpansionClient().GetPathParametersSimpleExpansionExplodeClient();
+
+Response response = await client.PrimitiveAsync("<param>");
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="Primitive(string,RequestContext)">
+      <example>
+This sample shows how to call Primitive.
+<code><![CDATA[
+PathParametersSimpleExpansionExplode client = new RoutesClient().GetPathParametersClient().GetPathParametersSimpleExpansionClient().GetPathParametersSimpleExpansionExplodeClient();
+
+Response response = client.Primitive("<param>");
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call Primitive with all parameters.
+<code><![CDATA[
+PathParametersSimpleExpansionExplode client = new RoutesClient().GetPathParametersClient().GetPathParametersSimpleExpansionClient().GetPathParametersSimpleExpansionExplodeClient();
+
+Response response = client.Primitive("<param>");
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="ArrayAsync(IEnumerable{string},RequestContext)">
+      <example>
+This sample shows how to call ArrayAsync.
+<code><![CDATA[
+PathParametersSimpleExpansionExplode client = new RoutesClient().GetPathParametersClient().GetPathParametersSimpleExpansionClient().GetPathParametersSimpleExpansionExplodeClient();
+
+Response response = await client.ArrayAsync(new string[] { "<param>" });
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call ArrayAsync with all parameters.
+<code><![CDATA[
+PathParametersSimpleExpansionExplode client = new RoutesClient().GetPathParametersClient().GetPathParametersSimpleExpansionClient().GetPathParametersSimpleExpansionExplodeClient();
+
+Response response = await client.ArrayAsync(new string[] { "<param>" });
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="Array(IEnumerable{string},RequestContext)">
+      <example>
+This sample shows how to call Array.
+<code><![CDATA[
+PathParametersSimpleExpansionExplode client = new RoutesClient().GetPathParametersClient().GetPathParametersSimpleExpansionClient().GetPathParametersSimpleExpansionExplodeClient();
+
+Response response = client.Array(new string[] { "<param>" });
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call Array with all parameters.
+<code><![CDATA[
+PathParametersSimpleExpansionExplode client = new RoutesClient().GetPathParametersClient().GetPathParametersSimpleExpansionClient().GetPathParametersSimpleExpansionExplodeClient();
+
+Response response = client.Array(new string[] { "<param>" });
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="RecordAsync(IDictionary{string,int},RequestContext)">
+      <example>
+This sample shows how to call RecordAsync.
+<code><![CDATA[
+PathParametersSimpleExpansionExplode client = new RoutesClient().GetPathParametersClient().GetPathParametersSimpleExpansionClient().GetPathParametersSimpleExpansionExplodeClient();
+
+Response response = await client.RecordAsync(new Dictionary<string, int>
+{
+    ["key"] = 1234
+});
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call RecordAsync with all parameters.
+<code><![CDATA[
+PathParametersSimpleExpansionExplode client = new RoutesClient().GetPathParametersClient().GetPathParametersSimpleExpansionClient().GetPathParametersSimpleExpansionExplodeClient();
+
+Response response = await client.RecordAsync(new Dictionary<string, int>
+{
+    ["key"] = 1234
+});
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="Record(IDictionary{string,int},RequestContext)">
+      <example>
+This sample shows how to call Record.
+<code><![CDATA[
+PathParametersSimpleExpansionExplode client = new RoutesClient().GetPathParametersClient().GetPathParametersSimpleExpansionClient().GetPathParametersSimpleExpansionExplodeClient();
+
+Response response = client.Record(new Dictionary<string, int>
+{
+    ["key"] = 1234
+});
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call Record with all parameters.
+<code><![CDATA[
+PathParametersSimpleExpansionExplode client = new RoutesClient().GetPathParametersClient().GetPathParametersSimpleExpansionClient().GetPathParametersSimpleExpansionExplodeClient();
+
+Response response = client.Record(new Dictionary<string, int>
+{
+    ["key"] = 1234
+});
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+  </members>
+</doc>

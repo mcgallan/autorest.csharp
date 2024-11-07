@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="FixedAsync(RequestContext)">
+      <example>
+This sample shows how to call FixedAsync.
+<code><![CDATA[
+InInterface client = new RoutesClient().GetInInterfaceClient();
+
+Response response = await client.FixedAsync();
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call FixedAsync with all request content.
+<code><![CDATA[
+InInterface client = new RoutesClient().GetInInterfaceClient();
+
+Response response = await client.FixedAsync();
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="Fixed(RequestContext)">
+      <example>
+This sample shows how to call Fixed.
+<code><![CDATA[
+InInterface client = new RoutesClient().GetInInterfaceClient();
+
+Response response = client.Fixed();
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call Fixed with all request content.
+<code><![CDATA[
+InInterface client = new RoutesClient().GetInInterfaceClient();
+
+Response response = client.Fixed();
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+  </members>
+</doc>

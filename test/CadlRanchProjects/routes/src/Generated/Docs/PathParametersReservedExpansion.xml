@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="TemplateAsync(string,RequestContext)">
+      <example>
+This sample shows how to call TemplateAsync.
+<code><![CDATA[
+PathParametersReservedExpansion client = new RoutesClient().GetPathParametersClient().GetPathParametersReservedExpansionClient();
+
+Response response = await client.TemplateAsync("<param>");
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call TemplateAsync with all parameters.
+<code><![CDATA[
+PathParametersReservedExpansion client = new RoutesClient().GetPathParametersClient().GetPathParametersReservedExpansionClient();
+
+Response response = await client.TemplateAsync("<param>");
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="Template(string,RequestContext)">
+      <example>
+This sample shows how to call Template.
+<code><![CDATA[
+PathParametersReservedExpansion client = new RoutesClient().GetPathParametersClient().GetPathParametersReservedExpansionClient();
+
+Response response = client.Template("<param>");
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call Template with all parameters.
+<code><![CDATA[
+PathParametersReservedExpansion client = new RoutesClient().GetPathParametersClient().GetPathParametersReservedExpansionClient();
+
+Response response = client.Template("<param>");
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="AnnotationAsync(string,RequestContext)">
+      <example>
+This sample shows how to call AnnotationAsync.
+<code><![CDATA[
+PathParametersReservedExpansion client = new RoutesClient().GetPathParametersClient().GetPathParametersReservedExpansionClient();
+
+Response response = await client.AnnotationAsync("<param>");
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call AnnotationAsync with all parameters.
+<code><![CDATA[
+PathParametersReservedExpansion client = new RoutesClient().GetPathParametersClient().GetPathParametersReservedExpansionClient();
+
+Response response = await client.AnnotationAsync("<param>");
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="Annotation(string,RequestContext)">
+      <example>
+This sample shows how to call Annotation.
+<code><![CDATA[
+PathParametersReservedExpansion client = new RoutesClient().GetPathParametersClient().GetPathParametersReservedExpansionClient();
+
+Response response = client.Annotation("<param>");
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call Annotation with all parameters.
+<code><![CDATA[
+PathParametersReservedExpansion client = new RoutesClient().GetPathParametersClient().GetPathParametersReservedExpansionClient();
+
+Response response = client.Annotation("<param>");
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+  </members>
+</doc>
