@@ -1,0 +1,12 @@
+{
+  "output-folder": ".",
+  "namespace": "_Type.Model.Inheritance.NestedDiscriminator",
+  "library-name": "_Type.Model.Inheritance.NestedDiscriminator",
+  "flavor": "azure",
+  "use-model-reader-writer": true,
+  "shared-source-folders": [
+    "../../../../../../../../artifacts/bin/AutoRest.CSharp/Debug/net8.0/Generator.Shared",
+    "../../../../../../../../artifacts/bin/AutoRest.CSharp/Debug/net8.0/Azure.Core.Shared"
+  ],
+  "use-write-core": true
+}

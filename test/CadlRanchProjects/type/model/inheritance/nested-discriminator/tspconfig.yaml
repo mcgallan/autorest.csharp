@@ -1,0 +1,4 @@
+options:
+  "@azure-tools/typespec-csharp":
+    namespace: _Type.Model.Inheritance.NestedDiscriminator
+    use-write-core: true
